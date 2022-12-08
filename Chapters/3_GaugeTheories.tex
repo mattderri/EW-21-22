@@ -1,0 +1,871 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\setchapterstyle{kao}
+\setchapterpreamble[u]{\margintoc}
+\setchapterimage[6.5cm]{Images/GT.jpg}
+\chapter[Gauge Field Theories]{Gauge Field Theories\footnotemark[0]}
+\labch{GT}
+\section{Particles in the Poincaré Group}
+In this chapter, we want to discuss gauge invariance. As a starting point, we give some definitions:
+\begin{itemize}
+    \item \underline{Particle}: unitary infinite-dimensional representation of the Poincaré group
+    \item \underline{Field}: non-unitary finite-dimensional representation of the Lorentz group
+\end{itemize}
+Photons have 2 degrees of freedom, while the field $A_\mu$ has 4: one of them is redundant and it is possible to suppress it using gauge invariance. Requesting Lorentz invariance implying having gauge invariance, hence the latter is not a symmetry. We encounter this type of redundancy in quantum mechanics too, where there are the phases of our states. Here it is the same thing, with just more degrees of freedom. Gauge invariance has no physical implication, it is not associated to any conservation law, it is just a technical instrument that allows us to have local fields.\\
+We want to move from particles to local fields and in order to do that we use the \textbf{method of induced representations} (Wigner), which works for non semi-simple groups: we need an invariant and abelian subgroup. The Lorentz group SO(3,1) does not satisfy this constraint, so we use the group of isomorphisms in the \href{https://en.wikipedia.org/wiki/Hermann_Minkowski}{Minkowski} space ISO(3,1): the Poincaré group.
+\[
+[P^\mu,P^\nu]=0 \quad [M^{\mu\nu},P^\rho]=i(\eta^{\mu\rho}P^\nu-\eta^{\nu\rho}P^\mu)
+\]
+The first commutator tells us that the translations form an abelian subgroup, the second one is invariant, i.e. $U(\Lambda)P^\mu U^{-1}(\Lambda)=\eta^\mu_\nu P^\nu$ with $U(\Lambda)=e^{i\omega_{\mu\nu}M^{\mu\nu}}$. How can the Poincaré group be characterized? There are two Casimir operators:
+\[
+\left\{
+\begin{aligned}
+&P^\mu P_\mu=P^2\xleftarrow[]{}\text{invariant mass}\\
+&W^\mu W_\mu=W^2\xleftarrow[]{}\text{\href{https://en.wikipedia.org/wiki/Pauli-Lubanski_pseudovector}{Pauli-Lubanski} vector}\;W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}P_\sigma
+\end{aligned}
+\right.
+\]
+Focus now on the invariant mass: the fact that it commutes with all the generators of the algebra implies that if an element of the representation has a certain $P^2$, it will be the same for all the other elements of the same representation. There are different types of irreducible representations:
+\begin{enumerate}
+    \item null vector: $P^2=0, P^\mu=0$ is an eigenvalue of $P^2$ (vacuum)
+    \item time-like: $P^2>0$ (massive particle)
+    \item light-like: $P^2=0, P^\mu\neq0$ (massless particle)
+    \item space-like: $P^2<0$
+\end{enumerate}
+\section{One-Particle Massive States}
+We want to find the quantum numbers which define these states, we can label them with eigenvalues $p^\mu$ of $P^\mu$. Consider now a subspace with $P^\mu=K^\mu$, with $K^\mu$ the reference momentum. We can make a clever choice and work in the reference system where the massive particle is at rest, i.e. $K^\mu=(m,0,0,0)$. Operators which commute with $P^\mu$ for $p^\mu=k^\mu$ generate transformations that leave $K^\mu$ invariant: $W^\mu_\nu K^\nu=K^\mu$ are elements of the \textbf{little group} of $K^\mu$. Regarding our choice, the little group is SO(3) and we can use $J^2$ and $J_z$. SO(3) is compact, therefore the eigenvalues of its generators are quantized. We can prove that $J^2$ is proportional to the second Casimir $W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}P_\sigma$, $\sigma$ must be a temporal index, all the other ones are spatial.
+\[
+W^i=\frac{1}{2}\epsilon^{ijk}M_{jk}\cdot M=J^i\cdot M\xrightarrow[]{}W^2=J^2\cdot M^2
+\]
+We want to find all the other operators that commute with the Casimir to label the state as $\ket{\Vec{k},\sigma,M,s}$.\marginnote{In principle, we could have other quantum numbers, like isospin, but they have nothing to do with the Poincaré group.}
+\[
+\left\{
+\begin{aligned}
+&P^\mu\ket{\Vec{k},\sigma,M,s}=k^\mu\ket{\Vec{k},\sigma,M,s} \quad \text{where $\Vec{k}=0$ and $k^0=M$}\\
+&J^2\ket{\Vec{k},\sigma,M,s}=\hbar^2s(s+1)\ket{\Vec{k},\sigma,M,s}\\
+&J_z\ket{\Vec{k},\sigma,M,s}=\hbar\sigma\ket{\Vec{k},\sigma,M,s}
+\end{aligned}
+\right.
+\]
+For SO(2) we have just one Casimir, $J^2$, which is the element that commutes with all the other elements in the algebra, $[J^2,J^i]=\exp{iJ^iM^i\theta}=0$. The action of the operator does not change the Casimir:
+\[
+J^2U(R(\theta))\ket{s,\sigma}\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize they commute };}}{=}U(R(\theta))J^2\ket{s,\sigma}=\hbar^2s(s+1)U(R(\theta))\ket{s,\sigma}
+\]
+$\ket{\Vec{k},\sigma}$ gives us a unitary infinite-dimensional representation of the Poincaré group, the idea is to extend this structure to other states of the representation. To do that, we act with a Lorentz transformation $L(p)^\mu_\nu k^\nu=p^\mu$, corresponding to boost+rotation. A general state with momentum $\Vec{p}$ is defined as:\marginnote{Up to an arbitrary normalization factor.}
+\[
+\ket{\Vec{p},\sigma}:=U(L(p))\ket{\Vec{k},\sigma}
+\]
+The transformation is realized by the action of a unitary operator on the state. We have to prove that $\ket{\Vec{p},\sigma}$ are eigenvalues of the momentum.
+\begin{align*}
+P^\mu\ket{\Vec{p},\sigma}&=P^\mu U(L(p))\ket{\Vec{k},\sigma}=U(L(p))[U^{-1}(L(p))P^\mu U(L(p))]\ket{\vec{k},\sigma}\\
+&=U(L(p))L(p)^\mu_\nu P^\nu\ket{\vec{k},\sigma}=U(L(p))L(p)^\mu_\nu k^\nu\ket{\vec{k},\sigma}\\
+&=U(L(p))p^\mu\ket{\vec{k},\sigma}=p^\mu\ket{\vec{p},\sigma} \quad \checkmark
+\end{align*}
+Moreover, we want to prove that this state is also an eigenstate of the Lorentz transformations:
+\begin{align*}
+U(\Lambda)\ket{\vec{p},\sigma}&=U(\Lambda)U(L(p))\ket{\vec{k},\sigma}=U(L(\Lambda p))[U^{-1}(L(\Lambda p))U(\Lambda)U(L(p))]\ket{\vec{k},\sigma}\\
+&=U(L(\Lambda p))U(W(\Lambda,p))\ket{\vec{k},\sigma}\marginnote{The product of unitary transformations is the unitary transformation of the product, $W(\Lambda,p):=L(\Lambda p)^{-1}\Lambda L(p)$.}
+\end{align*}
+We look more in details at this transformation $W(\Lambda,p)$.
+\begin{align*}
+W(\Lambda,p)^\mu_\nu k^\nu&=(L(\Lambda p)^{-1}\Lambda L(p))^\mu_\nu k^\nu=(L(\Lambda p)^{-1}\Lambda)L(p)^\mu_\nu k^\nu=(L(\Lambda p)^{-1}\Lambda)^\mu_\nu p^\nu\\
+&=(L(\Lambda p)^{-1})^\mu_\nu(\Lambda p)^\nu=k^\nu
+\end{align*}
+$W(\Lambda,p)$ leaves $k^\mu$ invariant and it is an element of the little group, we can write it as a matrix:
+\[
+U(W(\Lambda,p))\ket{\vec{k},\sigma}=\sum_{\sigma'}D_{\sigma\sigma'}W(\Lambda,p)\ket{\vec{k},\sigma'}
+\]
+We can substitute this result in the equation above.
+\begin{align*}
+U(\Lambda)\ket{\vec{p},\sigma}&=U(L(\Lambda p))\sum_{\sigma'}D_{\sigma\sigma'}W(\Lambda,p)\ket{\vec{k},\sigma'}=\sum_{\sigma'}D_{\sigma\sigma'}W(\Lambda,p)U(L(\Lambda p))\ket{\vec{k},\sigma'}\\
+&=\sum_{\sigma'}D_{\sigma\sigma'}\ket{\vec{p}_\Lambda,\sigma'}
+\end{align*}
+where $(\vec{p}_\Lambda)=(\Lambda p)^i$. This is our irreducible representation, one thing left to prove is that $D_{\sigma\sigma'}$ is unitary:
+\begin{align*}
+\bra{\vec{p}',\sigma'}\ket{\vec{p},\sigma}&=(2\pi)^32E_p\delta^3(\vec{p}-\vec{p}')\delta_{\sigma\sigma'}=\bra{\vec{p}',\sigma'}U^{-1}(\Lambda)U(\Lambda)\ket{\vec{p},\sigma}\\
+&=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*\bra{\vec{p}_{\Lambda'},\hat{\sigma}'}\ket{\vec{p}_\Lambda,\hat{\sigma}}=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*(2\pi)^32E_{p_{\Lambda}}\delta^3(\vec{p}_\Lambda-\vec{p}'_{\Lambda'})\delta_{\hat{\sigma}\hat{\sigma}'}\\
+&=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*(2\pi)^32E_p\delta^3(\vec{p}-\vec{p}')\delta_{\hat{\sigma}\hat{\sigma}'}
+\end{align*}
+\[
+\Rightarrow \delta_{\sigma\sigma'}=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*\delta_{\hat{\sigma}\hat{\sigma}'}=\sum_{\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}^*} \quad \text{$D$ is unitary}
+\]
+\section{One-Particle Massless States}
+We want to repeat the same arguments for one-particle massless states, but in this case it is not so simple because the little group is not trivial.\marginnote{Ah perché prima era simple?} As before, we start by taking a reference momentum which must be compatible with the light-like nature of the state, so we take $K^\mu=(k,0,0,k)$. We need to find the little group of $K^\mu$ which will include SO(2) rotation around the $z$-axis: we can perform a boost along the $x$-axis, a rotation in the $xz$ plane and again a boost but in the $z$-axis. We require that this sequence of transformations leaves $K^\mu$ invariant.
+\begin{enumerate}
+    \item Boost along the $x$-axis:
+    \[
+    \left(\begin{array}{cccc}
+    \gamma & \beta\gamma & 0 & 0 \\
+    \beta\gamma & \gamma & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 
+    \end{array}\right)
+    \left(\begin{array}{c}
+    k \\
+    0 \\
+    0 \\
+    k
+    \end{array}\right)=
+    \left(\begin{array}{c}
+    \gamma k \\
+    \beta\gamma k \\
+    0 \\
+    k
+    \end{array}\right)
+    \]
+    We obtain an $y$ component that we do not want, to throw it away we perform a rotation.
+    \item Rotation in the $xz$ plane $(\sin\theta=\beta, \cos\theta=1/\gamma)$:
+    \[
+    \left(\begin{array}{cccc}
+    1 & 0 & 0 & 0 \\
+    0 & \cos\theta & 0 & -\sin\theta \\
+    0 & 0 & 1 & 0 \\
+    0 & \sin\theta & 0 & \cos\theta 
+    \end{array}\right)
+    \left(\begin{array}{c}
+    \gamma k \\
+    \beta\gamma k \\
+    0 \\
+    k
+    \end{array}\right)=
+    \left(\begin{array}{c}
+    \gamma k \\
+    0 \\
+    0 \\
+    \gamma k
+    \end{array}\right)
+    \]
+    We have an undesired factor $\gamma$, so we make another boost to eliminate it.
+    \item Boost along the $z$-axis $(\Tilde{\gamma}=(\gamma^2+1)/2\gamma)$:
+    \[
+    \left(\begin{array}{cccc}
+    \Tilde{\gamma} & 0 & 0 & \Tilde{\beta}\Tilde{\gamma} \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    \Tilde{\beta}\Tilde{\gamma} & 0 & 0 & \Tilde{\gamma} 
+    \end{array}\right)
+    \left(\begin{array}{c}
+    \gamma k \\
+    0 \\
+    0 \\
+    \gamma k
+    \end{array}\right)=
+    \left(\begin{array}{c}
+    k \\
+    0 \\
+    0 \\
+    k
+    \end{array}\right)
+    \]
+\end{enumerate}
+This sequence of transformations leaves the momentum invariant, we can perform the boost along the $x$-axis and then the boost along the $z$-axis or vice-versa. Now we want to find the generators of these transformations which commute with $P$ and that allow us to find the quantum numbers needed to label our states. What we have to do is taking the product of these transformations and make it infinitesimal, assuming that $\beta$ is small. For $\beta\ll1$ we have:
+\[
+\gamma\simeq1+\frac{1}{2}\beta^2 \quad \sin\theta=\beta \quad \cos\theta=1+\pazocal{O}(\beta^2) \quad \Tilde{\beta}=-\frac{1}{2}\beta^2 \quad \Tilde{\gamma}=1+\pazocal{O}(\beta^2)
+\]
+To the first order in $\beta$, only the first two transformations make a relevant contribution. We denote with $K_1$ the generator of the boost along the $x$-axis and with $J_2$ the generator of the rotation in the $xz$ plane.
+\[
+A^\mu_\nu=\left(\begin{array}{cccc}
+    0 & -i & 0 & 0 \\
+    -i & 0 & 0 & i \\
+    0 & 0 & 0 & 0 \\
+    0 & -i & 0 & 0
+\end{array}\right)=(K_1+J_2)^\mu_\nu
+\]
+The total transformation $\Lambda^\mu_\nu$ can be written as $\Lambda^\mu_\nu=\delta^\mu_\nu+i\beta A^\mu_\nu+\pazocal{O}(\beta^2)$.\\
+What other transformations can we do? We can perform a SO(2) rotation in the $xy$ plane or a transformation like the one generated by $A^\mu_\nu$ but with the boost along the $y$-axis, defined by $B^\mu_\nu$.
+\[
+B^\mu_\nu=\left(\begin{array}{cccc}
+    0 & 0 & -i & 0 \\
+    0 & 0 & 0 & 0 \\
+    -i & 0 & 0 & i \\
+    0 & 0 & -i & 0
+\end{array}\right)=(K_2+J_1)^\mu_\nu
+\]
+The little group will be composed by three generators, $A^\mu_\nu$, $B^\mu_\nu$ and $J_3$ so in general we have:
+\[
+\Lambda^\mu_\nu=\delta^\mu_\nu+i\alpha A^\mu_\nu+i\beta B^\mu_\nu+i\theta J_3
+\]
+We found the generators but to identify the group we need to define the algebra. Take these three matrices, compute the commutator and we find:
+\[
+[J_3,A]=iB \quad [J_3,B]=-iA \quad [A,B]=0
+\]
+$A$ and $B$ commute, they transform one into another under the action of $J_3$: this is an invariant subgroup. There will surely be SO(2) generated by $J_3$ plus another invariant subgroup generated by $A$ and $B$. If we put them in a vector, we observe that it is a translation, so we have rotation+translation. This is the \textbf{group of isomorpshims} in $\mathbb{R}^2$ called ISO(2) which is not compact. We have to find the unitary representation of this group but, as in the Poincaré case, being it not compact we have the problem that this unitary representation will not be finite-dimensional. However, we have an invariant subgroup, so it is possible to use again the induced representations method but we need to find the Casimir. So far, we have just one Casimir $P^2=A^2+B^2$, $\vec{P}=(A,B)$. As in the massless case, this corresponds to the second Casimir of the Poincaré group, which is the square of the Pauli-Lubanski vector $W^\mu$ and we restrict it to states with $P^\mu=K^\mu=(k,0,0,k)$.
+\[
+\left\{
+\begin{aligned}
+&W^0=\frac{1}{2}(\epsilon^{0123}M_{12}K+\epsilon^{0213}M_{21}K)=M_{12}\cdot K=J_3\cdot K\marginnote{$J_i=M_{kl}$, with $i,k,l$ symmetric permutations of 123.}\\
+&W^1=\frac{1}{2}(\epsilon^{1230}M_{23}K+\epsilon^{1320}M_{32}K+\epsilon^{1203}M_{20}K+\epsilon^{1023}M_{02}K)=K(-J_1+K_2)=+K\cdot B\\
+&W^2=\frac{1}{2}(\epsilon^{2130}M_{13}K+\epsilon^{2310}M_{31}K+\epsilon^{2013}M_{01}K+\epsilon^{2103}M_{10}K)=K(-J_2-K_1)=-K\cdot A\\
+&W^3=\frac{1}{2}(\epsilon^{3210}M_{21}K+\epsilon^{3120}M_{12}K)=-K\cdot J_3
+\end{aligned}
+\right.
+\]
+We take the square, $W_\mu W^\mu=W^2=-K^2(A^2+B^2)$. We want to classify physical states according to the value of the Casimir, we have two types of states:
+\[
+|\vec{P}|^2>0 \quad |\vec{P}|^2=0
+\]
+In the first case, $\vec{K}=(P,0)$ and there is no little group. We need a rotation to find the most generic momentum which is written as $\ket{\vec{p}}=\ket{a,b}$, with $a,b$ eigenvalues of $A$ and $B$. They are both real numbers, so we have an infinite number of states which are not observed in nature: there are no massless states with continuous indices. $|\vec{P}|^2>0$ does not correspond to any physical state, it is just possible from a mathematical point of view.\\
+In the second case, $\ket{\vec{p}}=\ket{a,b}=\ket{0,0}$. We cannot perform translations because the values of $a$ and $b$ would change, but we can make rotations. The little group of (0,0) is SO(2), the quantum number which characterizes these states is the \textbf{helicity} $h$: it is the eigenvalue of the generator of rotations along the axis parallel to the momentum of our state.\marginnote{That would be the projection of the spin along the direction of motion, but the other definition is better.} What are the possible values of $h$? Since we are dealing with Lorentz transformations, we can have both bosons and fermions. If we make a $2\pi$ rotation of a boson we return to the initial state, but a $2\pi$ rotation for a fermion would give a minus sign, so a $4\pi$ rotation is needed for fermions. For this reason, helicity can assume both integer and half-integer values $h=0,\pm1,\pm\frac{1}{2},\dots$. The quantization is due to the topological structure of the group. States with $h=1$ belong to a different representation from states with $h=-1$, they are basically different particles. Why don't we use different names? Because, for example, electromagnetic interaction is invariant under parity, which flips the sign of the helicity: for a photon with helicity +1 there will be a photon with helicity -1. The same reasoning applies for gravitational interaction. Other interactions break parity, e.g. weak interaction. We have the combination CPT and we want to see how helicity transforms under it:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|ccc}
+     & Spin$(\vec{s})$ & Momentum $(\vec{p})$ & Helicity $(\vec{s}\cdot\vec{p}/|\vec{p}|)$ \\
+     \hline
+     P & +1 & -1 & -1 \\
+     C & +1 & +1 & +1 \\
+     T & -1 & -1 & +1 \\
+     CPT & -1 & +1 & -1 \\
+     \hline
+    \end{tabular}
+    \caption*{}
+    \label{tab:my_label}
+\end{table}\\
+\noindent
+We see that helicity changes sign under P, so it changes sign under CPT too. If we have a particle with a certain charge and helicity, there must exist another particle with opposite charge and opposite helicity. Are there other massless particles in nature? For a while, it was believed that the neutrino was massless but now we know that they have a small mass. Neutrino and anti-neutrino have different names because they interact via weak interaction which does not conserve parity. We want to understand what type of neutrinos we have in nature.
+\begin{itemize}
+    \item \underline{Massive neutrinos}: they have 2 degrees of freedom (given by the $z$ component of the spin) and no charge, neutrinos and anti-neutrinos are equal because there is no charge to distinguish them. In terms of fields, they are described by real Majorana fields, hence only one creation/annihilation operator. Another possibility is to have them charged with 4 degrees of freedom: the $z$ component of the spin and the opposite charge between neutrinos and anti-neutrinos. In this case, we need Dirac creation and annihilation operators.
+    \item \underline{Massless neutrinos (old version)}: they are charged with 2 degrees of freedom, having them being charged is the reason why it was impossible to have the Majorana mass term. We know, due to oscillations, that they must have a mass, but we don't know yet whether is the Majorana one or the Dirac one.
+\end{itemize}
+% We want to generate states with arbitrary momentum and we do that using Lorentz transformations: $\ket{\vec{p},h}:=U(L(p))\ket{\vec{k},h}$, with $U(L(p))$ being a boost+rotation. If we are in a reference system such that $K^\mu=(k,0,0,k)$, this means that the boost is along the $z$-axis and then we make the rotation.
+In the massive case, the matrix $D_{\sigma\sigma'}$ mixes the spin indices, so $\sigma$ is not invariant under Lorentz transformations, there is a multiplet of components which mix under Lorentz. In the massless case, helicity does not mix and it is really Lorentz invariant.
+% \subsection{Vacuum in the Poincaré Group}
+% We want to justify the fact that the vacuum is described by $P^2=0$ and $P^\mu=0$: what kind of states can we have with zero momentum? We have to use the induced representations method and see what is the little group which leaves $P^\mu=0$ invariant. This is SO(3,1): what are the unitary representations of SO(3,1)? We have two possibilities:
+% \begin{center}
+% \begin{tikzcd}
+% &\text{singlet representations (unitary and 1-dimensional)=vacuum}\\
+% \text{SO}(3,1)\arrow[ru] \arrow[rd] \\
+% &\text{non trivial $\infty$-dimensional representations=not realized in nature}
+% \end{tikzcd}
+% \end{center}
+% The vacuum is the only possible state such that $P^\mu\ket{0}=0$, it is a singlet in the Poincaré group with zero energy.
+\section{Transformation Rules for Creation/Annihilation Operators}
+Our idea is to start from particles to construct fields that transform accordingly under Lorentz. Fields are written in terms of creation and annihilation operators, so we want to find transformation rules for these operators which will automatically apply for the fields.\\
+\subsection{Massive Case}
+Consider now the \textbf{massive case}\marginnote{Same arguments apply for the massless case.}, we saw that states transform as:
+\[
+U(\Lambda)\ket{\vec{p},\sigma}=\sum_{\sigma'}D_{\sigma\sigma'}W(\Lambda,p)\ket{\vec{p}_\Lambda,\sigma'}
+\]
+We define the creation operator and its commutation rules:
+\[
+a^\dagger(\vec{p},\sigma)\ket{0}=\frac{1}{\sqrt{2E_p}}\ket{\vec{p},\sigma} \quad [a(\vec{p}',\sigma'),a^\dagger(\vec{p},\sigma)]=(2\pi)^3\delta^3(\vec{p}-\vec{p}')\delta_{\sigma\sigma'}
+\]
+The next step is to write the transformation rule for the states but using the creation operator:
+\begin{align*}
+U(\lambda)\ket{\vec{p},\sigma}&=\sqrt{2E_p}U(\Lambda)a^\dagger(\vec{p},\sigma)\ket{0}=\sqrt{2E_p}[U(\Lambda)a^\dagger(\vec{p},\sigma)U^{-1}(\Lambda)]\ket{0}\marginnote{The vacuum is invariant under Lorentz.}\\
+&=\sum_{\sigma'}D_{\sigma\sigma'}\sqrt{2E_{p_\Lambda}}a^\dagger(\vec{p}_\Lambda,\sigma')\ket{0}
+\end{align*}
+From the expression above, we find:
+\[
+\text{Massive particles:}
+\left\{
+\begin{aligned}
+&U(\Lambda)a^\dagger(\vec{p},\sigma)U^{-1}(\Lambda)=\sqrt{\frac{E_{p_\Lambda}}{E_p}}\sum_{\sigma'}D_{\sigma\sigma'}a^\dagger(\vec{p}_\Lambda,\sigma')\\
+&U(\Lambda)a(\vec{p},\sigma)U^{-1}(\Lambda)=\sqrt{\frac{E_{p_\Lambda}}{E_p}}\sum_{\sigma'}D_{\sigma\sigma'}^*a(\vec{p}_\Lambda,\sigma')
+\end{aligned}
+\right.
+\]
+Repeating more or less the same arguments, for massless particles one obtains:
+\[
+\left\{
+\begin{aligned}
+&U(\Lambda)a^\dagger(\vec{p},h)U^{-1}(\Lambda)=\sqrt{\frac{E_{p_\Lambda}}{E_p}}\exp{-ih\theta(\Lambda,\vec{p})}a^\dagger(\vec{p}_\Lambda,h)\\
+&U(\Lambda)a(\vec{p},h)U^{-1}(\Lambda)=\sqrt{\frac{E_{p_\Lambda}}{E_p}}\exp{-ih\theta(\Lambda,\vec{p})}a(\vec{p}_\Lambda,h)
+\end{aligned}
+\right.
+\]
+Take now a massive vectorial field:
+\[
+V^\mu(x)=\sum_{\sigma=0,\pm1}\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_p}}\left[a(\vec{p},\sigma)\varepsilon^\mu(\vec{p},\sigma)e^{-iPx}+a^\dagger(\vec{p},\sigma)\varepsilon^{\mu*}(\vec{p},\sigma)e^{+iPx}\right]
+\]
+When we transform it, we require that $U(\Lambda)V^\mu(x)U^{-1}(\Lambda)=(\Lambda^{-1})^\mu_\nu V^\nu(\Lambda x)$, i.e. it transforms as a Lorentz 4-vector. In order to get this result, we need to impose some kind of transformation rules on $\varepsilon^\mu(\vec{p},\sigma)$.
+\[
+U(\Lambda)V^\mu(x)U^{-1}(\Lambda)=\sum_{\sigma\sigma'}\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_p}}\sqrt{\frac{E_{p_\Lambda}}{E_p}}\left[D_{\sigma\sigma'}^*\varepsilon^\mu(\vec{p},\sigma)a(\vec{p}_\Lambda,\sigma')e^{-iPx}+\text{h.c.}\right]
+\]
+Comparing the two expressions, we have to impose that:
+\[
+\sum_\sigma D_{\sigma\sigma'}^*\varepsilon^\mu(\vec{p},\sigma)=(\Lambda^{-1})^\mu_\nu\varepsilon^\nu(\vec{p}_\Lambda,\sigma')
+\]
+In this way, our massive vectorial field transforms just as required.\marginnote{The integral measure is Lorentz invariant, so:
+\[
+\int\frac{d^3p}{E_p}=\int\frac{d^3p}{E_{p_\Lambda}}
+\]}
+If we look at the condition we imposed over $\varepsilon^\mu(\vec{p},\sigma)$, it is possible to see that there are two indices which transform under Lorentz, $\mu$ and $\sigma$. $\mu$ transforms with $\Lambda$, which is what we expect for a vector, but also $\sigma$ transforms and it has nothing to do with the field. $\sigma$ is the index for particles and it transforms as a representation of the little group: $\varepsilon^\mu(\vec{p},\sigma)$ is the object connecting particles and fields.\\
+We would like to find an explicit expression for $\varepsilon^\mu(\vec{p},\sigma)$, to do that we choose $P^\mu=K^\mu=(m,0,0,0)$ and compute $W(\Lambda,p)=L^{-1}(\Lambda,p)\Lambda L(p)$:
+\[
+\left\{
+\begin{aligned}
+&L(p)\cdot k=p=k\Rightarrow L(p)=L(k)=\mathbb{1}\\
+&L(\Lambda p)=L(\Lambda k)\Rightarrow L(\Lambda p)=\Lambda
+\end{aligned}
+\right.
+\Rightarrow W(\Lambda,p)=\Lambda^{-1}\Lambda=\mathbb{1}
+\]
+This implies that $D_{\sigma\sigma'}(W)=D_{\sigma\sigma'}(\mathbb{1})=\delta_{\sigma\sigma'}$. Another possibility is to have $\Lambda=L(q)$ such that $\Lambda\cdot k=L(q)\cdot k=q$. In this case we get\\
+$\varepsilon^\mu(\vec{k},\sigma)=(L^{-1}(q))^\mu_\nu\varepsilon^\nu(\vec{q},\sigma)$ which translates into $\varepsilon^\mu(\vec{q},\sigma)=L(q)^\mu_\nu\varepsilon^\nu(\vec{k},\sigma)$. This tells us that if we know the expression for the polarization vector in the reference system where the particle is at rest, we can know the expression for the polarization vector in any reference system by simply performing a boost. Now the question is: what is the expression for the polarization vector in the reference system where the particle is at rest? We can obtain it by placing ourselves in the reference system with the particle at rest and performing a rotation $\Lambda=R$: $\Lambda^\mu_\nu K^\nu=K^\mu=R^\mu_\nu K^\nu$ because the rotation acts on the spatial components which are equal to zero. In this case, $L(\Lambda k)=L(k)=1$ so $W=\Lambda=R$. We substitute it:
+\[
+\sum_\sigma D_{\sigma\sigma'}^*W(\Lambda,p)\varepsilon^\mu(\vec{p},\sigma)=(\Lambda^{-1})^\mu_\nu\varepsilon^\nu(\vec{p}_\Lambda,\sigma)
+\]
+and we obtain the transformation rule.
+\begin{equation}
+\labeq{transfrule}
+R^\mu_\nu\varepsilon^\nu(\vec{k},\sigma)=\sum_{\sigma'}D_{\sigma\sigma'}(R)\varepsilon^\mu(\vec{k},\sigma')
+\end{equation}
+What we want to describe are particles with spin 1 and field $V^\mu(x)$, therefore $D_{\sigma\sigma'}$ is a representation of rotations with spin 1. $R^\mu_\nu$ is the representation of the Lorentz group, but now we are looking at the subgroup of the rotations. $R^\mu_\nu$ is a representation of the rotations but it is not irreducible: $\Lambda^\mu_\nu$ is a 4-vector of SO(3,1), i.e. a $3\oplus1$ of SO(3). Why $3\oplus1$?
+% \[
+% P^\mu=\left(\begin{array}{c}
+%     p^0 \\
+%     p^1 \\
+%     p^2 \\
+%     p^3
+% \end{array}\right)
+% \begin{array}{c}
+%     \}1\\
+% \end{array}
+% \]
+\[
+P^\mu=\left(\begin{array}{c}
+    p^0\\
+    p^1\\
+    p^2\\
+    p^3
+    \end{array}\right)
+\setstackgap{L}{1.2\normalbaselineskip}
+\vcenter{\hbox{\stackunder[-1pt]{
+  \left.{\Centerstack{}}\right\}1
+}{
+  \left.{\Centerstack{\\ \\}}\right\}3
+}}}
+\]
+Another way to see it explicitly is to look directly at the generators of this rotation:
+\[
+(J_1)^\mu_\nu=\left(\begin{array}{c:ccc}
+    0 & 0 & 0 & 0 \\
+    \hdashline
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & -i \\
+    0 & 0 & +i & 0 \\
+\end{array}\right)
+\quad 
+(J_2)^\mu_\nu=\left(\begin{array}{c:ccc}
+    0 & 0 & 0 & 0 \\
+    \hdashline
+    0 & 0 & 0 & +i \\
+    0 & 0 & 0 & 0 \\
+    0 & -i & 0 & 0 \\
+\end{array}\right)
+\quad 
+(J_3)^\mu_\nu=\left(\begin{array}{c:ccc}
+    0 & 0 & 0 & 0 \\
+    \hdashline
+    0 & 0 & -i & 0 \\
+    0 & +i & 0 & 0 \\
+    0 & 0 & 0 & 0 \\
+\end{array}\right)
+\]
+The only non-zero components are the one in the $3\times3$ subgroup. $\varepsilon^\mu$ must transform as spin 1, so as a triplet, therefore it cannot have temporal component since it would be a singlet that we do not want. If we work with an \textbf{infinitesimal} transformation we have:
+\[
+\left\{
+\begin{aligned}
+&R^\mu_\nu=\delta^\mu_\nu+i\theta\hat{n}(\vec{J})^\mu_\nu\xleftarrow[]{}\text{$4\times4$ generators}\\
+&D_{\sigma\sigma'}(R)=\delta_{\sigma\sigma'}+i\theta\hat{n}(\vec{J})_{\sigma\sigma'}\xleftarrow[]{}\text{$3\times3$ representation}
+\end{aligned}
+\right.
+\]
+We put all of this in the transformation rule we found [\refeq{transfrule}] and we get:
+\[
+(\vec{J})^\mu_\nu\varepsilon^\nu(\vec{k},\sigma)=\sum_{\sigma'}(\vec{J})_{\sigma\sigma'}\varepsilon^\mu(\vec{k},\sigma')
+\]
+Now we can be smart and make a clever choice, selecting $\mu=0$ since $J^0_\nu=0$ and obtaining $\varepsilon^0(\vec{k},\sigma')=0$.\marginnote{This is because $(\vec{J})_{\sigma\sigma'}\neq0$.} This is the condition for massive particles: we have 3 degrees of freedom and $\varepsilon$ has 4, so one of them must be zero, the singlet. It is now possible to choose a basis:
+\[
+\varepsilon^\mu(\vec{k},0)=\left(\begin{array}{c}
+    0 \\
+    0 \\
+    0 \\
+    +1
+\end{array}\right)
+\quad
+\varepsilon^\mu(\vec{k},+1)=\frac{1}{\sqrt{2}}\left(\begin{array}{c}
+    0 \\
+    +1 \\
+    +i \\
+    0
+\end{array}\right)
+\quad
+\varepsilon^\mu(\vec{k},-1)=\frac{1}{\sqrt{2}}\left(\begin{array}{c}
+    0 \\
+    +1 \\
+    -i \\
+    0
+\end{array}\right)
+\]
+From this, it is possible to see that:
+\[
+\left\{
+\begin{aligned}
+&\varepsilon^\mu(\vec{k},\sigma)\varepsilon_\mu(\vec{k},\sigma')=-\delta_{\sigma\isgma'}\\
+&\varepsilon^\mu(\vec{k},\sigma)K_\mu=0
+\end{aligned}
+\right.
+\]
+This conditions hold true also for a generic momentum $P^\mu$, with the last one giving the condition on the fields $\partial_\mu V^\mu(x)=0$. It comes from the equations of motion, to see that we look at the \href{https://en.wikipedia.org/wiki/Alexandru_Proca}{Proca} Lagrangian for massive spin-1 particles:
+\[
+\pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_\nu^2}{2}V_\mu V^\mu
+\]
+The equations of motion are $\partial_\mu F_{\mu\nu}=-m_\nu^2V^\nu\to-m_v^2\partial_\nu V^\nu=0$.
+\subsection{Massless Case}
+We want to repeat the same story for the \textbf{massless case}:
+\[
+U(\Lambda)a(\vec{p},h)U^{-1}(\Lambda)=\exp{-ih\theta(\Lambda,p)}a(\vec{p}_\Lambda,h)\sqrt{\frac{E_{p_\Lambda}}{E_p}}
+\]
+As we previously did, we are looking for the transformation rule of the field, $U(\Lambda)A^\mu(x)U^{-1}(\Lambda)\stackrel{?}{=}(\Lambda^{-1})^\mu_\nu A^\nu(x)$. This is not possible and we are going to see why.\marginnote{Spoiler: we are not going to see a beata minchia.}
+\[
+U(\Lambda)A^\mu(x)U^{-1}(\Lambda)=\sum_{h=\pm1}\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_p}}\sqrt{\frac{E_{p_\Lambda}}{E_p}}\left[e^{-ih\theta(\Lambda,p)}a(\vec{p}_\Lambda,h)\varepsilon^\mu(\vec{p},h)e^{-iPx}+\text{h.c.}\right]
+\]
+For the polarization vector $\varepsilon^\mu$, the transformation rule we would like to have is $e^{-ih\theta(\Lambda,p)}\varepsilon^\mu(\vec{p},h)\stackrel{?}{=}(\Lambda^{-1})^\mu_\nu\varepsilon^\nu(\vec{p}_\Lambda,h)$. If this holds true, we obtain for the field the transformation rule written above. Is it possible to realize this transformation? Repeat the same steps of the massive case:
+\begin{enumerate}
+    \item choose $P^\mu=K^\mu\Rightarrow L(p)=\mathbb{1}$
+    \item choose $\Lambda=L(q)$, since $K^\mu=(k,0,0,k)$ we must perform a boost in the $z$ direction and then a rotation:
+    \[
+    L(q)\cdot k=q\Rightarrow W(L(q),k)=\mathbb{1}\Rightarrow\theta(\Lambda,p)=0
+    \]
+    If the transformation of the little group is 1 then we have no phase.
+    \[
+    \varepsilon^\mu(\vec{k},h)=(L^{-1}(q))^\mu_\nu\varepsilon^\nu(\vec{q},h)\Rightarrow\varepsilon^\mu(\vec{q},h)=L(q)^\mu_\nu\varepsilon^\nu(\vec{k},h)
+    \]
+    \item choose $\Lambda$ to be an element of the little group of $K^\mu$: $W(\Lambda,p)=\Lambda$
+\end{enumerate}
+At this point, there are two types of transformations one can do: SO(2) rotations or $S(\alpha,\beta)$, i.e. transformations made by exponentiating generators $A$ and $B$.\\
+In the first case $\Lambda=R(\theta)=\exp{i\theta J_3}$, so we have:
+\begin{equation}
+\labeq{case1}
+R(\theta)^\mu_\nu\varepsilon^\nu(\vec{k},h)=e^{ih\theta}\varepsilon^\mu(\vec{k},h)
+\end{equation}
+For the second case, $S(\alpha,\beta)^\mu_\nu$ is defined as:
+\begin{equation}
+\labeq{case2}
+S(\alpha,\beta)^\mu_\nu=\left(\begin{array}{cccc}
+    1+\xi & \alpha & \beta & -\xi \\
+    \alpha & 1 & 0 & -\alpha \\
+    \beta & 0 & 1 & -\beta \\
+    \xi & \alpha & \beta & 1-\xi
+\end{array}\right) \quad \xi=\frac{1}{2}(\alpha^2+\beta^2)
+\end{equation}
+$S(\alpha,\beta)^\mu_\nu\varepsilon^\nu(\vec{k},h)\stackrel{?}{=}\varepsilon^\mu(\vec{k},h)$ the transformation of the little group is the identity, under this transformation particles are neutral. We want to understand how to satisfy both requirements, \refeq{case1} and \refeq{case2}. We start by looking at solutions of the first case and see if they are simultaneously solutions for the other case. Here we will have the two transverse polarizations which are eigenstates of the rotation operator:
+\[
+\varepsilon^\mu(\vec{k},+1)=\frac{1}{\sqrt{2}}\left(\begin{array}{c}
+    0 \\
+    +1 \\
+    +i \\
+    0
+\end{array}\right)
+\quad
+\varepsilon^\mu(\vec{k},-1)=\frac{1}{\sqrt{2}}\left(\begin{array}{c}
+    0 \\
+    +1 \\
+    -i \\
+    0
+\end{array}\right)
+\]
+Are they solutions of \refeq{case2}? The answer is NO.
+\[
+\left(\begin{array}{cccc}
+    1+\xi & \alpha & \beta & -\xi \\
+    \alpha & 1 & 0 & -\alpha \\
+    \beta & 0 & 1 & -\beta \\
+    \xi & \alpha & \beta & 1-\xi
+\end{array}\right)\frac{1}{\sqrt{2}}\left(\begin{array}{c}
+    0 \\
+    +1 \\
+    \pm i \\
+    0
+\end{array}\right)=\frac{1}{\sqrt{2}}\left(\begin{array}{c}
+    \alpha\pm i\beta \\
+    +1 \\
+    \pm i \\
+    \alpha\pm i\beta
+\end{array}\right)\left\{
+\begin{aligned}
+&\neq\varepsilon^\mu(\vec{k},\pm1)\\
+&=\varepsilon^\mu(\vec{k},\pm1)+\frac{\alpha\pm i\beta}{\sqrt{2}}\frac{K^\mu}{k}
+\end{aligned}
+\right.
+\]
+It is possible to choose solutions of \refeq{case1}, because we know they solve equations of motion, but also solutions of \refeq{case2} adding the extra-term proportional to the momentum. Take now $\Lambda=S(\alpha,\beta)R(\theta)$, we can write the two transformations as:
+\[
+\Lambda^\mu_\nu\varepsilon^\nu(\vec{k},\pm1)=e^{\pm i\theta}\left(\varepsilon^\mu(\vec{k},\pm1)+\frac{\alpha\pm i\beta}{\sqrt{2}}\frac{K^\mu}{k}\right)
+\]
+Suppose this is the transformation rule, we want the expression for a transformation of $\varepsilon$ with a generic momentum.
+\begin{align*}
+\Lambda^\mu_\nu\varepsilon^\nu(\vec{p},\pm1)&=\left(L(\Lambda p)W(\Lambda,p)L^{-1}(p)\right)^\mu_\nu\varepsilon^\nu(\vec{p},\pm1)=\left(L(\Lambda p)W(\Lambda,p)\right)^\mu_\nu\varepsilon^\nu(\vec{k},\pm1)\\
+&=(L(\Lambda p))^\mu_\nu e^{\pm i\theta}\left(\varepsilon^\mu(\vec{k},\pm1)+\frac{\alpha\pm i\beta}{\sqrt{2}}\frac{K^\mu}{k}\right)=e^{\pm i\theta}\varepsilon^\mu(\vec{p}_\Lambda,\pm1)+\frac{\alpha\pm i\beta}{\sqrt{2}}\frac{(\Lambda p)^\mu}{k}
+\end{align*}
+Now we multiply both sides by $(\Lambda^{-1})^\mu_\nu$ and bring the phase to the LHS.
+\[
+e^{\mp i\theta}\varepsilon^\mu(\vec{p},\pm1)=(\Lambda^{-1})^\mu_\nu\varepsilon^\nu(\vec{p}_\Lambda,\pm1)+\frac{\alpha\pm i\beta}{\sqrt{2}}\frac{P^\mu}{k}
+\]
+We repeat the same steps of the massive case to find the transformation rule for the field:
+\[
+U(\Lambda)A^\mu(x)U^{-1}(\Lambda)=(\Lambda^{-1})^\mu_\nu A^\nu(x)+\partial^\mu\lambda_\Lambda(x)
+\]
+Gauge invariance appeared as a consequence of our request to have the Lagrangian Lorentz invariant.\\
+We have $K^\mu\varepsilon_\mu(\vec{k},\pm1)=0$, in a generic reference system $P^\mu\varepsilon_\mu(\vec{p},\pm1)=0$. Moreover, $\varepsilon^0(\vec{k},\pm1)=0$ is still valid in any reference system. To transform the polarization vector, we need a boost along the $z$ direction and a rotation. The boost acts only on the temporal and third components, hence $\varepsilon^\mu$ remains unchanged under this transformation. What is modified is $K^\mu$, but the orthogonality condition will be still valid, also after the rotation. What does this imply at the level of the field? 
+\[
+\varepsilon^0(\vec{p},\pm1)=0\Rightarrow A^0(x)=0, \partial_\mu A^\mu=\vec{\nabla}\cdot\vec{A}=0
+\]
+This is the \href{https://en.wikipedia.org/wiki/Charles-Augustin_de_Coulomb}{Coulomb} gauge, the transformation rule allows us to move from the Coulomb gauge to any other gauge.
+\section{Abelian Gauge Theories}
+We want to explore more deeply gauge theories, in particular we want to see how we get gauge invariance from requesting only Lorentz invariance. Under Lorentz, we know that the transformation for the massless vector field is the following:
+\[
+A_\mu(x)\to\Lambda^\mu_\nu A_\nu(\Lambda^{-1}x)+\partial_\mu\alpha(x)
+\]
+If we want a Lorentz invariant Lagrangian describing the two degrees of freedom of the vector field, it has to be invariant under this transformation. We can see it as a Lorentz transformation+gauge transformation. Our starting point is:
+\[
+\pazocal{L}(A)=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \quad F_{\mu\nu}=\partial_\mu A_\nu(x)-\partial_\nu A_\mu(x)
+\]
+We want to understand how to couple these two degrees of freedom to matter, so we need a matter field with a global symmetry (U(1) symmetry in our case): there will be a conserved current $J^\mu(x)$, which is the way to couple photons and matter.\\
+\begin{example}
+Coupling to fermionic matter field $\Psi(x)$:
+\[
+\pazocal{L}(\Psi)=\Bar{\Psi}(i\gamma^\mu\partial_\mu-m)\Psi
+\]
+It has a U(1) global invariance $\Psi(x)\to e^{i\alpha}\Psi(x)$ and the current is given by $J^\mu(x)=\Bar{\Psi}\gamma^\mu\Psi$. Introduce now an interaction term between $\Psi(x)$ and $A^\mu(x)$: $\pazocal{L}_{int}\stackrel{?}{=}A_\mu J^\mu$. It is always possible to put the coefficient in front of this interaction term equal to 1 by translating the field $A_\mu(x)$, which means that the kinetic term will change its normalization, $\pazocal{L}(A)=-\frac{1}{4g^2}F_{\mu\nu}F^{\mu\nu}$. Let's have a look at how $\pazocal{L}(\Psi)$ and $\pazocal{L}_{int}$ get modified under Lorentz transformation. $\delta\pazocal{L}(\Psi)=0$ so this is invariant under Lorentz, while the interaction term involves the field $A_\mu(x)$, resulting in $\delta\pazocal{L}_{int}=\partial_\mu\alpha(x)J^\mu(x)$. There is a shift due to the gauge transformation term. We have global U(1) invariance, so we can exploit it to make a local transformation.
+\[
+\Psi(x)\to\Psi(x)+i\alpha(x)\Psi(x):\left\{
+\begin{aligned}
+&\delta\pazocal{L}(\Psi)=-\partial_\mu\alpha(x)J^\mu(x)\\
+&\delta\pazocal{L}_{int}=0\\
+&\pazocal{L}=\pazocal{L}(A)+\pazocal{L}(\Psi)+\pazocal{L}_{int} \;\text{Lorentz invariant}
+\end{aligned}
+\right.
+\]
+To get this result, we need to do Lorentz+local U(1), it is crucial that the matter field has a global invariance. Moreover, we need $J^\mu(x)$ to cancel the shift of the term $\pazocal{L}(\Psi)$.
+\end{example}
+\begin{example}
+Coupling to complex scalar field $\phi(x)$:\\
+\[
+\pazocal{L}(\phi)=\partial_\mu\phi^\dagger\partial^\mu\phi-m^2\phi^\dagger\phi
+\]
+It has a global U(1) invariance $\phi(x)\to e^{i\alpha}\phi(x)$, the interaction term is the same as the previous example $A_\mu J^\mu$ with now $J^\mu(x)=\phi^\dagger i\overset{\leftrightarrow}{\partial_\mu}\phi$. We repeat the same steps we did for the fermionic field, so under Lorentz transformation $\delta\pazocal{L}(\phi)=0$ while $\delta\pazocal{L}_{int}=\partial_\mu\alpha(x)J^\mu(x)$. However, when we perform a local U(1) transformation, we get something different than the previous example:
+\[
+\phi(x)\to\phi(x)+i\alpha(x)\phi(x):\left\{
+\begin{aligned}
+&\delta\pazocal{L}(\phi)=-\partial_\mu\alpha(x)J^\mu(x)\\
+&\delta\pazocal{L}_{int}=-2\partial_\mu\alpha(x)A_\mu(x)\phi^\dagger(x)\phi(x)
+\end{aligned}
+\right.
+\]
+Two terms cancel among each other, but there is still $\delta\pazocal{L}_{int}$ under U(1): we need an additional term in $\pazocal{L}_{int}$ to remove this extra shift.
+\[
+\pazocal{L}_{int}=A_\mu J^\mu+A_\mu A^\mu\phi^\dagger\phi
+\]
+The scalar field gets coupled quadratically to $A_\mu$, the second term is invariant under local U(1) but we get an extra piece under Lorentz: $\delta\pazocal{L}_{int}=\partial_\mu\alpha(x)J^\mu(x)+2\partial_\mu\alpha(x)A^\mu(x)\phi^\dagger(x)\phi(x)$. Therefore, the Lagrangian invariant under Lorentz is:
+\[
+\pazocal{L}=\pazocal{L}(A)+\pazocal{L}(\phi)+A_\mu J^\mu+A_\mu A^\mu\phi^\dagger\phi
+\]
+\end{example}
+At this point, we would like to write $\pazocal{L}_{int}$ using the covariant derivative $D_\mu:=\partial_\mu-iA_\mu$:
+\[
+\pazocal{L}(\Psi)=\Bar{\Psi}(i\gamma^\mu D_\mu-m)\Psi
+\]
+By construction, we get $D_\mu\Psi\to e^{i\alpha}D_\mu\Psi$ and this condition applies to the commutator too:
+\[
+[D_\mu,D_\nu]\Psi=(D_\mu D_\nu-D_\nu D_\mu)\Psi\to e^{i\alpha}[D_\mu,D_\nu]\Psi
+\]
+Let's have a closer look at this object.
+\begin{align*}
+[D_\mu,D_\nu]&=(\partial_\mu-iA_\mu)(\partial_\nu-iA_\nu)-(\partial_\nu-iA_\nu)(\partial_\mu-iA_\mu)\\
+&=\cancel{\partial_\mu\partial_\nu}-i\partial_\mu A_\nu-\cancel{iA_\mu\partial_\nu}-\cancel{A_\mu A_\nu}-\cancel{\partial_\nu\partial_\mu}+i\partial_\nu A_\mu+\cancel{iA_\nu\partial_\mu}+\cancel{A_\nu A_\mu}\\
+&=-i(\partial_\mu A_\nu-\partial_\nu A_\mu):=-iF_{\mu\nu}\xleftarrow[]{}\text{field strength}
+\end{align*}
+The field strength is invariant under gauge transformation, resulting in $\pazocal{L}(A)$ being gauge invariant. \raisebox{-\mydepth}{{\includegraphics[height=1.1\baselineskip]{Images/smile.jpg}}}
+\section{Non Abelian Gauge Theories}
+Consider $n$ fields $A_\mu^a$ $(a=1,\dots,n)$, i.e. $n$ massless states with helicity $h=\pm1$. The idea is to couple these fields to a matter field. We could proceed as in the abelian case and request $n$ conserved currents, one for each field: $J_\mu^a(x)$ and a [U(1)]$^n$ global invariance. For the fermionic case, following the steps of the previous section, in principle we have:
+\[
+\pazocal{L}_{int}=A_\mu^a J^{\mu,a} \quad \pazocal{L}(A)=-\frac{1}{4g_a^2}(F_{\mu\nu}^a)^2
+\]
+The important thing here is that there is \textbf{no self-interaction} between the massless fields.\\
+There is another way to couple these fields: we must have a global symmetry G$\supset$[U(1)]$^n$ with the matter field transforming under G as:
+\[
+\Psi(x)\to\Omega\Psi(x)
+\]
+where $\Omega$ is a representation of G. We want to focus on \textbf{simple} and \textbf{compact} Lie groups: SU$(N)$, SO$(N)$, Sp$(2N)$+exceptional groups. The idea is that, since the field $\Psi$ transforms in the way we have seen before, $J^{\mu,a}(x)$ will not be invariant under this transformation, with this bigger transformation its components get mixed. $J^{\mu,a}$ is bilinear in $\Psi$ and hermitian, so there will be the representation $r$ for the field times $\Bar{r}$. $J^{\mu,a}$ will transform as a factor in $r\times\Bar{r}$, a reducible representation of G. We can break it in two irreducible representations and take one of the two factor as the transformation of $J^{\mu,a}$.
+\[
+r\times\Bar{r}=1+\text{adjoint}+\dots
+\]
+We cannot take 1 because we excluded that it transforms as a singlet, we want the adjoint representation. To guarantee a Lorentz invariant Lagrangian, we must impose the same transformation rule to $A_\mu^a$: in this way, $\pazocal{L}_{int}$ is invariant under global G transformations. We have to study $\pazocal{L}$ for local transformations of G but without ever breaking global invariance. In the abelian case there were no problems since the current was a singlet like the massless fields, but now we have a set of fields. The dimension of the adjoint representation must be equal to the number of fields, otherwise they are not compatible.\marginnote{$\Box$ is the fundamental representation (qualsiasi cosa sia).}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ccc}
+    G & dim(Adj) & dim($\Box$) \\
+    \hline
+    SU$(N)$ & $N^2-1$ & $N$ \\
+    SO$(N)$ & $\frac{N(N-1)}{2}$ & $N$ \\
+    Sp$(2N)$ & $\frac{N(N+1)}{2}$ & $N$ \\
+    E$_6$ & 78 & 27 \\
+    E$_7$ & 133 & 56 \\
+    E$_8$ & 248 & 248 \\
+    F$_4$ & 52 & 6 \\
+    G$_2$ & 14 & 7 \\
+    \hline
+    \end{tabular}
+    \caption*{}
+    \label{tab:my_label}
+\end{table}
+Assume that $\pazocal{L}(A)$ is invariant under global and local transformations of G and that under a global transformations of G we have:
+\begin{align*}
+\Psi(x)&\to\Omega\Psi(x)\\
+A_\mu^a\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize  generators in $r$};}}{T^a(r)}:=A_\mu&\to\Omega A_\mu\Omega^{-1}
+\end{align*}
+In this way, the field transforms as a matrix. This is $A_\mu^a$ under global transformations of G, let's see how it transforms under other transformations.
+\[
+\left\{
+\begin{aligned}
+&\text{Lorentz transformation:}\, A_\mu(x)\to\Lambda_\mu^\nu A_\nu(\Lambda^{-1}x)+\partial_\mu\alpha^a(x)\\
+&\text{Naive Lorentz transformation:}\,A_\mu(x)\to\Lambda_\mu^\nu A_\nu(\Lambda^{-1}x)\\
+&\text{Local G transformation:}\,A_\mu(x)\to\Omega A_\mu\Omega^{-1}+\partial_\mu\alpha(x)\marginnote{$\alpha(x)=\alpha^a(x)T^a(r)$}
+\end{aligned}
+\right.
+\]
+We repeat the same identical transformations both for $\pazocal{L}(\Psi)$ and for $\pazocal{L}_{int}$.
+\[
+\left\{
+\begin{aligned}
+&\text{Lorentz:}\left\{
+\begin{aligned}
+&\delta\pazocal{L}(\Psi)=0\\
+&\delta\pazocal{L}_{int}=\partial_\mu\alpha^a(x)J^{\mu,a}(x) \quad J^{\mu,a}=\Bar{\Psi}\gamma^\mu T^a(r)\Psi
+\end{aligned}
+\right.\\
+&\text{Local G:}\left\{
+\begin{aligned}
+&\delta\pazocal{L}(\Psi)=\Bar{\Psi}\gamma^\mu(i\Omega^{-1}\partial_\mu\Omega)\Psi\\
+&\delta\pazocal{L}_{int}=\partial_\mu\alpha^a(x)\Bar{\Psi}\gamma^\mu\Omega^{-1}T^a\Omega\Psi
+\end{aligned}
+\right.
+\end{aligned}
+\right.
+\]
+We now have to impose that the sum of these two objects is equal to zero.\marginnote{In the previous case it was trivial and it was not necessary to impose anything.}
+\[
+0=\delta\pazocal{L}(\Psi)+\delta\pazocal{L}_{int}=\Bar{\Psi}\gamma^\mu(i\Omega^{-1}\partial_\mu\Omega+\partial_\mu\alpha^a(x)\Omega^{-1}T^a\Omega)\Psi
+\]
+\[
+\Rightarrow\partial_\mu\alpha^a(x)T^a=-i\partial_\mu\Omega\Omega^{-1}=i\Omega\partial_\mu\Omega^{-1}
+\]
+We introduce the covariant derivative in this representation,\\
+$D_\mu:=\partial_\mu-iA_\mu^a T^a(r)$:
+\[
+\pazocal{L}(\Psi)=\Bar{\Psi}(i\gamma^\mu D_\mu-m)\Psi
+\]
+By construction, $D_\mu\Psi\to\Omega(D_\mu\Psi)$. For the commutator, we find:
+\[
+[D_\mu,D_\nu]\Psi\to[D_\mu,D_\nu]_\Omega\Omega\Psi:=\Omega[D_\mu,D_\nu]\Psi
+\]
+Hence, $[D_\mu,D_\nu]\to\Omega[D_\mu,D_\nu]\Omega^{-1}$, we look at it more in detail now.
+\begin{align*}
+[D_\mu,D_\nu]&=(\partial_\mu-iA_\mu)(\partial_\nu-iA_\nu)-(\partial_\nu-iA_\nu)(\partial_\mu-iA_\mu)\\
+&=\cancel{\partial_\mu\partial_\nu}-i\partial_\mu A_\nu-\cancel{iA_\mu\partial_\nu}-A_\mu A_\nu-\cancel{\partial_\nu\partial_\mu}+i\partial_\nu A_\mu+\cancel{iA_\nu\partial_\mu}+A_\nu A_\mu\\
+&=-i(\partial_\mu A_\nu-\partial_\nu A_\mu-i[A_\mu,A_\nu])=-iF_{\mu\nu}\xleftarrow[]{}\text{field strength}
+\end{align*}
+The field strength now is not invariant anymore, $F_{\mu\nu}\to\Omega F_{\mu\nu}\Omega^{-1}$. The Lagrangian is given by:
+\[
+\pazocal{L}(A)=-\frac{1}{4g^2}F_{\mu\nu}^aF^{\mu\nu,a}=-\frac{1}{2g^2}\Tr{F_{\mu\nu}F^{\mu\nu}} \quad F_{\mu\nu}:=F_{\mu\nu}^aT^a
+\]
+The fields couple with the same coupling constant, so it is just $g$ and not $g_a$. From the equations of motion, it is possible to see that there is also self-interaction:
+\[
+\left\{
+\begin{aligned}
+&D^\mu F_{\mu\nu}=0\;\text{in the vacuum}\\
+&D^\mu F_{\mu\nu}=J_\nu\;\text{coupling with matter}
+\end{aligned}
+\right.
+\]
+By applying the Bianchi identity, as in the abelian case, we have:
+\[
+D^\mu\Tilde{F}_{\mu\nu}=0 \quad \Tilde{F}_{\mu\nu}=\frac{1}{2}\epsilon_{\mu\nu\rho\sigma}F^{\rho\sigma}
+\]
+$D^\mu F_{\mu\nu}=J_\nu$ is not linear in $A_\mu$, we use perturbation theory to get rid of this equation as long as the coupling $g$ is small. Firstly, we get back to the initial normalization:
+\[
+\left\{
+\begin{aligned}
+&A_\mu\to gA_\mu\\
+&F_{\mu\nu}\to\partial_\mu A_\nu-\partial_\nu A_\mu-ig[A_\mu,A_\nu]\\
+&F_{\mu\nu}^a=\partial_\mu A_\nu^a-\partial_\nu A_\mu^a+gf^{abc}A_\mu^bA_\nu^c \quad [T^a,T^b]=if^{abc}T^c\\
+&\Rightarrow\pazocal{L}(A)=-\frac{1}{4}\left[(\partial_\mu A_\nu^a-\partial_\nu A_\mu^a)^2+4gf^{abc}A_\mu^bA_\nu^c\partial_\mu A_\nu^a+g^2f^{abc}A_\mu^bA_\nu^cf^{ade}A_\mu^aA_\nu^c\right]
+\end{aligned}
+\right.
+\]
+Consider now $\phi^a$ in the adjoint of G. We can describe this field by defining a matrix, obtaining from a multiplication of the field $\phi^a$ time the generators: $\phi_{ij}:=\phi^aT_{ij}^a$. An index of the generators transforms in the fundamental $F$, the other one in the anti-fundamental $\Bar{F}$, so that we have $F\times\Bar{F}=1+\text{adjoint}$ and the field will transform as $\phi\to\Omega\phi\Omega^{-1}$. What will be the covariant derivative for $\phi$? $D_\mu\phi:=\partial_\mu\phi-i[A_\mu,\phi]$ in the notation in which both $A_\mu$ and $\phi$ are matrices. We require that $D_\mu$ is covariant, i.e. $D_\mu\phi\to\Omega D_\mu\phi\Omega^{-1}$:
+\begin{align*}
+\partial_\mu\phi-i[A_\mu,\phi]&\to\partial_\mu(\Omega\phi\Omega^{-1})-i[\Omega A_\mu\Omega^{-1}+i\Omega\partial_\mu\Omega^{-1},\Omega\phi\Omega^{-1}]\\
+&=\Omega\left(\partial_\mu\phi-i[A_\mu,\phi]\right)\Omega^{-1}+\partial_\mu\Omega(\phi\Omega^{-1})+\Omega\phi\partial_\mu\Omega^{-1}-i[i\Omega\partial_\mu\Omega^{-1},\Omeg\phi\Omega^{-1}]\\
+&=\partial_\mu\Omega\phi\Omega^{-1}+\Omega\phi\partial_\mu\Omega^{-1}+\Omega\partial_\mu\Omega^{-1}\Omega\phi\Omega^{-1}-\Omega\phi\Omega^{-1}\Omega\partial_\mu\Omega^{-1}=0 \quad \checkmark
+\end{align*}
+\section{Gauge Invariance}
+Physical observables does not change under gauge transformations, it is a redundancy we introduce in our theory to make it invariant under local transformations. Also the (asymptotic) physical states must be gauge invariant. The point is that in QFT we cannot resolve a theory without removing this redundancy, we know it exists on the classical level too so the solution of the equations of motion does not uniquely identify the value of the gauge field because the equations are invariant under gauge transformations.
+\[
+A_\mu(x)\sim\Omega A_\mu\Omega^{-1}+i\Omega\partial_\mu\Omega^{-1}
+\]
+The equations of motion determine the evolution of classes of field configuration subject to this identification. At the quantum level, there are various problems since gauge invariance implies:
+\begin{enumerate}
+    \item the kinetic term is not invertible, it is not possible to write the propagator if gauge invariance is not broken somehow
+    \item when quantizing the theory in the Hamiltonian formalism, we want to identify all the components of the canonical momentum. However, this is not possible since $\pazocal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$ does not depend on the temporal component of $A^0$, so there is no conjugated momentum $\pi^0$.
+\end{enumerate}
+We can make two possible gauge choices:
+\begin{itemize}
+    \item \textbf{non-covariant gauges} (e.g. Coulomb gauge, $A^0(x)=0$ and $\vec{\nabla}\cdot\vec{A}(x)=0$ in the vacuum). In this case, we have to use the Hamiltonian formalism with some constraints and appropriately modify the canonical quantization rules. There is no manifest Lorentz invariance because it gets broken
+    \item \textbf{covariant gauges} (e.g. Lorentz gauge, $\partial_\mu A^\mu=0$). There is manifest Lorentz invariance but we have some complications too. We have to modify the Lagrangian by adding an extra-term which gives us the same equations of motion we would have by imposing $\partial_\mu A^\mu=0$.
+    \[
+    \pazocal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}-\frac{1}{2}(\partial_\mu A^\mu)^2
+    \]
+    $\partial_\mu A^\mu=0$ cannot be imposed on the operator level because it is not compatible with the commutation rules
+    \[
+    [A_0(\vec{x},t),\Dot{A}_0(\vec{y},t)]=-i\delta^3(\vec{x}-\vec{y})
+    \]
+    In this way, we obtain states with negative norm which we can remove by imposing the condition on physical states:
+    \[
+    (\partial_\mu A^{\mu,-})\ket{\text{phys}}=0 \quad \text{\href{https://en.wikipedia.org/wiki/Suraj_N._Gupta}{Gupta}-\href{https://en.wikipedia.org/wiki/Konrad_Bleuler}{Bleuler} condition}
+    \]
+    \end{itemize}
+For non-abelian gauge theories, the simplest way to quantize them uses the functional integral (\href{https://en.wikipedia.org/wiki/Ludvig_Faddeev}{Fadeev}-\href{https://en.wikipedia.org/wiki/Victor_Popov}{Popov} procedure). We introduce non physical fields (ghosts), which are anti-commuting scalars with fermionic statistics and are required to enforce unitarity. They cannot be introduced as external particles, they are present only in virtual processes. Their propagation cancels the non-physical contributes in the gauge field, i.e. the temporal and longitudinal components. Cancellation via ghost has been proved by the \href{https://en.wikipedia.org/wiki/BRST_quantization}{BRST method}.\\
+We obtained the transformation rule for $F_{\mu\nu}$ and then the expression for the kinetic term, given by the 4-dimensional trace of $F_{\mu\nu}^2$:
+\[
+\pazocal{L}_{kin}=-\frac{1}{4g^2}(F_{\mu\nu}^a)^2
+\]
+There is another renormalizable term, quadratic in $F_{\mu\nu}$:
+\[
+\pazocal{L}_{\theta}=\frac{\theta}{32\pi^2}F_{\mu\nu}^a\Tilde{F}^{\mu\nu,a} \quad \Tilde{F}^{\mu\nu,a}=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}
+\]
+This term violates P (and therefore CP) for the presence of the $\epsilon$ tensor. Why do we not add this extra-term? For example, in the abelian case, $(F_{\mu\nu})^2\to|\vec{E}|^2-|\vec{B}|^2$ and $(F_{\mu\nu}\Tilde{F}^{\mu\nu})\to\vec{E}\cdot\vec{B}$ is odd under P, it is a pseudo-scalar. The theta term can be written also using the total derivative: 
+\[
+\pazocal{L}_{\theta}=\frac{\theta}{32\pi^2}\partial_\mu K^\mu \quad K^\mu=\epsilon^{\mu\nu\rho\sigma}\Tr{A_\nu\partial_\rho A_\sigma+\frac{2}{3}iA_\nu A_\rho A_\sigma}
+\]
+If we put this term in the action, the integral disappears in the abelian case, while in the non-abelian one it goes in a configuration similar to the vacuum.\marginnote{In QCD, the vacuum depends on the theta term.}\\
+\section{Phases of Gauge Theories}
+We now want to talk about \textbf{phases} in which a theory can be. A phase is just a low-energy realization of the theory. We know there exist the phenomenon of \textbf{running coupling}, i.e. the coupling constant varies with the energy, this is (partially) due to radiative corrections.
+\[
+\beta(g)=\mu\frac{d}{d\mu}g(\mu)
+\]
+The $\beta$ function can be calculated perturbatively as long as the coupling is small.
+\[
+\mu\frac{d}{d\mu}g(\mu)=\beta(g)=\frac{\beta_0}{16\pi^2}g^3+\frac{\beta_1}{(16\pi^2)^2}g^5+\dots
+\]
+In QED, the corrections we have to include are electron self-energy, photon self-energy and vertex corrections which give us $\beta_0=4/3$ and $\beta(g)=g^3/12\pi^2$. It is positive, this means that the interaction coupling grows with the energy. QED is not a complete theory, it does not work at high energies. Usually, we stop at first order in $\beta$ because the coupling is small, but as it gets bigger we have to include higher order terms too. By including higher order terms, theory may \textit{cure itself}, for example with a change of sign. [METTICI IL DISEGNINO CHE ORA NON MI VA DI FARLO] For a certain value of $g$, denoted by $g^*$, the theory does not evolve anymore and the coupling constant is really a constant. At the fixed point, the theory is conformal, there is no physical scale and everything is invariant. This fixed point does not exist in QED, hence it is an effective theory, valid only at low energy and we have to replace it with another theory which guarantees a more fundamental description. This is what we do with the \textbf{Standard Model}. QED is an abelian gauge theory, an effective theory and it needs a UV completion. QCD is a non-abelian gauge theory, gluons are self-interacting and we have to consider more diagrams at 1-loop [DISEGNINO].
+\begin{equation}
+\labeq{beta0}
+\beta_0=-\frac{11}{3}C_2(\text{adj})+\frac{4}{3}T(n_f)n_f+\frac{1}{3}T(n_s)n_s
+\end{equation}
+The first term is negative, if we do not have too many matter fields, this will be the dominant one and the $\beta$ function will be negative, so as the energy increases the coupling decreases. At low energies instead, we cannot treat the theory perturbatively anymore.
+\begin{example}$\beta$ function in QED\\
+We want the most important radiative corrections, so suppose we want to compute $e^+e^-\to e^+e^-$.[DIAGRAMMI] In each diagram we have to put the bare coupling and renormalize to have an expression in terms of $g(E)$, where $E$ is the energy of our process. In this case, it corresponds to the exchanged momentum, $E=\sqrt{s}$. Start with the Lagrangian:
+\[
+\pazocal{L}=-\frac{1}{4}F^2_{0\mu\nu}+\Bar{\Psi}_0(iD_\mu\gamma^\mu-n)\Psi_0 \quad D_\mu=\partial_\mu-ig_0A_\mu^0
+\]
+We add one counter term for every parameter of $\pazocal{L}$:
+\[
+\left\{
+\begin{aligned}
+&A_\mu^0:=A_\mu Z_A^{1/2}\\
+&\Psi_0:=\Psi Z_\Psi^{1/2}\\
+&g_0=g(\mu)Z_g\mu^{D-4}
+\end{aligned}
+\right.
+\]
+We want to use \textbf{dimensional regularization}, i.e. extend the Lagrangian from 4 dimensions to $D=4-\varepsilon$ dimensions, keeping the coupling with dimension zero, $[g_0]=D-4$. $g_0$ depends on $\mu$, so we have:
+\[
+0=\mu\frac{d}{d\mu}g_0=Z_g\mu^{-\varepsilon}\mu\frac{d}{d\mu}g(\mu)+g(\mu)\mu^{-\varepsilon}\mu\frac{d}{d\mu}Z_g-\varepsilon g(\mu)Z_g\mu^{-\varepsilon}
+\]
+\[
+\Rightarrow\beta(g,\varepsilon):=\mu\frac{d}{d\mu}g(\mu)=\varepsilon g(\mu)-g(\mu)\frac{1}{Z_g}\mu\frac{d}{d\mu}Z_g\xrightarrow[\varepsilon\to0]{}\beta(g)
+\]
+We have to compute $Z_i$, defined as $Z_i=i+\delta_i$ with $\delta_i\sim\frac{1}{\varepsilon}g^2c_i+\dots$\\ Take now the interaction term in the Lagrangian:
+\[
+g(\mu)\mu^{-\varepsilon}\underset{\mathclap{\tikz \node {$\downarrow$} node [below=1ex] {\footnotesize $\simeq1+\delta_g+\delta_\Psi+\frac{1}{2}\delta_A:=1+\delta_V$ };}}{\underbrace{Z_gZ_A^{1/2}Z_\Psi}}\Bar{\Psi}\gamma^\mu\Psi A_\mu
+\]
+$\delta_V$ is obtained by computing the vertex correction and requiring that it cancels the divergence. We need $\delta_\Psi$ and $\delta_A$ to get $\delta_g$: computing the corrections to the electron and photon propagator, one obtains these two terms. In the $\overline{\text{MS}}$ scheme, $Z_g=1+\delta_g=1+\frac{1}{\varepsilon}g^2(\mu)c_g+\text{finite terms}$:
+\begin{align*}
+\mu\frac{d}{d\mu}Z_g&=\frac{1}{\varepsilon}c_g\mu\frac{d}{d\mu}g(\mu)^2=\frac{1}{\varepsilon}c_g2g(\mu)\mu\frac{d}{d\mu}g(\mu)\\
+&\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize recursively};}}{=}\frac{1}{\varepsilon}c_g2g(\mu)[\varepsilon g(\mu)+\pazocal{O}(g^2)]=2c_gg(\mu)^2+\pazocal{O}(g^3)
+\end{align*}
+At this point it is possible to compute $\beta(g,\varepsilon)$:
+\begin{align*}
+\beta(g,\varepsilon)&=\varepsilon g(\mu)-2c_gg(\mu)^3+\pazocal{O}(g^4)\xrightarrow[\varepsilon\to0]{}-2c_gg(\mu)^3+\pazocal{O}(g^5)\\
+&=\frac{g^3}{12\pi^2}+\pazocal{O}(g^5)
+\end{align*}
+\end{example}
+For non-abelian gauge theories, we have seen the expression of $\beta_0$ [\refeq{beta0}] which, in the case of QCD ($N_c=3$ and $n_f=6$), becomes:
+\[
+\beta_0=-\frac{11}{3}N_c+\frac{2}{3}n_f=-7<0
+\]
+For the abelian case instead, we have:
+\[
+\beta_0=\frac{4}{3}q^2\Psi n_f+\frac{1}{3}q_s^2n_s>0
+\]
+In QCD, the first term is always negative, at high energies the coupling decreases until it gets to 0: this is \textbf{asymptotic freedom}. For the abelian case, with $\beta_0>0$, the coupling evolves until it becomes zero for $E\to0$. The variation of velocity is zero, there is no evolution and this is reached only asymptotically. On the other hand, when the energy increases the $\beta$ function increases too and we have two possibilities as $E\to\infty$: 
+\begin{enumerate}
+    \item $\beta(g)$ remains positive and there are two sub-cases: $g(E)\to\infty$ for $E\toE_0$ (\href{https://en.wikipedia.org/wiki/Lev_Landau}{Landau} pole) or $g(E)\to\infty$ as $E\to\infty$. In both cases, the theory is not complete.
+    \item $\beta$ function has a zero for some finite value $g^*$ called UV fixed point. The theory does not evolve anymore once it reaches this fixed point, which is possible only asymptotically.
+\end{enumerate}
+For QED, we have:
+\[
+\beta(g)=\frac{g^3}{12\pi^2}+\dots\xrightarrow[]{}\mu\frac{d}{d\mu}g(\mu)=\beta(g)=\frac{g^3}{12\pi^2}:=\frac{\beta_0}{16\pi^2}g^3\;(\beta_0=4/3)
+\]
+We assumed that the contribution of higher order terms is negligible. It is convenient instead to solve:
+\[
+\frac{d}{d\log\mu}\frac{1}{g^2}=-\frac{2}{g^3}\frac{d}{d\log\mu}g(\mu)=-\frac{2\beta_0}{16\pi^2}
+\]
+This tells us that:
+\[
+\frac{1}{g^2(\mu)}=\frac{1}{g^2(M)}-\frac{2\beta_0}{16\pi^2}\log(\mu/M)\Rightarrow g^2(\mu)=\frac{g^2(M)}{1-\frac{\beta_0}{16\pi^2}g^2(M)\log(\mu^2/M^2)}
+\]
+where $M$ is a certain scale. We check that it has the right behaviour:
+\begin{itemize}
+    \item for $\mu<M, \mu\to0$: $g(\mu)\to0$, the dominating term is the logarithmic one.
+    \[
+    g^2(\mu)\approx\frac{16\pi^2}{\beta_0}\frac{1}{\log(M^2/\mu^2)}
+    \]
+    \item for $\mu=M$, $g^2(\mu)=g^2(M)$
+    \item for $\mu>M$, the denominator will be smaller than 1 and the coupling will increase. There will be a Landau pole, denoted by $\Lamda$:
+    \[
+    1-\frac{\beta_0}{16\pi^2}g^2(M)\log(\mu^2/M^2)=0\to\Lambda:=M\exp{\frac{8\pi^2}{\beta_0}\frac{1}{g^2(M)}}
+    \]
+\end{itemize}
+We cannot use perturbation theory anymore because the coupling becomes too large. If we want to reach the IR fixed point there will be other scales, because we reach a point where energies are compatible with the mass of the electron. Electrons contribution in the diagram will be cancelled for energies smaller than the mass of the electron, so we can create an effective theory without electrons, cutting it off and this theory has only the photon with some self-interaction reduced by virtual electrons loops. These interactions disappear at low energies but at this point is not QED anymore, it is a theory of only photons.\\
+At the fixed points of the renormalization groups $\beta(g)=0$: $g$ is a constant, the theory, without mass, is self-similar. In a normal situation, by changing the energy we obtain different results for scattering processes because we have running coupling, while in this case we have the same results because the theory does not evolve anymore. Scattering processes do not depend anymore on the energy of the particles involved.\\
+\underline{QED for $m_e=0$}:
+\[
+\pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+\Bar{\Psi}\gamma^\mu i(\partial_\mu-igA_\mu)\Psi
+\]
+This Lagrangian does not contain scales, it is invariant under change of scale at the classical level. When we include corrections, the coupling evolves because the renormalization process includes a scale factor ($\mu$) and this scale evolves. Once the fixed points are reached, we are back in a situation analogous to the classical one: the theory does not evolve anymore, hence it is invariant under scale change. Theories with UV fixed points are called \textbf{asymptotically safe}. Asymptotic safety is a generalization of asymptotic freedom: with asymptotic freedom the coupling goes to zero, while with asymptotic safety the coupling goes to a certain finite constant. Is QED asymptotically safe? No,the fixed points can be reached for small values of the coupling, where we can use perturbation theory to find $g^*$ but computations show that this point does not exist. Another possibility is to have $g*$ for large values of the coupling, where we cannot use perturbation theory and again this fixed point does not exist. QED is an \textbf{effective field theory}, it explodes at some point.\\
+\underline{Non-abelian gauge theories SU$(N)$ (QCD)}: in the non-abelian case, it can happen to have so many massless flavours that the $\beta_0$ contribution in the $\beta-$function coming from the matter is bigger than the negative contribution coming from the gauge field, resulting in $\beta_0>0$. However, we do not have only one gauge field, but $N^2-1$ fields. For simplicity, consider only fermions in the fundamental representation:\marginnote{It is the same thing for scalars.}
+\[
+\beta_0=-\frac{11}{3}N+\frac{2}{3}n_f\to\beta_0>0 \;\text{for}\;n_f>\frac{11}{2}N
+\]
+The theory is in the non-abelian Coulomb phase. Decreasing $n_f$ results in $\beta_0<0$:
+\[
+\beta(g)=\frac{\beta_0}{16\pi^2}g^3+\frac{\beta_1}{(16\pi^2)^2}g^5+\dots
+\]
+At some point, there can be a cancellation between the two terms:
+\[
+\beta(g^*)=0 \;\text{for}\;\frac{g^*^2}{16\pi^2}\beta_1=|\beta_0|
+\]
+Can we trust this calculation if there are higher order terms in $\beta(g)$? We can neglect terms of order $>g^5$ if we choose a value of $n_f$ below but close to the threshold, $n_f<11N/2$. This computation is reliable for $|\beta_0|/\beta_1\ll1$, i.e. $N,n_f\gg1$ but $n_f/N\lesssim11/2$. In UV, the theory is asymptotically free, because increasing $E$ results in $\beta_0<0$ and the coupling goes to zero. By decreasing $E$ we get to the IR fixed point, which is perturbative if we are close to the threshold. This theory becomes conformal, hence self-similar: in this type of theories, there are no particles and no scales that allow us to define masses. There are no theories which describe fundamental interactions in the conformal phase.
+
+We have seen that $g_0=g(\mu)Z_g\mu^{[g_0]}$, where $[g_0]$ is something that goes to zero for $d\to4$ but we do not want to say a-priori that it is $d-4$. We have to extend the Lagrangian in $d$ dimensions:
+\begin{itemize}
+    \item $[F_{\mu\nu}^2]=d\to2[A_\mu]+2=d\Rightarrow[A_\mu]=\frac{d-2}{2}$
+    \item $[\Bar{\Psi}i\partial_\mu\gamma^\mu\Psi]=d\to2[\Psi]+1=d\Rightarrow[\Psi]=\frac{d-1}{2}$
+    \item $[g_0\Bar{\Psi}\gamma^\mu A_\mu\Psi]=d\to[g_0]+2[\Psi]+[A_\mu]=d\Rightarrow[g_0]=\frac{4-d}{2}=\frac{\varepsilon}{2}$
+\end{itemize}
+We defined $d$ as $d:=4-\varepsilon$. Imposing this dimensionality to the term $g_0$, the $\beta$-function becomes:
+\[
+\beta(g,\varepsilon)=-\frac{\varepsilon}{2}g(\mu)-g(\mu)\frac{1}{Z_g}\mu\frac{d}{d\mu}Z_g
+\]
+\end{document}
+
+
+%QFT beyond tree-level (QED a 1 -loop con Barducci)
+%Symmetries and conservation laws (spontaneous symmetry breaking and Higgs mechanism)
+%Quick intro to non-abelian gauge theories
+%Effective field theories
+%Intro to the SM

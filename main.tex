@@ -110,6 +110,8 @@
 \usepackage{amsmath}% http://ctan.org/pkg/amsmath
 \usetikzlibrary{tikzmark}
 \usepackage{tikz-cd}
+\usepackage[usestackEOL]{stackengine}
+\stackMath
 
 \newcommand\JoinUp[4][10pt]{
 \draw
@@ -158,7 +160,7 @@
 \subject{Appunti del corso di}
 
 \title[]{}
-\subtitle{Anno accademico \\Corso tenuto dal Prof.}
+\subtitle{Anno accademico \\Corso tenuto dai Proff. Roberto Contino \& Daniele Barducci}
 
 \author{Matteo D'Errigo\thanks{Un amante dei panini}}
 
@@ -297,9 +299,11 @@
 \mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
 \setchapterstyle{kao} % Choose the default chapter heading style
 
-\part{Introduction}
+%\part{Introduction}
 \subfile{Chapters/1_Intro}
-\part{Flavour Physics}
+\subfile{Chapters/2_SymmetriesQFT}
+\subfile{Chapters/3_GaugeTheories}
+%\part{Flavour Physics}
 
 %\appendix % From here onwards, chapters are numbered with letters, as is the appendix convention
 

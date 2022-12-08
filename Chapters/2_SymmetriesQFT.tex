@@ -17,7 +17,7 @@ Instead of working with rays, it is easier to work with the states $\ket{\alpha}
 \]
 There is a nice theorem by Wigner which tells us that:
 \begin{theorem}[Wigner]
-Symmetry transformations can be represented on the Hilbert space by either a \textbf{linear} and \tetxbf{unitary} operator or an \textbf{anti-linear} and \textbf{anti-unitary} operator.
+Symmetry transformations can be represented on the Hilbert space by either a \textbf{linear} and \textbf{unitary} operator or an \textbf{anti-linear} and \textbf{anti-unitary} operator.
 \end{theorem}
 Let's have a look at the two cases:
 \begin{itemize}
@@ -805,7 +805,116 @@ By defining $\delta_aA:=\lim_{V\to\infty}[Q_V^a,A]$, we can write the transforma
 \]
 can be seen as the limit for the transformed state $\ket{\alpha_V}$ given by\\ $\ket{\alpha_V}:=U_V^{-1}(\alpha)\ket{0}$. However, the limit of this quantity does not exist but we can overcome this problem by considering both states and taking the limit, but we cannot take the limit singularly of $\ket{\alpha_V}$. We can still consider the vacuum expectation value of some observable $A$ and the vacuum expectation value of the transformed observable $Ag^{1}$, which can be interpreted as the vacuum expectation value on the transformed state after taking the limit of $V\to\infty$. This is the expectation value of the transformed state, but we cannot directly transform it. This is because the Hilbert space must be \textbf{separable}, i.e. it must contain a countable number of basis vectors. Each vacuum state can be used to create a Hilbert space, different vacuum states contribute to different theories hence a rotation would bring our state in a space which is not the one of our theory. $Q^a\ket{0}$ is not a state on our Hilbert space, but we can still work with the expectation value of the transformed operator.
 \subsection{Goldstone Theorem}
+The Goldstone Theorem states that for any regularized charge $Q_V^a$ such that $\lim_{V\to\infty}Q_V^a\ket{0}\neq0$ there exists a massless particle, the NGB. We give two proofs of this theorem.
+\paragraph{First proof:} if $\lim_{V\to\infty}Q_V^a\ket{0}\neq0\Rightarrow\exists$ some local operator $\phi_i$ such that:
+\[
+\langle\delta_a\phi_i\rangle=\lim_{V\to\infty}\bra{0}[Q_V^a,\phi_i(x)]\ket{0}\neq0
+\]
+$\langle\delta_a\phi_i\rangle$ is called the \textbf{order parameter} and it characterizes the fact that the vacuum is not invariant. If $Q_V^a\ket{0}=0$ there cannot be an order parameter. Moreover, we have that $\frac{d}{dt}\langle\delta_a\phi_i\rangle=0$. We explicitly compute the order parameter.
+\[
+\langle\delta_a\phi_i\rangle=\lim_{V\to\infty}\sum_n\int_Vd^3x\left[\bra{0}J^{0,a}(\Vec{x},t)\ket{n}\bra{n}\phi_i(0)\ket{0}-\bra{0}\phi_i(0)\ket{n}\bra{n}J^{0,a}(\Vec{x},t)\ket{0}\right]
+\]
+Having $\phi(0)$ instead of $\phi(x)$ is just a choice we made for convenience. We know that in general we can express $J^\mu(x)$ as $e^{-iPx}J^\mu(0)e^{+iPx}$ so that the previous expression becomes:
+\begin{align*}
+\langle\delta_a\phi_i\rangle&=\lim_{V\to\infty}\sum_n\int_Vd^3x\left[\bra{0}e^{-iPx}J^{0,a}(0)\underbrace{e^{+iPx}\ket{n}}\bra{n}\phi_i(0)\ket{0}-\bra{0}\phi_i(0)\ket{n}\underbrace{\bra{n}e^{-iPx}}J^{0,a}(0)e^{+iPx}\ket{0}\right]\\
+&=\lim_{V\to\infty}\sum_n\int_Vd^3x\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi_i(0)\ket{0}e^{+iP_nx}-\bra{0}\phi_i(0)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iP_nx}\right]
+\end{align*}
+We used the assumption that the vacuum has zero energy when applying $e^{\pm iPx}$, now we define:
+\[
+\int_Vd^3xe^{i\Vec{p}_n\cdot\Vec{x}}:=(2\pi)^3f_V(\Vec{p}_n)\xrightarrow[V\to\infty]{}\delta^3(\Vec{p}_n)
+\]
+It is possible to choose $V$ such that $f_V(\Vec{p}_n)=f_V(-\Vec{p}_n)$. For the moment, we keep the limit of finite volume and write:
+\begin{align*}
+\langle\delta_a\phi\rangle&=\lim_{V\to\infty}\sum_nf_V(\Vec{p}_n)\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi_i(0)\ket{0}e^{iE_nt}-\bra{0}\phi_i(0)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_nt}\right]\\
+&=\sum_n\delta^3(\Vec{p}_n)\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi_i(0)\ket{0}e^{iE_nt}-\bra{0}\phi_i(0)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_nt}\right]
+\end{align*}
+The $\delta^3$ forces all the three-momenta to be equal to zero and the theorem states that we have massless NGBs, hence $E_n=0$ and the expression above between square brackets is different from zero.\marginnote{This last step had been revealed to me in a dream, I am 0\% sure of the correctness of this result.}\\
+Once we computed the order parameter we can move to its derivative:
+\[
+\frac{d}{dt}\langle\delta_a\phi_i\rangle=\lim_{V\to\infty}i\sum_nf_V(\Vec{p}_n)E_n\left[\bra{0}J^{0,a}\ket{n}\bra{n}\phi_i(0)\ket{0}e^{iE_nt}+\bra{0}\phi_i(0)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_nt}\right]=0
+\]
+Following the same reasoning as before, we take the limit of $V\to\infty$, $f_V(\Vec{p}_n)\to\delta^3(\Vec{p}_n)$ forces all the three-momenta to be equal to zero, resulting in $E_n=0$ since we have massless NGBs.\\
+The two conditions we just proved are compatible if:
+\[
+\left\{
+\begin{aligned}
+&\bra{0}J^{0,a}\ket{n}\bra{n}\phi_i(0)\ket{0}=0\quad &&\text{for}\;E_n\neq0\\
+&\bra{0}J^{0,a}\ket{n}\bra{n}\phi_i(0)\ket{0}\neq0\quad &&\text{for}\;E_n=0
+\end{aligned}
+\right.
+\]
+The last constraint is telling us that $\ket{n}$ is a massless 1-particle state. Why? Because what must be equal to zero is the product:
+\[
+\delta^3(\Vec{p}_n)E_n\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize for $N$ particles };}}{=}\delta^3\left(\sum_{k=1}^N\Vec{p}_k\right)\left(\sum_{k=1}^N\sqrt{m_k^2+|\Vec{p}_k|^2}\right)
+\]
+The only way in which this can be zero is to have only one massless particle, $\delta^3(\Vec{p})\sqrt{m^2+|\Vec{p}|^2}=0$ when $m=0$. Let's keep only the contribution coming from massless one-particle states and see if we can obtain some more information.
+\[
+\langle\delta_a\phi_i\rangle=\lim_{V\to\infty}\int\frac{d^3p}{(2\pi)^3}\frac{1}{2E_p}f_V(\Vec{p})\left[\bra{0}J^{0,a}(0)\ket{\chi^b(\Vec{p})}\bra{\chi^b(\Vec{p})}\phi_i(0)\ket{0}e^{iE_nt}-\bra{0}\phi_i(0)\ket{\chi^b(\Vec{p})}\bra{\chi^b(\Vec{p})}J^{0,a}(0)\ket{0}e^{-iE_nt}\right]
+\]
+We want to write the matrix elements using Lorentz invariance:
+\[
+\bra{0}J^{\mu,a}(x)\ket{\chi^b(\Vec{p})}=iF_{ab}P^\mu e^{iPx} \quad \bra{\chi^b(\Vec{p})}\phi_i(0)\ket{0}=Z_{ab}
+\]
+For the first matrix element, we have to keep in mind that $\partial_\mu J^\mu=0$ so when deriving there is another factor $P^\mu$. We will have $P^2$ but since we are dealing with massless particles, the derivative of this matrix element will be equal to zero. Now we plug this in $\langle\delta_a\phi_i\rangle$:
+\[
+\langle\delta_a\phi_i\rangle=\lim_{V\to\infty}\int\frac{d^3p}{(2\pi)^3}\frac{1}{2\cancel{E_p}}f_V(\Vec{p})\left[iF_{ab}\cancel{E_p}Z_{ab}e^{iE_nt}+iZ_{ab}F_{ab}\cancel{E_p}e^{-iE_nt}\right]
+\]
+We evaluate the integral:
+\[
+\int\frac{d^3p}{(2\pi)^3}f_V(\Vec{p})e^{iE_nt}=1+\pazocal{O}(1/V)
+\]
+Similarly, for $d\langle\delta_a\phi_i\rangle/dt$ we obtain the integral:
+\[
+\int\frac{d^3p}{(2\pi)^3}f_V(\Vec{p})E_pe^{iE_nt}=\pazocal{O}(1/V)
+\]
+When taking the limit $V\to\infty$, we get
+$\langle\delta_a\phi_i\rangle=iF_{ab}Z_{ab}$ while the derivative is equal to zero.\\
+We expect to have an unbroken subgroup H since the symmetry is linearly realized: both $J^{\mu,a}$ and $\chi^b$ transform as some representation of the unbroken group but $J^{\mu,a}$ is interpolating $\chi^b$ from the vacuum and since they both transform as a representation of the unbroken group, this representation must be the same, being the vacuum Lorentz invariant. This explains why \# NGB=\# broken currents=\# broken generators.\\
+We use the covariance under H:
+\[
+\bra{0}J^{\mu,a}(x)\ket{\chi^b(\Vec{p})}=\bra{0}\underbrace{U(\beta)J^{\mu,a}(x)U^{-1}(\beta)}_{\text{transformed current}}\overbrace{U(\beta)\ket{\chi^b(\Vec{p})}}^{\text{transformed state}}=R_{aa'}R_{bb'}\bra{0}J^{\mu,a'}(x)\ket{\chi^{b'}(\Vec{p})}
+\]
+$U(\beta)$ is a unitary operator representing the transformation, in the first step we used the fact that the vacuum is invariant under this transformation, $R_{aa'}$ is a matrix representing the current transformation, $R_{bb'}$ is a matrix for the state transformation. These two matrices must be the same since the state and the current must undergo the same transformation. This means that $F_{ab}=R_{aa'}R_{bb'}F_{a'b'}$, $F_{ab}$ is an invariant tensor under transformation of H.
+\begin{example}
+In SO$(N)$ the transformation $R$ is a rotation of SO$(N-1)$. Let SO$(N-1)$=H: $F_{ab}=F\delta_{ab}$, where $F$ is the decay constant of the NGB. There is only one parameter for all the NGBs, this is because of the covariance under SO$(N-1)$ so we do not need an elaborate matrix but just a number. We repeat the same argument for the other matrix element:
+\[
+\bra{\chi^b(\Vec{p})}\phi_i(x)\ket{0}=Z_{ib}
+\]
+In this example, we can choose as SO$(N-1)$ the rotations of the first $N-1$ indices: $i=1,\dots,N$ ($N$ fields) and $b=1,\dots,N-1$ ($N-1$ NGBs). Setting $i=N$ means having $Z_{Nb}=0$ because we have no vector for $N$, while $Z_{ab}=Z\delta_{ab}$ for $i=a$. We have only two quantities, $F$ and $Z$ and it is always possible to renormalize $\phi_i$ to have $Z=1$. If we now compute the order parameter we get $\langle T_{ij}^a\phi_j\rangle=iF\delta_{ia}$ where $T_{ij}^a=i(\delta_{ai}\delta_{jN}-\delta_{aj}\delta_{iN})$ are the broken generators. From this, we get $\langle\phi_j\rangle=F\delta_{jN}$ which is different from zero only for the last component, as we assumed, according with the fact that a SO$(N-1)$ rotation involves only the first $N-1$ components.
+\end{example}
+We proved the existence of this massless particle which must have the same quantum numbers of the current and the scalar fields. It is possible to excite the particle using both operators, which are two apparently different things but actually they are not because we have to look at transformation rules under SO$(N-1)$. $J^{\mu,a}$ transforms as the fundamental of SO$(N)$, $\phi_i(x)$ is in the fundamental of SO$(N)$ which gets broken in the fundamental of SO$(N-1)$+a singlet. Two different operators can excite the same particle, the fact that $\phi_i(x)$ is a scalar field (otherwise it would break Lorentz invariance for the vacuum) is telling us that this particle must be a boson. \marginnote{In supersymmetry theory, the field is fermionic.}\\
+Goldstone theorem does not imply that these particles must be in the physical spectrum, it just states that they must exist.
+\paragraph{Alternative proof:}\marginnote{St'aleternative proof fa letteralmente cagare.}
+we start by computing:
+\begin{align*}
+\partial_\mu^x\bra{0}T[J^{\mu,a}(x)\phi_i(0)]\ket{0}&=\partial_\mu^x\left[\theta(x^0)\bra{0}J^{\mu,a}(x)\phi_i(0)\ket{0}+\theta(-x^0)\bra{0}\phi_i(0)J^{\mu,a}(x)\ket{0}\right]\\
+&=\delta(x^0)\bra{0}[J^{0,a}(x),\phi_i(0)]\ket{0}
+\end{align*}
+Now we integrate:
+\[
+\int d^4x\partial_\mu^x\bra{0}T[J^{\mu,a}(x)\phi_i(0)]\ket{0}=\bra{0}[Q^a,\phi_i(0)]\ket{0}=\langle\delta_a\phi_i\rangle\neq0
+\]
+This is different from zero because of the presence of the massless state. We write the matrix element in \href{https://en.wikipedia.org/wiki/Joseph_Fourier}{Fourier} space.
+\[
+\bra{0}T[J^{\mu,a}(x)\phi_i(0)]\ket{0}=\int\frac{d^4p}{(2\pi)^4}e^{iPx}G^{\mu,a,i}(p)\xleftarrow[]{}\text{FT of the T-product, i.e. Green's function}
+\]
+Using Lorentz covariance, we write $G^{\mu,a,i}(p)=-iP^\mu H^{a,i}(p^2)$ and substitute it in the first integral.
+\[
+\int d^4pP^2\delta^4(p)H^{a,i}(p^2)
+\]
+If $H^{a.i}(p^2)$ has no poles the integral goes to zero, so it must be:
+\[
+H^{a,i}(p^2)=\frac{\langle\delta_a\phi_i\rangle}{p^2}+\text{regular terms in $p^2$}
+\]
+We are exciting the field in a point with the current and with $\phi_i$ in another point. The existence of the pole implies the existence of a state interpolated from the vacuum by $J^\mu$ and $\phi_i$, which propagates and gives us the pole: this is the NGB.\\
+
+\textbf{Remarks:}
+\begin{enumerate}
+    \item We cannot have SSB of a symmetry (discrete or continue) in dimension $d\le2$ because of infrared divergence.
+    \item How do we know if we have SSB in our theory? At the classical level, we check the derivative of the potential and look for the minima. In general, we have to look at the effective potential which includes radiative corrections, and look for the minima.
+\end{enumerate}
 \end{document}
+
 
 
 %QFT beyond tree-level (QED a 1 -loop con Barducci)
