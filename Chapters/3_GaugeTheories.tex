@@ -742,7 +742,7 @@ This term violates P (and therefore CP) for the presence of the $\epsilon$ tenso
 \]
 If we put this term in the action, the integral disappears in the abelian case, while in the non-abelian one it goes in a configuration similar to the vacuum.\marginnote{In QCD, the vacuum depends on the theta term.}\\
 \section{Phases of Gauge Theories}
-We now want to talk about \textbf{phases} in which a theory can be. A phase is just a low-energy realization of the theory. We know there exist the phenomenon of \textbf{running coupling}, i.e. the coupling constant varies with the energy, this is (partially) due to radiative corrections.
+We now want to talk about \textbf{phases} in which a theory can be. A phase is just a low-energy realization of the theory. We know there exists the phenomenon of \textbf{running coupling}, i.e. the coupling constant varies with the energy, this is (partially) due to radiative corrections.
 \[
 \beta(g)=\mu\frac{d}{d\mu}g(\mu)
 \]
@@ -750,14 +750,18 @@ The $\beta$ function can be calculated perturbatively as long as the coupling is
 \[
 \mu\frac{d}{d\mu}g(\mu)=\beta(g)=\frac{\beta_0}{16\pi^2}g^3+\frac{\beta_1}{(16\pi^2)^2}g^5+\dots
 \]
-In QED, the corrections we have to include are electron self-energy, photon self-energy and vertex corrections which give us $\beta_0=4/3$ and $\beta(g)=g^3/12\pi^2$. It is positive, this means that the interaction coupling grows with the energy. QED is not a complete theory, it does not work at high energies. Usually, we stop at first order in $\beta$ because the coupling is small, but as it gets bigger we have to include higher order terms too. By including higher order terms, theory may \textit{cure itself}, for example with a change of sign. [METTICI IL DISEGNINO CHE ORA NON MI VA DI FARLO] For a certain value of $g$, denoted by $g^*$, the theory does not evolve anymore and the coupling constant is really a constant. At the fixed point, the theory is conformal, there is no physical scale and everything is invariant. This fixed point does not exist in QED, hence it is an effective theory, valid only at low energy and we have to replace it with another theory which guarantees a more fundamental description. This is what we do with the \textbf{Standard Model}. QED is an abelian gauge theory, an effective theory and it needs a UV completion. QCD is a non-abelian gauge theory, gluons are self-interacting and we have to consider more diagrams at 1-loop [DISEGNINO].
+In QED, the corrections we have to include are electron self-energy, photon self-energy and vertex corrections which give us $\beta_0=4/3$ and $\beta(g)=g^3/12\pi^2$. \marginnote{\includegraphics{Images/corrections.pdf}\\
+Electron self-energy, photon self-energy and vertex corrections.}
+It is positive, this means that the interaction coupling grows with the energy. QED is not a complete theory, it does not work at high energies. Usually, we stop at first order in $\beta$ because the coupling is small, but as it gets bigger we have to include higher order terms too. By including higher order terms, theory may \textit{cure itself}, for example with a change of sign. For a certain value of $g$, denoted by $g^*$, the theory does not evolve anymore and the coupling constant is really a constant. At the fixed point, the theory is conformal, there is no physical scale and everything is invariant. This fixed point does not exist in QED, hence it is an effective theory, valid only at low energy and we have to replace it with another theory which guarantees a more fundamental description. This is what we do with the \textbf{Standard Model}. QED is an abelian gauge theory, an effective theory and it needs a UV completion. QCD is a non-abelian gauge theory, gluons are self-interacting and we have to consider more diagrams at 1-loop.
 \begin{equation}
 \labeq{beta0}
 \beta_0=-\frac{11}{3}C_2(\text{adj})+\frac{4}{3}T(n_f)n_f+\frac{1}{3}T(n_s)n_s
 \end{equation}
 The first term is negative, if we do not have too many matter fields, this will be the dominant one and the $\beta$ function will be negative, so as the energy increases the coupling decreases. At low energies instead, we cannot treat the theory perturbatively anymore.
 \begin{example}$\beta$ function in QED\\
-We want the most important radiative corrections, so suppose we want to compute $e^+e^-\to e^+e^-$.[DIAGRAMMI] In each diagram we have to put the bare coupling and renormalize to have an expression in terms of $g(E)$, where $E$ is the energy of our process. In this case, it corresponds to the exchanged momentum, $E=\sqrt{s}$. Start with the Lagrangian:
+We want the most important radiative corrections, so suppose we want to compute $e^+e^-\to e^+e^-$.
+\marginnote{\includegraphics[]{Images/eeee.pdf}}
+In each diagram we have to put the bare coupling and renormalize to have an expression in terms of $g(E)$, where $E$ is the energy of our process. In this case, it corresponds to the exchanged momentum, $E=\sqrt{s}$. Start with the Lagrangian:
 \[
 \pazocal{L}=-\frac{1}{4}F^2_{0\mu\nu}+\Bar{\Psi}_0(iD_\mu\gamma^\mu-n)\Psi_0 \quad D_\mu=\partial_\mu-ig_0A_\mu^0
 \]
@@ -827,7 +831,7 @@ where $M$ is a certain scale. We check that it has the right behaviour:
     \item for $\mu=M$, $g^2(\mu)=g^2(M)$
     \item for $\mu>M$, the denominator will be smaller than 1 and the coupling will increase. There will be a Landau pole, denoted by $\Lamda$:
     \[
-    1-\frac{\beta_0}{16\pi^2}g^2(M)\log(\mu^2/M^2)=0\to\Lambda:=M\exp{\frac{8\pi^2}{\beta_0}\frac{1}{g^2(M)}}
+    1-\frac{\beta_0}{16\pi^2}g^2(M)\log(\mu^2/M^2)=0\to\Lambda:=M\exp{-\frac{8\pi^2}{\beta_0}\frac{1}{g^2(M)}}
     \]
 \end{itemize}
 We cannot use perturbation theory anymore because the coupling becomes too large. If we want to reach the IR fixed point there will be other scales, because we reach a point where energies are compatible with the mass of the electron. Electrons contribution in the diagram will be cancelled for energies smaller than the mass of the electron, so we can create an effective theory without electrons, cutting it off and this theory has only the photon with some self-interaction reduced by virtual electrons loops. These interactions disappear at low energies but at this point is not QED anymore, it is a theory of only photons.\\
@@ -849,18 +853,76 @@ At some point, there can be a cancellation between the two terms:
 \[
 \beta(g^*)=0 \;\text{for}\;\frac{g^*^2}{16\pi^2}\beta_1=|\beta_0|
 \]
-Can we trust this calculation if there are higher order terms in $\beta(g)$? We can neglect terms of order $>g^5$ if we choose a value of $n_f$ below but close to the threshold, $n_f<11N/2$. This computation is reliable for $|\beta_0|/\beta_1\ll1$, i.e. $N,n_f\gg1$ but $n_f/N\lesssim11/2$. In UV, the theory is asymptotically free, because increasing $E$ results in $\beta_0<0$ and the coupling goes to zero. By decreasing $E$ we get to the IR fixed point, which is perturbative if we are close to the threshold. This theory becomes conformal, hence self-similar: in this type of theories, there are no particles and no scales that allow us to define masses. There are no theories which describe fundamental interactions in the conformal phase.
-
-We have seen that $g_0=g(\mu)Z_g\mu^{[g_0]}$, where $[g_0]$ is something that goes to zero for $d\to4$ but we do not want to say a-priori that it is $d-4$. We have to extend the Lagrangian in $d$ dimensions:
+Can we trust this calculation if there are higher order terms in $\beta(g)$? We can neglect terms of order $>g^5$ if we choose a value of $n_f$ below but close to the threshold, $n_f<11N/2$. This computation is reliable for $|\beta_0|/\beta_1\ll1$, i.e. $N,n_f\gg1$ but $n_f/N\lesssim11/2$. In UV, the theory is asymptotically free, because increasing $E$ results in $\beta_0<0$ and the coupling goes to zero. If we decrease the number of flavours $n_f$, $|\beta_0|$ increases and $g^*$ gets larger: there is a value $n_f^c$ below which there is no IR fixed point. If the number of flavours $n_f$ is kept between $n_f^c$ and $11N/2$, we are in the \textbf{conformal window} and there exists an IR fixed point. For $n_f=n_f^c$ we have one critical point, but if we below this critical value the coupling gets bigger and bigger and eventually it explodes. This tells us that we have to take into account some non-perturbative contribution. QCD is a theory of this type where there is confinement for $n_f\in(0,n_f^c)$: this confinement space is characterized by the presence of bound states. The coupling gets so big that we have the formation of non-perturbative bound states called \textbf{hadrons}. They are not states like the hydrogen atom, they are made by fermions and gauge fields together and are colour singlet, i.e. they form singlets of SU$(N)$. Colour does not appear at large distance (small energy). The Lagrangian is written in the UV range, hence at extremely high energies where the theory is perturbative, but when we go to lower energies the phenomenology is completely different.\\
+What kind of bound states can we have?
 \begin{itemize}
-    \item $[F_{\mu\nu}^2]=d\to2[A_\mu]+2=d\Rightarrow[A_\mu]=\frac{d-2}{2}$
-    \item $[\Bar{\Psi}i\partial_\mu\gamma^\mu\Psi]=d\to2[\Psi]+1=d\Rightarrow[\Psi]=\frac{d-1}{2}$
-    \item $[g_0\Bar{\Psi}\gamma^\mu A_\mu\Psi]=d\to[g_0]+2[\Psi]+[A_\mu]=d\Rightarrow[g_0]=\frac{4-d}{2}=\frac{\varepsilon}{2}$
+    \item \textbf{Baryons}: made only of quarks, we take $N$ quarks and contract them with an $\varepsilon$ tensor. In the case of QCD, $N=3$.
+    \item \textbf{Mesons}: made of one quark $q$ and an anti-quark $\Bar{q}$, $\Bar{q}_iq^i=\Bar{q}_jq^i\delta_i^j$\marginnote{There are also other possibilities like tetra- and penta-quarks but they are exotic states. We know they are resonances so they have a short lifetime.}
 \end{itemize}
-We defined $d$ as $d:=4-\varepsilon$. Imposing this dimensionality to the term $g_0$, the $\beta$-function becomes:
+At which scale are these bound states created? We can make a simple estimate by solving the running coupling equation at 1-loop:
 \[
-\beta(g,\varepsilon)=-\frac{\varepsilon}{2}g(\mu)-g(\mu)\frac{1}{Z_g}\mu\frac{d}{d\mu}Z_g
+g^2(\mu)=\frac{g^2(M)}{1-\frac{\beta_0}{16\pi^2}g^2(M)\log(\mu^2/M^2)}\Rightarrow\Lambda=M\exp{-\frac{8\pi^2}{\beta_0}\frac{1}{g^2(M)}}
 \]
+$M$ denotes the energy at which we can measure the coupling, we decrease it until we reach a value $\Lambda$ where the coupling explodes. The expression for $g^2(\mu)$ holds true only when the coupling is small, but it gives us an idea of the value of the energy at which the coupling becomes non-perturbative.
+
+Classically, we start from a theory where we do not have any dimensional parameter, just the kinetic term for the gauge fields and the massless fermions:
+\[
+\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\sum_{i=1}^{n_f}\Bar{\Psi}_ii\slashed{D}\Psi_i
+\]
+The action is invariant since there are no dimensional parameter, so there is nothing fixing a reference scale. However, this is valid only on a classical level: in the Lagrangian, there is the coupling in the covariant derivative and in the non-abelian interaction term, so these parameters are dimensionless but we have seen that the coupling introduces a scale $\Lambda$. This phenomenon is called \textbf{dimensional transmutation}: starting from a theory with only dimensionless parameters we arrive to a theory which has an intrinsic scale due to coupling when it gets non-perturbative, $\Lambda$ is generated dynamically from the theory.\marginnote[-3.5cm]{\includegraphics[]{Images/massgap.pdf}} $\Lambda$ fixes the mass gap, except for lightest bound states ($m_\pi$) which arise from spontaneous symmetry breaking and they will be treated as pseudo-Nambu-Goldstone bosons.\\
+We have seen that a possibility for the $\beta-$function is to have an IR fixed point which appears in vectorial SU$(N)$ gauge theories with $n_f$ Dirac fermions. The possibility to have this perturbative IR fixed point requires $n_f\lesssim11N/2$. What happens if we consider instead massive fermions? When we decrease the energy, we start inside the conformal window so the coupling will move towards the fixed point. 
+\begin{figure}[h]
+    \centering
+    \includegraphics{Images/conf.pdf}
+    \caption*{}
+    \label{fig:my_label}
+\end{figure}
+At some point, we will get to the energy of the order of the mass of the first fermion, $E\sim m_{f_1}$, and the contribution of any Feynman diagram coming from the virtual propagation of this fermion will freeze. Going to energies below $m_{f_1}$, we can forget about this fermion and write an effective theory without considering it. Repeating this argument for more fermions, we may find ourselves outside the conformal window and enter the confinement phase, where there will be a threshold at which bound states are formed, i.e. the dynamical scale $\Lambda$. In principle, there could be also other fermions lighter than $\Lambda$ which do not necessarily have to be massless (this is the case of QCD). All the lighter fermions behave as if they were massless even if they are not and the number of these fermions tells us where we are in the graphic above. In QCD, there are 3 lighter fermions (up, down and strange), the dynamical scale $\Lambda\approx(100\text{MeV}-1\text{GeV})$ (charm) and two heavier fermions (top and bottom).
+\section{Spin-1 Particle as a Gauge Theory}
+Consider the \href{https://en.wikipedia.org/wiki/Alexandru_Proca}{Proca} Lagrangian for massive spin-1 particles:
+\[
+\pazocal{L}_p=-\frac{1}{4}V_{\mu\nu}^2+\frac{m_v^2}{2}V_\mu^2 \quad V_{\mu\nu}=\partial_\mu V_\nu-\partial_\nu V_\mu
+\]
+We want to understand how this Lagrangian is connected with gauge invariance and gauge symmetry. To do that, we use the so-called \href{https://en.wikipedia.org/wiki/Ernst_Stueckelberg}{Stueckelberg} trick which is nothing but a change of variables in which we put $V_\mu(x)=A_\mu(x)-\partial_\mu\pi(x)$, where $A_\mu(x)$ is a gauge field and $\pi(x)$  a scalar field. This description is not unique, we can choose the two fields in different ways. We have a redundancy, with these new variables, the Lagrangian is invariant under:
+\[
+\left\{
+\begin{aligned}
+&A_\mu(x)\to A_\mu(x)+\partial_\mu\varepsilon(x)\\
+&\pi(x)\to\pi(x)+\varepsilon(x)
+\end{aligned}
+\right.
+\]
+We are adding one more degree of freedom at the cost of having this redundancy.\marginnote{Basically because we do not need another degree of freedom, we could set $\pi(x)=0$ and get back to the initial case.} In terms of the new variables, the Proca Lagrangian becomes:
+\[
+\pazocal{L}_p=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}(A_\mu(x)-\partial_\mu\pi(x))^2=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}A^2_\mu+\frac{m_v^2}{2}(\partial_\mu\pi)^2-m_v^2A_\mu\partial_\mu\pi
+\]
+The last term mixes $A_\mu$ and $\pi$ and we want to eliminate it. We can exploit the redundancy and choose the new terms such that this term vanishes.\marginnote{For example, we can remove it assuming $\partial_\mu A_\mu=0$. This is a possible choice, but we are not going to use it.} We introduce a gauge-fixing Lagrangian to cancel that term:
+\[
+\pazocal{L}_{GF}=-\frac{1}{\xi}(\partial_\mu A^\mu+\xi m_v^2\pi)^2=-\frac{1}{2\xi}(\partial_\mu A^\mu)^2-\frac{1}{2}\xi m_v^4\pi^2-m_v^2\partial_\mu A^\mu\pi
+\marginnote{A me sembra che stiamo gauge-fixando una beata sega ma tant'è.}
+\]
+$\xi$ is an arbitrary dimensionless parameter, we define $\chi(x):=m_v\pi(x)$ and write everything as:
+\[
+\pazocal{L}=\pazocal{L}_p+\pazocal{L}_{GF}=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}A_\mu^2-\frac{1}{2\xi}(\partial_\mu A^\mu)^2+\frac{1}{2}(\partial_\mu\chi)^2-\frac{1}{2}\xi m_v^2\chi^2
+\]
+This is now the Lagrangian of our theory with no mixed terms. The first part resembles a gauge theory, except for the mass term which seems a bit odd, while the second part is a scalar theory. In order to quantize the theory, we can invert the kinetic term to get the propagator so that we can understand how many physical degrees of freedom are there: we started with 3 degrees of freedom and now apparently we have 4 of them. We have to study the poles of the propagators.
+\begin{itemize}
+    \item $A_\mu$ propagator:
+    \[
+    \Pi_{\mu\nu}(p)=\frac{-i}{p^2-m_v^2}\left[\eta_{\mu\nu}+(\xi-1)\frac{P_\mu P_\nu}{p^2-\xi m_v^2}\right]
+    \]
+    It has two poles, an expected one in $p^2=m_v^2$ and an unexpected on in $p^2=\xi m_v^2$ which is unphysical.
+    \item $\chi$ propagator:
+    \[
+    \Pi(p)=\frac{i}{p^2-\xi m_v^2}
+    \]
+    $\xi$ is an arbitrary parameter, the physics cannot depend on it. This pole has to vanish somehow: the propagation of $\chi$ cancels the non-physical quantity in the gauge field propagator. 
+\end{itemize}
+$\chi$ itself is not a physical quantity, there are only the three degrees of freedom from the propagator of $A_\mu$ which is the only one to have a physical pole. It is useful to rewrite $\Pi_{\mu\nu}(p)$ in the following way:
+\[
+\Pi_{\mu\nu}(p)=\underbrace{\frac{-i}{p^2-m_v^2}\left[\eta_{\mu\nu}-\frac{P_\mu P_\nu}{m_v^2}\right]}_{\text{massive spin-1 particle propagator}}-\underbrace{\frac{i}{p^2-\xi m_v^2}\frac{P_\mu P_\nu}{m_v^2}}_{\text{unphysical content}}
+\]
+The gauge-fixing we introduced is called the $\xi-$gauge, this kind of gauges are good to test the renormalization of massive spin-1 field theories. When we do renormalization, we want to see what are the diagrams which diverge, because if we have a finite number of diverging diagrams we can renormalize the theory by introducing a finite number of counter-terms. In the propagator of a massive spin-1 particle, if we take the limit $p\to\infty$ there is a term going as $1/p^2$ and one which goes as $p^2$, so the propagator goes as $p^0$. This is obviously not good, because it means there is a possibility that when doing the diagrams all of them are divergent and the theory is not renormalizable. Luckily, this is not our case, we are going to see that this Lagrangian can be brought back to a gauge theory, even if we have that odd mass term for the moment.
 \end{document}
 
 
