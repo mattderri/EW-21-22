@@ -1,0 +1,185 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\setchapterstyle{kao}
+\setchapterpreamble[u]{\margintoc}
+\setchapterimage[6.5cm]{Images/eft.jpg}
+\chapter[Effective Field Theories]{Effective Field Theories\footnotemark[0]}
+\labch{EFT}
+\section{Qualitative Introduction}
+The Standard Model is a gauge theory SU$(3)\times$SU$(2)\times$U(1). There are no problems with the UV behaviour because there is the Higgs boson but like in QCD there is a problem on the quantum level due to U(1): the coupling explodes at extremely high energies ($\approx10^{42}$ GeV) hence it is an \textbf{effective field theory}. These theories are not mathematically complete, an effective description is possible only if the system is described by at least two different parameters but with the same dimensionality.
+\begin{example}
+Classical mechanics is an effective theory of both quantum mechanics (for $l\gg h/p$) and special relativity (for $v\ll c$).
+\end{example}
+We want to describe QFT with heavy degrees of freedom and study the behaviour at energies much smaller than the mass of these heavy states. It is possible to write an effective field theory where these degrees of freedom are not present, there is not sufficient energy to create but their effect can be seen if we add local operators. These theories are based on the concept of \textbf{locality}: the virtual exchange of heavy particles with mass $M$ happens at small distances, of the order of $1/M$. To give a qualitative explanation, we use the well known uncertainty principle, $\Delta E\Delta t\gtrsim\hbar/2$. There is an intrinsic limit for an instrument to measure both $E$ and $t$ simultaneously with a precision better than $\hbar/2$. Suppose to have an ideal instrument with $\Delta E\Delta t\simeq\hbar/2$ and consider the virtual exchange of a heavy particle with mass $M$. We have a violation of momentum conservation since $M\gg p$ but this violation should not be observable because the particle gets emitted and lives for a time extremely short. 
+\[
+\Delta E\sim Mc^2\to\Delta t\sim\frac{\hbar}{2Mc^2}
+\]
+This is the precision on the time, which implies $\Delta x\simeq\frac{\hbar}{2Mc}$, therefore this process should take place at distances smaller than $\Delta x$ since this is the maximum we can measure. If instead we used a real instrument, we would obtain $\Delta x\approx\frac{\hbar c}{E}\gg \frac{\hbar}{2Mc}$: it is not possible to resolve the propagation of this heavy particle so the propagation of these particles will appear as local effect in the theory.
+\section{Structure of an Effective Lagrangian}
+To describe local effects, we need local operators in the theory:
+\begin{equation}
+\labeq{EFT}
+\pazocal{L}_{EFT}=\pazocal{L}^{(4)}+\sum_n C^{(n)}O^{(n)}(x)
+\end{equation}
+$\pazocal{L}^{(4)}$ describes the low energy degrees of freedom and it is renormalizable while $O^{(n)}(x)$ are local operators of dimension $d_n$ which describe the effect of heavy states. $C^{(n)}$ are arbitrary coefficients of dimension $d_n-4$ and they can be written in terms of a new scale, $C^{(n)}\propto(1/M)^{d_n-4}$, where $M$ denotes the mass of the heavy state. $\pazocal{L}_{EFT}$ is not renormalizable, however things are not so bad as they seem, let's have a look at the effects of these local operators. These operators must satisfy all the global symmetries we impose and they must be gauge invariant. The local operators are all the possible operators compatible with the symmetries of the low-energy theory.\marginnote{Gauge invariance is included among the symmetries.} Hence, we \textit{either} know the UV theory, find out what these operators are, take out the heavy particles and compare the two theories obtaining $C^{(n)}$ and then $O^{(n)}(x)$ \textit{or}, if we do not know the theory at high energy, write the most generic effective Lagrangian compatible with symmetries we require at low-energy. Suppose to have an observable $A$ at low-energy, the effect of the heavy states, i.e. of the local operators, will be:
+\[
+\frac{\delta A}{A}\approx\left(\frac{E}{M}\right)^{(d_n-4)m}
+\]
+where $m$ is the number of insertions of the operator $O^{(n)}(x)$. The principal effects come from the degrees of freedom at low-energy, there are corrections which go like $E/M$: the larger is the dimensionality of the operator, the smaller the effects will be. It is also possible to cut the series, since it does not have much sense to consider it all because of experimental precision hence the theory is not renormalizable. But we can truncate, so the number of parameters we have to renormalize is finite and we are happy. \raisebox{-\mydepth}{{\includegraphics[height=1.1\baselineskip]{Images/smile.jpg}}}\\
+When $M\gg E$ of the process we are considering it is possible to expand the propagator. But it is more convenient to expand the Lagrangian in terms of local operators which involve lighter degrees of freedom and the expansion is in terms of the ratio between the momenta of lighter particles and the mass $M$ of the heaviest particle, then truncate the series according to the precision required by the process.
+\subsection{Examples of EFTs}
+\begin{example}\textbf{\href{https://en.wikipedia.org/wiki/Enrico_Fermi}{Fermi} theory for $\beta$ decay}\\
+The $\beta$ decay $n\to pe^-\Bar{\nu}_e$ is described by:
+\[
+\pazocal{L}=-\frac{G_F}{\sqrt{2}}[\underbrace{\Bar{p}\gamma^\mu(1-\gamma_5)n}_{J^{\mu}_{\text{had}}}][\underbrace{\Bar{e^-}\gamma^\mu(1-\gamma_5)\nu_e}_{J^{\mu}_{\text{lep}}}]
+\]
+This Lagrangian is the product of two currents and has dimension 6. We can see it as an EFT obtained by integrating, i.e. considering only what is below, a heavy particle coupled to both hadrons and leptons. This particle is massive with spin 1, with a mass much bigger than the energy involved in the process: the $W$ boson.\marginnote[-3cm]{\includegraphics[]{Images/betadecay.pdf}\\
+Diagram of the process}\\
+From the complete theory, the amplitude of this diagram is given by:
+\[
+A=\left(\frac{g}{\sqrt{2}}\right)^2\frac{i^2}{2!}2\frac{(-i)}{k^2-m_W^2}\eta_{\mu\nu}\Bar{u}(p)\gamma^\mu\frac{(1-\gamma_5)}{2}u(n)\Bar{u}(e^-)\gamma^\nu\frac{(1-\gamma_5)}{2}v(\nu_e)
+\]
+If $k^2\ll m_W^2$, it is possible to expand the propagator:
+\[
+\frac{1}{k^2-m_W^2}\simeq-\frac{1}{m_W^2}\left(1+\frac{k^2}{m_W^2}-\frac{k^4}{m_W^4}+\dots\right)
+\]
+Each term here is analytical in $k$, each contribution comes from a local operator. The Fermi model comes from the contribution at first order of this propagator, which basically means that the diagram is approximated by a contact interaction between the hadronic and leptonic currents. If we compare the amplitude from the effective theory with the one obtained by the complete theory (at first order) it is possible to find the value of the effective operator:
+\[
+\left(\frac{G_F}{\sqrt{2}}\right)=\frac{g^2}{8m_W^2}
+\]
+Higher orders of the expansion correspond to other contributions, operators with higher dimensionality, where the momentum corresponds to interactions which contain derivatives and act on currents.
+\[
+\begin{aligned}
+&\frac{k^2}{m_W^4}\to\frac{1}{m_W^4}J_{had}^\mu\Box J_\mu^{lep} \quad &&D=8\\
+&\frac{k^4}{m_W^6}\to\frac{1}{m_W^6}J_{had}^\mu\Box^2 J_\mu^{lep} \quad &&D=10
+\end{aligned}
+\]
+We are increasing the number of derivatives which act on the fields, hence the dimensionality. It is important that all these operators are local.
+\end{example}
+\begin{example}\textbf{Heavy fermion coupled to a scalar and a gauge field}\\
+The Lagrangian which describes this kind of theory is:
+\[
+\pazocal{L}=\Bar{\Psi}(i\slashed{D}-M)\Psi-\frac{1}{4}(F_{\mu\nu})^2+\frac{1}{2}(\partial_\mu\phi)^2+y\phi\Bar{\Psi}\Psi-\frac{m_\phi^2}{2}\phi^2
+\marginnote[-2cm]{\includegraphics{Images/aaphiphi.pdf}\\
+Diagram of the full process.}
+\]
+We want to take the limit in which $E\ll M$, where $\Psi$ will be point-like. It is possible to obtain an effective theory where $\Psi$ is not present but it is integrated out. What we get is a contact interaction between $\phi$ and $A$ but since $\phi$ is neutral this interaction will not be of the type of minimal coupling but it will have to respect gauge invariance. \marginnote[-1cm]{\includegraphics[]{Images/phiplike.pdf}\\
+Diagram for $E\ll M$ and $\Psi$ point-like.}
+The operator involved will be $F^2_{\mu\nu}\phi^2$ which has dimension 6. The scattering amplitude will be:
+\[
+M(AA\to\phi\phi)\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize $E\ll M$ };}}{\propto}\frac{g^2}{16\pi^2}y^2\varepsilon_\mu(p_1)\varepsilon_\nu(p_2)\underbrace{(\eta^{\mu\nu}(p_1\cdot p_2)-p_1^\mu p_2^\nu)}_{M^{\mu\nu}}
+\]
+This has to be dimensionless, so there will be a mass scale $M^2$ at the denominator, where $M$ is the mass of $\Psi$.
+\end{example}
+\section{EFTs as QFTs}
+Let's get back to the general structure of an EFT [\refeq{EFT}]: what is the value of $d_n$? We have to be careful because in general the dimensionality of an operator changes with the interactions. If we assume that the EFT is weakly coupled, in a certain region of energy, then the dimensionality is the classical one. On the other hand, if the theory is strongly coupled, the dimensionality is modified by the interaction: there is an anomalous dimension coming from quantum effects. This anomalous dimension can be neglected in the case the theory is weakly coupled, so in our case $[O^{(n)}]=$classical dimension. The fact that for $E\ll M$ the contribution of high dimensionality operators is suppressed has some consequences: it implies that for $[O^{(n)}]<4$ they are irrelevant (in the IR), they become important at high energies.\\
+Suppose to have an EFT, where we truncated the series and kept only the dominant contributions at low energy: how can we use this EFT? Can we use the Lagrangian only at tree-level or also at loop level? EFTs are full-fledged QFTs, there are no restrictions to impose, it is possible to use them at any order.\\
+Take now a theory with quantum interaction and consider it at 1-loop. In this loop there is an exchange of virtual momenta which can be as large as we want. The derivatives appearing in the vertices will give us a nasty UV behaviour because the larger the number of derivatives is, the more divergent the diagram will be. The effective and the complete theory are different: in the complete theory, the loop has to be replaced with something with more propagators, which is more convergent. The UV behaviour is much nicer for complete theory than it is for effective ones but it is not a problem. These divergences have a local effect and they can be removed by the counter-terms, it is a redefinition of local operators that we insert in the theory, they do not modify the low energy behaviour.
+\begin{example}
+Consider the following theory:
+\[
+\pazocal{L}=\frac{v^2}{4}\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}=(\partial_\mu\chi)^2+\frac{1}{v^2}(\chi\partial_\mu\chi)^2+\dots
+\]
+Suppose we want to expand it at 1-loop \marginnote{\includegraphics[]{Images/chiloop2.pdf}\\
+1-loop expansion.}and for simplicity we consider $\chi$ massless, so the only parameter will be the external momenta:
+\[
+\text{loop contribution}\sim\frac{1}{v^4}\frac{1}{16\pi^2}p^4
+\]
+This will have a divergence of order $\log(-p^2/\mu^2+1/\varepsilon)$ where $\mu$ is the subtraction scale of dimensional regularization. To cancel this divergence, the counter-term has to be something like $(\partial_\mu\chi)^4$: we need a local operator with 4 derivatives, we have two operators:
+\[
+(\Tr{\partial_\mu\Sigma^\dagger\partial_\nu\Sigma})^2 \quad (\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma})^2
+\]
+\end{example}
+We have two possible EFTs:
+\begin{enumerate}
+    \item \underline{EFTs of known UV theories}: we use the \textit{matching procedure}, i.e. choosing the effective coefficients so that the observables are equal in the EFT and in the complete UV theory. The UV theory does not have to be a field theory (e.g. string theory) but we can still do matching. If we have QFTs we can do matching where the observable we compare are off-shell Green functions and imposing the fact that UV theories and Green functions are reproduced by the same Green functions, it is a very strong constraint.
+    \item \underline{EFTs of unknown UV theories}: the coefficients are now unknown and there are 3 observations one can make.
+    \begin{enumerate}
+        \item EFT predicts quantities which are independent of the effective coefficients $C^{(n)}$, observables that are non-analytic in momentum or in the parameters of the Lagrangian
+        \item It is possible to extract the coefficients $C^{(n)}$ from experiments, or impose some limit on them
+        \item We can make some estimates of $C^{(n)}$ and this requires power counting
+    \end{enumerate}
+\end{enumerate}
+\begin{example}\textbf{QED as an EFT}\\
+We want to consider the operator which contributes to the anomalous magnetic moment of the electron:
+\[
+c_0\underbrace{\Bar{\Psi}\sigma^{\mu\nu}F_{\mu\nu}\Psi}_{D=5}\to\left\{\begin{aligned}
+&\Vec{\mu}=\frac{e}{2m_ec}g_e\Vec{s}\\
+&a_e=\frac{g_e-2}{2}
+\end{aligned}\right.
+\]
+If we go to low energies and compute the contribution of the vertex at tree-level, we get $\delta a_e^{\text{NP}}=4m_ec_0/e$. However, in QED we have also loop corrections, which give us $\delta a_e=\alpha/4\pi$. We want to make an estimate of $c_0$ in terms of parameters of the UV theory. There will be only a scale and a coupling to characterize this \textit{new} theory. At the end of the day, we have to compare this result with the experimental one but since QED is an EFT we can always think that there is some heavy state which, once integrated out, generates the dimension 5 local operator which has the correct structure to give us an additional contribution. Comparing this with the experimental result gives us:
+\[
+\frac{\delta a_e^{\text{exp}}}{a_e}=0.24\,\text{ppb}=2.4\cdot10^{-10}\marginnote{Best experimental result in physics, according to Contino.}
+\]
+We want to use this result to put some constraints on new physics and make predictions. In order to have complete predictions, we need to include also QCD. Considering now the 1-loop contribution coming from QCD, the precision of the theoretical prediction is:
+\[
+\frac{\delta a_e^{\text{th}}}{a_e}=6.7\,\text{ppb}=6.7\cdot10^{-9}
+\]
+About 30 times the experimental one! Why are we not able to reach the experimental precision? The problem is the estimate of $a$: by using the experimental one obtained by rubidium spectroscopy, the theoretical precision is higher than the experimental one. We can put some constraints on new physics.
+\[
+\delta a_e^{\text{NP}}\lesssim\delta a_e^{\text{th}}\Rightarrow|c_0|\lesssim3\cdot10^{-9} \text{e/GeV}
+\]
+If we want more information about this new physics, we can make an estimation of the coefficient $c_0$ by using power counting:
+\[
+c^{(n)}\approx\left(\frac{1}{M_*}\right)^{d_n-4}g_*^{n-2}\left(\frac{g_*^2}{16\pi^2}\right)^l
+\]
+we denoted with $M_*$ the new physics scale, $n$ the number of fields in the operator $O^{(n)}$, $g_*$ the coupling strength in this new physics sector and $l$ the number of loops. \marginnote{$M_*$ is just the mass of the particle in the loop, assuming there is just one (1). We are also assuming (2) there is only one coupling.}How do we apply all of this stuff in our case? We have that $d_n=5$ and $n=3$, so we get:
+\[
+c_0\sim\frac{e}{M_*}\left(\frac{g_*^2}{16\pi^2}\right)
+\]
+where we inserted the electromagnetic coupling $e$. The photon-electron interaction does not take place through the covariant derivative but via $F_{\mu\nu}$, it is a non minimal interaction. If the field of the new physics is minimally coupled with the covariant derivative there is no way to generate this operator at tree-level, we need one loop: that is another assumption we make (3). Suppose to have something like the diagram portrayed on the side: \marginnote[-2cm]{\includegraphics[]{Images/eftqed.pdf}}due to gauge invariance of electromagnetic theory, the coupling on the top vertex must necessary be $e$ while for the bottom vertex there is nothing that tells us it has to be $e$, so we denote the other coupling with $g_*$. If we look at the structure of our operator, we notice that it is similar to the mass term, mixing left and right chirality. There is a symmetry we can use: we know the mass term $\Bar{\Psi}_L\Psi_R$ is the only operator which breaks axial symmetry.
+\[
+\begin{aligned}
+P_A:&\Psi\to\gamma^5\Psi\\
+&m_e\to-m_e
+\end{aligned}
+\]
+$m_e(\Bar{\Psi}_L\Psi_R+\text{h.c.})$ is formally invariant under $P_A$. There is only one spurion in the new theory which breaks $P_A$ (4) and it is the same which contributes to the mass term and to the new operator. This implies that this operator must be proportional to $m_e$:
+\[
+c_0\sim\frac{e}{M_*}\left(\frac{g_*^2}{16\pi^2}\right)\frac{m_e}{M_*}
+\]
+So it is not dimension 5 but dimension 6, giving an additional suppression. The interesting quantities are $M_*$ and $g_*$, we can establish a constraint for $M_*$:
+\[
+M_*\gtrsim3\,\text{GeV}\cdot g_*
+\]
+The coupling cannot be larger than $4\pi$ or it would not be perturbative anymore. This tells us that the correction to new physics will be under experimental precision if $M_*$ is larger than the value we just found.\\
+This new physics is just the Standard Model completion with QCD and QED, we have to add the vector bosons.
+\[
+\left\{
+\begin{aligned}
+&m_W\simeq80\,\text{GeV}\\
+&m_Z\simeq90\,\text{GeV}\\
+&m_h\simeq125\,\text{GeV}
+\end{aligned}
+\right.
+\to
+\left\{
+\begin{aligned}
+&M_*\approx100\,\text{GeV}\\
+&g_*\sim g\sim0.65
+\end{aligned}
+\right.
+\]
+There is another situation where we are sensitive to new physics, we ask ourselves if we can consider the muon magnetic moment instead of the electron one. The experimental precision for the muon magnetic moment is 0.35 ppb$=3.5\cdot10^{-7}$ and with this result we get $M_*\approx400\,\text{GeV}\cdot g_*$, the same order of magnitude. In the Standard Model, the operator is modified:
+\[
+c_0\Bar{\Psi}\sigma^{\mu\nu}F_{\mu\nu}\Psi\to\Bar{\Psi}_L\sigma^{\mu\nu}W^{\mu\nu}\Psi_RH
+\]
+$H$ is the Higgs field, required to have SU$(2)_{EW}$ invariance. Now we have $\Delta a_\mu=a_\mu^{\text{exp}}-a_\mu^{\text{SM}}=2.5\cdot10^{-9}$ which is larger than experimental uncertainty. There is a difference at $4\sigma$ level, so there must be some new physics. We can say that this difference comes from $W^{\mu\nu}$,\\
+$M_*\approx25\,\text{GeV}\cdot g_*$, so below the electroweak scale.
+\end{example}
+\section{Validity of EFTs}
+When these effective theories collapse? There is not a unique answer, we have to make some assumption. Let's see an example.
+\begin{example}\textbf{Fermi theory}\\
+\[
+\pazocal{L}=c_6(\Bar{e}\gamma^\mu(1-\gamma^5)\nu_e)(\Bar{\nu}_\mu\gamma_\mu(1-\gamma^5)\mu) \quad c_6=-\frac{G_F}{\sqrt{2}}=-\frac{g^2}{8m_W^2}\marginnote[-1cm]{\includegraphics[]{Images/fermieft.pdf}}
+\]    
+Suppose to measure the muon lifetime, what we measure is $c_6$. We understand that the process is mediated by effective operators, hence why we want to measure $c_6$, the ratio between the coupling and the scale.\marginnote{\includegraphics[]{Images/scalenp.pdf}}
+\end{example} 
+The range highlighted in red in the picture on the side denotes where this new physics could appear, but we do not know exactly where. How could we determine it? We either make some assumption on the value of the coupling and extrapolate the value of $m_W$ from there or we look for new physics in scattering processes with the same elements of the Fermi interaction, $e^-\nu_\mu\to\mu^-\nu_e$. This was done by the Gargamella experiment in 1973, observing both charged and neutral current, so $W$ and $Z$. To find the masses, we had to wait until 1982 at CERN.
+\end{document}
+%QFT beyond tree-level (QED a 1 -loop con Barducci)
+%Symmetries and conservation laws (spontaneous symmetry breaking and Higgs mechanism)
+%Quick intro to non-abelian gauge theories
+%Effective field theories
+%Intro to the SM

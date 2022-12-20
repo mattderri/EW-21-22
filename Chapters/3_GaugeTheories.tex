@@ -1057,6 +1057,7 @@ For the unitary gauge, we can evaluate the spectrum starting from the Lagrangian
 \]
 We observe that the physical degrees of freedom are the 3 polarizations of massive spin-1 particles+spin-0 particle $(\eta)$, resulting in 4 degrees of freedom.\marginnote{We could have observed it also from the starting Lagrangian but we would not have been able to connect it to physical states, while it is clear in the unitary gauge.}
 \section{Equivalence Theorem}
+\labsec{eqthm}
 \begin{theorem}
 The scattering amplitude of the $S$-matrix for the emission or absorption of a longitudinally polarized vector boson becomes equal, at $E\gg m_A$, to the scattering amplitude of the corresponding NGB computed in the $\xi$-gauge.
 \end{theorem}
@@ -1143,6 +1144,300 @@ The diagrams are the same with the same combinatorial factor.
 M(\chi\chi\to\chi\chi)=\frac{i}{2!}4\cdot2\frac{1}{v^2}\left[\frac{(p_1\cdot p_2)(p_3\cdot p_4)}{s-m_\eta^2}+(2\xleftrightarrow[]{}3)+(2\xleftrightarrow[]{}4)\right]
 \]
 The scattering amplitudes are the same, so we proved the equivalence theorem.\marginnote{Su sta roba sono un po' scettico perché non mi sembra sia stato dimostrato qualcosa ma tant'è.}
+\section{Self-Interacting Massive Spin-1 Particles}
+These are non-abelian gauge theories and we want to generalize the U(1) case. For the abelian case, we established an equivalence between the Proca Lagrangian and gauge theories introducing the complex scalar field $\varphi(x)=ve^{i\chi(x)/v}/\sqrt{2}$ along with its non-linear constraint\\
+$\varphi^\dagger(x)\varphi(x)=v^2/2$. Since it is subject to a non-linear constraint, the global U(1) symmetry cannot be linearly realized. We know there is SSB in the vacuum, where $\langle\varphi(x)\rangle=v/\sqrt{2}$ and $\chi(x)=0$, breaking U(1) to the identity.\\
+\subsection{U$(N)\to$U$(N-1)$ Spontaneous Breaking}
+Now we want to move to the non-abelian case, where we have $N$ complex scalar fields $\varphi_i(x)$ with the same non-linear constraint as before. We can perform a U$(N)$ transformation on these fields:
+\[
+\text{U}(N): \varphi(x)\to U\varphi(x)=\varphi'(x) \; U\in\text{U}(N)
+\]
+The new field $\varphi'(x)$ still satisfy the constraint so it is a good transformation and the U$(N)$ invariant Lagrangian is simply given by $\pazocal{L}=|\partial_\mu\varphi(x)|^2$. Again, here the symmetry is not linearly realized because of the constraint. We can write $\varphi(x)$ in the following representation:
+\[
+\varphi(x)=\frac{v}{\sqrt{2}}\exp{\frac{i\chi^{\hat{a}}(x)T^{\hat{a}}}{v}}\begin{pmatrix}0\\0\\\vdots\\1\end{pmatrix}
+\]
+where $T^{\hat{a}}$ are the \textbf{broken generators}, i.e. generators that are in U$(N)$ but not in U$(N-1)$ and they correspond to the number of NGBs. We have a total of $2N-1$ degrees of freedom, since we have $N$ fields  with 2 degrees of freedom each and one constraint: this is the number of fields we have to put in the exponential, $a=1,2,\dots,2N-1$. In the vacuum, $\chi$ is put to 0 and the field $\varphi(x)$ becomes:
+\[
+\varphi(x)=\frac{v}{\sqrt{2}}\begin{pmatrix}0\\0\\\vdots\\1\end{pmatrix}
+\]
+This vev spontaneously breaks U$(N)$ down to U$(N-1)$: how many NGBs do we have in this case? We have to count the broken generators:
+\begin{align*}
+& &&\text{U}(N) &&\text{U}(N-1)\\
+\hline
+&\#\text{generators} &&N^2 && (N-1)^2\\
+&\#\text{broken generators:} &&N^2-(N-1)^2=2N-1 &&&
+\end{align*}
+$2N-1$ is the number of NGBs in the theory, which corresponds exactly to the number of degrees of freedom of $\chi(x)$. What happens if we promote this symmetry to local property? First we introduce $N^2$ gauge fields $A_\mu(x)$ minimally coupled to the scalar field. We expect that some of these $N^2$ gauge fields acquire mass.\marginnote{Lagrangiana schiaffata totalmente a caso e poi magia nera tra aggiunte e scatolette porca di quella troia.}
+\[
+\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+|D_\mu\varphi(x)|^2
+\]
+U$(N-1)$ is linearly realized but what are the representations under U$(N-1)$?
+\[
+\begin{aligned}
+&\text{U}(N)&&\text{U}(N-1)\\
+&\text{Adj}&&={\color{red}\text{Adj}}+{\color{blue}\Box}+{\color{green}1}\\
+&N^2&&={\color{red}(N-1)^2}+{\color{blue}2(N-1)}+{\color{green}1}
+\end{aligned}
+\]
+How can we prove this decomposition? There are two ways:
+\begin{enumerate}
+    \item the adjoint representation of a unitary group can be seen as a series of $N^2$ fields times the U$(N)$ generators:
+    \[
+    A_\mu^A(x)T^A(x)\to\begin{pNiceArray}{cw{c}{1cm}cc}[margin]
+    \Block{3-3}{\color{red}{\text{\small{$(N-1)\times(N-1)$}}}} & & & \color{blue}\vdots \\
+    & & & \color{blue}\vdots \\
+    & & & \color{blue}\vdots \\
+    \Cdots & \Cdots & \Cdots & \tikz\draw[green,fill=green] (0,0) circle (.5ex)
+    \end{pNiceArray}\quad\begin{cases}
+    {\color{red}\text{Adjoint of U$(N-1)$}}\\
+    {\color{blue}\text{$\Box$ of U$(N-1)$}}\\
+    {\color{green}\text{Singlet of U$(N-1)$}}
+    \end{cases}
+    \]
+    \item a field in the adjoint representation can be seen as a rank 2 tensor with indices $i,j=1,\dots,N$. If we restrict these indices to\\
+    $a,b=1,\dots,N-1$ we get the adjoint.
+    \[
+    \begin{aligned}
+    & &&\text{Adj}&&&\Box&&&&1\\
+    &\phi_{ij}\to&&\phi_{ab}&&&\phi_{aN}&&&&\phi_{NN}
+    \end{aligned}
+    \]
+\end{enumerate}
+The field $\varphi(x)$ does not transform as a U$(N)$ representation because of the constraint, it does not have to have $2N$ degrees of freedom but $2N-1$: it is not $\Box$ of U$(N)$ but it contains $\Box$ of U$(N-1)$+one singlet. When we have a non-linearly realized U$(N)$ global symmetry, the complex field of this theory does not have to be a complete representation of this theory but it must contain complete multiplets of the unbroken symmetry. This is due to the fact that only linearly realized symmetries imply conserved charges which can be used to characterize the spectrum of the asymptotic states. Every asymptotic state must be a representation of the linearly realized symmetry , in this case U$(N-1)$. This $\Box+1$ we just found gives us the extra polarization we were looking for\marginnote{Ma mo' che cazzo è sta terza polarizzazione.} and together with the other 2 forms the massive vector field. We expect that the Lagrangian has $(N-1)^2$ massless gauge fields and $2N-1$ massive spin-1 particles: this is the Higgs mechanism, these $2N-1$ degrees of freedom will acquire mass. We can verify it and to do that we move to the unitary gauge, where it is possible to read the spectrum directly from the Lagrangian. To go to the unitary gauge we make a local U$(N)$ transformation on $\varphi(x)$, so that all the NGBs are put to zero.
+\[
+\varphi(x)\to U(\alpha(x))\varphi(x)=\frac{v}{\sqrt{2}}\begin{pmatrix}
+    0\\
+    \vdots\\
+    0\\
+    1
+\end{pmatrix}
+\]
+The transformation $U(\alpha(x))$ is defined as $U(\alpha(x))=\exp{i\alpha^A(x)T^A}$ where $T^A$ are the generators of U$(N)$, while $T^a$ are the U$(N-1)$ unbroken generators which give us zero when acting on the column vector. Therefore, we are left only with the broken generators which correspond to what we wrote in the beginning: it is the most generic expression we can have for the field in the unitary gauge.
+\[
+|D_\mu\varphi(x)|^2=\left|(\partial_\mu-igA_\mu^AT^A)\frac{v}{\sqrt{2}}\begin{pmatrix}
+    0\\
+    \vdots\\
+    0\\1
+\end{pmatrix}\right|^2=\frac{g^2v^2}{2}A_\mu^{\hat{a}}A_\mu^{\hat{b}}\phi_0^TT^{\hat{a}}T^{\hat{b}}\phi_0
+\]
+where we denoted with $\phi_0$ the column vector and we see that only the broken generators survive. The mass matrix we will have to add is:
+\[
+(M^2)_{\hat{a}\hat{b}}=(gv)^2\phi_0^TT^{\hat{a}}T^{\hat{b}}\phi_0
+\]
+which is the Higgs mechanism for non-abelian gauge theories with broken U$(N)$ symmetry. We started our discussion with massless fields, some of them remained massless while other ones acquired mass through the Higgs mechanism. But what if we wanted a theory with all massive particles? 
+\subsection{SU$(N)_L\times$SU$(N)_R\to$SU$(N)_V$ Spontaneous Breaking}
+Consider $N^2$ gauge fields and $(2N-1)$ NGBs, $N^2\ge2N-1$ for $N\ge1$: hence, for $N>1$ there will always be massless particles in the theory. How do we get rid of them? We consider another example where all the NGBs are hidden and there are no massless gauge fields. Consider a theory with a global symmetry, SU$(N)_L\times$SU$(N)_R\to$SU$(N)_V$:
+\[
+\begin{aligned}
+& &&\text{SU}(N)_L&&&\text{SU}(N)_R&&&&\text{SU}(N)_V\\
+\hline
+&\text{\# generators:} &&N^2-1 &&&N^2-1 &&&&N^2-1\\
+&\text{\# broken generators:} &&N^2-1 &&& &&&&
+\end{aligned}
+\]
+How can we parameterize these NGBs? We introduce the field\\
+$\Sigma(x)=\exp{2i\frac{\chi^a(x)}{v}T^a}$, with $T^a$ generators of SU$(N)$ in the fundamental representation, i.e. $N\times N$ matrices. Consider now the following kinetic term:
+\[
+\pazocal{L}=\frac{1}{4}v^2\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}
+\]
+$\Sigma$ is dimensionless by definition, so it is needed to add the term $v^2$ which has dimension 2. What global symmetry do we have in this case? We can make a transformation in which $\Sigma$ is multiplied by elements of SU$(N)_L$ and SU$(N)_R$:
+\[
+\Sigma(x)\to L\Sigma(x)R \quad L\in\text{SU}(N)_L, R\in\text{SU}(N)_R
+\]
+which gives us a symmetry due to the cyclicity of the trace. In the vacuum, the fields are put to zero, so $\langle\Sigma(x)\rangle=\mathbb{1}$ breaking SU$(N)_L\times$SU$(N)_R$ to SU$(N)_V$, i.e. elements of SU$(N)_L\times$SU$(N)_R$ which preserve $\langle\Sigma(x)\rangle=\mathbb{1}$ must be equal ($L=R$), hence elements of SU$(N)_V$ by definition. But why do we work in SU$(N)$? There is an even larger symmetry given by U$(N)_L\times$U$(N)_R$ broken to U$(N)_V$. However, this results in an additional NGB and if we do the same transformation as before $\Sigma'$ will not have the same properties as $\Sigma$ because now $L$ and $R$ are not special unitary matrices anymore. We focus on SU$(N)_L\times$SU$(N)_R\to$SU$(N)_V$ because it is the symmetry realized in QCD.
+\[
+\text{SU}(N)_L\times\text{SU}(N)_R\times\text{U}(1)_L\times\text{U}(U)_R\to\text{SU}(N)_V\times\text{U}(1)_V
+\]
+The symmetry pattern of U$(1)_L\times$U$(1)_R$ can be written as U$(1)_A\times$U$(1)_V$ where the new generators are defined as:
+\[
+\left\{
+\begin{aligned}
+&T_V:=T_R+T_L\\    
+&T_A:=T_R-T_L
+\end{aligned}
+\right.
+\]
+These generators are abelian, so we can always write U$(1)_L\times$U$(1)_R$=U$(1)_A\times$U$(1)_V$ but this is not true for SU$(N)$: SU$(N)_A$ does not exist because the algebra is not closed. U$(1)_V$ is just a spectator of this play because it is linearly realized, the extra NGB comes from U$(1)_A$ which is spontaneously broken.\marginnote{U$(1)_A$ is anomalous in QCD: it is a symmetry present on the classical level bur not on the quantum one.}\\
+Let's get back to the case where $\Sigma(x)$ is special and unitary. We want to see the Higgs mechanism, so we make part of this symmetry local, there are two possibilities: we either make local SU$(N)_L$ or SU$(N)_R$. We decide to work with the first one, so we introduce $N^2-1$ gauge fields $A_\mu^a(x)$ and then we have to make covariant the derivative.\marginnote{If we make local SU$(N)_R$ instead the covariant derivative will have a plus sign since we are in the anti-fundamental representation.}
+\[
+D_\mu\Sigma=\partial_\mu\Sigma-igT^aA_\mu^A\Sigma
+\]
+At the end of the day, we can write the Lagrangian as:
+\[
+\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{v^2}{4}\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}
+\]
+As usual, we move to the unitary gauge where $\Sigma(x)=\mathbb{1}$. To do that, we make a local SU$(N)$ transformation which hides all the NGBs and we obtain:
+\[
+\frac{v^2}{4}\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}=\frac{v^2}{4}g^2\Tr{T^aT^b}A_\mu^aA_\mu^b=\frac{1}{2}\left(\frac{vg}{2}\right)^2A_\mu^a(x)A_\mu^a(x)\Rightarrow m=\frac{gv}{2}
+\]
+In the last step we used the fact that $T^a$ and $T^b$ are generally normalized so that $\Tr{T^aT^b}=\delta^{ab}/2$. We observe that all the gauge fields acquire the same mass.\marginnote{If we make both SU$(N)_L$ and SU$(N)_R$ local we will have $N^2-1$ massive fields and $N^2-1$ will remain massless, but we do not want those extra massless fields.}
+SU$(N)_L\times$SU$(N)_R$ is not linearly realized even if the transformation for $\Sigma$ is linear: how is that possible? We have two non-linear constraints:
+\begin{enumerate}
+    \item $\Sigma\Sigma^\dagger=\Sigma^\dagger\Sigma=\mathbb{1}$ results in $N^2$ constraints ($\Sigma$ is a $N\times N$ hermitian matrix)
+    \item $\Tr{\log\Sigma}=0$ results in 1 constraint. This is because $\Sigma$ has to be not only unitary but also special, we are requiring that the generators are traceless.
+\end{enumerate}
+Finally, there will be $2N^2-N^2-1=N^2-1$ degrees of freedom which are exactly the ones we have.\\
+SU$(N)_V$ is linearly realized, which means that also $\chi(x)$ transforms linearly.
+\[
+\Sigma\xrightarrow[]{\text{SU}(N)_V}\underbrace{e^{i\alpha^AT^A}}_{V}\underbrace{e^{2i\chi^a(x)T^a/v}}_{\Sigma}\underbrace{e^{-i\alpha^AT^A}}_{V^\dagger}=\exp{2i\chi^a(x)VT^aV^\dagger}
+\]
+If we write the exponential as a series we obtain exactly the transformation rule for a linearly realized symmetry. Define now:
+\[
+\chi^a(x)T^a\to\chi^a(x)\underbrace{VT^aV^\dagger}_{R_{ab}T^b}=\underbrace{\chi^a(x)R_{ab}}_{\chi^b(x)}T^b=\chi^b(x)T^b
+\]
+We proved that SU$(N)_V$ is linearly realized. However, this theory is not complete because we cannot extrapolate it at arbitrary high energies. It is a theory of $N^2-1$ self-interacting spin-1 particles, in the unitary gauge we have:
+\[
+\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{2}m_A^2A_\mu^aA_\mu^a
+\]
+\subsection{SU$(2)\times$SU$(2)\to$SU(2) Spontaneous Breaking}
+Why do we switch to the formalism with $\Sigma$ when it is possible to write the Lagrangian in this way? First of all, it is not clear that it is a gauge theory while it is if we write it in terms of $\Sigma$. Moreover, $\Sigma$ contains an important information: in the scattering processes there is, at a certain energy, a probability larger than 1 as long as we are at the tree-level, we are losing perturbative unitarity. Consider the scattering of two longitudinal vectors $A_L^aA_L^b\to A_L^cA_L^d$: 
+\begin{figure}[h]
+    \centering
+    \includegraphics{Images/abcd.pdf}
+    \caption{Scattering of two longitudinal vectors.}
+    \label{fig:my_label}
+\end{figure}if we sum all the diagrams, we find out that the total goes like $E^2$, which is obviously not good. We have to use the equivalence theorem [\refsec{eqthm}] to try to cure this growth. The theorem tells us that we can compute the scattering amplitude of this process by substituting $A_L$ with the NGB $\chi$ but to perform this calculation we have to be in the $\xi$-gauge. 
+\[
+\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{v^2}{4}\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}+\text{gauge-fixing}
+\]
+We have to work on the trace term, let's write it explicitly:
+\[
+\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}=\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}+\underbrace{igA_\mu^a\Tr{-\partial_\mu\Sigma^\dagger T^a\Sigma+\Sigma^\dagger T^a\partial_\mu\Sigma}}_{=gA_\mu^a\Tr{\Sigma^\dagger T^ai\overset{\leftrightarrow}{\partial_\mu}\Sigma}=gA_\mu^AJ_\mu^a}+g^2A_\mu^aA_\mu^b\Tr{\Sigma^\dagger T^aT^b\Sigma}
+\]
+We want to expand this expression in powers of $\chi$, keeping only terms as high as $\chi^2$. We define $\chi:=\chi^aT^a/v$ and work in the case $N=2$ (SU$(2)\times$SU$(2)\to$SU(2)), where $T^a=\sigma^a/2$. We want to compute $igA_\mu^a\Tr{\Sigma^\dagger\frac{\sigma^a}{2}\partial_\mu\Sigma}$:
+\begin{align*}
+igA_\mu^a\Tr{\Sigma^\dagger\frac{\sigma^a}{2}\partial_\mu\Sigma}&\simeq igA_\mu^a\Tr{(1-i\chi-\chi^2/2+\dots)\frac{\sigma^a}{2}(i\partial_\mu\chi-\partial_\mu\chi^2/2+\dots)}\\
+&=igA_\mu^A\left[\Tr{i\frac{\sigma^a}{2}\partial_\mu\chi}+\Tr{\chi\frac{\sigma^a}{2}\partial_\mu\chi-\frac{1}{2}\frac{\sigma^a}{2}\partial_\mu\chi^2}+\pazocal{O}(\chi^3)\right]
+\end{align*}
+Hence, it follows that:
+\[
+\Tr{\Sigma^\dagger\frac{\sigma^a}{2}\overset{\leftrightarrow}{\partial_\mu}\Sigma}=\frac{2i}{v}\partial_\mu\chi^a+\frac{2i}{v^2}\varepsilon^{abc}\partial_\mu\chi^b\chi^c+\pazocal{O}(\chi^3)
+\]
+The first term tells us that $\pazocal{L}\supset-\frac{1}{2}gv^2A_\mu^a\partial^\mu\chi^a$ which is the term we want to remove, so we choose a proper gauge-fixing term:
+\[
+\pazocal{L}_{GF}=-\frac{1}{2\xi}(\partial_\mu A^{\mu,a}+\frac{1}{2}\xi gv\chi^a)^2
+\]
+The term $\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}$ is invariant under $\Sigma\to\Sigma^\dagger$, which is equivalent to changing the sign of $\chi^a$: in the expansion of powers of $\chi$, there will only be even powers of $\chi$. To compute the kinetic term, we need to go to the 4-th order in $\chi$, so we have to expand $\Sigma$ up to the 3-rd order.
+\[
+\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}\simeq\Tr{(-i\partial_\mu\chi-\frac{1}{2}\partial_\mu\chi^2+\frac{i}{6}\partial_\mu\chi^3+\dots)(-i\partial_\mu\chi-\frac{1}{2}\partial_\mu\chi^2+\frac{i}{6}\partial_\mu\chi^3+\dots)}
+\]
+The term $\chi^2$ is equal to $\chi^2=\frac{\chi^a\sigma^a}{2}\frac{\chi^bsigma^b}{2}=\frac{\chi^a\chi^b}{v^2}\frac{1}{2}\{\sigma^a\sigma^b\}$ so we can write:
+\[
+\frac{v^2}{4}\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}=\frac{1}{2}(\partial_\mu\chi^a)^2+\frac{1}{6v^2}[(\chi^a\partial_\mu\chi^a)^2-\chi^a\chi^a(\partial_\mu\chi^b\partial^\mu\chi^b)+\dots]
+\]
+The last term above is the only one contributing to the scattering at this order of energy, with a contribution$\simeq E^2/v^2$. The full Lagrangian with the gauge-fixing term is now the following:
+\begin{align*}
+\pazocal{L}+\pazocal{L}_{GF}&=-\frac{1}{4}(F_{\mu\nu}^a)^2-\frac{1}{2\xi}(\partial_\mu A^{\mu,a})^2+\frac{m_A^2}{2}A_\mu^aA_\mu^a+\frac{1}{2}(\partial_\mu\chi^a)^2-\frac{1}{2}m_A^2\xi(\chi^a)^2\\
+&-\frac{1}{2}g\varepsilon^{abc}A_\mu^a\partial_\mu\chi^b\chi^c+\frac{1}{6v^2}\left[(\chi^a\partial_\muchi^a)^2-\chi^a\chi^b(\partial_\mu\chi^b\partial^\mu\chi^b)\right]+\pazocal{O}[\chi^b,A\chi^3] \quad m_a=\frac{gv}{2}
+\end{align*}
+Now that we have the Lagrangian, it is possible to compute the amplitude but of a special case: $\chi^a\chi^b\to\chi^a\chi^b$.\marginnote{\includegraphics{Images/abab.pdf}\\
+Diagram at the first order in perturbation theory.}
+\[
+M(\chi^a\chi^b\to\chi^a\chi^b)=\frac{2i}{6v^2}[-(p_1-p_3)_\mu(p_2-p_4)^\mu-2\cdot2p_2\cdot p_4]
+\]
+We have to look at the kinematic of this process and it tells us that:
+\[
+\left\{
+\begin{aligned}
+&p_1+p_2=p_3+p_4\\
+&p_1-p_3=-(p_2-p_4)
+\end{aligned}
+\right.
+\to
+\left\{
+\begin{aligned}
+&(p_1-p_3)^2=t\\
+&(p_2-p_4)^2=t=2m_A^2-2p_2\cdot p_4
+\end{aligned}
+\right.
+\]
+Hence, the amplitude becomes:
+\begin{equation}
+\labeq{chi}
+M(\chi^a\chi^b\to\chi^a\chi^b)=\frac{i}{3v^2}[t+2(t-2m_A^2)]+\dots=\frac{it}{v^2}+\dots\sim\frac{E^2}{v^2}:=g^2(E)
+\end{equation}
+It is possible to interpret this amplitude as the coupling squared, which grows with the energy. The strength of this interaction increases as the energy increases, therefore there will be a certain value of energy for which perturbative theory does not hold anymore: is it possible to estimate this value? We consider the 1-loop contribution \marginnote{\includegraphics[]{Images/chiloop.pdf}\\
+1-loop diagram.} which gives a contribution $\sim\frac{E^2}{v^2}\frac{E^2}{16\pi^2v^2}$, so the perturbative expansion will be something like:
+\[
+g^2(E)+g^2(E)\frac{g^2(E)}{16\pi^2}+\dots
+\]
+This perturbative series breaks when $\frac{g^2(E)}{16\pi^2}\sim\pazocal{O}(1)$, which corresponds to $E_{max}\approx4\pi v$: at this energy we lose perturbative unitarity. 
+\section{Higgs Boson}
+What do we do with this theory when it breaks at high energies? There are two possibilities:
+\begin{enumerate}
+    \item modify the theory, so that it becomes mathematically complete. To do that, we need to add more degrees of freedom
+    \item keep it as an effective field theory, valid upon a certain energy
+\end{enumerate}
+We start with the first option, adding degrees of freedom. It is possible to add just one to make the theory complete, the \textbf{Higgs boson}. It is exactly what we have done for the U(1) case:
+\[
+\varphi(x)=\frac{v}{\sqrt{2}}\exp{i\chi(x)/v} \quad \varphi^\dagger(x)\varphi(x)=\frac{v^2}{2}
+\]
+$\varphi(x)$ was not a complete representation of U(1), it has to be a complex scalar representation with 2 degrees of freedom, hence the non-linear constraint. We have also seen that it is possible to incorporate one extra degree of freedom to make the theory linearly realized:
+\[
+\varphi(x)=\frac{v+h(x)}{\sqrt{2}}\exp{i\chi(x)/v}
+\]
+In this way we can realize a real U(1) linear transformation. However, this theory is not renormalizable because the coupling goes like $E^{-2}$.\marginnote{From power counting, we know that theories with couplings which go like a negative power of the energy are not renormalizable.} Moreover, we have a global symmetry not linearly realized. These two observations are correlated: if we can add a degree of freedom to make the theory renormalizable we can prove that the theory can be extrapolated at arbitrary high energies. \\
+Let's see how to realize a complete representation. On the field $\Sigma$ we had the following conditions:
+\[
+\underbrace{\Sigma^\dagger\Sigma=\Sigma\Sigma^\dagger=\mathbb{1}}_{\text{4 conditions}} \quad \underbrace{\det\Sigma=1}_{\text{1 condition}}
+\]
+A $2\times2$ complex matrix has 8 degrees of freedom: 8-5=3 Adj of SU$(2)_V$. What is the smallest possible dimension of a SU$(2)_L\times$SU$(2)_R$ representation? Let $\Phi$ a generic $2\times2$ matrix which transforms as $\Phi\to L\Phi R^\dagger$: this has 8 degrees of freedom, 5 more than the ones we had before. We need to impose some linear constraint on $\Phi$. We use the fact that SU(2) has pseudo-real representations, i.e. real up to a unitary transformation. Let $\Psi$ be $\Box$ of SU(2), pseudo real: if $\Psi^*$ transforms as a doublet of SU(2), then it is a real representation. However, $\Psi$ is pseudo-real so we add a unitary transformation:
+\[
+U\Psi^*=i\sigma^2\Psi^*:=\Psi^c
+\]
+In the SU(2) case, the unitary transformation is $i\sigma^2$, therefore we have:
+\[
+\left\{
+\begin{aligned}
+&\Psi\to\exp{i\alpha^a\sigma^a}\Psi\\
+&\Psi^c\to\exp{i\alpha^a\sigma^a}\Psi^c
+\end{aligned}
+\right.
+\]
+Suppose now that $\Phi$ transforms as $\Phi\to L\Phi R^\dagger$, $\Phi^c=i\sigma^2\Phi^*(-i\sigma^2)$ will transform as $\Phi^c\to L\Phi^c R^\dagger$: it transforms in the same way as $\Phi$. We can impose $\Phi=\Phi^c$, throwing away 4 degrees of freedom since it gives us 4 conditions. Now $\mathcal{H}:=\Phi$\marginnote{The change of notation in the last few lines:\\
+\includegraphics[]{Images/parkour.jpg}\\
+Parkour!} and it is possible to define $\mathcal{H}\to L\mathcal{H}R^\dagger$, $\mathcal{H}=i\sigma^2\mathcal{H}^*(-i\sigma^2)$ this is the reality condition from which it follows that $\mathcal{H}=\varphi(x)\Sigma(x)$. $\mathcal{H}$ has 4 degrees of freedom, 3 in $\Sigma(x)$ and 1 in $\varphi(x)$. In general $\mathcal{H}$ is a $2\times2$ matrix which can always be written as $\mathcal{H}=a_0\mathbb{1}+ia_i\sigma^i$, but the reality condition implies that $a_0$ and $a_i$ must be real.
+\begin{align*}
+&\mathcal{H}^\dagger\mathcal{H}=(a_0\mathbb{1}-ia_i\sigma^i)(a_0\mathbb{1}+ia_i\sigma^i)=a_0^2\mathbb{1}+a_ia_j\sigma^i\sigma^j\\
+&=a_0^2\mathbb{1}+\frac{a_ia_j}{2}\{\sigma^i,\sigma^j\}=(a_0^2+a_i^2)\mathbb{1}
+\end{align*}
+$\mathcal{H}^\dagger\mathcal{H}$ is the identity, we could have seen it directly from the definition $\mathcal{H}=\varphi(x)\Sigma(x)$. At this point we have to write the Lagrangian for $\mathcal{H}$ and obtain the Feynman rules, i.e. the interactions.
+\[
+\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{4}\Tr{(D_\mu\mathcal{H})^\dagger(D^\mu\mathcal{H})}
+\]
+SU$(2)_L\times$SU$(2)_R$ has to be spontaneously broken, so we must add a potential $V(\mathcal{H})$ to the Lagrangian.\marginnote{We add it with a minus sign so that we can recover the usual Mexican hat. Andale! Andale!}
+\[
+V(\mathcal{H})=-\frac{\mu^2}{4}\Tr{\mathcal{H}^\dagger\mathcal{H}}+\frac{\lambda}{16}(\Tr{\mathcal{H}^\dagger\mathcal{H}})^2=-\frac{\mu^2}{2}\varphi^2(x)+\frac{\lambda}{4}\varphi^4(x)
+\]
+It follows that $\langle\varphi(x)\rangle=v=\sqrt{\mu^2/\lambda}$, so we can write $\varphi(x)=v+h(x)$ where $h(x)$ is the Higgs boson (fluctuations around the vev). Now we have to substitute the expression for $\mathcal{H}$ in the $\xi$-gauge and find the interactions. From the trace term we obtain the kinetic term for the Higgs boson, while from the potential the mass term for $h(x)$ and its interactions.
+\begin{align*}
+&\bullet D_\mu\mathcal{H}=\partial_\mu\varphi\Sigma+\varphi D_\mu\Sigma\\
+&\bullet \Tr{(D_\mu\mathcal{H})^\dagger(D^\mu\mathcal{H})}=2(\partial_\mu\varphi)^2\Tr{\Sigma\Sigma^\dagger}+\varphi^2\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}
+\end{align*}
+From the last trace, the main interaction we find for the Higgs boson is $\frac{1}{2}(\partial_\mu\chi^2)^2\frac{h}{4}$, which gives a contribution to the scattering amplitude. This contribution is what cures $g^2(E)$.\\
+It is possible to write the full Lagrangian as:
+\[
+\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{2}(\partial_\mu\varphi)^2+\frac{\mu^2}{2}\varphi^2-\frac{\lambda}{4}\varphi^4+\frac{1}{4}\varphi^2\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}
+\]
+Let's look at the potential: if we look for the minima, we find\\
+$\langle\varphi\rangle=v=\sqrt{\mu^2/\lambda}$. This means that SU$(2)_L\times$SU$(2)_R$ is a broken symmetry, broken to SU$(2)_V$. It is now possible to define the field $\varphi(x)$ as the vev+a certain excitation $h(x)$ with $m_h^2=2\mu^2$. This is the 4-th degree of freedom for the massive radial excitation, the other 3 are in $\Sigma$ and parameterize the excitation around the valley of minima.
+\begin{align*}
+\pazocal{L}&=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{2}(\partial_\mu h(x))^2+\frac{1}{2}m_h^2h^2(x)-\lambda vh^3(x)-\frac{\lambda}{4}h^4(x)\\
+&+\frac{v^2}{4}\left(1+\frac{h(x)}{v}\right)^2\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}+\text{constant terms}
+\end{align*}
+We have $h(x)$ as a self-interacting massive field and it interacts through the last term with the NGB $\chi^a$ contained in $\Sigma$. We want to understand this interaction and see how this fixes the dependency $E^2$ of the scattering amplitude of $\chi^a\chi^b\to\chi^a\chi^b$. This gives us the diagram depicted on the side \marginnote[-3cm]{\includegraphics{Images/aahbb.png}}:
+\begin{align*}
+M_h(\chi^a\chi^b\to\chi^a\chi^b)&=\frac{i^2}{2!v^2}2\cdot2\cdot2(p_1\cdot p_3)(p_2\cdot p_4)\frac{i}{(p_1-p_3)^2-m_h^2}\\
+&=\frac{-i}{t-m_h^2}(t-2m_A)^2\frac{1}{v^2}=-\frac{it}{v^2}+\dots
+\end{align*}
+This contribution is exactly the same as the one from $\chi$ [\refeq{chi}] with opposite sign, hence they cancel each other and the scattering amplitude is constant at high energies. \raisebox{-\mydepth}{{\includegraphics[height=1.1\baselineskip]{Images/smile.jpg}}}
+
+If we have a spontaneously broken symmetry G$\to$H, the fields must form a complete multiplet of H, not of G. There are two possibilities to spontaneously break G to H:
+\begin{itemize}
+    \item fields form complete multiplets of G but at the minimum of the potential G$\to$H.\marginnote{The symmetry G is recovered at high energies, $E\gg v$} What we have is then a massive spin-1 particles theory which at high energies can be interpreted as massless spin-1 particles+scalar. This means that at high energies the spin-1 massive theory has to be interpreted as a gauge theory where the fields are representations of G.
+    \item fields do not form a complete representation of G but only of H: they cannot be extrapolated at high energies, the massive spin-1 particles theory collapses at some point because there is one less degree of freedom, there is no $h(x)$. It is an effective theory, there is a cut-off $\Lambda\approx4\pi v$.
+\end{itemize}
+
 \end{document}
 
 
