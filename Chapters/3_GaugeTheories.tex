@@ -6,34 +6,58 @@
 \chapter[Gauge Field Theories]{Gauge Field Theories\footnotemark[0]}
 \labch{GT}
 \section{Particles in the Poincaré Group}
-In this chapter, we want to discuss gauge invariance. As a starting point, we give some definitions:
-\begin{itemize}
-    \item \underline{Particle}: unitary infinite-dimensional representation of the Poincaré group
-    \item \underline{Field}: non-unitary finite-dimensional representation of the Lorentz group
-\end{itemize}
-Photons have 2 degrees of freedom, while the field $A_\mu$ has 4: one of them is redundant and it is possible to suppress it using gauge invariance. Requesting Lorentz invariance implying having gauge invariance, hence the latter is not a symmetry. We encounter this type of redundancy in quantum mechanics too, where there are the phases of our states. Here it is the same thing, with just more degrees of freedom. Gauge invariance has no physical implication, it is not associated to any conservation law, it is just a technical instrument that allows us to have local fields.\\
-We want to move from particles to local fields and in order to do that we use the \textbf{method of induced representations} (Wigner), which works for non semi-simple groups: we need an invariant and abelian subgroup. The Lorentz group SO(3,1) does not satisfy this constraint, so we use the group of isomorphisms in the \href{https://en.wikipedia.org/wiki/Hermann_Minkowski}{Minkowski} space ISO(3,1): the Poincaré group.
+One important symmetry of our universe is that no place in space-time seems to be different from any other place. Therefore, our theory should be \textbf{translation invariant}. Another important symmetry is \textbf{Lorentz invariance}. The group of translations and Lorentz transformations is called the \textbf{Poincaré group} ISO(1,3).\\
+We move our attention to particles, which have mass, spin and other quantum numbers. They also have momentum and the projection of spin on some axis. If we rotate or boost to change frame, only the momenta and the spin projection change, but other quantum numbers do not. Hence, a particle can be defined as a set of states that mix only among themselves under Poincaré transformations, denoted by $\pazocal{P}$.
 \[
-[P^\mu,P^\nu]=0 \quad [M^{\mu\nu},P^\rho]=i(\eta^{\mu\rho}P^\nu-\eta^{\nu\rho}P^\mu)
+\ket{\Psi}\to\pazocal{P}\ket{\Psi}
 \]
-The first commutator tells us that the translations form an abelian subgroup, the second one is invariant, i.e. $U(\Lambda)P^\mu U^{-1}(\Lambda)=\eta^\mu_\nu P^\nu$ with $U(\Lambda)=e^{i\omega_{\mu\nu}M^{\mu\nu}}$. How can the Poincaré group be characterized? There are two Casimir operators:
+A set of objects $\Psi$ that mix under a transformation group is called a \textbf{representation} of the group. If no subset of states transform among themselves then the representation is \textbf{irreducible}. Moreover, we want \textbf{unitary} representations. This is because in field theory we compute matrix elements $\pazocal{M}=\bra{\Psi_1}\ket{\Psi_2}$ which should be Poincaré invariant. If $\pazocal{M}$ is Poincaré invariant and $\ket{\Psi_1}$ and $\ket{\Psi_2}$ transform under a Poincaré transformation $\pazocal{P}$ we find:
 \[
-\left\{
-\begin{aligned}
-&P^\mu P_\mu=P^2\xleftarrow[]{}\text{invariant mass}\\
-&W^\mu W_\mu=W^2\xleftarrow[]{}\text{\href{https://en.wikipedia.org/wiki/Pauli-Lubanski_pseudovector}{Pauli-Lubanski} vector}\;W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}P_\sigma
-\end{aligned}
-\right.
+\pazocal{M}=\bra{\Psi_1}\pazocal{P}^\dagger\pazocal{P}\ket{\Psi_2}
 \]
-Focus now on the invariant mass: the fact that it commutes with all the generators of the algebra implies that if an element of the representation has a certain $P^2$, it will be the same for all the other elements of the same representation. There are different types of irreducible representations:
+\marginnote{From \cite{schwartz}, Section 8.1.}So $\pazocal{P}^\dagger\pazocal{P}=1$, which is the definition of unitarity. Unitary representations of the Poincaré group are only a small subset of all the possible representations of it. 
+\begin{definition}
+Particles transform under irreducible unitary representation of the Poincaré group.
+\end{definition}
+Unfortunately, there are \textit{no finite-dimensional unitary representations} of the Poincaré group. The \textit{unitary irreducible representations} of the Poincaré group were classified by Wigner: they are all infinite dimensional and described by \textbf{fields}.
+% In this chapter, we want to discuss gauge invariance. As a starting point, we give some definitions:
+% \begin{itemize}
+%     \item \underline{Particle}: unitary infinite-dimensional representation of the Poincaré group
+%     \item \underline{Field}: non-unitary finite-dimensional representation of the Lorentz group
+% \end{itemize}
+% Photons have 2 degrees of freedom, while the field $A_\mu$ has 4: one of them is redundant and it is possible to suppress it using gauge invariance. Requesting Lorentz invariance implying having gauge invariance, hence the latter is not a symmetry. We encounter this type of redundancy in quantum mechanics too, where there are the phases of our states. Here it is the same thing, with just more degrees of freedom. Gauge invariance has no physical implication, it is not associated to any conservation law, it is just a technical instrument that allows us to have local fields.\\
+% We want to move from particles to local fields and in order to do that we use the \textbf{method of induced representations} (Wigner), which works for non semi-simple groups: we need an invariant and abelian subgroup. The Lorentz group SO(3,1) does not satisfy this constraint, so we use the group of isomorphisms in the \href{https://en.wikipedia.org/wiki/Hermann_Minkowski}{Minkowski} space ISO(3,1): the Poincaré group.
+% \[
+% [P^\mu,P^\nu]=0 \quad [M^{\mu\nu},P^\rho]=i(\eta^{\mu\rho}P^\nu-\eta^{\nu\rho}P^\mu)
+% \]
+% The first commutator tells us that the translations form an abelian subgroup, the second one is invariant, i.e. $U(\Lambda)P^\mu U^{-1}(\Lambda)=\eta^\mu_\nu P^\nu$ with $U(\Lambda)=e^{i\omega_{\mu\nu}M^{\mu\nu}}$. How can the Poincaré group be characterized? There are two Casimir operators:
+% \[
+% \left\{
+% \begin{aligned}
+% &P^\mu P_\mu=P^2\xleftarrow[]{}\text{invariant mass}\\
+% &W^\mu W_\mu=W^2\xleftarrow[]{}\text{\href{https://en.wikipedia.org/wiki/Pauli-Lubanski_pseudovector}{Pauli-Lubanski} vector}\;W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}P_\sigma
+% \end{aligned}
+% \right.
+% \]
+% Focus now on the invariant mass: the fact that it commutes with all the generators of the algebra implies that if an element of the representation has a certain $P^2$, it will be the same for all the other elements of the same representation. 
+\marginnote{From \cite{WKT}, Section 10.4.}The unitary irreducible representation of the Poincaré group can be derived by using the \textbf{method of induced representation}. This method is based on the use of the abelian invariant subgroup of translations T$_4$. The square of the four-momentum is a \textbf{Casimir operator} which commutes with all generators, hence with all group transformations. We define it as:
+\[
+C_1:=P_\mu P^\mu=P^2=p_0^2-p^2
+\]
+$C_1$ has the desired properties because it is Lorentz invariant (as the scalar product of $P^\mu$ with itself) and it is also invariant under translations due to the abelian nature of T$_4$. However, its eigenvalue $c_1$ is not positive definite and the irreducible representations of the Lorentz group are labelled by $c_1$. The second Casimir of the Poincaré group comes from the \href{https://en.wikipedia.org/wiki/Pauli-Lubanski_pseudovector}{Pauli-Lubanski} vector:
+\[
+C_2:=W_\mu W^\mu=W^2 \quad W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}P_\sigma
+\]
+We can distinguish among 4 cases:
 \begin{enumerate}
-    \item null vector: $P^2=0, P^\mu=0$ is an eigenvalue of $P^2$ (vacuum)
-    \item time-like: $P^2>0$ (massive particle)
-    \item light-like: $P^2=0, P^\mu\neq0$ (massless particle)
-    \item space-like: $P^2<0$
+    \item null vector $p$: $c_1=0$ and $p^0=\Vec{p}=0$ (vacuum)
+    \item time-like $p$: $c_1>0$ (massive particle)
+    \item light-like $p$: $c_1=0, p^\mu\neq0$ (massless particle)
+    \item space-like $p$: $c_1<0$
 \end{enumerate}
-\section{One-Particle Massive States}
-We want to find the quantum numbers which define these states, we can label them with eigenvalues $p^\mu$ of $P^\mu$. Consider now a subspace with $P^\mu=K^\mu$, with $K^\mu$ the reference momentum. We can make a clever choice and work in the reference system where the massive particle is at rest, i.e. $K^\mu=(m,0,0,0)$. Operators which commute with $P^\mu$ for $p^\mu=k^\mu$ generate transformations that leave $K^\mu$ invariant: $W^\mu_\nu K^\nu=K^\mu$ are elements of the \textbf{little group} of $K^\mu$. Regarding our choice, the little group is SO(3) and we can use $J^2$ and $J_z$. SO(3) is compact, therefore the eigenvalues of its generators are quantized. We can prove that $J^2$ is proportional to the second Casimir $W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}P_\sigma$, $\sigma$ must be a temporal index, all the other ones are spatial.
+\section{One-Particle States}\marginnote{From \cite{W1}, Section 2.5.}
+\subsection{Massive States}
+We now consider the classification of one-particle states according to their transformation under the Poincaré group. The components of the energy-momentum four-vector all commute with each other, therefore it is natural to express physical state-vectors in terms of eigenvectors $p^\mu$ of the four-momentum $P^\mu$. Consider now a subspace with $P^\mu=K^\mu$, with $K^\mu$ the reference momentum. We can make a clever choice and work in the reference system where the massive particle is at rest, i.e. $K^\mu=(m,0,0,0)$. Operators which commute with $P^\mu$ for $p^\mu=k^\mu$ generate transformations that leave $K^\mu$ invariant: $W^\mu_\nu K^\nu=K^\mu$ are elements of the \textbf{little group} of $K^\mu$. Regarding our choice, the little group is SO(3) and we can use $J^2$ and $J_z$. SO(3) is compact, therefore the eigenvalues of its generators are quantized. We can prove that $J^2$ is proportional to the second Casimir $W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}P_\sigma$, $\sigma$ must be a temporal index, all the other ones are spatial.
 \[
 W^i=\frac{1}{2}\epsilon^{ijk}M_{jk}\cdot M=J^i\cdot M\xrightarrow[]{}W^2=J^2\cdot M^2
 \]
@@ -89,7 +113,7 @@ where $(\vec{p}_\Lambda)=(\Lambda p)^i$. This is our irreducible representation,
 \[
 \Rightarrow \delta_{\sigma\sigma'}=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*\delta_{\hat{\sigma}\hat{\sigma}'}=\sum_{\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}^*} \quad \text{$D$ is unitary}
 \]
-\section{One-Particle Massless States}
+\subsection{Massless States}
 We want to repeat the same arguments for one-particle massless states, but in this case it is not so simple because the little group is not trivial.\marginnote{Ah perché prima era simple?} As before, we start by taking a reference momentum which must be compatible with the light-like nature of the state, so we take $K^\mu=(k,0,0,k)$. We need to find the little group of $K^\mu$ which will include SO(2) rotation around the $z$-axis: we can perform a boost along the $x$-axis, a rotation in the $xz$ plane and again a boost but in the $z$-axis. We require that this sequence of transformations leaves $K^\mu$ invariant.
 \begin{enumerate}
     \item Boost along the $x$-axis:
