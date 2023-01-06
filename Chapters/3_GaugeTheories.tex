@@ -125,11 +125,65 @@ It follows that:
 \delta_{\sigma\sigma'}=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*\delta_{\hat{\sigma}\hat{\sigma}'}=\sum_{\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}^*}\Rightarrow\text{$D$ is unitary}
 \]
 \subsection{Massive States}
-For massive states, we make a clever choice and work in the reference system where the massive particle is at rest, i.e. $K^\mu=(m,0,0,0)$. The little group is SO(3), since rotations are the only proper orthochronous Lorentz transformations that leaves at rest a particle with zero momentum. We can use the generators $J^2$ and $J_z$ and, being SO(3) compact, the eigenvalues of its generators are quantized. We can prove that $J^2$ is proportional to the second Casimir $W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}P_\sigma$. $\sigma$ must be a temporal index while all the other ones are spatial.
+For massive states, we make a clever choice and work in the reference system where the massive particle is at rest, i.e. $K^\mu=(m,0,0,0)$. The little group is SO(3), since rotations are the only proper orthochronous Lorentz transformations that leaves at rest a particle with zero momentum. 
+% For SO(2) we have just one Casimir, $J^2$, which is the element that commutes with all the other elements in the algebra, $[J^2,J^i]=\exp{iJ^iM^i\theta}=0$. The action of the operator does not change the Casimir:
+% \[
+% J^2U(R(\theta))\ket{s,\sigma}\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize they commute };}}{=}U(R(\theta))J^2\ket{s,\sigma}=\hbar^2s(s+1)U(R(\theta))\ket{s,\sigma}
+% \]
+% $\ket{\Vec{k},\sigma}$ gives us a unitary infinite-dimensional representation of the Poincaré group, the idea is to extend this structure to other states of the representation. 
+As seen before, elements of the little group are given by $W(\Lambda,p)=L^{-1}(\Lambda p)\Lambda L(p)$. To calculate this rotation, we have to choose a standard boost $L(p)$ which takes the four-momentum from $K^\mu$ to $P^\mu$. Conveniently, this is chosen as:
+\[
+\left\{
+\begin{aligned}
+&L_k^i(p)=\delta_{ik}+(\gamma-1)\hat{p}_i\hat{p}_k\\
+&L^i_0(p)=L^0_i(p)=\hat{p}_i\sqrt{\gamma^2-1}\\
+&L^0_0(p)=\gamma
+\end{aligned}
+\right.
+\quad \text{where}\;
+\left\{
+\begin{aligned}
+&\hat{p}_i=\frac{p_i}{|\Vec{p}|}\\
+&\gamma=\frac{\sqrt{p^2+m^2}}{m}
+\end{aligned}
+\right.
+\]
+When $\Lambda^\mu_\nu$ is an arbitrary three-dimensional rotation $\pazocal{R}$, the Wigner rotation $W(\Lambda,p)$ is the same as $\pazocal{R}$ for all $p$. In order to see this, note that the boost $L(p)$ may be expressed as:
+\[
+L(p)=R(\hat{p})B(|\Vec{p}|)R^{-1}(\hat{p})
+\]
+where $R(\hat{p})$ is a rotation that takes the three-axis into the direction of $\Vec{p}$, while $B(|\Vec{p}|)$ is defined as:
+\[
+B(|\Vec{p}|)=\left(\begin{array}{cccc}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & \gamma & \sqrt{\gamma^2-1} \\
+    0 & 0 & \sqrt{\gamma^2-1} & \gamma 
+\end{array}\right)
+\]
+For an arbitrary rotation $\pazocal{R}$ we then have:
+\[
+W(\pazocal{R},p)=R(\pazocal{R}\hat{p})B^{-1}(|\Vec{p}|){\color{green}R^{-1}(\pazocal{R}\hat{p})\pazocal{R}R(\hat{p})}B(|\Vec{p}|)R^{-1}(\hat{p})
+\]
+The rotation highlighted in green takes the three-axis into the direction of $\Vec{p}$ then in the direction of $\pazocal{R}\Vec{p}$ and then back to the three-axis, therefore it must be just a rotation by some angle $\theta$ around the three-axis:
+\[
+R^{-1}(\pazocal{R}\hat{p})\pazocal{R}R(\hat{p})=R(\theta)=\left(\begin{array}{cccc}
+    \cos\theta & \sin\theta & 0 & 0 \\
+    -\sin\theta & \cos\theta & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1
+\end{array}\right)
+\]
+$R(\theta)$ commute with $B(|\Vec{p}|)$, which gives us:
+\[
+W(\pazocal{R},p)=R(\pazocal{R}\hat{p})B^{-1}(|\Vec{p}|)R(\theta)B(|\Vec{p}|)R^{-1}(\hat{p})=R(\pazocal{R}\hat{p})R(\theta)R^{-1}(\hat{p})=\pazocal{R}
+\]
+Finally, this shows us that states of a moving massive particles have the same transformation under rotations as in non-relativistic quantum mechanics.\\
+In order to label our sates, it is possible to use the generators $J^2$ and $J_z$ and, being SO(3) compact, the eigenvalues of these generators are quantized. For these states we only need $K^\mu$, $J^2$ and $J_z$. We can prove that $J^2$ is proportional to the second Casimir $W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}P_\sigma$. $\sigma$ must be a temporal index while all the other ones are spatial.
 \[
 W^i=\frac{1}{2}\epsilon^{ijk}M_{jk}\cdot m=J^i\cdot m\xrightarrow[]{}W^2=J^2\cdot m^2
 \]
-We want to find all the other operators that commute with the Casimir to label the state as $\ket{\Vec{k},\sigma,m,s}$.\marginnote{In principle, we could have other quantum numbers, like isospin, but they have nothing to do with the Poincaré group.}
+Our state can be labeled as $\ket{\Vec{k},\sigma,m,s}$.\marginnote{In principle, we could have other quantum numbers, like isospin, but they have nothing to do with the Poincaré group.}
 \[
 \left\{
 \begin{aligned}
@@ -139,13 +193,8 @@ We want to find all the other operators that commute with the Casimir to label t
 \end{aligned}
 \right.
 \]
-% For SO(2) we have just one Casimir, $J^2$, which is the element that commutes with all the other elements in the algebra, $[J^2,J^i]=\exp{iJ^iM^i\theta}=0$. The action of the operator does not change the Casimir:
-% \[
-% J^2U(R(\theta))\ket{s,\sigma}\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize they commute };}}{=}U(R(\theta))J^2\ket{s,\sigma}=\hbar^2s(s+1)U(R(\theta))\ket{s,\sigma}
-% \]
-% $\ket{\Vec{k},\sigma}$ gives us a unitary infinite-dimensional representation of the Poincaré group, the idea is to extend this structure to other states of the representation. 
 \subsection{Massless States}
-We want to repeat the same arguments for one-particle massless states, but in this case it is not so simple because the little group is not trivial. As before, we start by taking a reference momentum which must be compatible with the light-like nature of the state, so we take $K^\mu=(k,0,0,k)$. We need to find the little group of $K^\mu$ which will include SO(2) rotation around the $z$-axis: we can perform a boost along the $x$-axis, a rotation in the $xz$ plane and again a boost but in the $z$-axis. We require that this sequence of transformations leaves $K^\mu$ invariant.
+We want to repeat the same arguments for one-particle massless states, but in this case it is not so simple because the little group is not trivial like it was before. As we previously did, we start by taking a reference momentum which must be compatible with the light-like nature of the state, so we take $K^\mu=(k,0,0,k)$. We need to find the little group of $K^\mu$: we can perform a boost along the $x$-axis, a rotation in the $xz$ plane and again a boost but in the $z$-axis. We require that this sequence of transformations leaves $K^\mu$ invariant.
 \begin{enumerate}
     \item Boost along the $x$-axis:
     \[
@@ -213,11 +262,58 @@ We want to repeat the same arguments for one-particle massless states, but in th
     \end{array}\right)
     \]
 \end{enumerate}
-This sequence of transformations leaves the momentum invariant, we can perform the boost along the $x$-axis and then the boost along the $z$-axis or vice-versa. Now we want to find the generators of these transformations which commute with $P$ and that allow us to find the quantum numbers needed to label our states. What we have to do is taking the product of these transformations and make it infinitesimal, assuming that $\beta$ is small. For $\beta\ll1$ we have:
+This sequence of transformations leaves the momentum invariant, we can perform the boost along the $x$-axis and then the boost along the $z$-axis or vice-versa. Now we want to find the generators of these transformations which commute with $P$ and that allows us to find the quantum numbers needed to label our states. What we have to do is taking the product of these transformations and make it infinitesimal, assuming that $\beta$ is small. For $\beta\ll1$ we have:
 \[
 \gamma\simeq1+\frac{1}{2}\beta^2 \quad \sin\theta=\beta \quad \cos\theta=1+\pazocal{O}(\beta^2) \quad \Tilde{\beta}=-\frac{1}{2}\beta^2 \quad \Tilde{\gamma}=1+\pazocal{O}(\beta^2)
 \]
-To the first order in $\beta$, only the first two transformations make a relevant contribution. We denote with $K_1$ the generator of the boost along the $x$-axis and with $J_2$ the generator of the rotation in the $xz$ plane.
+To the first order in $\beta$, only the first two transformations make a relevant contribution.\marginnote{For $\beta\ll1$, the matrix of the third transformation becomes the identity at first order in $\beta$.}
+\[
+\begin{aligned}
+&\bullet\text{Boost along the $x$-axis:}&&\left(\begin{array}{cccc}
+\gamma & \beta\gamma & 0 & 0 \\
+    \beta\gamma & \gamma & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 
+    \end{array}\right)\underset{\beta\ll1}{\simeq}\left(\begin{array}{cccc}
+    1 & \beta & 0 & 0 \\
+    \beta & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 
+    \end{array}\right)\\
+&\bullet\text{Rotation in the $xz$ plane:}&&\left(\begin{array}{cccc}
+    1 & 0 & 0 & 0 \\
+    0 & \cos\theta & 0 & -\sin\theta \\
+    0 & 0 & 1 & 0 \\
+    0 & \sin\theta & 0 & \cos\theta 
+    \end{array}\right)\underset{\beta\ll1}{\simeq}\left(\begin{array}{cccc}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & -\beta \\
+    0 & 0 & 1 & 0 \\
+    0 & \beta & 0 & 1
+    \end{array}\right)
+\end{aligned}
+\]
+When taking the product of the two, what we get is:
+\begin{align*}
+\Lambda^\mu_\nu&=\left(\begin{array}{cccc}
+    1 & \beta & 0 & 0 \\
+    \beta & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 
+    \end{array}\right)\left(\begin{array}{cccc}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & -\beta \\
+    0 & 0 & 1 & 0 \\
+    0 & \beta & 0 & 1
+    \end{array}\right)=\left(\begin{array}{cccc}
+    1 & \beta & 0 & 0 \\
+    \beta & 1 & 0 & -\beta \\
+    0 & 0 & 1 & 0 \\
+    0 & \beta & 0 & 1
+    \end{array}\right)+\pazocal{O}(\beta^2)\\
+    &=\delta^\mu_\nu+i\beta A^\mu_\nu+\pazocal{O}(\beta^2)
+\end{align*}
+The matrix $A^\mu_\nu$ is defined as:
 \[
 A^\mu_\nu=\left(\begin{array}{cccc}
     0 & -i & 0 & 0 \\
@@ -226,25 +322,26 @@ A^\mu_\nu=\left(\begin{array}{cccc}
     0 & -i & 0 & 0
 \end{array}\right)=(K_1+J_2)^\mu_\nu
 \]
-The total transformation $\Lambda^\mu_\nu$ can be written as $\Lambda^\mu_\nu=\delta^\mu_\nu+i\beta A^\mu_\nu+\pazocal{O}(\beta^2)$.\\
-What other transformations can we do? We can perform a SO(2) rotation in the $xy$ plane or a transformation like the one generated by $A^\mu_\nu$ but with the boost along the $y$-axis, defined by $B^\mu_\nu$.
+where we denoted with $K_1$ the generator of the boosts along the $x$-axis and with $J_2$ the generator of the rotations around $\hat{y}$.\\
+What other transformations can we do? We can perform a SO(2) rotation in the $xy$ plane or a transformation like the previous one but with the boost along the $y$-axis, defining in this way $B^\mu_\nu$.
 \[
 B^\mu_\nu=\left(\begin{array}{cccc}
     0 & 0 & -i & 0 \\
     0 & 0 & 0 & 0 \\
     -i & 0 & 0 & i \\
     0 & 0 & -i & 0
-\end{array}\right)=(K_2+J_1)^\mu_\nu
+\end{array}\right)=(K_2-J_1)^\mu_\nu
 \]
+In this case, $K_2$ is the generator of the boosts along the $y$-axis and $J_1$ the generator of the rotations around $\hat{x}$.\\
 The little group will be composed by three generators, $A^\mu_\nu$, $B^\mu_\nu$ and $J_3$ so in general we have:
 \[
 \Lambda^\mu_\nu=\delta^\mu_\nu+i\alpha A^\mu_\nu+i\beta B^\mu_\nu+i\theta J_3
 \]
-We found the generators but to identify the group we need to define the algebra. Take these three matrices, compute the commutator and we find:
+We found the generators but to identify the group we need to define the algebra. Take these three matrices, compute the commutators and we find:
 \[
 [J_3,A]=iB \quad [J_3,B]=-iA \quad [A,B]=0
 \]
-$A$ and $B$ commute, they transform one into another under the action of $J_3$: this is an invariant subgroup. There will surely be SO(2) generated by $J_3$ plus another invariant subgroup generated by $A$ and $B$. If we put them in a vector, we observe that it is a translation, so we have rotation+translation. This is the \textbf{group of isomorpshims} in $\mathbb{R}^2$ called ISO(2) which is not compact. We have to find the unitary representation of this group but, as in the Poincaré case, being it not compact we have the problem that this unitary representation will not be finite-dimensional. However, we have an invariant subgroup, so it is possible to use again the induced representations method but we need to find the Casimir. So far, we have just one Casimir $P^2=A^2+B^2$, $\vec{P}=(A,B)$. As in the massless case, this corresponds to the second Casimir of the Poincaré group, which is the square of the Pauli-Lubanski vector $W^\mu$ and we restrict it to states with $P^\mu=K^\mu=(k,0,0,k)$.
+$A$ and $B$ commute and they transform one into another under the action of $J_3$: this is an invariant subgroup. There will surely be SO(2) generated by $J_3$ plus another invariant subgroup generated by $A$ and $B$. If we put them in a vector, we observe that it is a translation, so we have rotation+translation. This is the \textbf{group of isomorpshims} in $\mathbb{R}^2$ called ISO(2) which is not compact\marginnote{The Poincaré group is the group of isomorphism in Minkowski space, denoted by ISO(3,1).}. We have to find the unitary representation of this group but, as in the Poincaré case, being it not compact we have the problem that this unitary representation will not be finite-dimensional. However, we have an invariant subgroup, so it is possible to use again the induced representations method but we need to find the Casimir. So far, we have just one Casimir $P^2=A^2+B^2$, $\vec{P}=(A,B)$. As in the massless case, this corresponds to the second Casimir of the Poincaré group, which is the square of the Pauli-Lubanski vector $W^\mu$ and we restrict it to states with $P^\mu=K^\mu=(k,0,0,k)$.
 \[
 \left\{
 \begin{aligned}
