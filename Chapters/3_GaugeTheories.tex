@@ -1249,7 +1249,7 @@ $\varphi(x):=ve^{i\chi(x)/v}$. In terms of this new field, the mass term can be 
 \[
 \frac{1}{2}m_v^2V_\mu V^\mu=\frac{1}{2}|D_\mu\varphi|^2 \quad D_\mu=\partial_\mu-igA_\mu
 \]
-This is something familiar now: the mass term becomes the kinetic term for the field $\varphi$. The Lagrangian gets now written in the following way:
+This is something familiar now: the mass term becomes the kinetic term for the field $\varphi$. Adding the gauge-fixing term, the Lagrangian gets written in the following way:
 \[
 \pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+\frac{1}{2}|D_\mu\varphi|^2-\frac{1}{2\xi}(\partial_\mu A^\mu+\xi gv\chi)^2
 \]
@@ -1264,27 +1264,29 @@ This is now a gauge theory in which the fields transform like:
 \right.
 \]
 By defining $\alpha(x):=g\varepsilon(x)$ it becomes a gauge transformation which acts linearly. Before it was not a linear transformation in $\chi$ because there was a non-linear shift, moreover $\varphi$ is subject to a non-linear constraint $\varphi^\dagger\varphi=v^2$.\\
-At this point, we forget about all the considerations we made about gauge transformations and we consider U(1):$\varphi(x)\to e^{i\alpha(x)}\varphi(x)$. We have a gauge theory with a U(1) global symmetry non-linearly realized, $\chi$ is nothing but the NGB corresponding to this spontaneously broken global invariance: this symmetry is not realized à la Wigner, but rather à la Nambu-Goldstone.
+At this point, we forget about all the considerations we made about gauge transformations and we consider U(1):$\varphi(x)\to e^{i\alpha(x)}\varphi(x)$. We have a gauge theory with a U(1) global symmetry non-linearly realized, $\chi$ is nothing but the NGB corresponding to this spontaneously broken global invariance: this symmetry is not realized à la Wigner, but rather à la Nambu-Goldstone.\\
+Gauge theories with spontaneously broken global symmetry correspond to theories of massive spin-1 particles.
 
-\section{\href{https://en.wikipedia.org/wiki/Robert_Brout}{Brout}-\href{https://en.wikipedia.org/wiki/Francois_Englert}{Englert}-\href{https://en.wikipedia.org/wiki/Peter_Higgs}{Higgs} Mechanism}
+\section{\href{https://en.wikipedia.org/wiki/Robert_Brout}{Brout}-\href{https://en.wikipedia.org/wiki/Francois_Englert}{Englert}-\href{https://en.wikipedia.org/wiki/Peter_Higgs}{Higgs} Mechanism}\marginnote{From \cite{schwartz}, Section 28.3.}
 
-Spontaneous Symmetry Breaking (SSB) does not occur when we have a potential, here for example we do not have one. The important thing is how this symmetry is realized, whether à la Wigner (linearly) or à la Nambu-Goldstone (non-linearly). It is the global invariance to be broken, not the gauge one which is a redundancy and cannot be spontaneously broken. If we go to energies much larger than the mass of this spin-1 particle, then we can ignore it. Our theory has 3 degrees of freedom, which are the three possible polarizations $(\sigma=-1,0,+1)$: at high energies we can include the theory in the Poincaré group and treat it as a massless spin-1 particle plus a scalar. So it is a gauge theory both at high energies and at low energies since we have SSB. We neglect the mass term for $E\gg m_v$:
+Spontaneous Symmetry Breaking (SSB) does not occur when we have a potential, for example in the previous section we have seen this case. The important thing is how this symmetry is realized, whether à la Wigner (linearly) or à la Nambu-Goldstone (non-linearly). Notice that it is the global invariance to be broken, not the gauge one which is a redundancy and cannot be spontaneously broken. If we go to energies much larger than the mass of this spin-1 particle, then we can ignore it. Our theory has 3 degrees of freedom, which are the three possible polarizations of a massive spin-1 particle $(\sigma=-1,0,+1)$: at high energies we can include the theory in the Poincaré group and treat it as a massless spin-1 particle plus a scalar. So it is a gauge theory both at high energies and at low energies since we have SSB.\\
+As said, for $E\gg m_v$ we neglect the mass terms:
 \[
-\pazocal{L}=\underbrace{-\frac{1}{4}F_{\mu\nu}^2-\frac{1}{2\xi}(\partial_\mu A_\mu)^2}_{\text{massless spin-1 particle}}+\underbrace{\frac{1}{2}(\partial_\mu \chi)^2}_{\text{scalar}}
+\pazocal{L}=\pazocal{L}_{\text{P}}+\pazocal{L}_{\text{GF}}=\underbrace{-\frac{1}{4}F_{\mu\nu}^2-\frac{1}{2\xi}(\partial_\mu A_\mu)^2}_{\text{massless spin-1 particle}}+\underbrace{\frac{1}{2}(\partial_\mu \chi)^2}_{\text{scalar}}
 \]
-The scalar acts as the longitudinal polarization of a massive spin-1 particle: at high energies it is described by the Goldstone boson which becomes physical when we go to extremely high energies. It is important to separate these degrees of freedom because, as we are going to see, they behave in completely different ways.\\
-At this point we want to get rid of the constraint $\varphi^\dagger\varphi=v^2$ and we can show that in order to do that we have to introduce another degree of freedom, another scalar: the \textbf{Higgs boson}. We start with:
+The part associated to the massless spin-1 particle propagates only twp degrees of freedom ($h=\pm1$), while the scalar acts as the longitudinal polarization of a massive spin-1 particle ($h=0$). At high energies, the latter is described by the Goldstone boson which becomes physical when we go to extremely high energies. It is important to separate these degrees of freedom because, as we are going to see, they behave in completely different ways.\\
+At this point we want to get rid of the constraint $\varphi^\dagger\varphi=v^2$ and we can show that in order to do that we have to introduce another degree of freedom, another scalar field: the \textbf{Higgs boson}. We start with:
 \[
-\pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+|D_\mu\varphi|^2-V(\varphi) \quad V(\varphi)=-\mu^2(\varphi^\dagger\varphi)+\lambda(\varphi^\dagger\varphi)^2
+\pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+|D_\mu\varphi|^2-V(\varphi) \quad V(\varphi)=-\mu^2(\varphi^\dagger\varphi)+\lambda(\varphi^\dagger\varphi)^2\marginnote{The factor $\frac{1}{2}$ in front of $|D_\mu\varphi|^2$ gets reabsorbed in the definition of $\varphi$.}
 \]
-We had to introduce a potential for $\varphi$, the so-called Mexican hat potential.
+We had to introduce a potential for $\varphi$, the so-called Mexican hat potential, already seen in \refsec{exSSB} with the linear U(1) Sigma model. This is known as the \textbf{Abelian Higgs model}.
 \begin{figure}[h]
     \centering
-    \includegraphics{Images/higgspotential.png}
+    \includegraphics[width=0.7\textwidth]{Images/higgspotential.png}
     \caption{Mexican hat potential.}
     \label{fig:my_label}
 \end{figure}\\
-We want to spontaneously break the U(1) invariance, so the mass term $-\mu^2$ has to be negative. The vacuum expectation value (vev) is $\langle\varphi\rangle=v/\sqrt{2}$, substituting this expression in the potential and minimizing it we find $v^2=\mu^2/\lambda$. We can parameterize our field $\varphi(x)$ by using another field $\eta(x)$:
+We want to spontaneously break the U(1) invariance, so the mass term $\mu^2$ has to be negative. The vacuum expectation value (vev) is $\langle\varphi\rangle=\frac{v}{\sqrt{2}}$, substituting this expression in the potential and minimizing it we find $v^2=-\frac{\mu^2}{\lambda}$. We can parametrize our field $\varphi(x)$ by using another field $\eta(x)$:
 \[
 \varphi(x)=\frac{v+\eta(x)}{\sqrt{2}}e^{i\chi(x)/v}
 \]
@@ -1302,16 +1304,17 @@ D_\mu\varphi&=\frac{1}{\sqrt{2}}(\partial_\mu-igA_\mu)(v+\eta)e^{i\chi/v}\\
 \end{align*}
 We take the modulus squared of this object and we are left with:
 \[
-|D_\mu\varphi|^2=\frac{1}{2}\left[(\partial_\mu\eta)+\left(1+\frac{\eta}{v}\right)^2(\partial_\mu\chi-gvA_\mu)^2\right]
+|D_\mu\varphi|^2=\frac{1}{2}\left[(\partial_\mu\eta)^2+\left(1+\frac{\eta}{v}\right)^2(\partial_\mu\chi-gvA_\mu)^2\right]
 \]
 When expanding the square in the last term, we obtain a mixing term which we want to get rid of. Again, we add a gauge-fixing term to remove this unwanted part:
 \[
-\pazocal{L}_{GF}=-\frac{1}{2\xi}(\partial_\mu A^\mu+\xi gv\chi)^2
+\pazocal{L}_{\text{GF}}=-\frac{1}{2\xi}(\partial_\mu A^\mu+\xi gv\chi)^2
 \]
 We define $m_A:=gv$ and write:
-\[
-\pazocal{L}+\pazocal{L}_{GF}=-\frac{1}{4}F_{\mu\nu}^2-\frac{1}{2\xi}(\partial_\mu A^\mu)^2+\frac{1}{2}(\partial_\mu\chi)^2\left(1+\frac{\eta}{v}\right)^2-\frac{1}{2}\xi m_A^2\chi^2+\frac{1}{2}m_A^2A_\mu A^\mu\left(1+\frac{\eta}{v}\right)^2-m_AA_\mu\partial_\mu\chi\left(\frac{2\eta}{v}+\frac{\eta^2}{v^2}\right)
-\]
+\begin{align*}
+\pazocal{L}=\pazocal{L}+\pazocal{L}_{\text{GF}}=&-\frac{1}{4}F_{\mu\nu}^2-\frac{1}{2\xi}(\partial_\mu A^\mu)^2+\frac{1}{2}(\partial_\mu\chi)^2\left(1+\frac{\eta}{v}\right)^2-\frac{1}{2}\xi m_A^2\chi^2\\
+&+\frac{1}{2}m_A^2A_\mu A^\mu\left(1+\frac{\eta}{v}\right)^2-m_AA_\mu\partial_\mu\chi\left(\frac{2\eta}{v}+\frac{\eta^2}{v^2}\right)+\frac{1}{2}(\partial_\mu\eta)^2
+\end{align*}
 The Lagrangian now is no longer free, moreover we observe that:
 \begin{itemize}
     \item $\chi$ interacts only through derivatives, which is good for NGB \raisebox{-\mydepth}{{\includegraphics[height=1.1\baselineskip]{Images/smile.jpg}}}
@@ -1320,40 +1323,41 @@ The Lagrangian now is no longer free, moreover we observe that:
 \end{itemize}
 We now take a look at some possible choices for $\xi$:
 \begin{enumerate}
-    \item $\xi=1$, this is the Feynman gauge.
+    \item $\xi=1$, this is the \textbf{Feynman gauge}.
     \[
     \Pi_{\mu\nu}(p)=-\frac{i\eta_{\mu\nu}}{p^2-m_A^2}
     \]
-    \item $\xi=0$, this is the Landau gauge.
+    \item $\xi=0$, this is the \textbf{Landau gauge}.
     \[
-    \Pi_{\mu\nu}(p)=-\frac{i}{p^2-m_A^2}\left(\eta_{\mu\nu}-\frac{P_\mu P_\nu}{p^2}\right)
+    \Pi_{\mu\nu}(p)=-\frac{i}{p^2-m_A^2}\left(\eta_{\mu\nu}-\frac{p_\mu p_\nu}{p^2}\right)
     \]
-    It is the transverse propagator, in this gauge we have $m_\chi^2=\xi m_A^2=\xi g^2v^20$ hence it is a non-physical quantity since its mass depends on an arbitrary parameter.
+    It is the transverse propagator, in this gauge we have said that the Goldstone boson $\chi$ is massless. $m_\chi^2=\xi m_A^2=\xi g^2v^2$ hence we can see that it is a non-physical quantity since its mass depends on an arbitrary parameter.
     \item $\xi\to\infty$, this is the unitary gauge. Before adding the gauge-fixing term, we can make a gauge transformation:
     \[
     \frac{\chi}{v}\to\frac{\chi}{v}+\alpha(x) \quad \alpha(x)=-\frac{\chi}{v} 
     \]
     We send the NGB to zero but if $\xi\to\infty$, then the mass of the NGB goes to infinity too so we cannot excite this state anymore because it would require an infinite amount of energy.
     \[
-    \Pi_{\mu\nu}(p)=-\frac{i}{p^2-m_A^2}\left(\eta_{\mu\nu}-\frac{P_\mu P_\nu}{m_A^2}\right)
+    \Pi_{\mu\nu}(p)=-\frac{i}{p^2-m_A^2}\left(\eta_{\mu\nu}-\frac{p_\mu p_\nu}{m_A^2}\right)
     \]
 \end{enumerate}
 The generic expression for the propagator is given by:
 \[
-\Pi_{\mu\nu}(p)=-\frac{i}{p^2-m_A^2}\left[\eta_{\mu\nu}+(\xi-1)\frac{P_\mu P_\nu}{p^2-\xi m_A^2}\right]
+\Pi_{\mu\nu}(p)=-\frac{i}{p^2-m_A^2}\left[\eta_{\mu\nu}+(\xi-1)\frac{p_\mu p_\nu}{p^2-\xi m_A^2}\right]
 \]
-In some gauges, the NGB is not present while we find it in some other ones, whether it is massive or massless. However, the Goldstone theorem [\ref{GT}] tells us that whenever we have SSB we should have a massless NGB. It seems like this theorem holds true for some cases and in some other ones it is not valid anymore: the validity of the Goldstone theorem depends on the gauge-fixing. For example, non-covariant gauges (like the Coulomb one) violate the theorem. At some point in the theory we want to prove that:
+In some gauges, the NGB is not present while we find it in some other ones, whether it is massive or massless. However, the Goldstone theorem [\refthm{GT}] tells us that whenever we have SSB we should have a massless NGB. It seems like this theorem holds true for some cases and in some other ones it is not valid anymore: the validity of the Goldstone theorem depends on the gauge-fixing. For example, non-covariant gauges (like the Coulomb one) violate the theorem. At some point in the theory we want to prove that:
 \[
 \lim_{V\to\infty}[Q_V(t),\phi(0)]=\lim_{V\to\infty}\int_Vd^3x[J^0(\Vec{x},t),\phi(0)]<\infty
 \]
-To prove that we used microcausality, which exploits Lorentz covariance. If we work in a gauge with no Lorentz covariance, we will have some problems in this step. Even when this NGB are massless and present in the theory, they are not physical quantities. Therefore, even when the theorem is valid it does not produce a physical contribution. We can prove that by considering the fact that the $S$-matrix must be unitary when we include the physical states. Restricting the $S$-matrix to the space of physical states, without including the NGBs, keeps the $S$-matrix unitary: in a gauge theory, the NGB is never physical and we can always choose a gauge in which it is not even present.\\
+To prove that we used microcausality, which exploits Lorentz covariance. If we work in a gauge with no Lorentz covariance, we will have some problems in this step. Even when this NGBs are massless and present in the theory, they are not physical quantities. Therefore, although the theorem is still valid it does not produce a physical contribution. We can prove that by considering the fact that the $S$-matrix must be unitary when we include the physical states. Restricting the $S$-matrix to the space of physical states, without including the NGBs, keeps the $S$-matrix unitary: in a gauge theory, the NGB is never physical and we can always choose a gauge in which it is not even present.\\
 For the unitary gauge, we can evaluate the spectrum starting from the Lagrangian:
 \[
 \pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+\frac{1}{2}m_A^2A_\mu A^\mu\left(1+\frac{\eta}{v}\right)^2+\frac{1}{2}(\partial_\mu\eta)^2-V(\eta)
 \]
-We observe that the physical degrees of freedom are the 3 polarizations of massive spin-1 particles+spin-0 particle $(\eta)$, resulting in 4 degrees of freedom.\marginnote{We could have observed it also from the starting Lagrangian but we would not have been able to connect it to physical states, while it is clear in the unitary gauge.}
-\section{Equivalence Theorem}
+We observe that the physical degrees of freedom are the 3 polarizations of massive spin-1 particles+spin-0 particle $(\eta)$, resulting in 4 degrees of freedom. We could have observed it also from the starting Lagrangian but we would have not been able to connect it to physical states, while it is clear in the unitary gauge.
+\subsection{Equivalence Theorem}
 \labsec{eqthm}
+$\chi$ is not physical, it cannot be put on external lines of the diagrams. There are some matrix elements where $\chi$ is on the external lines but, again, this corresponds to a non-physical quantity. However, at high energies this scattering amplitude becomes physical because in this limit we lose the longitudinal polarization of a boson which gets substituted by the Goldstone boson. This is known as the \textbf{equivalence theorem}.
 \begin{theorem}
 The scattering amplitude of the $S$-matrix for the emission or absorption of a longitudinally polarized vector boson becomes equal, at $E\gg m_A$, to the scattering amplitude of the corresponding NGB computed in the $\xi$-gauge.
 \end{theorem}
