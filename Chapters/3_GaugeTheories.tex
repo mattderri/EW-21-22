@@ -1073,7 +1073,8 @@ Specializing now to QCD with $N_c=3$ and $n_f=6$. In this case, \refeq{beta0} te
 \[
 \beta_0=-\frac{11}{3}N_c+\frac{2}{3}n_f=-7<0
 \]
-% As long as there are less than 17 flavours of quarks (there are six in nature), $\beta_0<0$ hence $g(\mu)$ decreases with increasing $\mu$. Compare this result with the one for the abelian case, where we have:
+As long as there are less than 17 flavours of quarks (there are six in nature), $\beta_0<0$ hence $g(\mu)$ decreases with increasing $\mu$.
+%Compare this result with the one for the abelian case, where we have:
 % \[
 % \beta_0=\frac{4}{3}q^2_\Psi n_f+\frac{1}{3}q_s^2n_s
 % \]
@@ -1121,14 +1122,17 @@ We check that it has the right behaviour:
     \]
 \end{itemize}
 Using $\alpha(m_e=511\,\text{keV})=\frac{e_R^2(m_e)}{4\pi}=\frac{1}{137}$, we find $\Lambda_{\text{QED}}=10^{286}$\,eV. In doing this, we swapped a dimensionless number for a dimensionful scale: this is known as \textbf{dimensional transmutation}. This uncovers a very profound misconception about nature: electrodynamics is fundamentally defined not by the electric charge, as we learned classically, but by a dimensionful scale $\Lambda_{\text{QED}}$. Moreover, this scale only has a meaning if there is another scale in the theory, such as the electron mass, so really it is the ratio $m_e/\Lambda_{\text{QED}}$ which specifies QED completely.\\
-We cannot use perturbation theory anymore because the coupling becomes too large. If we want to reach the IR fixed point there will be other scales, because we reach a point where energies are compatible with the mass of the electron. Electrons contribution in the diagram will be cancelled for energies smaller than the mass of the electron, so we can create an effective theory without electrons, cutting it off and this theory has only the photon with some self-interaction reduced by virtual electrons loops. These interactions disappear at low energies but at this point is not QED anymore, it is a theory of only photons.\\
-At the fixed points of the renormalization groups $\beta(g)=0$: $g$ is a constant, the theory, without mass, is self-similar. In a normal situation, by changing the energy we obtain different results for scattering processes because we have running coupling, while in this case we have the same results because the theory does not evolve anymore. Scattering processes do not depend anymore on the energy of the particles involved.\\
+The point is that when the energy increases it is not possible to use perturbation theory anymore because the coupling becomes too large. If we want to reach the IR fixed point there will be other scales, because we reach energies compatible with the mass of the electron. Electrons contribution in the diagram will freeze out for energies smaller than the mass of the electron, so we can create an effective theory without electrons, cutting it off. This theory has only the photons with some self-interaction induced by virtual electrons loops. These interactions disappear at low energies but at this point is not QED anymore, it is a theory of only photons.\\
+At the fixed points of the renormalization groups $\beta(g)=0$: $g$ is a constant, the theory, without masses, is self-similar. In a normal situation, by changing the energy we obtain different results for scattering processes because we have running coupling, while in this case we have the same results because the theory does not evolve anymore. Scattering processes do not depend anymore on the energy of the particles involved.\\
 \underline{QED for $m_e=0$}:
 \[
 \pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+\Bar{\Psi}\gamma^\mu i(\partial_\mu-igA_\mu)\Psi
 \]
-This Lagrangian does not contain scales, it is invariant under change of scale at the classical level. When we include corrections, the coupling evolves because the renormalization process includes a scale factor ($\mu$) and this scale evolves. Once the fixed points are reached, we are back in a situation analogous to the classical one: the theory does not evolve anymore, hence it is invariant under scale change. Theories with UV fixed points are called \textbf{asymptotically safe}. Asymptotic safety is a generalization of asymptotic freedom: with asymptotic freedom the coupling goes to zero, while with asymptotic safety the coupling goes to a certain finite constant. Is QED asymptotically safe? No,the fixed points can be reached for small values of the coupling, where we can use perturbation theory to find $g^*$ but computations show that this point does not exist. Another possibility is to have $g*$ for large values of the coupling, where we cannot use perturbation theory and again this fixed point does not exist. QED is an \textbf{effective field theory}, it explodes at some point.\\
-\underline{Non-abelian gauge theories SU$(N)$ (QCD)}: in the non-abelian case, it can happen to have so many massless flavours that the $\beta_0$ contribution in the $\beta-$function coming from the matter is bigger than the negative contribution coming from the gauge field, resulting in $\beta_0>0$. However, we do not have only one gauge field, but $N^2-1$ fields. For simplicity, consider only fermions in the fundamental representation:\marginnote{It is the same thing for scalars.}
+This Lagrangian does not contain scales, it is invariant under change of scale at the classical level. When we include corrections, the coupling evolves because the renormalization process includes a scale factor $\mu$ and this scale evolves. Once the fixed points are reached, we are back in a situation analogous to the classical one: the theory does not evolve anymore, hence it is invariant under scale change. Theories with UV fixed points are called \textbf{asymptotically safe}. Asymptotic safety is a generalization of asymptotic freedom: with asymptotic freedom the coupling goes to zero, while with asymptotic safety the coupling goes to a certain finite constant. Is QED asymptotically safe? No, the fixed points can be reached for small values of the coupling, where we can use perturbation theory to find $g^*$ but computations show that this point does not exist. Another possibility is to have $g*$ for large values of the coupling, where we cannot use perturbation theory and again this fixed point does not exist. QED is an \textbf{effective field theory}, it explodes at some point.
+\[
+\lim_{E\to0}g(E)=0\Rightarrow\text{the theory is in the Coulomb phase}
+\]
+\underline{Non-abelian gauge theories SU$(N)$ (QCD)}: in the non-abelian case, it can happen to have so many massless flavours that the $\beta_0$ contribution in the $\beta-$function coming from the matter is bigger than the negative contribution coming from the gauge field, resulting in $\beta_0>0$. However, we do not have only one gauge field, but $N^2-1$ fields (if we are in SU$(N)$). For simplicity, consider only fermions in the fundamental representation:\marginnote{It is the same thing for scalars.}
 \[
 \beta_0=-\frac{11}{3}N+\frac{2}{3}n_f\to\beta_0>0 \;\text{for}\;n_f>\frac{11}{2}N
 \]
@@ -1140,7 +1144,15 @@ At some point, there can be a cancellation between the two terms:
 \[
 \beta(g^*)=0 \;\text{for}\;\frac{g^*^2}{16\pi^2}\beta_1=|\beta_0|
 \]
-Can we trust this calculation if there are higher order terms in $\beta(g)$? We can neglect terms of order $>g^5$ if we choose a value of $n_f$ below but close to the threshold, $n_f<11N/2$. This computation is reliable for $|\beta_0|/\beta_1\ll1$, i.e. $N,n_f\gg1$ but $n_f/N\lesssim11/2$. In UV, the theory is asymptotically free, because increasing $E$ results in $\beta_0<0$ and the coupling goes to zero. If we decrease the number of flavours $n_f$, $|\beta_0|$ increases and $g^*$ gets larger: there is a value $n_f^c$ below which there is no IR fixed point. If the number of flavours $n_f$ is kept between $n_f^c$ and $11N/2$, we are in the \textbf{conformal window} and there exists an IR fixed point. For $n_f=n_f^c$ we have one critical point, but if we below this critical value the coupling gets bigger and bigger and eventually it explodes. This tells us that we have to take into account some non-perturbative contribution. QCD is a theory of this type where there is confinement for $n_f\in(0,n_f^c)$: this confinement space is characterized by the presence of bound states. The coupling gets so big that we have the formation of non-perturbative bound states called \textbf{hadrons}. They are not states like the hydrogen atom, they are made by fermions and gauge fields together and are colour singlet, i.e. they form singlets of SU$(N)$. Colour does not appear at large distance (small energy). The Lagrangian is written in the UV range, hence at extremely high energies where the theory is perturbative, but when we go to lower energies the phenomenology is completely different.\\
+Can we trust this calculation or are there higher order terms in $\beta(g)$ that we have to include? We can neglect terms of order higher than $g^5$ if we choose a value of $n_f$ below but close to the threshold, $n_f<\frac{11}{2}N$. This computation is reliable for $\frac{|\beta_0|}{\beta_1}\ll1$, i.e. $N,n_f\gg1$ but $\frac{n_f}{N}\lesssim\frac{11}{2}$.\\
+In UV, the theory is asymptotically free, because increasing $E$ results in $\beta_0<0$ and the coupling goes to zero. If we decrease the number of flavours $n_f$, $|\beta_0|$ increases and $g^*$ gets larger: there is a value $n_f^c$ below which there is no IR fixed point. If the number of flavours $n_f$ is kept between $n_f^c$ and $\frac{11}{2} N$, we are in the \textbf{conformal window} and there exists an IR fixed point.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/conf.pdf}
+    \caption{}
+    \labfig{confwind}
+\end{figure}\\\\
+For $n_f=n_f^c$ we have one critical point, but if we are below this critical value the coupling gets bigger and bigger and eventually it explodes. This tells us that we have to take into account some non-perturbative contribution. QCD is a theory of this type where there is confinement for $n_f\in(0,n_f^c)$: this confinement space is characterized by the presence of \textbf{bound states}. The coupling gets so big that we have the formation of non-perturbative bound states called \textbf{hadrons}. They are not states like the hydrogen atom, they are made by fermions and gauge fields together and are colour singlet, i.e. they form singlets of SU$(N)$\marginnote{Colour is the name given to the gauge group SU$(N)$.}. Colour does not appear at large distance (small energy). The Lagrangian is written in the UV range, hence at extremely high energies where the theory is perturbative, but when we go to lower energies the phenomenology is completely different.\\
 What kind of bound states can we have?
 \begin{itemize}
     \item \textbf{Baryons}: made only of quarks, we take $N$ quarks and contract them with an $\varepsilon$ tensor. In the case of QCD, $N=3$.
@@ -1148,27 +1160,20 @@ What kind of bound states can we have?
 \end{itemize}
 At which scale are these bound states created? We can make a simple estimate by solving the running coupling equation at 1-loop:
 \[
-g^2(\mu)=\frac{g^2(M)}{1-\frac{\beta_0}{16\pi^2}g^2(M)\log(\mu^2/M^2)}\Rightarrow\Lambda=M\exp{-\frac{8\pi^2}{\beta_0}\frac{1}{g^2(M)}}
+g^2(\mu)=\frac{g^2(M)}{1+\frac{\beta_0}{16\pi^2}g^2(M)\log(\mu^2/M^2)}\Rightarrow\Lambda=M\exp{-\frac{8\pi^2}{\beta_0}\frac{1}{g^2(M)}}
 \]
-$M$ denotes the energy at which we can measure the coupling, we decrease it until we reach a value $\Lambda$ where the coupling explodes. The expression for $g^2(\mu)$ holds true only when the coupling is small, but it gives us an idea of the value of the energy at which the coupling becomes non-perturbative.
-
+$M$ denotes the energy at which we can measure the coupling, we decrease it until we reach a value $\Lambda$ where the coupling explodes. The expression for $g^2(\mu)$ holds true only when the coupling is small, but it gives us an idea of the value of the energy at which the coupling becomes non-perturbative.\\
 Classically, we start from a theory where we do not have any dimensional parameter, just the kinetic term for the gauge fields and the massless fermions:
 \[
 \pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\sum_{i=1}^{n_f}\Bar{\Psi}_ii\slashed{D}\Psi_i
 \]
 The action is invariant since there are no dimensional parameter, so there is nothing fixing a reference scale. However, this is valid only on a classical level: in the Lagrangian, there is the coupling in the covariant derivative and in the non-abelian interaction term, so these parameters are dimensionless but we have seen that the coupling introduces a scale $\Lambda$. This phenomenon is called \textbf{dimensional transmutation}: starting from a theory with only dimensionless parameters we arrive to a theory which has an intrinsic scale due to coupling when it gets non-perturbative, $\Lambda$ is generated dynamically from the theory.\marginnote[-3.5cm]{\includegraphics[]{Images/massgap.pdf}} $\Lambda$ fixes the mass gap, except for lightest bound states ($m_\pi$) which arise from spontaneous symmetry breaking and they will be treated as pseudo-Nambu-Goldstone bosons.\\
-We have seen that a possibility for the $\beta-$function is to have an IR fixed point which appears in vectorial SU$(N)$ gauge theories with $n_f$ Dirac fermions. The possibility to have this perturbative IR fixed point requires $n_f\lesssim11N/2$. What happens if we consider instead massive fermions? When we decrease the energy, we start inside the conformal window so the coupling will move towards the fixed point. 
-\begin{figure}[h]
-    \centering
-    \includegraphics{Images/conf.pdf}
-    \caption*{}
-    \label{fig:my_label}
-\end{figure}
-At some point, we will get to the energy of the order of the mass of the first fermion, $E\sim m_{f_1}$, and the contribution of any Feynman diagram coming from the virtual propagation of this fermion will freeze. Going to energies below $m_{f_1}$, we can forget about this fermion and write an effective theory without considering it. Repeating this argument for more fermions, we may find ourselves outside the conformal window and enter the confinement phase, where there will be a threshold at which bound states are formed, i.e. the dynamical scale $\Lambda$. In principle, there could be also other fermions lighter than $\Lambda$ which do not necessarily have to be massless (this is the case of QCD). All the lighter fermions behave as if they were massless even if they are not and the number of these fermions tells us where we are in the graphic above. In QCD, there are 3 lighter fermions (up, down and strange), the dynamical scale $\Lambda\approx(100\text{MeV}-1\text{GeV})$ (charm) and two heavier fermions (top and bottom).
+We have seen that a possibility for the $\beta-$function is to have an IR fixed point which appears in vectorial SU$(N)$ gauge theories with $n_f$ Dirac fermions. The possibility to have this perturbative IR fixed point requires $n_f\lesssim\frac{11}{2}N$. What happens if we consider instead massive fermions? When we decrease the energy, we start inside the conformal window so the coupling will move towards the fixed point. 
+At some point, we will get to the energy of the order of the mass of the first fermion, $E\sim m_{f_1}$, and the contribution of any Feynman diagram coming from the virtual propagation of this fermion will freeze. Going to energies below $m_{f_1}$, we can forget about this fermion and write an effective theory without considering it. Repeating this argument for more fermions, we may find ourselves outside the conformal window and enter the confinement phase, where there will be a threshold at which bound states are formed, i.e. the dynamical scale $\Lambda$. In principle, there could be also other fermions lighter than $\Lambda$ which do not necessarily have to be massless (this is the case of QCD). All the lighter fermions behave as if they were massless even if they are not and the number of these fermions tells us where we are in \reffig{confwind}. In QCD, there are 3 lighter fermions (up, down and strange), the dynamical scale $\Lambda\approx(100\text{MeV}-1\text{GeV})$ (charm) and two heavier fermions (top and bottom).
 \section{Spin-1 Particle as a Gauge Theory}
-Consider the \href{https://en.wikipedia.org/wiki/Alexandru_Proca}{Proca} Lagrangian for massive spin-1 particles:
+Summarizing, we have seen the Coulomb phase with short range forces, then the conformal phase where there are no particles and lastly the confinement phase with asymptotic bound states. There is another possibility. Consider the Proca Lagrangian for massive spin-1 particles:
 \[
-\pazocal{L}_p=-\frac{1}{4}V_{\mu\nu}^2+\frac{m_v^2}{2}V_\mu^2 \quad V_{\mu\nu}=\partial_\mu V_\nu-\partial_\nu V_\mu
+\pazocal{L}_{\text{P}}=-\frac{1}{4}V_{\mu\nu}^2+\frac{m_v^2}{2}V_\mu^2 \quad V_{\mu\nu}=\partial_\mu V_\nu-\partial_\nu V_\mu
 \]
 We want to understand how this Lagrangian is connected with gauge invariance and gauge symmetry. To do that, we use the so-called \href{https://en.wikipedia.org/wiki/Ernst_Stueckelberg}{Stueckelberg} trick which is nothing but a change of variables in which we put $V_\mu(x)=A_\mu(x)-\partial_\mu\pi(x)$, where $A_\mu(x)$ is a gauge field and $\pi(x)$  a scalar field. This description is not unique, we can choose the two fields in different ways. We have a redundancy, with these new variables, the Lagrangian is invariant under:
 \[
@@ -1181,40 +1186,43 @@ We want to understand how this Lagrangian is connected with gauge invariance and
 \]
 We are adding one more degree of freedom at the cost of having this redundancy.\marginnote{Basically because we do not need another degree of freedom, we could set $\pi(x)=0$ and get back to the initial case.} In terms of the new variables, the Proca Lagrangian becomes:
 \[
-\pazocal{L}_p=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}(A_\mu(x)-\partial_\mu\pi(x))^2=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}A^2_\mu+\frac{m_v^2}{2}(\partial_\mu\pi)^2-m_v^2A_\mu\partial_\mu\pi
+\pazocal{L}_{\text{P}}=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}(A_\mu(x)-\partial_\mu\pi(x))^2=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}A^2_\mu+\frac{m_v^2}{2}(\partial_\mu\pi)^2-m_v^2A_\mu\partial_\mu\pi
 \]
-The last term mixes $A_\mu$ and $\pi$ and we want to eliminate it. We can exploit the redundancy and choose the new terms such that this term vanishes.\marginnote{For example, we can remove it assuming $\partial_\mu A_\mu=0$. This is a possible choice, but we are not going to use it.} We introduce a gauge-fixing Lagrangian to cancel that term:
+The last term mixes $A_\mu$ and $\pi$ and we want to eliminate it. We can exploit the redundancy and choose the new terms such that this term vanishes. For example, we can remove it assuming $\partial_\mu A_\mu=0$. This is a possible choice, but we are not going to use it. Instead, we introduce a gauge-fixing Lagrangian to cancel that term:
 \[
-\pazocal{L}_{GF}=-\frac{1}{\xi}(\partial_\mu A^\mu+\xi m_v^2\pi)^2=-\frac{1}{2\xi}(\partial_\mu A^\mu)^2-\frac{1}{2}\xi m_v^4\pi^2-m_v^2\partial_\mu A^\mu\pi
-\marginnote{A me sembra che stiamo gauge-fixando una beata sega ma tant'è.}
+\pazocal{L}_{\text{GF}}=-\frac{1}{2\xi}(\partial_\mu A^\mu+\xi m_v^2\pi)^2=-\frac{1}{2\xi}(\partial_\mu A^\mu)^2-\frac{1}{2}\xi m_v^4\pi^2-m_v^2\partial_\mu A^\mu\pi
 \]
 $\xi$ is an arbitrary dimensionless parameter, we define $\chi(x):=m_v\pi(x)$ and write everything as:
-\[
-\pazocal{L}=\pazocal{L}_p+\pazocal{L}_{GF}=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}A_\mu^2-\frac{1}{2\xi}(\partial_\mu A^\mu)^2+\frac{1}{2}(\partial_\mu\chi)^2-\frac{1}{2}\xi m_v^2\chi^2
-\]
-This is now the Lagrangian of our theory with no mixed terms. The first part resembles a gauge theory, except for the mass term which seems a bit odd, while the second part is a scalar theory. In order to quantize the theory, we can invert the kinetic term to get the propagator so that we can understand how many physical degrees of freedom are there: we started with 3 degrees of freedom and now apparently we have 4 of them. We have to study the poles of the propagators.
+\begin{align*}
+\pazocal{L}=\pazocal{L}_{\text{P}}+\pazocal{L}_{\text{GF}}&=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}A_\mu^2-\frac{1}{2\xi}(\partial_\mu A^\mu)^2+\frac{1}{2}(\partial_\mu\chi)^2-\frac{1}{2}\xi m_v^2\chi^2-m_v^2A_\mu\partial_\mu\pi-m_v^2\partial_\mu A^\mu\pi\\
+&=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}A_\mu^2-\frac{1}{2\xi}(\partial_\mu A^\mu)^2+\frac{1}{2}(\partial_\mu\chi)^2-\frac{1}{2}\xi m_v^2\chi^2-m_v^2\partial_\mu(A^\mu\pi)\\
+&=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}A_\mu^2-\frac{1}{2\xi}(\partial_\mu A^\mu)^2+\frac{1}{2}(\partial_\mu\chi)^2-\frac{1}{2}\xi m_v^2\chi^2
+\end{align*}
+The last term has been dropped since it is a total derivative and it gives a null surface contribution in the action.\\
+This is now the Lagrangian of our theory with no mixed terms. The first part resembles a gauge theory, except for the mass term which seems a bit odd, while the second part is a scalar theory. In order to quantize the theory, we can invert the kinetic term to get the propagator so that we can understand how many physical degrees of freedom are there: we started with 3 degrees of freedom, i.e. massive spin-1 particle, and now apparently we have 4 of them. We have to study the poles of the propagators.
 \begin{itemize}
     \item $A_\mu$ propagator:
     \[
-    \Pi_{\mu\nu}(p)=\frac{-i}{p^2-m_v^2}\left[\eta_{\mu\nu}+(\xi-1)\frac{P_\mu P_\nu}{p^2-\xi m_v^2}\right]
+    \Pi_{\mu\nu}(p)=\frac{-i}{p^2-m_v^2}\left[\eta_{\mu\nu}+(\xi-1)\frac{p_\mu p_\nu}{p^2-\xi m_v^2}\right]
     \]
-    It has two poles, an expected one in $p^2=m_v^2$ and an unexpected on in $p^2=\xi m_v^2$ which is unphysical.
+    It has two poles, an expected one in $p^2=m_v^2$ and an unexpected one in $p^2=\xi m_v^2$ which is unphysical since it depends on the choice of the gauge parameter $\xi$.
     \item $\chi$ propagator:
     \[
     \Pi(p)=\frac{i}{p^2-\xi m_v^2}
     \]
     $\xi$ is an arbitrary parameter, the physics cannot depend on it. This pole has to vanish somehow: the propagation of $\chi$ cancels the non-physical quantity in the gauge field propagator. 
 \end{itemize}
-$\chi$ itself is not a physical quantity, there are only the three degrees of freedom from the propagator of $A_\mu$ which is the only one to have a physical pole. It is useful to rewrite $\Pi_{\mu\nu}(p)$ in the following way:
-\[
-\Pi_{\mu\nu}(p)=\underbrace{\frac{-i}{p^2-m_v^2}\left[\eta_{\mu\nu}-\frac{P_\mu P_\nu}{m_v^2}\right]}_{\text{massive spin-1 particle propagator}}-\underbrace{\frac{i}{p^2-\xi m_v^2}\frac{P_\mu P_\nu}{m_v^2}}_{\text{unphysical content}}
-\]
+$\chi$ itself is not a physical quantity, there are only the three degrees of freedom from the propagator of $A_\mu$ which is the only one to have a physical pole.
+% It is useful to rewrite $\Pi_{\mu\nu}(p)$ in the following way:
+% \[
+% \Pi_{\mu\nu}(p)=\underbrace{\frac{-i}{p^2-m_v^2}\left[\eta_{\mu\nu}-\frac{p_\mu p_\nu}{m_v^2}\right]}_{\text{massive spin-1 particle propagator}}-\underbrace{\frac{i}{p^2-\xi m_v^2}\frac{p_\mu p_\nu}{m_v^2}}_{\text{unphysical content}}
+% \]
 The gauge-fixing we introduced is called the $\xi-$gauge, this kind of gauges are good to test the renormalization of massive spin-1 field theories. When we do renormalization, we want to see what are the diagrams which diverge, because if we have a finite number of diverging diagrams we can renormalize the theory by introducing a finite number of counter-terms. In the propagator of a massive spin-1 particle, if we take the limit $p\to\infty$ there is a term going as $1/p^2$ and one which goes as $p^2$, so the propagator goes as $p^0$. This is obviously not good, because it means there is a possibility that when doing the diagrams all of them are divergent and the theory is not renormalizable. Luckily, this is not our case, we are going to see that this Lagrangian can be brought back to a gauge theory, even if we have that odd mass term for the moment.\\
 We can make another redefinition of the field before adding the gauge-fixing term:
 \[
-\frac{1}{2}(\partial_\mu\chi-m_vA_\mu)^2=\frac{1}{2}\frac{1}{v^2}\left|\left(\partial_\mu-i\frac{m_v}{v}A_\mu\right)e^{i\chi/v}\right|^2
+\frac{m_v^2}{2}(A_\mu(x)-\partial_\mu\pi(x))^2=\frac{1}{2}(m_vA_\mu-\partial_\mu\chi)^2=\frac{v^2}{2}\left|\left(\partial_\mu-i\frac{m_v}{v}A_\mu\right)e^{i\chi/v}\right|^2
 \]
-with $v$ an arbitrary parameter introduced to have an dimensionless argument in the exponential. This is the mass term, we define the coupling $g:=m_v/v$: in terms of mass, both terms have dimension 1 but if we add $\hbar$ they have different dimensions because the coupling is not dimensionless in $\hbar$.
+with $v$ an arbitrary parameter introduced to have a dimensionless argument in the exponential. This is the mass term, we define the coupling $g:=\frac{m_v}{v}$: in terms of mass, both terms have dimension 1 but if we add $\hbar$ they have different dimensions because the coupling is not dimensionless in $\hbar$.
 \[
 \alpha=\frac{e^2}{4\pi\hbar c} \;\text{dimensionless}\Rightarrow[e^2]_\hbar=1/2
 \]
@@ -1236,20 +1244,21 @@ From the initial redefinition of the field, we have that $[\phi']=-1/2$ since $\
 [g]_\hbar=\frac{[m_v]_\hbar}{[v]_\hbar}\Rightarrow[g]_\hbar=1/2
 \]
 \end{example}
-Let's get back to our initial calculation and define a new field $\varphi(x):=ve^{i\chi(x)/v}$, the mass term can be written as:
+Let's get back to our initial calculation and define a new field\\
+$\varphi(x):=ve^{i\chi(x)/v}$. In terms of this new field, the mass term can be written as:
 \[
 \frac{1}{2}m_v^2V_\mu V^\mu=\frac{1}{2}|D_\mu\varphi|^2 \quad D_\mu=\partial_\mu-igA_\mu
 \]
 This is something familiar now: the mass term becomes the kinetic term for the field $\varphi$. The Lagrangian gets now written in the following way:
 \[
-\pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+\frac{1}{2}|D_\mu\varphi|^2-\frac{1}{2\xi}(\partial_\mu A^\mu+\xi gv\mathfrak{Im}\varphi)^2
+\pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+\frac{1}{2}|D_\mu\varphi|^2-\frac{1}{2\xi}(\partial_\mu A^\mu+\xi gv\chi)^2
 \]
 This is now a gauge theory in which the fields transform like:
 \[
 \left\{
 \begin{aligned}
 &\chi(x)\to\chi(x)+m_v\varepsilon(x)\\
-&\varphi(x)\toe^{im_v\varepsilon(x)/v}\varphi(x)=e^{ig\varepsilon(x)}\varphi(x)\\
+&\varphi(x)\to e^{im_v\varepsilon(x)/v}\varphi(x)=e^{ig\varepsilon(x)}\varphi(x)\\
 &A_\mu(x)\to A_\mu(x)+\partial_\mu\varepsilon(x)
 \end{aligned}
 \right.
@@ -1261,7 +1270,7 @@ At this point, we forget about all the considerations we made about gauge transf
 
 Spontaneous Symmetry Breaking (SSB) does not occur when we have a potential, here for example we do not have one. The important thing is how this symmetry is realized, whether à la Wigner (linearly) or à la Nambu-Goldstone (non-linearly). It is the global invariance to be broken, not the gauge one which is a redundancy and cannot be spontaneously broken. If we go to energies much larger than the mass of this spin-1 particle, then we can ignore it. Our theory has 3 degrees of freedom, which are the three possible polarizations $(\sigma=-1,0,+1)$: at high energies we can include the theory in the Poincaré group and treat it as a massless spin-1 particle plus a scalar. So it is a gauge theory both at high energies and at low energies since we have SSB. We neglect the mass term for $E\gg m_v$:
 \[
-\pazocal{L}=\underbrace{-\frac{1}{4}F_{\mu\nu}^2-\frac{1}{2\xi}(\partial_\mu A_\mu)^2}_{\text{massless spin-1 particle}}+\underbrace{\frac{1}{2}(\partial_\mu chi)^2}_{\text{scalar}}
+\pazocal{L}=\underbrace{-\frac{1}{4}F_{\mu\nu}^2-\frac{1}{2\xi}(\partial_\mu A_\mu)^2}_{\text{massless spin-1 particle}}+\underbrace{\frac{1}{2}(\partial_\mu \chi)^2}_{\text{scalar}}
 \]
 The scalar acts as the longitudinal polarization of a massive spin-1 particle: at high energies it is described by the Goldstone boson which becomes physical when we go to extremely high energies. It is important to separate these degrees of freedom because, as we are going to see, they behave in completely different ways.\\
 At this point we want to get rid of the constraint $\varphi^\dagger\varphi=v^2$ and we can show that in order to do that we have to introduce another degree of freedom, another scalar: the \textbf{Higgs boson}. We start with:
