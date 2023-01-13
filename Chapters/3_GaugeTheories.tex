@@ -1272,7 +1272,8 @@ As said, for $E\gg m_v$ we neglect the mass terms:
 \]
 The part associated to the massless spin-1 particle propagates only two degrees of freedom ($h=\pm1$), while the scalar acts as the longitudinal polarization of a massive spin-1 particle ($h=0$). At high energies, the latter is described by the Goldstone boson which becomes physical when we go to extremely high energies. It is important to separate these degrees of freedom because, as we are going to see, they behave in completely different ways.
 
-\section{\href{https://en.wikipedia.org/wiki/Robert_Brout}{Brout}-\href{https://en.wikipedia.org/wiki/Francois_Englert}{Englert}-\href{https://en.wikipedia.org/wiki/Peter_Higgs}{Higgs} Mechanism}\marginnote{From \cite{schwartz}, Section 28.3 and \cite{CL}, Section 8.3.}
+\section{\href{https://en.wikipedia.org/wiki/Robert_Brout}{Brout}-\href{https://en.wikipedia.org/wiki/Francois_Englert}{Englert}-\href{https://en.wikipedia.org/wiki/Peter_Higgs}{Higgs} Mechanism}\marginnote{From \cite{schwartz}, Section 28.3\\
+From \cite{CL}, Section 8.3.}
 We saw that the imposition of local symmetry implies the existence of massless vector particles. If we want to avoid this feature of the gauge theory and obtain massive vector bosons, the gauge symmetry must be broken somehow. If we introduce explicit breaking terms in the form of arbitrary gauge boson masses, we alter the high-energy behaviour of the theory in such a way that the renormalizability is lost. We have the situation of a hidden symmetry: the Lagrangian is still invariant under the symmetry transformations but the dynamics are such that the vacuum is not a singlet of the symmetry group. The choice of one of all the possible degenerate vacua breaks the symmetry. According to Goldstone theorem [\refthm{GT}], this would imply the existence of a set of massless scalar bosons so, again we run into undesired massless particles. However, the proof of the theorem requires the validity of the usual field theory axioms: manifest Lorentz covariance, positivity of the norm and so on. There is no gauge-fixing condition we can impose for a theory to obey \textit{all} the axioms of the usual field theories. If we consider massless gauge bosons and massless Goldstone bosons as disease of the theory, each turns out to be the cure of the other. They both disappear from the physical spectrum of the theory by combining to form massive vector particles, without ruining the good high-energy behaviour of the symmetric theory.\\
 Consider the simple case of an abelian U(1) gauge theory:
 % At this point we want to get rid of the constraint $\varphi^\dagger\varphi=v^2$ introduced before and we can show that in order to do that we have to introduce another degree of freedom, namely a scalar field: the \textbf{Higgs boson}. We start with:
@@ -1382,10 +1383,11 @@ In some gauges, the NGB is not present while we find it in some other ones, whet
 To prove that we used microcausality, which exploits Lorentz covariance. If we work in a gauge with no Lorentz covariance, we will have some problems in this step. Even when these NGBs are massless and present in the theory, they are not physical quantities. Therefore, although the theorem is still valid it does not produce a physical contribution.\\
 % We can prove that by considering the fact that the $S$-matrix must be unitary when we include the physical states. Restricting the $S$-matrix to the space of physical states, without including the NGBs, keeps the $S$-matrix unitary: in a gauge theory, the NGB is never physical and we can always choose a gauge in which it is not even present.\\
 For the unitary gauge, we can evaluate the spectrum starting from the Lagrangian:
-\[
-\pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+\frac{1}{2}m_A^2A_\mu A^\mu\left(1+\frac{\eta}{v}\right)^2+\frac{1}{2}(\partial_\mu\eta)^2-\mu^2\eta^2-\frac{1}{4}\lambda\eta^4-\lambda v\eta^3
-\]
-We observe that the physical degrees of freedom are the 3 polarizations of massive spin-1 particles+spin-0 particle $(\eta)$, resulting in 4 degrees of freedom. We could have observed it also from the starting Lagrangian but we would have not been able to connect it to physical states, while it is clear in the unitary gauge.
+\begin{align*}
+\pazocal{L}&=-\frac{1}{4}F_{\mu\nu}^2+\frac{1}{2}m_A^2A_\mu A^\mu\left(1+\frac{\eta}{v}\right)^2+\frac{1}{2}(\partial_\mu\eta)^2-\mu^2\eta^2-\frac{1}{4}\lambda\eta^4-\lambda v\eta^3\\
+&=\underbrace{-\frac{1}{4}F_{\mu\nu}^2+\frac{1}{2}m_A^2A_\mu A^\mu+\frac{1}{2}(\partial_\mu\eta)^2-\mu^2\eta^2}_{\pazocal{L}_0}+\underbrace{\frac{1}{2}g^2A_\mu A^\mu\eta(2v+\eta)-\frac{1}{4}\lambda\eta^4-\lambda v\eta^3}_{\pazocal{L}_1}
+\end{align*}
+It is clear that $\pazocal{L}_0$ is the free Lagrangian for a massive vector boson with mass $m_A=gv$ and a scalar meson with mass $m_\eta=\sqrt{2}\mu$. After the symmetry breaking, we observe that the field $\chi$ has disappeared and we are left with one scalar $\eta$ and one massive gauge boson $A_\mu$, which acquired mass through the Higgs mechanism. We could have observed it also from the starting Lagrangian but we would have not been able to connect it to physical states, while it is clear in the unitary gauge. The $\chi$ field is called a \textit{would-be-Goldstone boson}.
 \subsection{Equivalence Theorem}
 \labsec{eqthm}
 $\chi$ is not physical, it cannot be put on external lines of the diagrams. There are some matrix elements where $\chi$ is on the external lines but, again, this corresponds to a non-physical quantity. However, at high energies this scattering amplitude becomes physical because in this limit we lose the longitudinal polarization of a boson which gets substituted by the Goldstone boson. This is known as the \textbf{equivalence theorem}.
@@ -1465,30 +1467,30 @@ M(\chi\chi\to\chi\chi)=\frac{i}{2!}4\cdot2\frac{1}{v^2}\left[\frac{(p_1\cdot p_2
 \]
 The scattering amplitudes are the same, so we proved the equivalence theorem.\marginnote{Su sta roba sono un po' scettico perché non mi sembra sia stato dimostrato qualcosa ma tant'è.}
 \section{Spontaneously Broken Gauge Theories}%\marginnote{From \cite{PS}, Chapter 20.}
-% We have seen that symmetries can be realized in different ways in QFT [\refch{symmqft}]. The simplest case is a manifest global symmetry, leading to particle multiplets with restricted interactions. A second possibility is a spontaneously broken global symmetry. In this case, the symmetry currents are still conserved but the vacuum state does not respect the symmetry and the particles do not form obvious symmetry multiplets. Such a theory contains massless Goldstone bosons, one for each generator of the spontaneously broken symmetry. A third possibility is the one of a gauge symmetry. Such a symmetry requires the existence of a massless vector field for each symmetry generator and the interactions among these fields are highly restricted. Now we ask ourselves: what happens if we include both local gauge invariance \textit{and} spontaneous symmetry breaking in the same theory?
-
-These are non-abelian gauge theories and we want to generalize the U(1) case. For the abelian case, we established an equivalence between the Proca Lagrangian and gauge theories introducing the complex scalar field $\varphi(x)=\frac{v}{\sqrt{2}}e^{i\chi(x)/v}$ along with its non-linear constraint $\varphi^\dagger(x)\varphi(x)=\frac{v^2}{2}$. Since it is subject to a non-linear constraint, the global U(1) symmetry cannot be linearly realized. We know there is SSB because in the vacuum $\chi(x)=0$ and $\langle\varphi(x)\rangle=\frac{v}{\sqrt{2}}$, breaking U(1) to the identity.\\
+We have seen that symmetries can be realized in different ways in QFT [\refch{symmqft}]. The simplest case is a manifest global symmetry, leading to particle multiplets with restricted interactions. A second possibility is a spontaneously broken global symmetry. In this case, the symmetry currents are still conserved but the vacuum state does not respect the symmetry and the particles do not form obvious symmetry multiplets. Such a theory contains massless Goldstone bosons, one for each generator of the spontaneously broken symmetry. A third possibility is the one of a gauge symmetry. Such a symmetry requires the existence of a massless vector field for each symmetry generator and the interactions among these fields are highly restricted. Now we ask ourselves: what happens if we include both local gauge invariance \textit{and} spontaneous symmetry breaking in the same theory?\\
+For the abelian case, we established an equivalence between the Proca Lagrangian and gauge theories introducing the complex scalar field $\varphi(x)=\frac{v}{\sqrt{2}}e^{i\chi(x)/v}$ along with its non-linear constraint $\varphi^\dagger(x)\varphi(x)=\frac{v^2}{2}$. Since it is subject to a non-linear constraint, the global U(1) symmetry cannot be linearly realized. We know there is SSB because in the vacuum $\chi(x)=0$ and $\langle\varphi(x)\rangle=\frac{v}{\sqrt{2}}$, breaking U(1) to the identity.\\
 \subsection{U$(N)\to$U$(N-1)$ Spontaneous Breaking}
 Now we want to move to the non-abelian case, where we have $N$ complex scalar fields $\varphi_i(x)$ with the same non-linear constraint as before, $\varphi_i^\dagger(x)\varphi_i(x)=\frac{v^2}{2}$. We can perform a U$(N)$ transformation on these fields:
 \[
-\text{U}(N): \varphi(x)\to U\varphi(x)=\varphi'(x) \; U\in\text{U}(N)
+\text{U}(N): \varphi(x)\to U\varphi(x)=\varphi'(x) \quad U\in\text{U}(N)
 \]
-The new field $\varphi'(x)$ still satisfy the constraint so it is a good transformation and the U$(N)$ invariant Lagrangian is simply given by $\pazocal{L}=|\partial_\mu\varphi(x)|^2$. Again, here the symmetry is not linearly realized because of the constraint. We can write $\varphi(x)$ in the following representation:
+The new field $\varphi'(x)$ still satisfies the constraint so it is a good transformation and the U$(N)$ invariant Lagrangian is simply given by $\pazocal{L}=|\partial_\mu\varphi(x)|^2$. Again, here the symmetry is not linearly realized because of the constraint. We can write $\varphi(x)$ in the following representation:
 \[
-\varphi(x)=\frac{v}{\sqrt{2}}\exp{\frac{i\chi^{\hat{a}}(x)T^{\hat{a}}}{v}}\begin{pmatrix}0\\0\\\vdots\\1\end{pmatrix}
+\varphi(x)=\frac{v}{\sqrt{2}}\exp{\frac{i\chi^{\hat{a}}(x)T^{\hat{a}}}{v}}\begin{pmatrix}0\\0\\\vdots\\1\end{pmatrix} \quad a=,1,2,\cdots,2N-1
 \]
-where $T^{\hat{a}}$ are the \textbf{broken generators}, i.e. generators that are in U$(N)$ but not in U$(N-1)$ and they correspond to the number of NGBs. We have a total of $2N-1$ degrees of freedom, since we have $N$ fields  with 2 degrees of freedom each and one constraint: this is the number of fields we have to put in the exponential, $a=1,2,\dots,2N-1$. In the vacuum, $\chi$ is put to 0 and the field $\varphi(x)$ becomes:
+where $T^{\hat{a}}$ are the \textbf{broken generators}, i.e. generators that are in U$(N)$ but not in U$(N-1)$ and they correspond to the number of NGBs. We have a total of $2N-1$ degrees of freedom, since we have $N$ fields  with 2 degrees of freedom each and one constraint: this is the number of fields we have to put in the exponential. In the vacuum, $\chi$ is put to 0 and the field $\varphi(x)$ becomes:
 \[
 \varphi(x)=\frac{v}{\sqrt{2}}\begin{pmatrix}0\\0\\\vdots\\1\end{pmatrix}
 \]
-This vev spontaneously breaks U$(N)$ down to U$(N-1)$: how many NGBs do we have in this case? We have to count the broken generators:
+This vev spontaneously breaks U$(N)$ down to U$(N-1)$, we can still transform the first $N-1$ entries. How many NGBs do we have in this case? We have to count the broken generators:
 \begin{align*}
 & &&\text{U}(N) &&\text{U}(N-1)\\
 \hline
 &\#\text{generators} &&N^2 && (N-1)^2\\
 &\#\text{broken generators:} &&N^2-(N-1)^2=2N-1 &&&
 \end{align*}
-$2N-1$ is the number of NGBs in the theory, which corresponds exactly to the number of degrees of freedom of $\varphi(x)$. What happens if we promote this symmetry to local property? First we introduce $N^2$ gauge fields $A_\mu(x)$ minimally coupled to the scalar field. We expect that some of these $N^2$ gauge fields acquire mass.
+$2N-1$ is the number of NGBs in the theory, which corresponds exactly to the number of degrees of freedom of $\varphi(x)$.\\
+What happens if we promote this symmetry to a local property? First we introduce $N^2$ gauge fields $A_\mu(x)$ minimally coupled to the scalar field. We expect that some of these $N^2$ gauge fields acquire mass.
 \[
 \pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+|D_\mu\varphi(x)|^2
 \]
@@ -1524,7 +1526,9 @@ How can we prove this decomposition? There are two ways:
     \end{aligned}
     \]
 \end{enumerate}
-The field $\varphi(x)$ does not transform as a U$(N)$ representation because of the constraint, it does not have $2N$ degrees of freedom but $2N-1$: it is not $\Box$ of U$(N)$ but it contains $\Box$ of U$(N-1)$+one singlet. When we have a non-linearly realized U$(N)$ global symmetry, the complex field of this theory does not have to be a complete representation of this theory but it must contain complete multiplets of the unbroken symmetry. This is due to the fact that only linearly realized symmetries imply conserved charges which can be used to characterize the spectrum of the asymptotic states. Every asymptotic state must be a representation of the linearly realized symmetry , in this case U$(N-1)$. This $\Box+1$ we just found gives us the extra polarization we were looking for\marginnote{Ma mo' che cazzo è sta extra polarizzazione.} and together with the other 2 forms the massive vector field. We expect that the Lagrangian has $(N-1)^2$ massless gauge fields and $2N-1$ massive spin-1 particles: this is the Higgs mechanism, these $2N-1$ degrees of freedom will acquire mass. We can verify it and to do that we move to the unitary gauge, where it is possible to read the spectrum directly from the Lagrangian. To go to the unitary gauge we make a local U$(N)$ transformation on $\varphi(x)$, so that all the NGBs are put to zero.
+The field $\varphi(x)$ does not transform as a U$(N)$ representation because of the constraint, it does not have $2N$ degrees of freedom but $2N-1$: it is not $\Box$ of U$(N)$ but it contains $\Box$ of U$(N-1)$+one singlet.\\
+When we have a non-linearly realized U$(N)$ global symmetry, the complex field does not have to be a complete representation of the theory but it must contain complete multiplets of the unbroken symmetry. This is due to the fact that only linearly realized symmetries imply conserved charges which can be used to characterize the spectrum of the asymptotic states.\\
+Every asymptotic state must be a representation of the linearly realized symmetry , in this case U$(N-1)$. This $\Box+1$ we just found gives us the extra polarization we were looking for and together with the other 2 forms the massive vector field. We expect that the Lagrangian has $(N-1)^2$ massless gauge fields and $2N-1$ massive spin-1 particles: this is the Higgs mechanism, these $2N-1$ degrees of freedom will acquire mass. We can verify it and to do that we move to the unitary gauge, where it is possible to read the spectrum directly from the Lagrangian. To go to the unitary gauge we make a local U$(N)$ transformation on $\varphi(x)$, so that all the NGBs are put to zero.
 \[
 \varphi(x)\to U(\alpha(x))\varphi(x)=\frac{v}{\sqrt{2}}\begin{pmatrix}
     0\\
@@ -1533,7 +1537,7 @@ The field $\varphi(x)$ does not transform as a U$(N)$ representation because of 
     1
 \end{pmatrix}
 \]
-The transformation $U(\alpha(x))$ is defined as $U(\alpha(x))=\exp{i\alpha^A(x)T^A}$ where $T^A$ are the generators of U$(N)$, while $T^a$ are the U$(N-1)$ unbroken generators which give us zero when acting on the column vector. Therefore, we are left only with the broken generators which correspond to what we wrote in the beginning: it is the most generic expression we can have for the field in the unitary gauge.
+The transformation $U(\alpha(x))$ is defined as $U(\alpha(x))=\exp{i\alpha^A(x)T^A}$ where $T^A$ are the generators of U$(N)$.\marginnote{Remember that $T^a$ are the U$(N-1)$ unbroken generators which give us zero when acting on the column vector} Therefore, we are left only with the broken generators which correspond to what we wrote in the beginning: it is the most generic expression we can have for the field in the unitary gauge.
 \[
 |D_\mu\varphi(x)|^2=\left|(\partial_\mu-igA_\mu^AT^A)\frac{v}{\sqrt{2}}\begin{pmatrix}
     0\\
@@ -1545,7 +1549,7 @@ where we denoted with $\phi_0$ the column vector and we see that only the broken
 \[
 (M^2)_{\hat{a}\hat{b}}=(gv)^2\phi_0^TT^{\hat{a}}T^{\hat{b}}\phi_0
 \]
-which is the Higgs mechanism for non-abelian gauge theories with broken U$(N)$ symmetry. We started our discussion with massless fields, some of them remained massless while other ones acquired mass through the Higgs mechanism. But what if we wanted a theory with all massive particles? 
+which is the Higgs mechanism for non-abelian gauge theories with broken U$(N)$ symmetry. We started our discussion with massless fields, some of them remained massless while other ones acquired mass through the Higgs mechanism.
 \subsection{SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}\to$SU$(N)_{\text{V}}$ Spontaneous Breaking}
 Consider $N^2$ gauge fields and $(2N-1)$ NGBs, $N^2\ge2N-1$ for $N\ge1$: hence, for $N>1$ there will always be massless particles in the theory. How do we get rid of them? We consider another example where all the NGBs are hidden and there are no massless gauge fields. Consider a theory with a global symmetry, SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}\to$SU$(N)_{\text{V}}$:
 \[
@@ -1564,13 +1568,13 @@ with $T^a$ generators of SU$(N)$ in the fundamental representation, i.e. $N\time
 \[
 \pazocal{L}=\frac{1}{4}v^2\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}
 \]
-$\Sigma$ is dimensionless by definition, so it is needed to add the term $v^2$ which has dimension 2. What global symmetry do we have in this case? We can make a transformation in which $\Sigma$ is multiplied by elements of SU$(N)_{\text{L}}$ and SU$(N)_{\text{R}}$:
+$\Sigma$ is dimensionless by definition, so it is necessary to add the term $v^2$ which has dimension 2. What global symmetry do we have in this case? We can make a transformation in which $\Sigma$ is multiplied by elements of SU$(N)_{\text{L}}$ and SU$(N)_{\text{R}}$:
 \[
-\Sigma(x)\to L\Sigma(x)R \quad L\in\text{SU}(N)_{\text{L}}, R\in\text{SU}(N)_{\text{R}}
+\Sigma(x)\to\Sigma'=L\Sigma(x)R \quad L\in\text{SU}(N)_{\text{L}}, R\in\text{SU}(N)_{\text{R}}
 \]
 which gives us a symmetry due to the cyclicity of the trace. In the vacuum, the fields are put to zero, so $\langle\Sigma(x)\rangle=\mathbb{1}$ breaking SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}$ to SU$(N)_{\text{V}}$, i.e. elements of SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}$ which preserve $\langle\Sigma(x)\rangle=\mathbb{1}$ must be equal ($L=R$), hence elements of SU$(N)_{\text{V}}$ by definition. But why do we work in SU$(N)$? There is an even larger symmetry given by U$(N)_{\text{L}}\times$U$(N)_{\text{R}}$ broken to U$(N)_{\text{V}}$. However, this results in an additional NGB and if we do the same transformation as before $\Sigma'$ will not have the same properties as $\Sigma$ because now $L$ and $R$ are not special unitary matrices anymore. We focus on SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}\to$SU$(N)_{\text{V}}$ because it is the symmetry realized in QCD.
 \[
-\text{SU}(N)_{\text{L}}\times\text{SU}(N)_{\text{R}}\times\text{U}(1)_{\text{L}}\times\text{U}(U)_{\text{R}}\to\text{SU}(N)_{\text{V}}\times\text{U}(1)_{\text{V}}
+\text{SU}(N)_{\text{L}}\times\text{SU}(N)_{\text{R}}\times\text{U}(1)_{\text{L}}\times\text{U}(1)_{\text{R}}\to\text{SU}(N)_{\text{V}}\times\text{U}(1)_{\text{V}}
 \]
 The symmetry pattern of U$(1)_{\text{L}}\times$U$(1)_{\text{R}}$ can be written as U$(1)_{\text{A}}\times$U$(1)_{\text{V}}$ where the new generators are defined as:
 \[
@@ -1700,7 +1704,7 @@ Let's see how to realize a complete representation. On the field $\Sigma$ we had
 \[
 \underbrace{\Sigma^\dagger\Sigma=\Sigma\Sigma^\dagger=\mathbb{1}}_{\text{4 conditions}} \quad \underbrace{\det\Sigma=1}_{\text{1 condition}}
 \]
-A $2\times2$ complex matrix has 8 degrees of freedom: 8-5=3 Adj of SU$(2)_V$. What is the smallest possible dimension of a SU$(2)_L\times$SU$(2)_R$ representation? Let $\Phi$ a generic $2\times2$ matrix which transforms as $\Phi\to L\Phi R^\dagger$: this has 8 degrees of freedom, 5 more than the ones we had before. We need to impose some linear constraint on $\Phi$. We use the fact that SU(2) has pseudo-real representations, i.e. real up to a unitary transformation. Let $\Psi$ be $\Box$ of SU(2), pseudo real: if $\Psi^*$ transforms as a doublet of SU(2), then it is a real representation. However, $\Psi$ is pseudo-real so we add a unitary transformation:
+A $2\times2$ complex matrix has 8 degrees of freedom: 8-5=3 Adj of SU$(2)_{\text{V}}$. What is the smallest possible dimension of a SU$(2)_{\text{L}}\times$SU$(2)_{\text{R}}$ representation? Let $\Phi$ be a generic $2\times2$ matrix which transforms as $\Phi\to L\Phi R^\dagger$: this has 8 degrees of freedom, 5 more than the ones we had before. We need to impose some linear constraint on $\Phi$. We use the fact that SU(2) has pseudo-real representations, i.e. real up to a unitary transformation. Let $\Psi$ be $\Box$ of SU(2), pseudo real: if $\Psi^*$ transforms as a doublet of SU(2), then it is a real representation. However, $\Psi$ is pseudo-real so we add a unitary transformation:
 \[
 U\Psi^*=i\sigma^2\Psi^*:=\Psi^c
 \]
@@ -1744,7 +1748,7 @@ $\langle\varphi\rangle=v=\sqrt{\mu^2/\lambda}$. This means that SU$(2)_L\times$S
 \pazocal{L}&=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{2}(\partial_\mu h(x))^2+\frac{1}{2}m_h^2h^2(x)-\lambda vh^3(x)-\frac{\lambda}{4}h^4(x)\\
 &+\frac{v^2}{4}\left(1+\frac{h(x)}{v}\right)^2\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}+\text{constant terms}
 \end{align*}
-We have $h(x)$ as a self-interacting massive field and it interacts through the last term with the NGB $\chi^a$ contained in $\Sigma$. We want to understand this interaction and see how this fixes the dependency $E^2$ of the scattering amplitude of $\chi^a\chi^b\to\chi^a\chi^b$. This gives us the diagram depicted on the side \marginnote[-3cm]{\includegraphics{Images/aahbb.png}}:
+We have $h(x)$ as a self-interacting massive field and it interacts through the last term with the NGB $\chi^a$ contained in $\Sigma$. We want to understand this interaction and see how this fixes the dependency $E^2$ of the scattering amplitude of $\chi^a\chi^b\to\chi^a\chi^b$. This gives us the diagram depicted on the side \marginnote[-3cm]{\includegraphics[width=0.3\textwidth]{Images/aahbb.png}}:
 \begin{align*}
 M_h(\chi^a\chi^b\to\chi^a\chi^b)&=\frac{i^2}{2!v^2}2\cdot2\cdot2(p_1\cdot p_3)(p_2\cdot p_4)\frac{i}{(p_1-p_3)^2-m_h^2}\\
 &=\frac{-i}{t-m_h^2}(t-2m_A)^2\frac{1}{v^2}=-\frac{it}{v^2}+\dots
