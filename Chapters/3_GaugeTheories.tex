@@ -1474,25 +1474,29 @@ Now we want to move to the non-abelian case, where we have $N$ complex scalar fi
 \[
 \text{U}(N): \varphi(x)\to U\varphi(x)=\varphi'(x) \quad U\in\text{U}(N)
 \]
-The new field $\varphi'(x)$ still satisfies the constraint so it is a good transformation and the U$(N)$ invariant Lagrangian is simply given by $\pazocal{L}=|\partial_\mu\varphi(x)|^2$. Again, here the symmetry is not linearly realized because of the constraint. We can write $\varphi(x)$ in the following representation:
+The new field $\varphi'(x)$ still satisfies the constraint so it is a good transformation, the Lagrangian for $\varphi(x)$ would be just:
 \[
-\varphi(x)=\frac{v}{\sqrt{2}}\exp{\frac{i\chi^{\hat{a}}(x)T^{\hat{a}}}{v}}\begin{pmatrix}0\\0\\\vdots\\1\end{pmatrix} \quad a=,1,2,\cdots,2N-1
+\pazocal{L}=|\partial_\mu\varphi(x)|^2
 \]
-where $T^{\hat{a}}$ are the \textbf{broken generators}, i.e. generators that are in U$(N)$ but not in U$(N-1)$ and they correspond to the number of NGBs. We have a total of $2N-1$ degrees of freedom, since we have $N$ fields  with 2 degrees of freedom each and one constraint: this is the number of fields we have to put in the exponential. In the vacuum, $\chi$ is put to 0 and the field $\varphi(x)$ becomes:
+and it is U$(N)$ invariant. Is this invariant linearly realized? No, because there is a non linear constraint. We have $2N-1$ degrees of freedom, since we have $N$ complex fields with one constraint. We can write $\varphi(x)$ in the following representation:
+\[
+\varphi(x)=\frac{v}{\sqrt{2}}\exp{\frac{i\chi^{\hat{a}}(x)T^{\hat{a}}}{v}}\begin{pmatrix}0\\0\\\vdots\\1\end{pmatrix} \quad \hat{a}=,1,2,\cdots,2N-1
+\]
+In the vacuum, $\chi$ is put to 0 and the field $\varphi(x)$ becomes:
 \[
 \varphi(x)=\frac{v}{\sqrt{2}}\begin{pmatrix}0\\0\\\vdots\\1\end{pmatrix}
 \]
-This vev spontaneously breaks U$(N)$ down to U$(N-1)$, we can still transform the first $N-1$ entries. How many NGBs do we have in this case? We have to count the broken generators:
+This vev spontaneously breaks U$(N)$ down to U$(N-1)$, we can still transform the first $N-1$ entries. Hence, in the exponential $T^{\hat{a}}$ are the \textbf{broken generators}\marginnote{Broken generators are denoted with a hat.}, i.e. generators that are in U$(N)$ but not in U$(N-1)$ and they correspond to the number of NGBs. How many NGBs do we have in this case? We have to count the broken generators:
 \begin{align*}
 & &&\text{U}(N) &&\text{U}(N-1)\\
 \hline
 &\#\text{generators} &&N^2 && (N-1)^2\\
 &\#\text{broken generators:} &&N^2-(N-1)^2=2N-1 &&&
 \end{align*}
-$2N-1$ is the number of NGBs in the theory, which corresponds exactly to the number of degrees of freedom of $\varphi(x)$.\\
-What happens if we promote this symmetry to a local property? First we introduce $N^2$ gauge fields $A_\mu(x)$ minimally coupled to the scalar field. We expect that some of these $N^2$ gauge fields acquire mass.
+The number of NGBs in the theory corresponds exactly to the number of degrees of freedom of $\varphi(x)$.\\
+What if we gauged this global U$(N)$ invariance? What happens? We introduce $N^2$ gauge fields $A_\mu(x)$ minimally coupled to the scalar field $\varphi(x)$. We expect that some of these $N^2$ gauge bosons will acquire mass.
 \[
-\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+|D_\mu\varphi(x)|^2
+\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+|D_\mu\varphi(x)|^2 \quad D_\mu=\partial_\mu-igA_\mu
 \]
 U$(N-1)$ is linearly realized but what are the representations under U$(N-1)$?
 \[
@@ -1504,20 +1508,20 @@ U$(N-1)$ is linearly realized but what are the representations under U$(N-1)$?
 \]
 How can we prove this decomposition? There are two ways:
 \begin{enumerate}
-    \item the adjoint representation of a unitary group can be seen as a series of $N^2$ fields times the U$(N)$ generators:
+    \item the adjoint representation of a unitary group can be represented as a collection of $N^2$ fields times the U$(N)$ generators:
     \[
     A_\mu^A(x)T^A(x)\to\begin{pNiceArray}{cw{c}{1cm}cc}[margin]
     \Block{3-3}{\color{red}{\text{\small{$(N-1)\times(N-1)$}}}} & & & \color{blue}\vdots \\
     & & & \color{blue}\vdots \\
     & & & \color{blue}\vdots \\
-    \Cdots & \Cdots & \Cdots & \tikz\draw[green,fill=green] (0,0) circle (.5ex)
+    \color{blue}\dots & \color{blue}\dots & \color{blue}\dots & \tikz\draw[green,fill=green] (0,0) circle (.5ex)
     \end{pNiceArray}\quad\begin{cases}
     {\color{red}\text{Adjoint of U$(N-1)$}}\\
     {\color{blue}\text{$\Box$ of U$(N-1)$}}\\
     {\color{green}\text{Singlet of U$(N-1)$}}
     \end{cases}
     \]
-    \item a field in the adjoint representation can be seen as a rank 2 tensor with indices $i,j=1,\dots,N$. If we restrict these indices to\\
+    \item a field in the adjoint representation can be represented as a rank 2 tensor $\phi_{ij}$ with indices $i,j=1,\dots,N$. If we restrict these indices to\\
     $a,b=1,\dots,N-1$ we get the adjoint.
     \[
     \begin{aligned}
@@ -1525,10 +1529,9 @@ How can we prove this decomposition? There are two ways:
     &\phi_{ij}\to&&\phi_{ab}&&&\phi_{aN}&&&&\phi_{NN}
     \end{aligned}
     \]
+    This is basically the same thing as before but rephrased in terms of tensors instead in terms of matrices.
 \end{enumerate}
-The field $\varphi(x)$ does not transform as a U$(N)$ representation because of the constraint, it does not have $2N$ degrees of freedom but $2N-1$: it is not $\Box$ of U$(N)$ but it contains $\Box$ of U$(N-1)$+one singlet.\\
-When we have a non-linearly realized U$(N)$ global symmetry, the complex field does not have to be a complete representation of the theory but it must contain complete multiplets of the unbroken symmetry. This is due to the fact that only linearly realized symmetries imply conserved charges which can be used to characterize the spectrum of the asymptotic states.\\
-Every asymptotic state must be a representation of the linearly realized symmetry , in this case U$(N-1)$. This $\Box+1$ we just found gives us the extra polarization we were looking for and together with the other 2 forms the massive vector field. We expect that the Lagrangian has $(N-1)^2$ massless gauge fields and $2N-1$ massive spin-1 particles: this is the Higgs mechanism, these $2N-1$ degrees of freedom will acquire mass. We can verify it and to do that we move to the unitary gauge, where it is possible to read the spectrum directly from the Lagrangian. To go to the unitary gauge we make a local U$(N)$ transformation on $\varphi(x)$, so that all the NGBs are put to zero.
+This is the decomposition of the adjoint, $(N-1)^2$ are the massless fields because the adjoint of U$(N-1)$ will be a local symmetry that is realized linearly. The remaining $2(N-1)-1=2N-1$ will be the massive ones. Here we started with only two polarizations for each component and we need to provide the third polarization which comes exactly from the $\varphi(x)$ fields. If we decompose the fundamental of U$(N)$ we get the fundamental of U$(N-1)$+2 singlets.\marginnote{Note that the adjoint is a real representation while the fundamental is a complex one.} One of these singlets is the radial mode, in other words it is the degree of freedom which is killed by the constraint. Strictly speaking, the field $\varphi(x)$ is not transforming as a representation of U$(N)$, it does not have $2N$ degrees of freedom but $2N-1$. However, it contains representations of U$(N-1)$ and now we discovered it contains the fundamental and a singlet. This is an important point: when we have a global non-linearly realized symmetry, the field content in our theory does not have to be a complete representation of this symmetry. It has to contain complete multiplets of the unbroken symmetry. This is due to the fact that only linearly realized symmetries imply conserved charges which can be used to characterize the spectrum of the asymptotic states. Each asymptotic state must be a representation of the linearly realized symmetry , in this case U$(N-1)$. We have to check that representations of the asymptotic states are representations of U$(N-1)$. This $\Box+1$ provides exactly the extra polarization which together with the other 2 forms the massive vector field. Summarizing, we expect the Lagrangian to have $(N-1)^2$ massless gauge fields and $2N-1$ massive spin-1 particles: this is the Higgs mechanism, these $2N-1$ degrees of freedom will acquire mass by \textit{eating} the scalar fields  contained in $\varphi(x)$. At this level it is a bit abstract but we can check it. To do that, we move to the unitary gauge where it is possible to read the spectrum directly from the Lagrangian. To go to the unitary gauge we make a local U$(N)$ transformation on $\varphi(x)$, so that all the NGBs $\chi^{\hat{a}}(x)$ are set to zero.
 \[
 \varphi(x)\to U(\alpha(x))\varphi(x)=\frac{v}{\sqrt{2}}\begin{pmatrix}
     0\\
@@ -1537,7 +1540,16 @@ Every asymptotic state must be a representation of the linearly realized symmetr
     1
 \end{pmatrix}
 \]
-The transformation $U(\alpha(x))$ is defined as $U(\alpha(x))=\exp{i\alpha^A(x)T^A}$ where $T^A$ are the generators of U$(N)$.\marginnote{Remember that $T^a$ are the U$(N-1)$ unbroken generators which give us zero when acting on the column vector} Therefore, we are left only with the broken generators which correspond to what we wrote in the beginning: it is the most generic expression we can have for the field in the unitary gauge.
+In other words, in the unitary gauge the expression of the field is exactly the one we have in he vacuum. If we start from this expression of the field in the unitary gauge, it is possible to recover the generic expression of the field in a generic gauge by doing another local transformation of U$(N)$. 
+\[
+\exp{i\alpha^A(x)T^A}\frac{v}{\sqrt{2}}\begin{pmatrix}
+    0\\
+    \vdots\\
+    0\\
+    1
+\end{pmatrix}
+\]
+The generators of U$(N-1)$ will annihilate the vacuum, by definition of unbroken generators. Therefore, we are left only with the broken generators which correspond to what we wrote in the beginning\marginnote{At the start of this section, $\alpha$ was called $\chi$ but that is irrelevant.}: it is the most generic expression we can have for the field in the unitary gauge. Working now in the unitary gauge, we want to compute $|D_\mu\varphi(x)|^2$:
 \[
 |D_\mu\varphi(x)|^2=\left|(\partial_\mu-igA_\mu^AT^A)\frac{v}{\sqrt{2}}\begin{pmatrix}
     0\\
@@ -1545,13 +1557,14 @@ The transformation $U(\alpha(x))$ is defined as $U(\alpha(x))=\exp{i\alpha^A(x)T
     0\\1
 \end{pmatrix}\right|^2=\frac{g^2v^2}{2}A_\mu^{\hat{a}}A_\mu^{\hat{b}}\phi_0^TT^{\hat{a}}T^{\hat{b}}\phi_0
 \]
-where we denoted with $\phi_0$ the column vector and we see that only the broken generators survive. The mass matrix we will have to add is:
+where we denoted with $\phi_0$ the column vector. The derivative gives no contribution because it acts on a constant field, similarly the unbroken generators gives us zero as we have previously discussed so only the broken ones survive. This means that we are giving mass to the gauge fields only along the broken generators, as promised, hence the mass matrix will be given by:
 \[
 (M^2)_{\hat{a}\hat{b}}=(gv)^2\phi_0^TT^{\hat{a}}T^{\hat{b}}\phi_0
 \]
-which is the Higgs mechanism for non-abelian gauge theories with broken U$(N)$ symmetry. We started our discussion with massless fields, some of them remained massless while other ones acquired mass through the Higgs mechanism.
+This is the Higgs mechanism for non-abelian gauge theories with broken U$(N)$ symmetry. In this example, we started with massless fields, some of them remained massless while other ones acquired mass through the Higgs mechanism. Now the question is: if we want a theory of only massive spin-1 particles, without any massless leftover, how can we do? To make it even more explicit, consider $N^2$ gauge fields and $(2N-1)$ NGBs, $N^2\ge2N-1$ for $N\ge1$: hence, for $N>1$ there will always be massless particles in the theory. $N=1$ is a special case in which we do not have any massless particle in the theory. How do we get rid of them? We move to another example with no massless gauge fields.
+%44:21
 \subsection{SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}\to$SU$(N)_{\text{V}}$ Spontaneous Breaking}
-Consider $N^2$ gauge fields and $(2N-1)$ NGBs, $N^2\ge2N-1$ for $N\ge1$: hence, for $N>1$ there will always be massless particles in the theory. How do we get rid of them? We consider another example where all the NGBs are hidden and there are no massless gauge fields. Consider a theory with a global symmetry, SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}\to$SU$(N)_{\text{V}}$:
+Consider a theory with a global symmetry, SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}\to$SU$(N)_{\text{V}}$:
 \[
 \begin{aligned}
 & &&\text{SU}(N)_{\text{L}}&&&\text{SU}(N)_{\text{R}}&&&&\text{SU}(N)_{\text{V}}\\
@@ -1638,7 +1651,7 @@ Hence, it follows that:
 \]
 The first term tells us that $\pazocal{L}\supset-\frac{1}{2}gv^2A_\mu^a\partial^\mu\chi^a$ which is the term we want to remove, so we choose a proper gauge-fixing term:
 \[
-\pazocal{L}_{GF}=-\frac{1}{2\xi}(\partial_\mu A^{\mu,a}+\frac{1}{2}\xi gv\chi^a)^2
+\pazocal{L}_{\text{GF}}=-\frac{1}{2\xi}(\partial_\mu A^{\mu,a}+\frac{1}{2}\xi gv\chi^a)^2
 \]
 The term $\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}$ is invariant under $\Sigma\to\Sigma^\dagger$, which is equivalent to changing the sign of $\chi^a$: in the expansion of powers of $\chi$, there will only be even powers of $\chi$. To compute the kinetic term, we need to go to the 4-th order in $\chi$, so we have to expand $\Sigma$ up to the 3-rd order.
 \[
@@ -1650,10 +1663,10 @@ The term $\chi^2$ is equal to $\chi^2=\frac{\chi^a\sigma^a}{2}\frac{\chi^bsigma^
 \]
 The last term above is the only one contributing to the scattering at this order of energy, with a contribution$\simeq E^2/v^2$. The full Lagrangian with the gauge-fixing term is now the following:
 \begin{align*}
-\pazocal{L}+\pazocal{L}_{GF}&=-\frac{1}{4}(F_{\mu\nu}^a)^2-\frac{1}{2\xi}(\partial_\mu A^{\mu,a})^2+\frac{m_A^2}{2}A_\mu^aA_\mu^a+\frac{1}{2}(\partial_\mu\chi^a)^2-\frac{1}{2}m_A^2\xi(\chi^a)^2\\
-&-\frac{1}{2}g\varepsilon^{abc}A_\mu^a\partial_\mu\chi^b\chi^c+\frac{1}{6v^2}\left[(\chi^a\partial_\muchi^a)^2-\chi^a\chi^b(\partial_\mu\chi^b\partial^\mu\chi^b)\right]+\pazocal{O}[\chi^b,A\chi^3] \quad m_a=\frac{gv}{2}
+\pazocal{L}+\pazocal{L}_{\text{GF}}&=-\frac{1}{4}(F_{\mu\nu}^a)^2-\frac{1}{2\xi}(\partial_\mu A^{\mu,a})^2+\frac{m_A^2}{2}A_\mu^aA_\mu^a+\frac{1}{2}(\partial_\mu\chi^a)^2-\frac{1}{2}m_A^2\xi(\chi^a)^2\\
+&-\frac{1}{2}g\varepsilon^{abc}A_\mu^a\partial_\mu\chi^b\chi^c+\frac{1}{6v^2}\left[(\chi^a\partial_\mu\chi^a)^2-\chi^a\chi^b(\partial_\mu\chi^b\partial^\mu\chi^b)\right]+\pazocal{O}[\chi^b,A\chi^3] \quad m_a=\frac{gv}{2}
 \end{align*}
-Now that we have the Lagrangian, it is possible to compute the amplitude but of a special case: $\chi^a\chi^b\to\chi^a\chi^b$.\marginnote{\includegraphics{Images/abab.pdf}\\
+Now that we have the Lagrangian, it is possible to compute the amplitude but of a special case: $\chi^a\chi^b\to\chi^a\chi^b$.\marginnote{\includegraphics[width=0.3\textwidth]{Images/abab.pdf}\\
 Diagram at the first order in perturbation theory.}
 \[
 M(\chi^a\chi^b\to\chi^a\chi^b)=\frac{2i}{6v^2}[-(p_1-p_3)_\mu(p_2-p_4)^\mu-2\cdot2p_2\cdot p_4]
@@ -1679,7 +1692,7 @@ Hence, the amplitude becomes:
 \labeq{chi}
 M(\chi^a\chi^b\to\chi^a\chi^b)=\frac{i}{3v^2}[t+2(t-2m_A^2)]+\dots=\frac{it}{v^2}+\dots\sim\frac{E^2}{v^2}:=g^2(E)
 \end{equation}
-It is possible to interpret this amplitude as the coupling squared, which grows with the energy. The strength of this interaction increases as the energy increases, therefore there will be a certain value of energy for which perturbative theory does not hold anymore: is it possible to estimate this value? We consider the 1-loop contribution \marginnote{\includegraphics[]{Images/chiloop.pdf}\\
+It is possible to interpret this amplitude as the coupling squared, which grows with the energy. The strength of this interaction increases as the energy increases, therefore there will be a certain value of energy for which perturbative theory does not hold anymore: is it possible to estimate this value? We consider the 1-loop contribution \marginnote{\includegraphics[width=0.3\textwidth]{Images/chiloop.pdf}\\
 1-loop diagram.} which gives a contribution $\sim\frac{E^2}{v^2}\frac{E^2}{16\pi^2v^2}$, so the perturbative expansion will be something like:
 \[
 g^2(E)+g^2(E)\frac{g^2(E)}{16\pi^2}+\dots
