@@ -1564,7 +1564,7 @@ where we denoted with $\phi_0$ the column vector. The derivative gives no contri
 This is the Higgs mechanism for non-abelian gauge theories with broken U$(N)$ symmetry. In this example, we started with massless fields, some of them remained massless while other ones acquired mass through the Higgs mechanism. Now the question is: if we want a theory of only massive spin-1 particles, without any massless leftover, how can we do? To make it even more explicit, consider $N^2$ gauge fields and $(2N-1)$ NGBs, $N^2\ge2N-1$ for $N\ge1$: hence, for $N>1$ there will always be massless particles in the theory. $N=1$ is a special case in which we do not have any massless particle in the theory. How do we get rid of them? We move to another example with no massless gauge fields.
 %44:21
 \subsection{SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}\to$SU$(N)_{\text{V}}$ Spontaneous Breaking}
-Consider a theory with a global symmetry, SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}\to$SU$(N)_{\text{V}}$:
+Consider a theory with a global symmetry SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}$ broken into SU$(N)_{\text{V}}$. We will see why it is broken into SU$(N)_{\text{V}}$ and what it means. How many NGBs do we have? As usual, we have to count the broken generators:
 \[
 \begin{aligned}
 & &&\text{SU}(N)_{\text{L}}&&&\text{SU}(N)_{\text{R}}&&&&\text{SU}(N)_{\text{V}}\\
@@ -1581,58 +1581,70 @@ with $T^a$ generators of SU$(N)$ in the fundamental representation, i.e. $N\time
 \[
 \pazocal{L}=\frac{1}{4}v^2\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}
 \]
-$\Sigma$ is dimensionless by definition, so it is necessary to add the term $v^2$ which has dimension 2. What global symmetry do we have in this case? We can make a transformation in which $\Sigma$ is multiplied by elements of SU$(N)_{\text{L}}$ and SU$(N)_{\text{R}}$:
+$\Sigma$ is dimensionless by definition, so it is necessary to add the term $v^2$ which has dimension 2. What global symmetry do we have in this case? We can make a transformation in which $\Sigma$ is multiplied by elements of SU$(N)_{\text{L}}$ and SU$(N)_{\text{R}}$:\marginnote{$L$ acts on $\Sigma$ on the left and $R$ acts on $\Sigma$ on the right, hence the names SU$(N)_{\text{L}}$ and SU$(N)_{\text{R}}$.}
 \[
-\Sigma(x)\to\Sigma'=L\Sigma(x)R \quad L\in\text{SU}(N)_{\text{L}}, R\in\text{SU}(N)_{\text{R}}
+\Sigma(x)\to\Sigma'=L\Sigma(x)R^\dagger \quad L\in\text{SU}(N)_{\text{L}}, R\in\text{SU}(N)_{\text{R}}
 \]
-which gives us a symmetry due to the cyclicity of the trace. In the vacuum, the fields are put to zero, so $\langle\Sigma(x)\rangle=\mathbb{1}$ breaking SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}$ to SU$(N)_{\text{V}}$, i.e. elements of SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}$ which preserve $\langle\Sigma(x)\rangle=\mathbb{1}$ must be equal ($L=R$), hence elements of SU$(N)_{\text{V}}$ by definition. But why do we work in SU$(N)$? There is an even larger symmetry given by U$(N)_{\text{L}}\times$U$(N)_{\text{R}}$ broken to U$(N)_{\text{V}}$. However, this results in an additional NGB and if we do the same transformation as before $\Sigma'$ will not have the same properties as $\Sigma$ because now $L$ and $R$ are not special unitary matrices anymore. We focus on SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}\to$SU$(N)_{\text{V}}$ because it is the symmetry realized in QCD.
+which gives us a symmetry due to the cyclicity of the trace.\\
+In the vacuum, the fields $\chi^a(x)$ are put to zero, so $\langle\Sigma(x)\rangle=\mathbb{1}$ breaking SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}$ to SU$(N)_{\text{V}}$, i.e. elements of SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}$ which preserve $\langle\Sigma(x)\rangle=\mathbb{1}$ must be equal ($L=R$), hence elements of SU$(N)_{\text{V}}$ by definition. But why do we work in SU$(N)$? There is an even larger symmetry given by U$(N)_{\text{L}}\times$U$(N)_{\text{R}}$ broken to U$(N)_{\text{V}}$. However, this results in an additional NGB:
 \[
-\text{SU}(N)_{\text{L}}\times\text{SU}(N)_{\text{R}}\times\text{U}(1)_{\text{L}}\times\text{U}(1)_{\text{R}}\to\text{SU}(N)_{\text{V}}\times\text{U}(1)_{\text{V}}
+\begin{aligned}
+& &&\text{U}(N)_{\text{L}}&&&\text{U}(N)_{\text{R}}&&&&\text{U}(N)_{\text{V}}\\
+\hline
+&\text{\# generators:} &&N^2 &&&N^2 &&&&N^2\\
+&\text{\# broken generators:} &&N^2 &&& &&&&
+\end{aligned}
 \]
-The symmetry pattern of U$(1)_{\text{L}}\times$U$(1)_{\text{R}}$ can be written as U$(1)_{\text{A}}\times$U$(1)_{\text{V}}$ where the new generators are defined as:
+If we do the same transformation as before $\Sigma'$ will not have the same properties as $\Sigma$ because now $L$ and $R$ are not special unitary matrices anymore. We can still make a theory with the same kinetic term and the same pattern of symmetry breaking by simply providing one extra generator in $\Sigma(x)$, which is the one proportional to the identity. Which one is more relevant for us? We focus on SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}\to$SU$(N)_{\text{V}}$ because it is the symmetry realized in QCD. To understand it even better, we can rewrite the symmetry in the following way:
 \[
-T_{\text{V}}:=T_{\text{R}}+T_{\text{L}} \quad T_{\text{A}}:=T_{\text{R}}*T_{\text{L}}
+\text{U}(N)_{\text{L}}\times\text{U}(N)_{\text{R}}\simeq\text{SU}(N)_{\text{L}}\times\text{U}(1)_{\text{L}}\times\text{SU}(N)_{\text{R}}\times\text{U}(1)_{\text{R}}\to\text{SU}(N)_{\text{V}}\times\text{U}(1)_{\text{V}}
 \]
-These generators are abelian, so we can always write U$(1)_{\text{L}}\times$U$(1)_{\text{R}}$ as U$(1)_{\text{A}}\times$U$(1)_{\text{V}}$ but this is not true for SU$(N)$: SU$(N)_{\text{A}}$ does not exist because its algebra is not closed. U$(1)_{\text{V}}$ is just a spectator of this play because it is linearly realized, the extra NGB comes from U$(1)_{\text{A}}$ which is spontaneously broken.\marginnote{U$(1)_{\text{A}}$ is anomalous in QCD: it is a symmetry present on the classical level bur not on the quantum one.}\\
-Let's get back to the case where $\Sigma(x)$ is special and unitary. We want to see the Higgs mechanism, so we make part of this symmetry local, there are two possibilities: we either make local SU$(N)_{\text{L}}$ or SU$(N)_{\text{R}}$. We decide to work with the first one, so we introduce $N^2-1$ gauge fields $A_\mu^a(x)$ and then we have to make covariant the derivative.\marginnote{If we make local SU$(N)_{\text{R}}$ instead the covariant derivative will have a plus sign since we are in the anti-fundamental representation.}
+It turns out that U$(1)_{\text{L}}\times$U$(1)_{\text{R}}$ can be always rewritten as U$(1)_{\text{A}}\times$U$(1)_{\text{V}}$ where the new generators are defined as:
 \[
-D_\mu\Sigma=\partial_\mu\Sigma-igT^aA_\mu^A\Sigma
+T_{\text{V}}:=T_{\text{R}}+T_{\text{L}} \quad T_{\text{A}}:=T_{\text{R}}-T_{\text{L}}
+\]
+These generators are all abelian, so we can always write U$(1)_{\text{L}}\times$U$(1)_{\text{R}}$ as U$(1)_{\text{A}}\times$U$(1)_{\text{V}}$ but this is not true for SU$(N)$: SU$(N)_{\text{A}}$ does not exist because its algebra is not closed. U$(1)_{\text{V}}$ is just a spectator of this play because it is linearly realized, the extra NGB comes from U$(1)_{\text{A}}$ which is spontaneously broken.\marginnote{U$(1)_{\text{A}}$ is not a good symmetry, it is anomalous in QCD: it is a symmetry present on the classical level but not on the quantum one.}\\
+Let's get back to the case where $\Sigma(x)$ is special and unitary. We want to see the Higgs mechanism at work, so we gauge part of this symmetry, there are two possibilities: we either gauge, i.e. make local, SU$(N)_{\text{L}}$ or SU$(N)_{\text{R}}$. We decide to work with the first one, so we introduce $N^2-1$ gauge fields $A_\mu^a(x)$ and then we have to make covariant the derivative acting on $\Sigma$.\marginnote{If we make local SU$(N)_{\text{R}}$ instead the covariant derivative will have a plus sign since we are in the anti-fundamental representation.}
+\[
+D_\mu\Sigma:=\partial_\mu\Sigma-igT^aA_\mu^a\Sigma
 \]
 At the end of the day, we can write the Lagrangian as:
 \[
 \pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{v^2}{4}\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}
 \]
-As usual, we move to the unitary gauge where $\Sigma(x)=\mathbb{1}$. To do that, we make a local SU$(N)$ transformation which hides all the NGBs and we obtain:
+To see he Higgs mechanism at work, we move to the unitary gauge where $\Sigma(x)=\mathbb{1}$. To do that, we make a local SU$(N)$ transformation which eats all the NGBs and we obtain:
 \[
 \frac{v^2}{4}\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}=\frac{v^2}{4}g^2\Tr{T^aT^b}A_\mu^aA_\mu^b=\frac{1}{2}\left(\frac{vg}{2}\right)^2A_\mu^a(x)A_\mu^a(x)\Rightarrow m=\frac{gv}{2}
 \]
-In the last step we used the fact that $T^a$ and $T^b$ are generally normalized so that $\Tr{T^aT^b}=\frac{\delta^{ab}}{2}$. We observe that all the gauge fields acquire the same mass.\marginnote{If we make both SU$(N)_{\text{L}}$ and SU$(N)_{\text{R}}$ local we will have $N^2-1$ massive fields and $N^2-1$ will remain massless, but we do not want those extra massless fields.}
-SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}$ is not linearly realized even if the transformation for $\Sigma$ is linear: how is that possible? We have two non-linear constraints:
+In the last step we used the fact that $T^a$ and $T^b$ are generally normalized so that $\Tr{T^aT^b}=\frac{\delta^{ab}}{2}$. We observe that all the gauge fields acquire the same mass.\marginnote{If we make both SU$(N)_{\text{L}}$ and SU$(N)_{\text{R}}$ local we will have $N^2-1$ massive fields and $N^2-1$ will remain massless, but we do not want those extra massless fields.}\\
+SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}$ is not linearly realized even if apparently the transformation for $\Sigma$ is linear: how is that possible? In this case, there are two non-linear constraints:
 \begin{enumerate}
     \item $\Sigma\Sigma^\dagger=\Sigma^\dagger\Sigma=\mathbb{1}$ results in $N^2$ constraints ($\Sigma$ is a $N\times N$ hermitian matrix)
     \item $\Tr{\log\Sigma}=0$ results in 1 constraint. This is because $\Sigma$ has to be not only unitary but also special, we are requiring that the generators are traceless.
 \end{enumerate}
-Finally, there will be $2N^2-N^2-1=N^2-1$ degrees of freedom which are exactly the ones we have.\\
+If we start with a $N\times N$ complex matrix there are $2N^2$ degrees of freedom. We have to subtract the constraints just imposed, resulting in $2N^2-N^2-1=N^2-1$ degrees of freedom which are exactly the ones we have.\\
 SU$(N)_{\text{V}}$ is linearly realized, which means that also $\chi(x)$ transforms linearly.
 \[
-\Sigma\xrightarrow[]{\text{SU}(N)_{\text{V}}}\underbrace{e^{i\alpha^AT^A}}_{V}\underbrace{e^{2i\chi^a(x)T^a/v}}_{\Sigma}\underbrace{e^{-i\alpha^AT^A}}_{V^\dagger}=\exp{2i\chi^a(x)VT^aV^\dagger}
+\Sigma\xrightarrow[]{\text{SU}(N)_{\text{V}}}\underbrace{\exp{i\alpha^AT^A}}_{V}\underbrace{\exp{2i\chi^a(x)T^a/v}}_{\Sigma}\underbrace{\exp{-i\alpha^AT^A}}_{V^\dagger}=\exp{2i\chi^a(x)VT^aV^\dagger}
 \]
-If we write the exponential as a series we obtain exactly the transformation rule for a linearly realized symmetry. Define now:
+That is exactly the transformation rule we want for a linearly realized symmetry, because at this point we can write:
 \[
 \chi^a(x)T^a\to\chi^a(x)\underbrace{VT^aV^\dagger}_{R_{ab}T^b}=\underbrace{\chi^a(x)R_{ab}}_{\chi^b(x)}T^b=\chi^b(x)T^b
 \]
-We proved that SU$(N)_{\text{V}}$ is linearly realized. However, this theory is not complete because we cannot extrapolate it at arbitrary high energies. It is a theory of $N^2-1$ self-interacting spin-1 particles, in the unitary gauge we have:
+We proved that SU$(N)_{\text{V}}$ is linearly realized. However, this theory is not complete because it cannot be extrapolated it at arbitrary high energies. It is a theory of $N^2-1$ self-interacting spin-1 massive particles, in the unitary gauge we have:
 \[
 \pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{2}m_A^2A_\mu^aA_\mu^a
 \]
-\subsection{SU$(2)\times$SU$(2)\to$SU(2) Spontaneous Breaking}
-Why do we switch to the formalism with $\Sigma$ when it is possible to write the Lagrangian in this way? First of all, it is not clear that it is a gauge theory while it is if we write it in terms of $\Sigma$. Moreover, $\Sigma$ contains an important information: in the scattering processes there is, at a certain energy, a probability larger than 1 as long as we are at the tree-level, we are losing perturbative unitarity. Consider the scattering of two longitudinal vectors $A_L^aA_L^b\to A_L^cA_L^d$: 
+One might object: this expression is super simple, why did we have to go to the complicated formulation in terms of $\Sigma$? First of all, from here it is not clear that this is a gauge theory, while it is more obvious if we write it in terms of $\Sigma$. Moreover, $\Sigma$ contains an important information: in the scattering processes there is, at a certain energy, a probability larger than 1 as long as we are at the tree-level, we are losing perturbative unitarity. How can this happen? Because it is a self-interactive theory. Consider the scattering of two longitudinal vectors $A_L^aA_L^b\to A_L^cA_L^d$: 
 \begin{figure}[h]
     \centering
     \includegraphics{Images/abcd.pdf}
     \caption{Scattering of two longitudinal vectors.}
     \label{fig:my_label}
-\end{figure}if we sum all the diagrams, we find out that the total goes like $E^2$, which is obviously not good. We have to use the equivalence theorem [\refsec{eqthm}] to try to cure this growth. The theorem tells us that we can compute the scattering amplitude of this process by substituting $A_L$ with the NGB $\chi$ but to perform this calculation we have to be in the $\xi$-gauge. 
+\end{figure}\\
+If we sum all the diagrams, we find out that the total goes like $E^2$\marginnote{Each diagram naively goes like $E^4$, to get the cancellation when summing them one has to work hard and suffer a little bit.}, which is obviously not good because it will give us a cross section scaling as $E^2$ and eventually at some energy there will be a probability bigger than one. The same calculation can be done very easily with the $\Sigma$ field using the equivalence theorem [\refsec{eqthm}]. In this formulation it will become clear how to cure this growth. 
+\subsection{SU$(2)\times$SU$(2)\to$SU(2) Spontaneous Breaking}
+The theorem tells us that we can compute the scattering amplitude of this process by substituting $A_L$ with the NGB $\chi$ but to perform this calculation we have to be in the $\xi$-gauge. 
 \[
 \pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{v^2}{4}\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}+\text{gauge-fixing}
 \]
