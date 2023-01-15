@@ -1718,7 +1718,7 @@ g^2(E)+g^2(E)\frac{g^2(E)}{16\pi^2}+\dots
 \]
 %55:14
 This perturbative series breaks when $\frac{g^2(E)}{16\pi^2}\sim\pazocal{O}(1)$, which corresponds to $E_{\text{max}}\approx4\pi v$. Two things happen at this energy: first, we lose control of the perturbation expansion and at the same time we lose unitarity, since the cross section gets so large that the probability becomes bigger than one. People say that we lose \textbf{perturbative unitarity}. Unitarity is broken if we just keep the tree-level diagram and go to energy above $E_{\text{max}}$ but at the same time at this energy loop corrections become equally important. 
-\section{Higgs Boson}
+\section{Role of the Higgs Boson}
 At this point we know that this theory cannot be extrapolated at arbitrary high energies and one may ask: what do we do with this theory, we throw it away or we can still use it? There are two possibilities:
 \begin{enumerate}
     \item modify the theory, so that it becomes mathematically complete. We are actually lucky, because there is a simple way to do that. In order to do that, we need to change the number of degrees of freedom, adding them.
@@ -1753,51 +1753,63 @@ In the SU(2) case, this unitary transformation is $i\sigma^2$, therefore we have
 \right.
 \]
 $\Phi$ transforms as $\Phi\to L\Phi R^\dagger$, so as a fundamental of SU(2)$_{\text{L}}$ and an anti-fundamental of SU(2)$_{\text{R}}$. If we define $\Phi^c:=i\sigma^2\Phi^*(-i\sigma^2)$, this will transform as $\Phi^c\to L\Phi^c R^\dagger$: it transforms in the same way as $\Phi$.\\
-We can impose $\Phi=\Phi^c$, throwing away 4 degrees of freedom since it gives us 4 conditions. We can define $\mathcal{H}:=\Phi$\marginnote[-1.75cm]{The amount of new notation introduced in this few lines:\\
+We can impose $\Phi=\Phi^c$, throwing away 4 degrees of freedom since it gives us 4 conditions. We can define $\pazocal{H}:=\Phi$\marginnote[-1.75cm]{The amount of new notation introduced in this few lines:\\
 \includegraphics[]{Images/parkour.jpg}\\
-Parkour!} which transforms as $\mathcal{H}\to L\mathcal{H}R^\dagger$ and the reality condition translates as $\mathcal{H}=i\sigma^2\mathcal{H}^*(-i\sigma^2)$. From this condition it follows that $\mathcal{H}=\varphi(x)\Sigma(x)$, with $\varphi(x)$ a real scalar field. $\mathcal{H}$ has 8-4=4 degrees of freedom, 3 in $\Sigma(x)$ and 1 in $\varphi(x)$.\\
+Parkour!} which transforms as $\pazocal{H}\to L\pazocal{H}R^\dagger$ and the reality condition translates as $\pazocal{H}=i\sigma^2\pazocal{H}^*(-i\sigma^2)$. From this condition it follows that $\pazocal{H}=\varphi(x)\Sigma(x)$, with $\varphi(x)$ a real scalar field. $\pazocal{H}$ has 8-4=4 degrees of freedom, 3 in $\Sigma(x)$ and 1 in $\varphi(x)$.\\
 %1:22:30
-In general $\mathcal{H}$ is a $2\times2$ matrix which can always be written as\\
-$\mathcal{H}=a_0\mathbb{1}+ia_i\sigma^i$, but the reality condition implies that $a_0$ and $a_i$ must be real.
+In general $\pazocal{H}$ is a $2\times2$ matrix which can always be written as\\
+$\pazocal{H}=a_0\mathbb{1}+ia_i\sigma^i$, but the reality condition implies that $a_0$ and $a_i$ must be real.
 \begin{align*}
-&\mathcal{H}^\dagger\mathcal{H}=(a_0\mathbb{1}-ia_i\sigma^i)(a_0\mathbb{1}+ia_i\sigma^i)=a_0^2\mathbb{1}+a_ia_j\sigma^i\sigma^j\\
+\pazocal{H}^\dagger\pazocal{H}&=(a_0\mathbb{1}-ia_i\sigma^i)(a_0\mathbb{1}+ia_j\sigma^j)=a_0^2\mathbb{1}+a_ia_j\sigma^i\sigma^j\\
 &=a_0^2\mathbb{1}+\frac{a_ia_j}{2}\{\sigma^i,\sigma^j\}=(a_0^2+a_i^2)\mathbb{1}
 \end{align*}
-$\mathcal{H}^\dagger\mathcal{H}$ is the identity, we could have seen it directly from the definition $\mathcal{H}=\varphi(x)\Sigma(x)$. At this point we have to write the Lagrangian for $\mathcal{H}$ and obtain the Feynman rules, i.e. the interactions.
+In other words, $\pazocal{H}^\dagger\pazocal{H}$ is the identity, but that's exactly what we get from $\pazocal{H}=\varphi(x)\Sigma(x)$:
 \[
-\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{4}\Tr{(D_\mu\mathcal{H})^\dagger(D^\mu\mathcal{H})}
+\pazocal{H}^\dagger\pazocal{H}=\varphi^2(x)\mathbb{1}
 \]
-SU$(2)_L\times$SU$(2)_R$ has to be spontaneously broken, so we must add a potential $V(\mathcal{H})$ to the Lagrangian.\marginnote{We add it with a minus sign so that we can recover the usual Mexican hat. Andale! Andale!}
+The two expression we provided for $\pazocal{H}$ are substantially equivalent, this is a sort of \textit{proof} to convince ourselves of this fact. This field $\varphi(x)$ will contain the Higgs boson. Now we have to write the Lagrangian for $\pazocal{H}$ and obtain the Feynman rules, i.e. the interactions.
+\begin{equation}
+\labeq{lsigma}    
+\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{4}\Tr{(D_\mu\pazocal{H})^\dagger(D^\mu\pazocal{H})}
+\end{equation}
+Setting $\varphi(x)$ to $v$ will bring us back to the previous case, $\pazocal{H}$ has dimension 1 so we do not need the $v^2$ in front. This has a linearly realized SU$(2)_{\text{L}}\times$SU$(2)_{\text{R}}$ but we want it to be spontaneously broken, so we must add a potential $V(\pazocal{H})$ to the Lagrangian.\marginnote{We add it with a minus sign ($-V(\pazocal{H})$) so that we can recover the usual Mexican hat. Andale! Andale!}
 \[
-V(\mathcal{H})=-\frac{\mu^2}{4}\Tr{\mathcal{H}^\dagger\mathcal{H}}+\frac{\lambda}{16}(\Tr{\mathcal{H}^\dagger\mathcal{H}})^2=-\frac{\mu^2}{2}\varphi^2(x)+\frac{\lambda}{4}\varphi^4(x)
+V(\pazocal{H})=-\frac{\mu^2}{4}\Tr{\pazocal{H}^\dagger\pazocal{H}}+\frac{\lambda}{16}\left(\Tr{\pazocal{H}^\dagger\pazocal{H}}\right)^2=-\frac{\mu^2}{2}\varphi^2(x)+\frac{\lambda}{4}\varphi^4(x)
 \]
-It follows that $\langle\varphi(x)\rangle=v=\sqrt{\mu^2/\lambda}$, so we can write $\varphi(x)=v+h(x)$ where $h(x)$ is the Higgs boson (fluctuations around the vev). Now we have to substitute the expression for $\mathcal{H}$ in the $\xi$-gauge and find the interactions. From the trace term we obtain the kinetic term for the Higgs boson, while from the potential the mass term for $h(x)$ and its interactions.
+It follows that $\langle\varphi(x)\rangle=v=\sqrt{\frac{\mu^2}{\lambda}}$, so we can write $\varphi(x)=v+h(x)$ where $h(x)$ is the Higgs boson, i.e. fluctuations around the vev. If we set $h(x)$ to 0 we recover the previous case, we want to excite the Higgs boson. To do that, we substitute the expression for $\pazocal{H}$ in the $\xi$-gauge and find all the interactions. From the trace term we obtain the kinetic term for the Higgs boson, while from the potential the mass term for $h(x)$ and its interactions. The covariant derivative acts on $\pazocal{H}$ in the following way:
+\[
+D_\mu\pazocal{H}=(\partial_\mu-igA_\mu^aT^a)\varphi\Sigma=(\partial_\mu\varphi)\Sigma+\varphi(D_\mu\Sigma)
+\]
+Now we can compute the trace:
 \begin{align*}
-&\bullet D_\mu\mathcal{H}=\partial_\mu\varphi\Sigma+\varphi D_\mu\Sigma\\
-&\bullet \Tr{(D_\mu\mathcal{H})^\dagger(D^\mu\mathcal{H})}=2(\partial_\mu\varphi)^2\Tr{\Sigma\Sigma^\dagger}+\varphi^2\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}
+\Tr{(D_\mu\pazocal{H})^\dagger(D^\mu\pazocal{H})}=&(\partial_\mu\varphi)^2\Tr{\Sigma\Sigma^\dagger}+\varphi^2\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}\\
+&+\varphi\partial_\mu\varphi\Tr{\Sigma^\dagger(D_\mu\Sigma)+(D_\mu\Sigma)^\dagger\Sigma}
 \end{align*}
-From the last trace, the main interaction we find for the Higgs boson is $\frac{1}{2}(\partial_\mu\chi^2)^2\frac{h}{4}$, which gives a contribution to the scattering amplitude. This contribution is what cures $g^2(E)$.\\
-It is possible to write the full Lagrangian as:
+The last piece vanishes because it is nothing but $\Tr{D_\mu(\Sigma^\dagger\Sigma)}=\Tr{\partial_\mu(\Sigma^\dagger\Sigma)}$ which is equal to zero. We put a normal derivative because $\Sigma^\dagger\Sigma$ transforms as a singlet under SU(2)$_{\text{L}}$, which means:
+\[
+\Sigma\to L\Sigma R^\dagger\Rightarrow(\Sigma^\dagger\Sigma)\to R(\Sigma^\dagger\Sigma)R^\dagger
+\]
+We are left with the kinetic term for $\Sigma$ which we have already encountered before, $\Tr{\Sigma\Sigma^\dagger}=2$ so the Lagrangian is obtained by plugging this expression in \refeq{lsigma}:
 \[
 \pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{2}(\partial_\mu\varphi)^2+\frac{\mu^2}{2}\varphi^2-\frac{\lambda}{4}\varphi^4+\frac{1}{4}\varphi^2\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}
 \]
 Let's look at the potential: if we look for the minima, we find\\
-$\langle\varphi\rangle=v=\sqrt{\mu^2/\lambda}$. This means that SU$(2)_L\times$SU$(2)_R$ is a broken symmetry, broken to SU$(2)_V$. It is now possible to define the field $\varphi(x)$ as the vev+a certain excitation $h(x)$ with $m_h^2=2\mu^2$. This is the 4-th degree of freedom for the massive radial excitation, the other 3 are in $\Sigma$ and parameterize the excitation around the valley of minima.
+$\langle\varphi\rangle=v=\sqrt{\frac{\mu^2}{\lambda}}$, implying $\langle\pazocal{H}\rangle=v$ This means that SU$(2)_{\text{L}}\times$SU$(2)_{\text{R}}$ is broken to SU$(2)_{\text{V}}$. It is now possible to define the field $\varphi(x)$ as the vev $v$+a certain excitation denoted by $h(x)$ with $m_h^2=2\mu^2$. This is the Higgs boson, the 4-th degree of freedom for the massive radial excitation, the other 3 are in $\Sigma$ and parametrize the excitation around the valley of minima.
 \begin{align*}
-\pazocal{L}&=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{2}(\partial_\mu h(x))^2+\frac{1}{2}m_h^2h^2(x)-\lambda vh^3(x)-\frac{\lambda}{4}h^4(x)\\
+\pazocal{L}=&-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{2}(\partial_\mu h(x))^2+\frac{1}{2}m_h^2h^2(x)-\lambda vh^3(x)-\frac{\lambda}{4}h^4(x)\\
 &+\frac{v^2}{4}\left(1+\frac{h(x)}{v}\right)^2\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}+\text{constant terms}
 \end{align*}
-We have $h(x)$ as a self-interacting massive field and it interacts through the last term with the NGB $\chi^a$ contained in $\Sigma$. We want to understand this interaction and see how this fixes the dependency $E^2$ of the scattering amplitude of $\chi^a\chi^b\to\chi^a\chi^b$. This gives us the diagram depicted on the side \marginnote{\includegraphics[width=0.3\textwidth]{Images/aahbb.png}}:
+Now, we have $h(x)$ as a self-interacting massive field and it interacts through the last term with the NGB $\chi^a$ contained in $\Sigma$. We want to understand this interaction and see how this fixes the dependency $E^2$ of the scattering amplitude of $\chi^a\chi^b\to\chi^a\chi^b$. This gives us the diagram depicted on the side \marginnote{\includegraphics[width=0.3\textwidth]{Images/aahbb.png}}:
 \begin{align*}
 M_h(\chi^a\chi^b\to\chi^a\chi^b)&=\frac{i^2}{2!v^2}2\cdot2\cdot2(p_1\cdot p_3)(p_2\cdot p_4)\frac{i}{(p_1-p_3)^2-m_h^2}\\
-&=\frac{-i}{t-m_h^2}(t-2m_A)^2\frac{1}{v^2}=-\frac{it}{v^2}+\dots
+&=\frac{-i}{t-m_h^2}(t-2m_A^2)^2\frac{1}{v^2}=-\frac{it}{v^2}+\dots
 \end{align*}
-This contribution is exactly the same as the one from $\chi$ [\refeq{chi}] with opposite sign, hence they cancel each other and the scattering amplitude is constant at high energies. \raisebox{-\mydepth}{{\includegraphics[height=1.1\baselineskip]{Images/smile.jpg}}}
+At high energies, this contribution is exactly the same as the one from $\chi$ [\refeq{chi}] with opposite sign, hence they cancel each other and the total scattering amplitude is constant. \raisebox{-\mydepth}{{\includegraphics[height=1.1\baselineskip]{Images/smile.jpg}}}
 
-If we have a spontaneously broken symmetry G$\to$H, the fields must form a complete multiplet of H, not of G. There are two possibilities to spontaneously break G to H:
+If we have a spontaneously broken symmetry G$\to$H, the fields must form complete multiplets of H, not of G. There are two possibilities to spontaneously break G to H:
 \begin{itemize}
     \item fields form complete multiplets of G but at the minimum of the potential G$\to$H.\marginnote{The symmetry G is recovered at high energies, $E\gg v$} What we have is then a massive spin-1 particles theory which at high energies can be interpreted as massless spin-1 particles+scalar. This means that at high energies the spin-1 massive theory has to be interpreted as a gauge theory where the fields are representations of G.
-    \item fields do not form a complete representation of G but only of H: they cannot be extrapolated at high energies, the massive spin-1 particles theory collapses at some point because there is one less degree of freedom, there is no $h(x)$. It is an effective theory, there is a cut-off $\Lambda\approx4\pi v$.
+    \item fields do not form a complete representation of G but only of H. This extrapolation at high energies will not work, the massive spin-1 particles theory collapses at some point because there is one less degree of freedom, there is no Higgs boson $h(x)$. It is an effective theory, there is a cut-off $\Lambda\approx4\pi v$.
 \end{itemize}
 
 \end{document}
