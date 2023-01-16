@@ -28,32 +28,33 @@ $\pazocal{L}^{(4)}$ describes the low energy degrees of freedom and it is renorm
 \frac{\delta A}{A}\approx\left(\frac{E}{M}\right)^{(d_n-4)m}
 \]
 where $m$ is the number of insertions of the operator $O^{(n)}(x)$. The principal effects come from the low-energy degrees of freedom, there are corrections which go like $E/M$: the larger is the dimensionality of the operator, the smaller the effects will be. It is also possible to cut the series, since it does not have much sense to consider it all because of experimental precision we are not sensitive to these operators. The theory is not renormalizable, but we can truncate, so the number of parameters we have to renormalize is finite and we are happy. \raisebox{-\mydepth}{{\includegraphics[height=1.1\baselineskip]{Images/smile.jpg}}}\\
-When $M$ is much larger than the energy of the process we are considering it is possible to expand the propagator. But it is more convenient to expand the Lagrangian in terms of local operators which involve lighter degrees of freedom and the expansion is in terms of the ratio between the momenta of lighter particles and the mass $M$ of the heaviest particle, then truncate the series according to the precision required by the process.
+When $M$ is much larger than the energy of the process we are considering it is possible to expand the propagator. But it is more convenient to expand the Lagrangian in terms of local operators which involve lighter degrees of freedom and the expansion is in terms of the ratio between the momenta of lighter particles and the mass $M$ of the heaviest particle, then truncate the series according to the precision required by the process.\\
+To make things more clear, we make a couple of examples.
 \subsection{Examples of EFTs}
 \begin{example}\textbf{\href{https://en.wikipedia.org/wiki/Enrico_Fermi}{Fermi} theory for $\beta$ decay}\\
 The $\beta$ decay $n\to pe^-\Bar{\nu}_e$ is described by:
 \[
 \pazocal{L}=-\frac{G_F}{\sqrt{2}}[\underbrace{\Bar{p}\gamma^\mu(1-\gamma_5)n}_{J^{\mu}_{\text{had}}}][\underbrace{\Bar{e^-}\gamma^\mu(1-\gamma_5)\nu_e}_{J^{\mu}_{\text{lep}}}]
 \]
-This Lagrangian is the product of two currents and has dimension 6. We can see it as an EFT obtained by integrating, i.e. considering only what is below, a heavy particle coupled to both hadrons and leptons. This particle is massive with spin 1, with a mass much bigger than the energy involved in the process: the $W$ boson.\marginnote[-3cm]{\includegraphics[]{Images/betadecay.pdf}\\
+This Lagrangian is the product of two currents and has dimension 6. We can see it as an EFT obtained by integrating out, i.e. considering only what is below, a heavy particle coupled to both hadrons and leptons. This particle is massive with spin 1, with a mass much bigger than the energy involved in the process: the $W$ boson.\marginnote[-3cm]{\includegraphics[]{Images/betadecay.pdf}\\
 Diagram of the process}\\
 From the complete theory, the amplitude of this diagram is given by:
 \[
 A=\left(\frac{g}{\sqrt{2}}\right)^2\frac{i^2}{2!}2\frac{(-i)}{k^2-m_W^2}\eta_{\mu\nu}\Bar{u}(p)\gamma^\mu\frac{(1-\gamma_5)}{2}u(n)\Bar{u}(e^-)\gamma^\nu\frac{(1-\gamma_5)}{2}v(\nu_e)
 \]
-If $k^2\ll m_W^2$, it is possible to expand the propagator:
+Without going into details, the point here is that if $k^2\ll m_W^2$ it is possible to expand the propagator:
 \[
 \frac{1}{k^2-m_W^2}\simeq-\frac{1}{m_W^2}\left(1+\frac{k^2}{m_W^2}-\frac{k^4}{m_W^4}+\dots\right)
 \]
-Each term here is analytical in $k$, each contribution comes from a local operator. The Fermi model comes from the contribution at first order of this propagator, which basically means that the diagram is approximated by a contact interaction between the hadronic and leptonic currents. If we compare the amplitude from the effective theory with the one obtained by the complete theory (at first order) it is possible to find the value of the effective operator:
+Each term here is analytical in $k$, therefore each contribution comes from a local operator. The Fermi interaction is basically coming from the contribution at first order of this propagator, which means that the diagram is approximated by a contact interaction between the hadronic and leptonic currents. By comparing the amplitude from the effective theory with the one obtained by the complete theory (at first order) it is possible to find the value of the effective operator:
 \[
 \left(\frac{G_F}{\sqrt{2}}\right)=\frac{g^2}{8m_W^2}
 \]
-Higher orders of the expansion correspond to other contributions, operators with higher dimensionality, where the momentum corresponds to interactions which contain derivatives and act on currents.
+Higher order terms of the expansion correspond to other contributions, operators with higher dimensionality, where the momentum corresponds to derivative interactions acting on currents.
 \[
 \begin{aligned}
-&\frac{k^2}{m_W^4}\to\frac{1}{m_W^4}J_{had}^\mu\Box J_\mu^{lep} \quad &&D=8\\
-&\frac{k^4}{m_W^6}\to\frac{1}{m_W^6}J_{had}^\mu\Box^2 J_\mu^{lep} \quad &&D=10
+&\frac{k^2}{m_W^4}\to\frac{1}{m_W^4}J_{\text{had}}^\mu(x)\Box J_\mu^{\text{lep}}(x) \quad &&D=8\\
+&\frac{k^4}{m_W^6}\to\frac{1}{m_W^6}J_{\text{had}}^\mu(x)\Box^2 J_\mu^{\text{lep}}(x) \quad &&D=10
 \end{aligned}
 \]
 We are increasing the number of derivatives which act on the fields, hence the dimensionality. It is important that all these operators are local.
@@ -61,43 +62,54 @@ We are increasing the number of derivatives which act on the fields, hence the d
 \begin{example}\textbf{Heavy fermion coupled to a scalar and a gauge field}\\
 The Lagrangian which describes this kind of theory is:
 \[
-\pazocal{L}=\Bar{\Psi}(i\slashed{D}-M)\Psi-\frac{1}{4}(F_{\mu\nu})^2+\frac{1}{2}(\partial_\mu\phi)^2+y\phi\Bar{\Psi}\Psi-\frac{m_\phi^2}{2}\phi^2
-\marginnote[-2cm]{\includegraphics{Images/aaphiphi.pdf}\\
+\pazocal{L}=\Bar{\Psi}(i\slashed{D}-M)\Psi-\frac{1}{4}(F_{\mu\nu})^2+\frac{1}{2}(\partial_\mu\phi)^2+y\phi\Bar{\Psi}\Psi-\frac{1}{2}m_\phi^2\phi^2
+\marginnote[-2.5cm]{\includegraphics{Images/aaphiphi.pdf}\\
 Diagram of the full process.}
 \]
-We want to take the limit in which $E\ll M$, where $\Psi$ will be point-like. It is possible to obtain an effective theory where $\Psi$ is not present but it is integrated out. What we get is a contact interaction between $\phi$ and $A$ but since $\phi$ is neutral this interaction will not be of the type of minimal coupling but it will have to respect gauge invariance. \marginnote[-1cm]{\includegraphics[]{Images/phiplike.pdf}\\
+We want to take the limit in which $E\ll M$, where $\Psi$ will be point-like. It is possible to obtain an effective theory where $\Psi$ is not present but it is integrated out. What we get is a contact interaction between the scalar $\phi$ and the gauge field $A$ but since $\phi$ is neutral this interaction will not be of the type of minimal coupling but it will have to respect gauge invariance. \marginnote[-1cm]{\includegraphics[0.5cm]{Images/phiplike.pdf}\\
 Diagram for $E\ll M$ and $\Psi$ point-like.}
 The operator involved will be $F^2_{\mu\nu}\phi^2$ which has dimension 6. The scattering amplitude will be:
 \[
-M(AA\to\phi\phi)\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize $E\ll M$ };}}{\propto}\frac{g^2}{16\pi^2}y^2\varepsilon_\mu(p_1)\varepsilon_\nu(p_2)\underbrace{(\eta^{\mu\nu}(p_1\cdot p_2)-p_1^\mu p_2^\nu)}_{M^{\mu\nu}}
+M(AA\to\phi\phi)\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize $E\ll M$ };}}{\propto}\frac{g^2}{16\pi^2}y^2\varepsilon_\mu(p_1)\varepsilon_\nu(p_2)\underbrace{(\eta^{\mu\nu}(p_1\cdot p_2)-p_1^\mu p_2^\nu)}_{=M^{\mu\nu}}
 \]
-This has to be dimensionless, so there will be a mass scale $M^2$ at the denominator, where $M$ is the mass of $\Psi$.
+Gauge invariance, which implies the Ward identity, forces $M^{\mu\nu}$ to have this structure. The scattering amplitude has to be dimensionless, so there will be a mass scale at the denominator, given by $M^2$. The coefficient in front of the dimension 6 operator $F_{\mu\nu}^2\phi^2$ can be identified to be:
+\[
+c_6\simeq\frac{g^2}{16\pi^2}\frac{y^2}{M^2}
+\]
+Notice that the loop diagram is finite, because the superficial degree of divergence is zero. Gauge invariance forces us to have two powers of the external momenta and this lower the degree of divergence by two.
 \end{example}
 \section{EFTs as QFTs}
-Let's get back to the general structure of an EFT [\refeq{EFT}]: what is the value of $d_n$? We have to be careful because in general the dimensionality of an operator changes with the interactions. If we assume that the EFT is weakly coupled, in a certain region of energy, then the dimensionality is the classical one. On the other hand, if the theory is strongly coupled, the dimensionality is modified by the interaction: there is an anomalous dimension coming from quantum effects. This anomalous dimension can be neglected in the case the theory is weakly coupled, so in our case $[O^{(n)}]=$classical dimension. The fact that for $E\ll M$ the contribution of high dimensionality operators is suppressed has some consequences: it implies that for $[O^{(n)}]<4$ they are irrelevant (in the IR), they become important at high energies.\\
-Suppose to have an EFT, where we truncated the series and kept only the dominant contributions at low energy: how can we use this EFT? Can we use the Lagrangian only at tree-level or also at loop level? EFTs are full-fledged QFTs, there are no restrictions to impose, it is possible to use them at any order.\\
-Take now a theory with quantum interaction and consider it at 1-loop. In this loop there is an exchange of virtual momenta which can be as large as we want. The derivatives appearing in the vertices will give us a nasty UV behaviour because the larger the number of derivatives is, the more divergent the diagram will be. The effective and the complete theory are different: in the complete theory, the loop has to be replaced with something with more propagators, which is more convergent. The UV behaviour is much nicer for complete theory than it is for effective ones but it is not a problem. These divergences have a local effect and they can be removed by the counter-terms, it is a redefinition of local operators that we insert in the theory, they do not modify the low energy behaviour.
+Let's get back to the general structure of an EFT [\refeq{EFT}]: what is the value of $d_n$? We have to be careful because in general the dimensionality of an operator can change with the interactions. If we assume that the EFT is weakly coupled, in a certain region of energy, then the dimensionality of $O^{(n)}(x)$ is the classical one. On the other hand, if the theory is strongly coupled, the dimensionality is modified by the interaction: there is an anomalous dimension coming from quantum effects. This anomalous dimension can be neglected in the case the theory is weakly coupled, so in our case $[O^{(n)}(x)]=d_n\simeq$ classical dimension.\\
+The fact that for $E\ll M$ the contribution of high dimension operators is suppressed has some consequences: it implies that for $[O^{(n)}]>4$ they are irrelevant (in the IR), they become important at high energies. If we increase the energy, the contribution of these operators is increasing. At energy comparable to $M$, all the operators in the series will give contributions of the same order. At this point, the effective theory breaks down.\\
+Suppose to have an EFT, where we have truncated the series and kept only the dominant contributions at low energy: how can we use this EFT? Can we use the Lagrangian only at tree-level or also at loop level? EFTs are \textbf{full-fledged QFTs}, there are no restrictions to impose, it is possible to use them at any loop order.\\
+Take now a theory with quartic interaction and consider it at 1-loop. In this loop there is an exchange of virtual momenta which can be as large as we want. The derivatives appearing in the vertices will give us a nasty UV behaviour because the larger the number of derivatives is, the more divergent the diagram will be. The effective and the complete theory are different: in the complete theory, the loop has to be replaced with something with more propagators, which is more convergent. The UV behaviour is much nicer for complete theory than it is for effective ones but it is not a problem. These divergences will be local, they occur at very short distances since they correspond to extremely high virtual momenta so they basically correspond to local effect and they can be cancelled by the counter-terms. Being local operators, this is nothing but a redefinition of local operators that we insert in the theory. We are not changing the low energy behaviour. Let's see an example.
 \begin{example}
 Consider the following theory:
 \[
-\pazocal{L}=\frac{v^2}{4}\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}=(\partial_\mu\chi)^2+\frac{1}{v^2}(\chi\partial_\mu\chi)^2+\dots
+\pazocal{L}=\frac{v^2}{4}\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma} \quad \Sigma=\exp{i\frac{\chi^a(x)\sigma^a}{v}}
 \]
-Suppose we want to expand it at 1-loop \marginnote{\includegraphics[]{Images/chiloop2.pdf}\\
-1-loop expansion.}and for simplicity we consider $\chi$ massless, so the only parameter will be the external momenta:
+If we expand in powers of $\chi$, we find:
+\[
+\pazocal{L}=(\partial_\mu\chi)^2+\frac{1}{v^2}(\chi\partial_\mu\chi)^2+\dots
+\]
+With other terms with increasing powers of the fields and therefore increasing dimensionality. From this expression, it is clear that there is a renormalizable part and one with higher dimension operators involving interaction. Suppose we want to expand it at 1-loop \marginnote[-1.5cm]{\includegraphics{Images/chiloop2.pdf}\\
+1-loop expansion.}and for simplicity we consider $\chi$ massless. In each vertex, there are two derivatives and a factor $\frac{1}{v^2}$. We need to understand what is the factor compensating this $\frac{1}{v^4}$: we said that $\chi$ are massless so there will be nothing else but the external momentum.
 \[
 \text{loop contribution}\sim\frac{1}{v^4}\frac{1}{16\pi^2}p^4
 \]
-This will have a divergence of order $\log(-p^2/\mu^2+1/\varepsilon)$ where $\mu$ is the subtraction scale of dimensional regularization. To cancel this divergence, the counter-term has to be something like $(\partial_\mu\chi)^4$: we need a local operator with 4 derivatives, we have two operators:
+This will have a divergence of order $\log\left(-\frac{p^2}{\mu^2}\right)+\frac{1}{\varepsilon}$ where $\mu$ is the subtraction scale in dimensional regularization. To cancel this divergence, the counter-term has to be something like $(\partial_\mu\chi)^4$, with 4 derivatives and 4 fields. We have two possible local operators:
 \[
 (\Tr{\partial_\mu\Sigma^\dagger\partial_\nu\Sigma})^2 \quad (\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma})^2
 \]
+This theory is not renormalizable but apart from the fact that we need increasing number of counter-terms is a standard QFT, so we can use this interaction without problems. 
 \end{example}
-We have two possible EFTs:
+If we work at low energy, it might be more convenient to use EFT than having the full theory because there will be less degrees of freedom. There are two possible EFTs:
 \begin{enumerate}
-    \item \underline{EFTs of known UV theories}: we use the \textit{matching procedure}, i.e. choosing the effective coefficients so that the observables are equal in the EFT and in the complete UV theory. The UV theory does not have to be a field theory (e.g. string theory) but we can still do matching. If we have QFTs we can do matching where the observable we compare are off-shell Green functions and imposing the fact that UV theories and Green functions are reproduced by the same Green functions, it is a very strong constraint.
+    \item \underline{EFTs of known UV theories}: we use the so-called \textit{matching procedure}, i.e. choosing the effective coefficients so that the observables are equal in the EFT and in the complete UV theory. This is what we have done with the example of the Fermi theory.\\
+    The UV theory does not have to be a field theory (e.g. it could be string theory) but we can still do matching. If the UV theory is instead a QFT we can do matching where the observable we compare are off-shell Green functions and we can impose a stronger constraint: the UV theory and the EFT reproduce the same Green functions.
     \item \underline{EFTs of unknown UV theories}: the coefficients are now unknown and there are 3 observations one can make.
     \begin{enumerate}
-        \item EFT predicts quantities which are independent of the effective coefficients $C^{(n)}$, observables that are non-analytic in momentum or in the parameters of the Lagrangian
+        \item EFT predicts quantities which are independent on the effective coefficients $C^{(n)}$, observables that are non-analytic in the momentum or in the parameters of the Lagrangian
         \item It is possible to extract the coefficients $C^{(n)}$ from experiments, or impose some limit on them
         \item We can make some estimates of $C^{(n)}$ and this requires power counting
     \end{enumerate}
@@ -105,12 +117,12 @@ We have two possible EFTs:
 \begin{example}\textbf{QED as an EFT}\\
 We want to consider the operator which contributes to the anomalous magnetic moment of the electron:
 \[
-c_0\underbrace{\Bar{\Psi}\sigma^{\mu\nu}F_{\mu\nu}\Psi}_{D=5}\to\left\{\begin{aligned}
+c_0\underbrace{\Bar{\Psi}\sigma^{\mu\nu}F_{\mu\nu}\Psi}_{D=5}\quad\text{contributes to:}\left\{\begin{aligned}
 &\Vec{\mu}=\frac{e}{2m_ec}g_e\Vec{s}\\
 &a_e=\frac{g_e-2}{2}
 \end{aligned}\right.
 \]
-If we go to low energies and compute the contribution of the vertex at tree-level, we get $\delta a_e^{\text{NP}}=4m_ec_0/e$. However, in QED we have also loop corrections, which give us $\delta a_e=\alpha/4\pi$. We want to make an estimate of $c_0$ in terms of parameters of the UV theory. There will be only a scale and a coupling to characterize this \textit{new} theory. At the end of the day, we have to compare this result with the experimental one but since QED is an EFT we can always think that there is some heavy state which, once integrated out, generates the dimension 5 local operator which has the correct structure to give us an additional contribution. Comparing this with the experimental result gives us:
+If we go to low energies and compute the contribution of the vertex at tree-level, we get $\delta a_e^{\text{NP}}=\frac{4m_ec_0}{e}$. However, in QED we have also loop corrections, which give us $\delta a_e=\frac{\alpha}{4\pi}$. Since QED is an EFT, we can imagine there are some heavy states that once integrated out will generate this local operator $c_0$ which gives the additional contribution. We want to make an estimate of $c_0$ in terms of parameters of the UV theory. We do not know exactly the details of this UV theory but it is possible to make some assumptions: there will be only one scale and one coupling strength to characterize this \textit{new} theory. At the end of the day, we then compare this result with the experimental one. This gives us:
 \[
 \frac{\delta a_e^{\text{exp}}}{a_e}=0.24\,\text{ppb}=2.4\cdot10^{-10}\marginnote{Best experimental result in physics, according to Contino.}
 \]
