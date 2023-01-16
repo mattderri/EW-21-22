@@ -122,7 +122,7 @@ c_0\underbrace{\Bar{\Psi}\sigma^{\mu\nu}F_{\mu\nu}\Psi}_{D=5}\quad\text{contribu
 &a_e=\frac{g_e-2}{2}
 \end{aligned}\right.
 \]
-If we go to low energies and compute the contribution of the vertex at tree-level, we get $\delta a_e^{\text{NP}}=\frac{4m_ec_0}{e}$. However, in QED we have also loop corrections, which give us $\delta a_e=\frac{\alpha}{4\pi}$. Since QED is an EFT, we can imagine there are some heavy states that once integrated out will generate this local operator $c_0$ which gives the additional contribution. We want to make an estimate of $c_0$ in terms of parameters of the UV theory. We do not know exactly the details of this UV theory but it is possible to make some assumptions: there will be only one scale and one coupling strength to characterize this \textit{new} theory. At the end of the day, we then compare this result with the experimental one. This gives us:
+where $\sigma^{\mu\nu}$ is a commutator between $\gamma$ matrices. If we go to low energies and compute the contribution of the vertex at tree-level, we get $\delta a_e^{\text{NP}}=\frac{4m_ec_0}{e}$. However, in QED we have also loop corrections, which give us $a_e\sim\frac{\alpha}{4\pi}$. Since QED is an EFT, we can imagine there are some heavy states that once integrated out will generate this local operator $c_0$ which gives the additional contribution. We want to make an estimate of $c_0$ in terms of parameters of the UV theory. We do not know exactly the details of this UV theory but it is possible to make some assumptions: there will be only one scale and one coupling strength to characterize this \textit{new} theory. At the end of the day, we then compare this result with the experimental one. This gives us:
 \[
 \frac{\delta a_e^{\text{exp}}}{a_e}=0.24\,\text{ppb}=2.4\cdot10^{-10}\marginnote{Best experimental result in physics, according to Contino.}
 \]
@@ -130,35 +130,39 @@ We want to use this result to put some constraints on new physics and make predi
 \[
 \frac{\delta a_e^{\text{th}}}{a_e}=6.7\,\text{ppb}=6.7\cdot10^{-9}
 \]
-About 30 times the experimental one! Why are we not able to reach the experimental precision? The problem is the estimate of $a$: by using the experimental one obtained by rubidium spectroscopy, the theoretical precision is higher than the experimental one. We can put some constraints on new physics.
+About 30 times the experimental one! We can put some constraints on new physics by equating the contribution coming from $c_0$ with the largest theoretical uncertainty.
 \[
 \delta a_e^{\text{NP}}\lesssim\delta a_e^{\text{th}}\Rightarrow|c_0|\lesssim3\cdot10^{-9} \text{e/GeV}
 \]
-If we want more information about this new physics, we can make an estimation of the coefficient $c_0$ by using power counting:
+This is completely model independent, it does not make any assumption about what is the nature of this new physics contributing to this operator. If we want some more physical information about this new physics, we have to make assumptions and it is possible to make an estimation of the coefficient $c_0$ by using power counting:
 \[
 c^{(n)}\approx\left(\frac{1}{M_*}\right)^{d_n-4}g_*^{n-2}\left(\frac{g_*^2}{16\pi^2}\right)^l
 \]
-we denoted with $M_*$ the new physics scale, $n$ the number of fields in the operator $O^{(n)}$, $g_*$ the coupling strength in this new physics sector and $l$ the number of loops. \marginnote{$M_*$ is just the mass of the particle in the loop, assuming there is just one (1). We are also assuming (2) there is only one coupling.}How do we apply all of this stuff in our case? We have that $d_n=5$ and $n=3$, so we get:
+we denoted with $M_*$ the new physics scale, $n$ the number of fields in the operator $O^{(n)}$, $g_*$ the coupling strength in this new physics sector and $l$ the number of loops. $M_*$ is just the mass of the particle in the loop, assuming (1) there is just one particle and (2) there is only one coupling. These two assumptions are basically power counting. How do we apply all of this stuff in our case? Our operator has dimension $d_n=5$ and involves three fields $n=3$, so we get:
 \[
 c_0\sim\frac{e}{M_*}\left(\frac{g_*^2}{16\pi^2}\right)
 \]
-where we inserted the electromagnetic coupling $e$. The photon-electron interaction does not take place through the covariant derivative but via $F_{\mu\nu}$, it is a non minimal interaction. If the field of the new physics is minimally coupled with the covariant derivative there is no way to generate this operator at tree-level, we need one loop: that is another assumption we make (3). Suppose to have something like the diagram portrayed on the side: \marginnote[-2cm]{\includegraphics[]{Images/eftqed.pdf}}due to gauge invariance of electromagnetic theory, the coupling on the top vertex must necessary be $e$ while for the bottom vertex there is nothing that tells us it has to be $e$, so we denote the other coupling with $g_*$. If we look at the structure of our operator, we notice that it is similar to the mass term, mixing left and right chirality. There is a symmetry we can use: we know the mass term $\Bar{\Psi}_L\Psi_R$ is the only operator which breaks axial symmetry.
+where we inserted the electromagnetic coupling $e$. The photon-electron interaction does not take place through the covariant derivative but via $F_{\mu\nu}$, it is a non minimal interaction. If the field of the new physics is minimally coupled with the covariant derivative there is no way to generate this operator at tree-level, we need one loop: that is another assumption we make (3). Suppose to have something like the diagram portrayed on the side: \marginnote[-3.5cm]{\includegraphics{Images/eftqed.pdf}}due to gauge invariance of electromagnetic theory, the coupling on the top vertex must necessary be $e$ while for the bottom vertex there is nothing that tells us it has to be some known coupling, so we denote the other coupling with $g_*$.\\
+This is not the end of the story for our operator, there is still one extra-argument we can use. If we look at the structure of our operator, we notice that it is very similar to the structure of the mass term, mixing left and right chirality. There is a symmetry we can use: we know the mass term $\Bar{\Psi}_L\Psi_R$ is the only operator which breaks axial symmetry.
 \[
+P_A:
+\left\{
 \begin{aligned}
-P_A:&\Psi\to\gamma^5\Psi\\
-&m_e\to-m_e
+\Psi&\to\gamma^5\Psi\\
+m_e&\to-m_e
 \end{aligned}
+\right.
 \]
-$m_e(\Bar{\Psi}_L\Psi_R+\text{h.c.})$ is formally invariant under $P_A$. There is only one spurion in the new theory which breaks $P_A$ (4) and it is the same which contributes to the mass term and to the new operator. This implies that this operator must be proportional to $m_e$:
+$m_e(\Bar{\Psi}_L\Psi_R+\text{h.c.})$ is formally invariant under $P_A$. Another assumption (4) is that there is only one spurion in the new theory which breaks $P_A$ and it is the same which contributes to the mass term and to the new operator. This implies that this operator must be proportional to $m_e$:
 \[
 c_0\sim\frac{e}{M_*}\left(\frac{g_*^2}{16\pi^2}\right)\frac{m_e}{M_*}
 \]
-So it is not dimension 5 but dimension 6, giving an additional suppression. The interesting quantities are $M_*$ and $g_*$, we can establish a constraint for $M_*$:
+So it is not dimension 5 but dimension 6, giving an additional suppression. The interesting quantities characterizing the new physics are $M_*$ and $g_*$, we can establish a constraint for $M_*$:
 \[
 M_*\gtrsim3\,\text{GeV}\cdot g_*
 \]
 The coupling cannot be larger than $4\pi$ or it would not be perturbative anymore. This tells us that the correction to new physics will be under experimental precision if $M_*$ is larger than the value we just found.\\
-This new physics is just the Standard Model completion with QCD and QED, we have to add the vector bosons.
+This new physics is just the Standard Model completion of QED+QCD and the particles contributing in the loops are the vector bosons.
 \[
 \left\{
 \begin{aligned}
@@ -175,22 +179,22 @@ This new physics is just the Standard Model completion with QCD and QED, we have
 \end{aligned}
 \right.
 \]
-There is another situation where we are sensitive to new physics, we ask ourselves if we can consider the muon magnetic moment instead of the electron one. The experimental precision for the muon magnetic moment is 0.35 ppb$=3.5\cdot10^{-7}$ and with this result we get $M_*\approx400\,\text{GeV}\cdot g_*$, the same order of magnitude. In the Standard Model, the operator is modified:
+The anomalous magnetic moment of the electron is not sensitive to new physics of this kind, because its scale is too heavy. However, there is another situation where we are sensitive to new physics because $c_0$ scales with $m_e$ so at this point we ask ourselves if we can consider the muon magnetic moment instead of the electron one. The experimental precision for the muon anomalous magnetic moment is\\
+0.35 ppm $=3.5\cdot10^{-7}$ and with this result we get $M_*\approx400\,\text{GeV}\cdot g_*$, the same order of magnitude as before. In the Standard Model, the operator is modified:
 \[
-c_0\Bar{\Psi}\sigma^{\mu\nu}F_{\mu\nu}\Psi\to\Bar{\Psi}_L\sigma^{\mu\nu}W^{\mu\nu}\Psi_RH
+c_0\Bar{\Psi}\sigma^{\mu\nu}F_{\mu\nu}\Psi\to\Bar{\Psi}_L\sigma^{\mu\nu}W^{\mu\nu}\Psi_RH\marginnote{At the moment this formula is a bit beyonf our understanding, but it will become more clear (hopefully) after the next chapter.}
 \]
-$H$ is the Higgs field, required to have SU$(2)_{EW}$ invariance. Now we have $\Delta a_\mu=a_\mu^{\text{exp}}-a_\mu^{\text{SM}}=2.5\cdot10^{-9}$ which is larger than experimental uncertainty. There is a difference at $4\sigma$ level, so there must be some new physics. We can say that this difference comes from $W^{\mu\nu}$,\\
-$M_*\approx25\,\text{GeV}\cdot g_*$, so below the electroweak scale.
+$H$ is the Higgs field, required to have SU$(2)_{\text{EW}}$ invariance. Now we have $\Delta a_\mu=a_\mu^{\text{exp}}-a_\mu^{\text{SM}}=2.5\cdot10^{-9}$ which is larger than experimental uncertainty. There is a difference at $4\sigma$ level, so there must be some new physics. We can say that this difference comes from $W^{\mu\nu}$ and if we do this we get a scale
+$M_*\approx25\,\text{GeV}\cdot g_*$. This is a bit uncomfortable because it is below the electroweak scale, the new physics should be lighter than the electroweak particles \textit{unless} the coupling gets larger.
 \end{example}
 \section{Validity of EFTs}
-When these effective theories collapse? There is not a unique answer, we have to make some assumption. Let's see an example.
+When these effective theories collapse? There is not a unique answer, we have to make some assumptions (again). Let's see an example.
 \begin{example}\textbf{Fermi theory}\\
 \[
-\pazocal{L}=c_6(\Bar{e}\gamma^\mu(1-\gamma^5)\nu_e)(\Bar{\nu}_\mu\gamma_\mu(1-\gamma^5)\mu) \quad c_6=-\frac{G_F}{\sqrt{2}}=-\frac{g^2}{8m_W^2}\marginnote[-1cm]{\includegraphics[]{Images/fermieft.pdf}}
+\pazocal{L}=c_6[\Bar{e}\gamma^\mu(1-\gamma^5)\nu_e][\Bar{\nu}_\mu\gamma_\mu(1-\gamma^5)\mu] \quad c_6=-\frac{G_F}{\sqrt{2}}=-\frac{g^2}{8m_W^2}\marginnote[-1cm]{\includegraphics[]{Images/fermieft.pdf}}
 \]    
-Suppose to measure the muon lifetime, what we measure is $c_6$. We understand that the process is mediated by effective operators, hence why we want to measure $c_6$, the ratio between the coupling and the scale.\marginnote{\includegraphics[]{Images/scalenp.pdf}}
+This operator describes the purely leptonic decay of the muon depicted on the side. If we compare it with the effective operator for protons, neutrons, electrons and neutrinos the coefficient in front is not quite the same but approximately the same. Suppose to measure the muon lifetime, what is measured is the coefficient $c_6$. Since in our theory there is nothing to justify the decay of the muon, then we understand that this process is mediated by effective operators, hence why we want to measure $c_6$. What does this say about the scale of new physics? It does not tell us anything directly about the scale of new physics because what we measure is the ratio between the coupling and the scale: without knowing the value of the coupling we cannot say anything about the scale. Today, we know the value of the coupling since the full theory is known but at the time when people first observed the muon decay this information was not available. What is the range of possibility? We can vary the coupling from very small values up to 4$\pi$, where the theory becomes not perturbative. \marginnote{\includegraphics[-1cm]{Images/scalenp.pdf}} The scale of new physics varies between the mass of the muon up to a point where the coupling is of order 4$\pi$, corresponding to the scale of new physics of order 1.5 TeV. This range is highlighted in red in the picture on the side, but we do not know exactly where this new physics could appear. How could we determine it? We \textit{either} make some assumptions on the value of the coupling, which of course have to be theoretically motivated, and then extrapolate the value of $m_W$ \textit{or} we look for new physics in scattering processes with the same elements of the Fermi interaction, for example $e^-\nu_\mu\to\mu^-\nu_e$. This was done by the Gargamella experiment in 1973, observing both charged and neutral currents, so $W$ and $Z$. To find the masses, we had to wait until 1983 at CERN which told us that this new physics appears at $m_W\simeq80$\,GeV.
 \end{example} 
-The range highlighted in red in the picture on the side denotes where this new physics could appear, but we do not know exactly where. How could we determine it? We either make some assumption on the value of the coupling and extrapolate the value of $m_W$ from there or we look for new physics in scattering processes with the same elements of the Fermi interaction, $e^-\nu_\mu\to\mu^-\nu_e$. This was done by the Gargamella experiment in 1973, observing both charged and neutral current, so $W$ and $Z$. To find the masses, we had to wait until 1982 at CERN.
 \end{document}
 %QFT beyond tree-level (QED a 1 -loop con Barducci)
 %Symmetries and conservation laws (spontaneous symmetry breaking and Higgs mechanism)
