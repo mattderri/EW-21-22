@@ -96,15 +96,15 @@ The Standard Model is a theory of fields of spin 0, $\frac{1}{2}$ and 1, summari
         \hline
         \rowcolor{gray!45}Field & SU$(3)_{\text{C}}$ & SU$(2)_{\text{EW}}$ & U$(1)_{\text{Y}}$ & SO(3,1) \\
         \hline
-        \cellcolor{orange!45}$q_L^i=\begin{pmatrix}
+        \cellcolor{orange!45}$Q_L^i=\begin{pmatrix}
              u_L^i\\
              d_L^i 
         \end{pmatrix}$ & \cellcolor{orange!45}$\Box$ & \cellcolor{orange!45}$\Box$ & \cellcolor{orange!45}$+\frac{1}{6}$ &\cellcolor{orange!45} (2,1) \\
         \rowcolor{orange!45}$u_R^i$ & $\Box$ & 1 & $+\frac{2}{3}$ & (1,2) \\
         \rowcolor{orange!45}$d_R^i$ & $\Box$ & 1 & $-\frac{1}{3}$ & (1,2) \\
         \hline
-        \cellcolor{orange!45}$l_L^i=\begin{pmatrix}\nu_L^i\\e_L^i\end{pmatrix}$ &\cellcolor{orange!45} 1 &\cellcolor{orange!45} $\Box$ &\cellcolor{orange!45} $-\frac{1}{2}$ &\cellcolor{orange!45} (2,1) \\
-        \rowcolor{orange!45}$l_R^i$ & 1 & 1 & -1 & (1,2) \\
+        \cellcolor{orange!45}$L_L^i=\begin{pmatrix}\nu_L^i\\e_L^i\end{pmatrix}$ &\cellcolor{orange!45} 1 &\cellcolor{orange!45} $\Box$ &\cellcolor{orange!45} $-\frac{1}{2}$ &\cellcolor{orange!45} (2,1) \\
+        \rowcolor{orange!45}$e_R^i$ & 1 & 1 & -1 & (1,2) \\
         \hline
         \rowcolor{blue!35}$G_\mu^{a=1,\dots,8}$ & Adj & 1 & 0 & (2,2)\\
         \rowcolor{blue!35}$W_\mu^{i=1,2,3}$ & 1 & Adj & 0 & (2,2)\\
@@ -132,7 +132,7 @@ where the four different pieces are:
 \begin{aligned}
 &\pazocal{L}_{\text{kin}}=-\frac{1}{4}(G_{\mu\nu}^a)^2-\frac{1}{4}(W_{\mu\nu}^i)^2-\frac{1}{4}(B_{\mu\nu})^2+|D_\mu H|^2+\sum_{\{\Psi\}}\sum_{j=1}^{3}\Bar{\Psi}_ji\slashed{D}\Psi_j\\
 &\pazocal{L}_\theta=\frac{\theta_0}{32\pi^2}G_{\mu\nu}^a\Tilde{G}^{\mu\nu,a}\\
-&\pazocal{L}_{\text{Yuk}}=-\sum_{i,j=1}^3\left[\bar{q}_L^i(Y_u)^{ij}H^cu_R^j+\bar{q}_L^i(Y_d)^{ij}Hd_r^j+\bar{l}_L^i(Y_l)^{ij}He_R^j+\text{h.c}\right]\\
+&\pazocal{L}_{\text{Yuk}}=-\sum_{i,j=1}^3\left[\bar{Q}_L^i(Y_u)^{ij}H^cu_R^j+\bar{Q}_L^i(Y_d)^{ij}Hd_r^j+\bar{L}_L^i(Y_l)^{ij}He_R^j+\text{h.c}\right]\\
 &V(H)=-\mu^2H^\dagger H+\lambda(H^\dagger H)^2
 \end{aligned}
 \right.
@@ -284,14 +284,33 @@ To explicitly see the mass of the $Z$ boson $m_Z$ we perform a rotation. Let $A_
      W_\mu^3 
 \end{array}\right)\Rightarrow Z_\mu=-\sin\theta_wB_\mu+\cos\theta_wW_\mu^3
 \]
+From this rotation, it follows that:
+\begin{equation}
+\labeq{azbasis}
+\left\{
+\begin{aligned}
+&Z_\mu=\cos\theta_wW_\mu^3-\sin\theta_wB_\mu\\
+&A_\mu=\sin\theta_wW_\mu^3+\cos\theta_wB_\mu
+\end{aligned}
+\right.
+\Leftrightarrow
+\left\{
+\begin{aligned}
+&B_\mu=\cos\theta_wA_\mu-\sin\theta_wZ_\mu\\
+&W_\mu^3=\sin\theta_wA_\mu+\cos\theta_wZ_\mu
+\end{aligned}
+\right.
+\end{equation}
 $\theta_w$ is the \href{https://en.wikipedia.org/wiki/Steven_Weinberg}{Weinberg} angle. To write the mass term $m_Z^2$ in the expression of $|D_\mu H|^2$, we have to perform some tricks:
 \[
 {\color{red}\frac{g^2+g'^2}{g^2+g'^2}}\frac{v^2}{8}(gW_\mu^3-g'B_\mu)^2=\frac{m_Z^2}{2}\left(\frac{g}{\sqrt{g^2+g'^2}}W_\mu^3-\frac{g'}{\sqrt{g^2+g'^2}}B_\mu\right)^2
 \]
-To obtain the desired result, we express $\theta_W$ in terms of the couplings $g$ and $g'$:
-\[
+To obtain the desired result, we express $\theta_w$ in terms of the couplings $g$ and $g'$:
+\begin{equation}
+\labeq{thetaw}  
 \sin\theta_w:=\frac{g'}{\sqrt{g^2+g'^2}} \quad \cos\theta_w:=\frac{g}{\sqrt{g^2+g'^2}} \quad \tan\theta_w=\frac{g'}{g}
-\]
+\end{equation}
+In this way, it is possible to define:
 \begin{kaobox}[frametitle=Mass of the $Z$ boson]
 \[
 m_Z:=\frac{1}{2}v\sqrt{g^2+g'^2}=\frac{1}{2}\frac{gv}{\cos\theta_w}=\frac{m_W}{\cos\theta_w}\marginnote{The subscript with capital W is for the $W$ boson, while the one with small w is for the Weinberg angle.}
@@ -301,63 +320,98 @@ $|D_\mu H|^2$ now can be written as:
 \[
 |D_\mu H|^2=\frac{1}{2}(\partial_\mu h(x))^2+\frac{m_Z^2}{2}Z_\mu Z^\mu\left(1+\frac{h(x)}{v}\right)^2+m_W^2W_\mu^+W_\mu^-\left(1+\frac{h(x)}{v}\right)^2
 \]
-We have the three fields that will acquire mass, the only remaining massless field is the photon. The mixing angle $\theta_w$ also gives the relationship between the masses of the $W$ and the $Z$ boson:
+We have the three fields that will acquire mass, the only remaining massless field is the photon. 
+\subsection{Fermion Sector}\marginnote{From \cite{schwartz}, Section 29.3.}
+Lastly, we want to understand how to couple the electroweak gauge bosons to fermions. It turns out that the theory of weak interactions is chiral and maximally parity-violating: the SU(2) gauge bosons \textit{only} couple to \textbf{left-handed} fermions.\marginnote{This fact was originally deduced by observations at low energy, well before the $W$ and $Z$ bosons were produced in colliders.} Unfortunately, there is no compelling explanation of \textit{why} the weak interaction must couple this way.\\
+The left-handed leptons $(e,\nu_e,\mu,\nu_\nu,\tau,\nu_\tau)$ and quarks $(u,d,c,s,t,b,)$ pair up to transform under SU(2) in the fundamental representation. The three \textbf{generations} of SU(2) doublet of quarks and leptons are:
 \[
-\frac{m_W^2}{m_Z^2}=\frac{g^2}{g^2+g'^2}=\cos^2\theta_w
+L_L^i=\begin{pmatrix}
+    \nu_{eL}\\
+    e_L
+\end{pmatrix}, \begin{pmatrix}
+    \nu_{\mu L}\\
+    \mu_L
+\end{pmatrix}, \begin{pmatrix}
+    \nu_{\tau L}\\
+    \tau_L
+\end{pmatrix}
+\quad
+Q_L^i=\begin{pmatrix}
+    u_L\\
+    d_L
+\end{pmatrix}, \begin{pmatrix}
+    c_L\\
+    s_L
+\end{pmatrix}, \begin{pmatrix}
+    t_L\\
+    b_L
+\end{pmatrix}
 \]
-from which we can define the quantity $\rho$: 
+$i=1,2,3$ is the index of the generation. These all transform as left-handed Weyl spinors, i.e. in the $\left(\frac{1}{2},0\right)$ representation of the Lorentz group [\refsec{replor}]. The right-handed fermions happen to be SU(2) singlet so they are uncharged under weak interaction.
 \[
-\rho=\frac{m_W^2}{m_Z^2\cos^2\theta_w}
+e_R^i=\{e_R,\mu_R,\tau_R\} \quad u_R^i=\{u_R,c_R,t_R\} \quad d_R^i=\{d_R,s_R,b_R\}
 \]
-which is equal to 1 at tree level, but it is a symmetry that gets broken by the hypercharge.
-\subsection{Fermion Sector}
-Lastly, we want to understand how the fermions couple to these fields. Consider the kinetic term in $q_L$:
+They all transform as right-handed Weyl spinors under the Lorentz group.\marginnote{Again, right-handed neutrinos are not included despite observations suggest their existence.}\\
+Consider now the electroweak kinetic term in $Q_L^i$:
 \[
-\Bar{q}_Li\slashed{D}q_L=\Bar{q}_Li\gamma^\mu\left(\partial_\mu-ig_3\lambda^aG_\mu^a-igW_\mu^i\frac{\sigma^i}{2}-ig'YB_\mu\right)q_L
+\Bar{Q}_L^ii\slashed{D}Q_L^i=\Bar{Q}_L^ii\gamma^\mu\left(\partial_\mu-igW_\mu^i\frac{\sigma^i}{2}-ig'YB_\mu\right)Q_L^i
 \]
-We use the same substitution as before and we write:
+We use the same substitution as before with $W_\mu^+$ and $W_\mu^-$ to write:
 \[
-\Bar{q}_Li\slashed{\partial}q_L+\Bar{q}_L\gamma^\mu\left[g_3\lambda^aG_\mu^a+\frac{g}{\sqrt{2}}(W_\mu^+\sigma^++W_\mu^-\sigma^-)+(gW_\mu^3T_3+g'B_\mu Y)\right]q_L
+\Bar{Q}_L^ii\slashed{\partial}Q_L^i+\Bar{Q}_L^i\gamma^\mu\left[\frac{g}{\sqrt{2}}(W_\mu^+\sigma^++W_\mu^-\sigma^-)+(gW_\mu^3T_3+g'B_\mu Y)\right]Q_L^i
 \]
-We want to write the last term in terms of the photon and the $Z$ boson, so with the same rotation as before we get:
+Now we change to the $A_\mu-Z_\mu$ basis by using \refeq{azbasis} which gives us:
 \begin{align*}
-&gT_3(\sin\theta_WA_\mu+\cos\theta_WZ_\mu)+g'Y(\cos\theta_WA_\mu-\sin\theta_WZ_\mu)\\
-=&A_\mu(gT_3\sin\theta_W+g'Y\cos\theta_W)+Z_\mu(gT_3\cos\theta_W-g'Y\sin\theta_W)
+gW_\mu^3T_3+g'B_\mu Y&=gT_3(\sin\theta_wA_\mu+\cos\theta_wZ_\mu)+g'Y(\cos\theta_wA_\mu-\sin\theta_wZ_\mu)\\
+&=A_\mu(gT_3\sin\theta_w+g'Y\cos\theta_w)+Z_\mu(gT_3\cos\theta_w-g'Y\sin\theta_w)
 \end{align*}
-We know how to express $\sin\theta_W$ and $\cos\thta_W$ in terms of the couplings $g$ and $g'$:
+But we know from \refeq{thetaw} how to express $\sin\theta_w$ and $\cos\theta_w$ in terms of the couplings $g$ and $g'$:
 \[
-\left\{
-\begin{aligned}
-&T_3\frac{gg'}{\sqrt{g^2+g'^2}}+Y\frac{gg'}{\sqrt{g^2+g'^2}}=e\cdot Q \quad e:=\frac{gg'}{\sqrt{g^2+g'^2}}\xleftrightarrow[]{}\frac{1}{e^2}=\frac{1}{g^2}+\frac{1}{g'^2}\\
-&\frac{g^2}{\sqrt{g^2+g'^2}}T_3-(Q-T_3)\frac{g'^2}{\sqrt{g^2+g'^2}}=\sqrt{g^2+g'^2}T_3-Q\frac{g'^2}{\sqrt{g^2+g'^2}}=\frac{g}{\cos\theta_W}[T_3-\sin^2\theta_WQ]
-\end{aligned}
-\right.
+gT_3{\color{green}\sin\theta_w}+g'Y{\color{blue}\cos\theta_w}=T_3{\color{green}\frac{{\color{black}g}g'}{\sqrt{g^2+g'^2}}}+Y{\color{blue}\frac{g{\color{black}g'}}{\sqrt{g^2+g'^2}}}=\frac{gg'}{\sqrt{g^2+g'^2}}(T_3+Y):=e\cdot Q
 \]
-where we used the fact that $\sqrt{g^2+g'^2}=g/\cos\theta_W$. At the end of the day, we have:
+where in the last step we have defined:
 \[
-\Bar{q}_Li\slashed{D}q_L=\underbrace{\Bar{q}i\gamma^\mu(\partial_\mu-ieQA_\mu)q_L}_{\text{photons interaction}}+\underbrace{\Bar{q}_L\gamma^\mu g_3\lambda^aG_\mu^aq_L}_{\text{gluons interaction}}+\underbrace{\frac{g}{\sqrt{2}}\Bar{q}_L\gamma^\mu(\sigma^+W_\mu^++\sigma^-W_\mu^-)q_L}_{\text{$W$ interaction}}+\underbrace{\frac{g}{\cos\theta_W}\gamma^\mu Z_\mu\Bar{q}_L(T_3-\sin^2\theta_WQ)q_L}_{\text{$Z$ interaction}}
+e:=\frac{gg'}{\sqrt{g^2+g'^2}}\xleftrightarrow[]{}\frac{1}{e^2}=\frac{1}{g^2}+\frac{1}{g'^2} \quad Q:=T_3+Y
 \]
-For $q_L$, $U=\begin{pmatrix}
-    +2/3 & 0\\0 & -1/3
-\end{pmatrix}$ while for $u_R$ and $d_R$ we have only one number since $T_3=0$. If we put everything together we get:
+This was for the term proportional to $A_\mu$, now we use this result to compute the term proportional to $Z_\mu$:
+\begin{align*}
+gT_3{\color{blue}\cos\theta_w}-g'{\color{red}Y}{\color{green}\sin\theta_w}&={\color{blue}\frac{g{\color{black}g}}{\sqrt{g^2+g'^2}}}T_3-{\color{red}(Q-T_3)}{\color{green}\frac{g'{\color{black}g'}}{\sqrt{g^2+g'^2}}}\\
+&=\sqrt{g^2+g'^2}T_3-Q\frac{g'^2}{\sqrt{g^2+g'^2}}\frac{\sqrt{g^2+g'^2}}{\sqrt{g^2+g'^2}}\\
+&=\sqrt{g^2+g'^2}T_3-\sqrt{g^2+g'^2}Q\frac{g'^2}{g^2+g'^2}\\
+&=\frac{g}{\cos\theta_w}[T_3-\sin^2\theta_wQ]
+\end{align*}
+In the last step we used from \refeq{thetaw} that $\sqrt{g^2+g'^2}=\frac{g}{\cos\theta_w}$ and $\sin^2\theta_w=\frac{g'^2}{g^2+g'^2}$.\\
+At the end of the day, putting everything together we have:
+\begin{align*}
+\Bar{Q}_L^ii\slashed{D}Q_L=&\underbrace{\Bar{Q}_L^ii\gamma^\mu(\partial_\mu-ieQA_\mu)Q_L}_{\text{photons interaction}}\\
+&+\underbrace{\frac{g}{\sqrt{2}}\Bar{Q}_L^i\gamma^\mu(\sigma^+W_\mu^++\sigma^-W_\mu^-)Q_L^i}_{\text{$W$ interaction}}\\
+&+\underbrace{\frac{g}{\cos\theta_w}\gamma^\mu Z_\mu\Bar{Q}_L^i(T_3-\sin^2\theta_wQ)Q_L^i}_{\text{$Z$ interaction}}
+\end{align*}
+For $Q_L^i$, $Q$ is given by the matrix:
+\[
+Q=\mqty(\dmat{+\frac{2}{3},-\frac{1}{3}})
+\]
+while for $u_R$ and $d_R$ we have only one number since $T_3=0$. If we put everything together we get:
 \begin{equation}
 \labeq{Yuk}
 \begin{aligned}
-\Bar{q}_Li\slashed{D}q_L+\Bar{u}_Ri\slashed{D}u_R+\Bar{d}_Ri\slashed{D}d_R&=\Bar{u}i\gamma^\mu[(\partial_\mu-ie(2/3)A_\mu-ig_3\lambda^aG_\mu^a]u\\
-&+\Bar{d}i\gamma^\mu[(\partial_\mu-ie(-1/3)A_\mu-ig_3\lambda^aG_\mu^a]d+\frac{g}{\sqrt{2}}\Bar{u}_L\gamma^\mu W_\mu^+d_L+\text{h.c.}\\
-&+\frac{g}{\cos\theta_W}Z_\mu[\Bar{u}\gamma^\mu(g_{Lu}P_L+g_{Ru}P_R)u+\Bar{d}\gamma^\mu(g_{Ld}P_L+g_{Rd}P_R)d]
+\Bar{Q}_L^ii\slashed{D}Q_L^i=&\Bar{u}_L^ii\gamma^\mu\left[\partial_\mu-\frac{2}{3}ieA_\mu\right]u_L^i+\Bar{d}_L^ii\gamma^\mu\left[\partial_\mu+\frac{1}{3}ieA_\mu\right]d_L^i\\
+&+\frac{g}{\sqrt{2}}\Bar{u}_L^i\gamma^\mu W_\mu^+d_L^i+\frac{g}{\sqrt{2}}\Bar{d}_L^i\gamma^\mu W_\mu^-u_L^i\\
+&+\frac{g}{\cos\theta_w}Z_\mu\left[\Bar{u}_L^i\gamma^\mu\left(\frac{1}{2}-\frac{2}{3}\sin^2\theta_w\right)u_L^i\right]\\
+&+\frac{g}{\cos\theta_w}Z_\mu\left[\Bar{d}_L^i\gamma^\mu\left(-\frac{1}{2}+\frac{1}{3}\sin^2\theta_w\right)d_L^i\right]
 \end{aligned}
 \end{equation}
-where $g_{Lu}=T_3(u)-\sin^2\theta_WQ(u)$ and $g_{Ru}=-\sin^2\theta_WQ(u)$. Only left-handed particles interact with the $W$, interactions are vector-like for photons and gluons (i.e., QED and QCD). The only thing left to do is to understand what is $\pazocal{L}_{Yuk}$ in the unitary gauge.
+The last thing left to do is to discuss fermion masses.\marginnote{From \cite{schwartz}, Section 29.3.2.} In fact, at this point we do not really have a left- and a right-handed electron but rather two separate unrelated fields which happen to have the same electric charge. In QED, left- and right-handed fermions were connected by a Dirac mass term. However, a mass term like $\Bar{e}_Le_R$ explicitly breaks SU(2) invariance and therefore is forbidden.\\
+Focus now just on quarks, we look at the Yukawa Lagrangian in the unitary gauge.
 \begin{align*}
-\pazocal{L}_{Yuk}&\supset-\Bar{q}_L^iY_u^{ij}\frac{1}{\sqrt{2}}\begin{pmatrix}
+\pazocal{L}_{\text{Yuk}}&\supset-\Bar{Q}_L^iY_u^{ij}\frac{1}{\sqrt{2}}\begin{pmatrix}
     1\\0
-\end{pmatrix}(v+h)u_R^j-\Bar{q}_L^iY_d^{ij}\frac{1}{\sqrt{2}}\begin{pmatrix}
+\end{pmatrix}(v+h)u_R^j-\Bar{Q}_L^iY_d^{ij}\frac{1}{\sqrt{2}}\begin{pmatrix}
     1\\0
 \end{pmatrix}(v+h)d_R^j+\text{h.c}\\
 &=-\frac{vY_u^{ij}}{\sqrt{2}}\left(1+\frac{h}{v}\right)\Bar{u}_L^iu_R^j-\frac{vY_d^{ij}}{\sqrt{2}}\left(1+\frac{h}{v}\right)\Bar{u}_L^id_R^j+\text{h.c}
 \end{align*}
-The term $vY_u^{ij}/\sqrt{2}$ represents a mass term but the Yukawa matrix is not diagonal: we have to perform two unitary transformations in order to diagonalize it.
+We can see that there are two $3\times3$ Yukawa matrices, which contain a lot of parameters for just a few masses. If it were not for gauge interactions, we could just diagonalize these matrices and the masses would be the only physical parameters. The term $\frac{1}{\sqrt{2}}vY_u^{ij}$ represents a mass term but the Yukawa matrix is not diagonal: we have to perform two unitary transformations in order to diagonalize it.
 \[
 \left\{
 \begin{aligned}
@@ -374,30 +428,31 @@ U_L,U_R\in\text{SU}(3):
 \end{aligned}
 \right.
 \]
-We have these diagonal matrices but with complex entries. We want real masses, so we perform a phase transformation.
+The same process can be repeated for $Y_d$. Now we have these diagonal matrices with, in general, complex entries. We want real masses, so we perform a phase transformation.
 \[
 u_R^i\to e^{i\phi_i}u_R^i\Rightarrow Y_u^{\text{diag}}=\mqty(\dmat{y_u,y_c,y_t})
 \]
 The Yukawa Lagrangian now gets written as:
-\begin{equation}
-\labeq{Yuk2}
-\pazocal{L}_{Yuk}=-\Bar{u}_i\mqty(\dmat{m_u,m_c,m_t})_{ij}u_j\left(1+\frac{h}{v}\right)+\text{h.c.}-\Bar{d}_i\mqty(\dmat{m_d,m_s,m_b})_{ij}d_j\left(1+\frac{h}{v}\right)+\text{h.c.}
-\end{equation}
-This gives us the masses of the quarks, $m_i:=Y_{ii}v/2$ but there is also interaction with $h(x)$: the flavour does not change in the interaction with the Higgs boson.\\
-What happens to the kinetic term after this rotation? If we look at \refeq{Yuk}, we see that these objects are diagonal in flavour space. This is because $u_R$ and $d_R$ have no interaction terms with charged $W$ so the interactions always involve the same field. Nothing changes with the SU(3) rotation mixing the three components of $u_R$, same for $d_R$. But for $u_L$ and $d_L$ we have the term $\Bar{u}_L\gamma^\mu W_\mu^+d_L$ which mixes the two fields. After the rotation, this becomes:
 \[
-\frac{g}{\sqrt{2}}\Bar{u}_L\gamma^\mu(U_L^\dagger D_L)_{ij}W_\mu^+d_L^i \quad U_L^\dagger D_L:=V_{CKM}
+\pazocal{L}_{\text{Yuk}}=-\Bar{u}_i\mqty(\dmat{m_u,m_c,m_t})_{ij}u_j\left(1+\frac{h}{v}\right)+\text{h.c.}-\Bar{d}_i\mqty(\dmat{m_d,m_s,m_b})_{ij}d_j\left(1+\frac{h}{v}\right)+\text{h.c.}
 \]
-where we introduced the \href{https://en.wikipedia.org/wiki/Nicola_Cabibbo}{Cabibbo}-\href{https://en.wikipedia.org/wiki/Makoto_Kobayashi_(physicist)}{Kobayashi}-\href{https://en.wikipedia.org/wiki/Toshihide_Maskawa}{Maskawa} matrix $V_{CKM}$. From here there is flavour violation in the SM. This SU(3) matrix has 8 parameters, 3 angles and 5 phases with only one phase being a physical one. Lastly, we can perform another transformation in \refeq{Yuk2}:
+This gives us the masses of the quarks, where we have defined $m_i$ as $m_i:=\frac{1}{2}vY_{ii}$. There is also interaction with $h(x)$, but the flavour does not change in the interaction with the Higgs boson.\\
+What happens to the kinetic term after this rotation? If we look at \refeq{Yuk}, we notice that for $u_L$ and $d_L$ we have the term $\Bar{u}_L\gamma^\mu W_\mu^+d_L$ which mixes the two fields. After the rotation, this becomes:
 \[
-\left\{
-\begin{aligned}
-&u_i\to e^{i\theta_i}u_i\\
-&d_i\to e^{i\Tilde{\theta}_i}d_i
-\end{aligned}
-\right.
+\frac{g}{\sqrt{2}}\Bar{u}_L^i\gamma^\mu W_\mu^+d_L^i\to\frac{g}{\sqrt{2}}\Bar{u}_L^i\gamma^\mu(U_L^\dagger D_L)_{ij}W_\mu^+d_L^j=\frac{g}{\sqrt{2}}\Bar{u}_L^i\gamma^\mu(V_{\text{CKM}})_{ij}W_\mu^+d_L^j
 \]
-If all the transformations for up were equal to the transformations for down, we would not have to do them because there will be an overall global phase factor. The only phase responsible for CP violation in the SM is the one corresponding to $\theta_i=-\Tilde{\theta}_i=\theta$.
+where $V_{\text{CKM}}:=U_L^\dagger D_L$. Hence, all of the interesting mixing effects are given by a single matrix known as the \href{https://en.wikipedia.org/wiki/Nicola_Cabibbo}{Cabibbo}-\href{https://en.wikipedia.org/wiki/Makoto_Kobayashi_(physicist)}{Kobayashi}-\href{https://en.wikipedia.org/wiki/Toshihide_Maskawa}{Maskawa} (CKM) matrix.\marginnote{This topic is discussed more in detail in the course \textit{Weak Interactions in the Standard Model and Beyond}, by prof. Contino (again) and Nardecchia but I wanted to include it here for completeness and to have a nice ending to the chapter.} The CKM matrix is a complex unitary $3\times3$ matrix, therefore it has nine real degrees of freedom. If it was real, it would be an O(3) matrix, with three degrees of freedom corresponding to three rotation angles. Being it complex, there are three angles and six phases in $V_{\text{CKM}}$. However, we can use the U(1)$^6$ symmetry under which the masses are invariant to set some phases to zero. If all the U(1) rotations are the same, then $V_{\text{CKM}}$ is unchanged and it is possible to eliminate only five phases, remaining with four degrees of freedom: three mixing angles $\theta_{12}$, $\theta_{13}$, $\theta_{23}$ and one phase $\delta$. The angle $\theta_{12}$ is known as the \textbf{Cabibbo angle}, it is the rotation angle between the first two generations and the only parameter relevant to hadronic physics involving light quarks $(u,d,s)$, so it was very important historically.\\
+If we had only two generations, we would have a $2\times2$ complex matrix with four real degrees of freedom: one rotation angle and three phases. with the U(1)$^4$ symmetry it is possible to remove three phases, so in the end there is only one parameter, the Cabibbo angle. In particular, the CKM matrix can be taken as \textbf{real}. If this is the case, then there can be no CP violation. Historically, CP violation was observed in the kaon system well before the third generation was discovered and a third generation was predicted as necessary for CP violation. 
+% From here there is flavour violation in the SM. This SU(3) matrix has 8 parameters, 3 angles and 5 phases with only one phase being a physical one. Lastly, we can perform another transformation in \refeq{Yuk2}:
+% \[
+% \left\{
+% \begin{aligned}
+% &u_i\to e^{i\theta_i}u_i\\
+% &d_i\to e^{i\Tilde{\theta}_i}d_i
+% \end{aligned}
+% \right.
+% \]
+% If all the transformations for up were equal to the transformations for down, we would not have to do them because there will be an overall global phase factor. The only phase responsible for CP violation in the SM is the one corresponding to $\theta_i=-\Tilde{\theta}_i=\theta$.
 \newpage
 \vspace*{\fill}
 \begin{center}
