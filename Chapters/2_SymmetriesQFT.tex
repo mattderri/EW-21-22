@@ -784,7 +784,7 @@ This Lagrangian describes a massless particle $\xi(x)$ as well as a massive part
     This is still a U(1) transformation, non homogeneous and in general non linear. The fields are not invariant but at the Lagrangian level symmetry is still present, we just realized it in an unusual way. At quantum level, $\xi(x)$ describes massless scalars called \textbf{Nambu-Goldstone bosons} (NGB). The field $\eta(x)$ can be visualized as radial excitations of the potential shown on the side, commonly called a Mexican hat potential.\marginnote[-2cm]{\includegraphics[]{Images/sombrero.png}}
     \item The manifold where $\xi(x)$ lives is the manifold of vacua ($\sim$S$^1$)
 \end{itemize}
-Massless Goldstone bosons such as $\eta(x)$ will appear in any theory with SSB (by Goldstone theorem [\refthm{GT}]), with one massless particle for each broken symmetry. Goldstone bosons are naturally associated with shift symmetries: it is easy to see from \refeq{phipar} that a phase rotation in $\phi(x)$ amounts to a shift in $\xi(x)$. The shift symmetry forbids a mass term for $\xi(x)$. There is a close connection between Goldstone theorem and shift symmetries of the Goldstone bosons. We now want to write the current in terms of $\xi(x)$ and $\eta(x)$:
+Massless Goldstone bosons such as $\xi(x)$ will appear in any theory with SSB (by Goldstone theorem [\refthm{GT}]), with one massless particle for each broken symmetry. Goldstone bosons are naturally associated with shift symmetries: it is easy to see from \refeq{phipar} that a phase rotation in $\phi(x)$ amounts to a shift in $\xi(x)$. The shift symmetry forbids a mass term for $\xi(x)$. There is a close connection between Goldstone theorem and shift symmetries of the Goldstone bosons. We now want to write the current in terms of $\xi(x)$ and $\eta(x)$:
 \[
 \left\{
 \begin{aligned}
@@ -900,7 +900,7 @@ The charges which annihilate the vacuum generate a linearly realized symmetry su
 \[
 Q^a=\int d^3xJ^{0,a}(\Vec{x},t)\xrightarrow[\text{regularization}]{}Q^a_V(t)=\int_V d^3xJ^{0,a}(\Vec{x},t)
 \]
-The regularized version of the charge will no longer be conserved because it depends on the time, instead we can look at the commutator of the charge with a local operator $A$ located in a point $A(y)$ or located in a finite space-time region.
+The regularized version of the charge will no longer be conserved because it depends on the time. What we can do instead is to look at the commutator of the charge with a local operator $A$ located in a point $A(y)$ or in a finite space-time region.
 \[
 [Q_V^a(t),A(y)]=\lim_{V\to\infty}\int_Vd^3x[J^{0,a}(\Vec{x},t),A(y)]\stackrel{?}{<}\infty
 \]
@@ -930,43 +930,40 @@ can be seen as the limit for the transformed state $\ket{\alpha_V}$ given by\\ $
 \labthm{GT}
 Spontaneous breaking of continuous global symmetries implies the existence of massless particles. Equivalently, for any regularized charge $Q_V^a$ such that $\lim_{V\to\infty}Q_V^a\ket{0}\neq0$ there exists a massless particle, the Nambu-Goldstone Boson (NGB). 
 \end{theorem}
-We give two proofs of this theorem.
-\paragraph{First proof:} \marginnote{\href{https://physics.stackexchange.com/questions/417753/schwartzs-and-zees-proof-of-goldstone-theorem}{This post} from Physics StackExchange can be useful.}the assumption of SSB is implemented via the existence of some local operator $\phi_i$ such that:
+\marginnote{From \cite{R}, Section 8.2.}The Goldstone theorem states that if there is a field operator $\phi'(x)$ with non-vanishing vacuum expectation value $\bra{0}\phi'(x)\ket{0}\neq0$ and which is not a singlet under the transformation of some symmetry group, then massless particles must exist in the spectrum of the states. If the Lagrangian is invariant under a group transformation, then the currents have zero divergence $\partial_\mu J^{\mu,a}=0$, the corresponding charges are conserved and they have the commutation relations of symmetry group. If the vacuum is invariant under the group, i.e. a singlet, the charges annihilate the vacuum. This is the usual case for a symmetry. If this is not the case, we say that we have degenerate vacua.
+\begin{proof}
+\marginnote{\href{https://physics.stackexchange.com/questions/417753/schwartzs-and-zees-proof-of-goldstone-theorem}{This post} from Physics StackExchange can be useful.} Since $\phi'(x)$ is not a singlet under the group, there must exist an operator $\phi(x)$ such that:
 \[
-\langle\delta_a\phi_i\rangle=\lim_{V\to\infty}\bra{0}[Q_V^a,\phi_i(x)]\ket{0}\neq0
+[Q_V^a,\phi(x)]=\phi'(x)
 \]
-$\langle\delta_a\phi_i\rangle$ is called the \textbf{order parameter} and it characterizes the fact that the vacuum is not invariant. Moreover, we have that $\frac{d}{dt}\langle\delta_a\phi_i\rangle=0$ as $V\to\infty$. If $Q_V^a\ket{0}=0$ there cannot be an order parameter.\\
-Our starting point is the explicit computation of the order parameter.
+$\phi'(x)$ have a non-vanishing vacuum expectation, from which it follows that:
 \[
-\langle\delta_a\phi_i\rangle=\lim_{V\to\infty}\sum_n\int_Vd^3x\left[\bra{0}J^{0,a}(\Vec{x},t)\ket{n}\bra{n}\phi_i(0)\ket{0}-\bra{0}\phi_i(0)\ket{n}\bra{n}J^{0,a}(\Vec{x},t)\ket{0}\right]
+\bra{0}[Q_V^a,\phi(x)]\ket{0}\neq0
 \]
-Having $\phi_i(0)$ instead of $\phi_i(x)$ is just a choice we made for convenience. We know that in general we can express $J^\mu(x)$ as $e^{-ipx}J^\mu(0)e^{+ipx}$ so that the previous expression becomes:
-\begin{align*}
-\langle\delta_a\phi_i\rangle&=\lim_{V\to\infty}\sum_n\int_Vd^3x\left[\underbrace{\bra{0}e^{-ipx}}J^{0,a}(0)\underbrace{e^{+ipx}\ket{n}}\bra{n}\phi_i(0)\ket{0}-\bra{0}\phi_i(0)\ket{n}\underbrace{\bra{n}e^{-ipx}}J^{0,a}(0)\underbrace{e^{+ipx}\ket{0}}\right]\\
-&=\lim_{V\to\infty}\sum_n\int_Vd^3x\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi_i(0)\ket{0}e^{+ip_nx}-\bra{0}\phi_i(0)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-ip_nx}\right]
-\end{align*}
-We used the assumption that the vacuum has zero energy when applying $e^{\pm ipx}$, now we define:
+We now show that this condition implies the existence of massless particles. Our starting point is the explicit computation of the vacuum expectation value of this commutator. We use the definition of charge and insert a complete set of intermediate states:
 \[
-\int_Vd^3xe^{i\Vec{p}_n\cdot\Vec{x}}:=(2\pi)^3f_V(\Vec{p}_n)\xrightarrow[V\to\infty]{}(2\pi)^3\delta^3(\Vec{p}_n)
+\lim_{V\to\infty}\sum_n\int_V d^3y\left[\bra{0}J^{0,a}(y)\ket{n}\bra{n}\phi(x)\ket{0}-\bra{0}\phi(x)\ket{n}\bra{n}J^{0,a}(y)\ket{0}\right]\neq0
 \]
-It is possible to choose $V$ such that $f_V(\Vec{p}_n)=f_V(-\Vec{p}_n)$. With this choice, we write:
+Translation invariance implies that $J^\mu(y)=e^{-ipy}J^\mu(0)e^{+ipy}$ so that the previous expression becomes:
 \begin{align*}
-\langle\delta_a\phi_i\rangle&=\lim_{V\to\infty}\sum_n(2\pi)^3f_V(\Vec{p}_n)\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi_i(0)\ket{0}e^{iE_nt}-\bra{0}\phi_i(0)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_nt}\right]\\
-&=\sum_n(2\pi)^3\delta^3(\Vec{p}_n)\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi_i(0)\ket{0}e^{iE_nt}-\bra{0}\phi_i(0)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_nt}\right]
+&\lim_{V\to\infty}\sum_n\int_V d^3y\left[\underbrace{\bra{0}e^{-ipy}}J^{0,a}(0)\underbrace{e^{+ipy}\ket{n}}\bra{n}\phi(x)\ket{0}-\bra{0}\phi(x)\ket{n}\underbrace{\bra{n}e^{-ipy}}J^{0,a}(0)\underbrace{e^{+ipy}\ket{0}}\right]\\
+=&\lim_{V\to\infty}\sum_n\int_V d^3y\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi(x)\ket{0}e^{+ip_ny}-\bra{0}\phi(x)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-ip_ny}\right]\neq0
 \end{align*}
-% The $\delta^3$ forces all the three-momenta to be equal to zero and the theorem states that we have massless NGBs, hence $E_n=0$ and the expression above between square brackets is different from zero.\marginnote[-1cm]{This last step had been revealed to me in a dream, I am 0\% sure of the correctness of this result.}\\
-Once we computed the order parameter we can move to its derivative:
+We used the assumption that the vacuum has zero energy when applying $e^{\pm ipy}$. It is now possible to perform the spatial integration, which gives us:
 \begin{align*}
-\frac{d}{dt}\langle\delta_a\phi_i\rangle&=\lim_{V\to\infty}i\sum_n(2\pi)^3f_V(\Vec{p}_n)E_n\left[\bra{0}J^{0,a}\ket{n}\bra{n}\phi_i(0)\ket{0}e^{iE_nt}+\bra{0}\phi_i(0)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_nt}\right]\\
-&=i\sum_n(2\pi)^3\delta^3(\Vec{p}_n)E_n\left[\bra{0}J^{0,a}\ket{n}\bra{n}\phi_i(0)\ket{0}e^{iE_nt}+\bra{0}\phi_i(0)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_nt}\right]
+&\sum_n(2\pi)^3\delta^3(\Vec{p}_n)\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi(x)\ket{0}e^{iE_ny^0}-\bra{0}\phi(x)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_ny^0}\right]\neq0
 \end{align*}
-% Following the same reasoning as before, we take the limit of $V\to\infty$, $f_V(\Vec{p}_n)\to\delta^3(\Vec{p}_n)$ forces all the three-momenta to be equal to zero, resulting in $E_n=0$ since we have massless NGBs.\\
-The two conditions $\langle\delta_a\phi_i\rangle\neq0$ and $\frac{d}{dt}\langle\delta_a\phi_i\rangle=0$ are compatible if:
+Previously, we used microcausality to show that the commutator of the charge with a local operator is independent on time. Now we require the same condition, so we compute the derivative with respect to $y^0$ and impose that it is equal to zero.
+\begin{align*}
+\frac{\partial}{\partial y^0}\bra{0}[Q^a,\phi(x)]\ket{0}&=\frac{\partial}{\partial y^0}\sum_n(2\pi)^3\delta^3(\Vec{p}_n)\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi(x)\ket{0}e^{iE_ny^0}-\bra{0}\phi(x)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_ny^0}\right]\\
+&=\sum_ni(2\pi)^3\delta^3(\Vec{p}_n)E_n\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi(x)\ket{0}e^{iE_ny^0}+\bra{0}\phi(x)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_ny^0}\right]
+\end{align*}
+The two conditions $\bra{0}[Q^a,\phi(x)]\ket{0}\neq0$ and $\frac{\partial}{\partial y^0}\bra{0}[Q^a,\phi(x)]\ket{0}=0$ are compatible if:
 \[
 \left\{
 \begin{aligned}
-&\bra{0}J^{0,a}\ket{n}\bra{n}\phi_i(0)\ket{0}=0\quad &&\text{for}\;E_n\neq0\\
-&\bra{0}J^{0,a}\ket{n}\bra{n}\phi_i(0)\ket{0}\neq0\quad &&\text{for}\;E_n=0
+&\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi(x)\ket{0}=0\quad &&\text{for}\;E_n\neq0\\
+&\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi(x)\ket{0}\neq0\quad &&\text{for}\;E_n=0
 \end{aligned}
 \right.
 \]
@@ -974,7 +971,9 @@ The last constraint is telling us that $\ket{n}$ is a massless 1-particle state.
 \[
 \delta^3(\Vec{p}_n)E_n\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize for $N$ particles };}}{=}\delta^3\left(\sum_{k=1}^N\Vec{p}_k\right)\left(\sum_{k=1}^N\sqrt{m_k^2+|\Vec{p}_k|^2}\right)
 \]
-The only way in which this can be zero is to have only \textbf{one massless particle}, $\delta^3(\Vec{p})\sqrt{m^2+|\Vec{p}|^2}=0$ when $m=0$. Let's keep only the contribution coming from massless one-particle states and see if we can obtain some more information.\marginnote[-2cm]{For one-particle state we have $$\sum_n\to\int\frac{d^3p}{(2\pi)^3}\frac{1}{2E_p}$$ where $E_p$ is the energy of the single particle.}
+The only way in which this can be zero is to have only \textbf{one massless particle}, $\delta^3(\Vec{p}_n)\sqrt{m_n^2+|\Vec{p}_n|^2}=0$ when $m=0$.    
+\end{proof}
+Let's keep only the contribution coming from massless one-particle states and see if we can obtain some more information.\marginnote[-2cm]{For one-particle state we have $$\sum_n\to\int\frac{d^3p}{(2\pi)^3}\frac{1}{2E_p}$$ where $E_p$ is the energy of the single particle.}
 \[
 \langle\delta_a\phi_i\rangle=\lim_{V\to\infty}\int\frac{d^3p}{\cancel{(2\pi)^3}}\frac{\cancel{(2\pi)^3}}{2E_p}f_V(\Vec{p})\left[\bra{0}J^{0,a}(0)\ket{\chi^b(\Vec{p})}\bra{\chi^b(\Vec{p})}\phi_i(0)\ket{0}e^{iE_pt}-\bra{0}\phi_i(0)\ket{\chi^b(\Vec{p})}\bra{\chi^b(\Vec{p})}J^{0,a}(0)\ket{0}e^{-iE_pt}\right]
 \]
