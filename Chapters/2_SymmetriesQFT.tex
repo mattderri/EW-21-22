@@ -199,10 +199,8 @@ One way to see that $Q^a$ is a generator is to use the properties of the generat
 &=-i\int d^3x\left[-\pi_i(x)t_{ij}^at_{jl}^b\phi_l(x)+\pi_k(x)t_{kl}^bt_{lj}^a\phi_j(x)\right]\\
 &=+i\int d^3x\left\{\pi_i(x)[t^a,t^b]_{il}\phi_j(x)\right\}\\
 &=+if^{abc}\int d^3x\pi_i(x)it_{il}^c\phi_l(x)=+if^{abc}Q^c \quad \checkmark
-\marginnote[-1cm]{Rubacchio trying to steal the correct sign but failing.\\
-\includegraphics{Images/rubacchio.jpeg}}
 \end{align*}
-This is the \textbf{charge algebra}, se non ti piace vattenene a fanculo. If we work with currents instead, we obtain something similar:
+This is the \textbf{charge algebra}. If we work with currents instead, we obtain something similar:
 \[
 [J^{0,a}(\Vec{x},t),J^{0,b}(\Vec{y},t)]=if^{abc}J^{0,c}(\Vec{x},t)\delta^3(\Vec{x}-\Vec{y})
 \]
@@ -262,7 +260,7 @@ Q\ket{0}=\int d^3xJ^0(\Vec{x},t)\ket{0}=0
 \]
 We multiply the integrand on the left by a generic state $n$ with zero three momentum:
 \[
-\bra{n,p_n=0}J^0(\Vec{x},t)\ket{0}=\bra{n,p_n}e^{-ipx}J^0(\Vec{0},t)\underbrace{e^{+ipx}\ket{0}}_{=0}=0
+\bra{n,p_n=0}J^0(\Vec{x},t)\ket{0}=\bra{n,p_n}e^{-ipx}J^0(\Vec{0},t)\underbrace{e^{+ipx}\ket{0}}_{=\ket{0}}=0
 \]
 Consider now the derivative with respect to time of $J^0(x)$, $\bra{n,p_n=0}\partial_0J^0(x)\ket{0}$. This can be written as the total derivative of the current, since the spatial derivative is equal to zero.
 \[
@@ -272,7 +270,7 @@ We proved that $\bra{n,p_n=0}\partial_\mu J^\mu\ket{0}=0$. Moreover, the operato
 \[
 \partial_\mu J^\mu\ket{0}=0
 \]
-There is a nice theorem\marginnote{Contino didn't say which was this \textit{nice theorem}. I personally doubt it exists, adding material to the thesis that this course was a scam.} which tells us that if $O(x)\ket{0}=0$ for $O(x)$ local, then $O(x)=0$. Using this result, we have that $\partial_\mu J^\mu=0$. From this fact, we can proceed as in the classical way to prove that $dQ/dt=[H,Q]=0$.
+There is a nice theorem\marginnote{Contino didn't say which was this \textit{nice theorem}. I personally doubt it exists, adding material to the thesis that this course was a scam.} which tells us that if $O(x)\ket{0}=0$ for $O(x)$ local, then $O(x)=0$. Using this result, we have that $\partial_\mu J^\mu=0$. From this fact, we can proceed as in the classical way to prove that the charge is conserved, hence $\frac{dQ}{dt}=[H,Q]=0$.
 \end{proof}
 % In Quantum Electrodynamics (QED), electric charges form a multiplet of degenerate states, coming from a Wigner-Weyl symmetry. Every state has a specific electric charge (this is why $e^-$ has charge -1 and $\gamma$ has charge zero). Now we want to see this from a different point of view, using \href{https://en.wikipedia.org/wiki/George_Green_(mathematician)}{Green}'s functions. Consider the following object:
 % \[
@@ -680,12 +678,12 @@ $\bullet\lambda_3\neq0$:\;$\delta m_\Psi\prop\lambda_3y^3$, here we can use the 
 \end{exercise}
 \section{The \href{https://en.wikipedia.org/wiki/Yoichiro_Nambu}{Nambu}-\href{https://en.wikipedia.org/wiki/Jeffrey_Goldstone}{Goldstone} Realization}
 Another possible way to realize symmetries is the Nambu-Goldstone realization. We know that the equations of motion can have some symmetries but their solution will not necessarily be invariant under those symmetries. We talk about \textbf{Spontaneous Symmetry Breaking} (SSB) when the fundamental state is not symmetric while the Lagrangian is invariant under a certain symmetry. We look at the fundamental state because if it is not invariant, neither will be the excited states. SSB is usually associated with phase transitions.\\
-To make things more clear, let's take a simple example in \textbf{Classical Mechanics}: consider a rod perpendicular to a flat surface. We apply a force to it and nothing initially happens, but if we increase the force the rod will bend in some random direction: the minimal energy configuration breaks the symmetry of the equations of motion. We learnt that there is a critical value of the parameter beyond which we have SSB and that there is a manifold of degenerate vacua connected by symmetry transformations.\\
+To make things more clear, let's take a simple example in \textbf{Classical Mechanics}: consider a rod perpendicular to a flat surface. We apply a force to it and nothing initially happens, but if we increase the force the rod will bend in some random direction: the symmetric (unbent) configuration becomes unstable beyond this critical value of the force and the new ground state is asymmetric. Also, there are infinitely many possible degenerate ground states, related by rotational symmetry. We learnt that there is a critical value of the parameter beyond which we have SSB and that there is a manifold of degenerate vacua connected by symmetry transformations.\\
 Let's move now to \textbf{Classical Field Theory}. The simplest relativistic system in which we can see SSB is one with a single scalar field with Lagrangian:
 \[
 \pazocal{L}=\frac{1}{2}(\partial_\mu\phi)^2-\underbrace{\left(\frac{\mu^2}{2}\phi^2+\frac{\lambda}{4}\phi^4\right)}_{V(\phi)}
 \]
-$\phi(x)$ is a real field, we want to find the configuration which minimizes the energy. Taking $\phi(x)=$constant minimizes the kinetic energy, we have to look at the potential $V(\phi)$: for $\mu^2>0$, the system is invariant under parity $P_\phi:\phi\to-\phi$ and we have no SSB. What happens if $\mu^2<0$? $V(\phi)$ has some critical points:
+$\phi(x)$ is a real field, we want to find the configuration which minimizes the energy. Taking $\phi(x)=$ constant minimizes the kinetic energy, we have to look at the potential $V(\phi)$: for $\mu^2>0$, the system is invariant under parity $P_\phi:\phi\to-\phi$ and we have no SSB. What happens if $\mu^2<0$? $V(\phi)$ has some critical points:
 \[
 \frac{\partial V}{\partial\phi}=0=\mu^2\phi+\lambda\phi^3\Rightarrow
 \left\{
@@ -741,18 +739,18 @@ This theory has a global U(1) symmetry given by $\phi\to e^{i\alpha}\phi$ with $
 \left\{
 \begin{aligned}
 &\varphi=0\\
-&\varphi^2=-\mu^2/2\lambda\to\varphi=v/\sqrt{2}
+&\varphi^2=-\frac{\mu^2}{2\lambda}\to\varphi=\frac{v}{\sqrt{2}}
 \end{aligned}
 \right.
 \]
-At the minimum, we have $\phi^\dagger\phi=v^2/2$. These vacuum states are all degenerate: $\phi(x)=ve^{i\theta}/\sqrt{2}$, where $\theta$ is an arbitrary value describing the position of all the vacuum states in the manifold which are all connected by a symmetry transformation $\phi\to\phi+i\alpha\phi+\pazocal{O}(\alpha^2)$. The current associated is:
+At the minimum, we have $\phi^\dagger\phi=\frac{v^2}{2}$. These vacuum states are all degenerate: $\phi(x)=\frac{1}{\sqrt{2}}ve^{i\theta}$, where $\theta$ is an arbitrary value describing the position of all the vacuum states in the manifold which are all connected by a symmetry transformation $\phi\to\phi+i\alpha\phi+\pazocal{O}(\alpha^2)$. The current associated is:
 \[
 J^\mu=\frac{\delta\pazocal{L}}{\delta(\partial_\mu\phi)}i\phi+\frac{\delta\pazocal{L}}{\delta(\partial\phi^\dagger)}(-i\phi^\dagger)=\partial_\mu\phi^\dagger i\phi-\partial_\mu\phi i\phi^\dagger=-i\phi^\dagger\overset{\leftrightarrow}{\partial_\mu}\phi
 \]
 All the vacua are equivalent (by symmetry) so it is possible to pick any convenient parametrization. Instead of writing $\phi(x)=v+\Tilde{\phi}(x)$, with $\Tilde{\phi}(x)$ a complex field, it is more convenient to expand around $v$ by parametrizing $\phi(x)$ in terms of two real fields $\eta(x)$ and $\xi(x)$:
 \begin{equation}
 \labeq{phipar}
-\phi(x)=\frac{e^{i\xi(x)/v}}{\sqrt{2}}(v+\eta(x)) \quad \xi(x)/v\in[0,2\pi)
+\phi(x)=\frac{e^{i\xi(x)/v}}{\sqrt{2}}(v+\eta(x)) \quad \frac{\xi(x)}{v}\in[0,2\pi)
 \end{equation}
 $\phi(x)$ is a complex field, instead of writing $\pazocal{L}$ in terms of $\mathfrak{Re}\phi$ and $\mathfrak{Im}\phi$ we use a phase and an absolute value, with the latter given by $v+\eta(x)$ and $\langle\eta(x)\rangle=0$. We compute the Lagrangian in terms of the new variables:
 \[
@@ -907,7 +905,7 @@ The regularized version of the charge will no longer be conserved because it dep
 We ask ourselves whether this integral is convergent or not. For relativistic QFT, microcausality tells us that $[O_1(x),O_2(y)]=0$ for $(x-y)^2<0$, i.e. $x,y$ space-like. As $V\to\infty$, we will get $(x-y)^2<0$ so the integral will converge and the commutator of the charge with any local operator is well defined. If we fix a time such that $x$ and $y$ are space-like we must be out of the light cone, but this will eventually happen as we are integrating over $V\to\infty$. We can extend this reasoning to a local operator located in a finite space-time region by considering all the light cones centered in the points of such region and there will always be a $x$ large enough to make the integrand zero in every point of the region.\\
 Moreover, we can also prove prove that this commutator does not depend on time.
 \begin{align*}
-\frac{d}{dt}\lim_{V\to\infty}[Q_V^a(t),A]&=\lim_{V\to\infty}\int_Vd^3x\left[\frac{\partial}{\partial t}J^{0,a}(\Vec{x},t),A(y)\right]\\
+\frac{d}{dt}[Q_V^a(t),A]&=\lim_{V\to\infty}\int_Vd^3x\left[\frac{\partial}{\partial t}J^{0,a}(\Vec{x},t),A(y)\right]\\
 &\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize $\partial_\mu J^\mu=0$ };}}{=}\lim_{V\to\infty}\int_Vd^3x[\Vec{\nabla}\cdot\Vec{J}(\Vec{x},t),A(y)]\\
 &=\lim_{V\to\infty}\int_{\partial V}dS[\hat{n}\cdot\Vec{J}(\Vec{x},t),A(y)]=0
 \end{align*}
@@ -933,9 +931,9 @@ All this machinery is needed to prove the Goldstone Theorem.
 \labthm{GT}
 Spontaneous breaking of continuous global symmetries implies the existence of massless particles. Equivalently, for any regularized charge $Q_V^a$ such that $\lim_{V\to\infty}Q_V^a\ket{0}\neq0$ there exists a massless particle, the Nambu-Goldstone Boson (NGB). 
 \end{theorem}
-\marginnote{From \cite{R}, Section 8.2.}The Goldstone theorem states that if there is a field operator $\phi'(x)$ with non-vanishing vacuum expectation value $\bra{0}\phi'(x)\ket{0}\neq0$ and which is not a singlet under the transformation of some symmetry group, then massless particles must exist in the spectrum of the states. If the Lagrangian is invariant under a group transformation, then the currents have zero divergence $\partial_\mu J^{\mu,a}=0$, the corresponding charges are conserved and they have the commutation relations of symmetry group. If the vacuum is invariant under the group, i.e. a singlet, the charges annihilate the vacuum. This is the usual case for a symmetry. If this is not the case, we say that we have degenerate vacua.
+\marginnote{From \cite{R}, Section 8.2.}If the Lagrangian is invariant under a group transformation, then the currents have zero divergence $\partial_\mu J^{\mu,a}=0$, the corresponding charges are conserved and they have the commutation relations of symmetry group. If the vacuum is invariant under the group, i.e. a singlet, the charges annihilate the vacuum. This is the usual case for a symmetry. If this is not the case, we say that we have degenerate vacua.
 \begin{proof}
-\marginnote{\href{https://physics.stackexchange.com/questions/417753/schwartzs-and-zees-proof-of-goldstone-theorem}{This post} from Physics StackExchange can be useful.} Since $\phi'(x)$ is not a singlet under the group, there must exist an operator $\phi(x)$ such that:
+\marginnote{\href{https://physics.stackexchange.com/questions/417753/schwartzs-and-zees-proof-of-goldstone-theorem}{This post} from Physics StackExchange can be useful.}The Goldstone theorem states that if there exists such a charge, then there is a field operator $\phi'(x)$ with non-vanishing vacuum expectation value $\bra{0}\phi'(x)\ket{0}\neq0$ and which is not a singlet under the transformation of some symmetry group.  Since $\phi'(x)$ is not a singlet under the group, there must exist an operator $\phi(x)$ such that:
 \[
 [Q_V^a,\phi(x)]=\phi'(x)
 \]
@@ -958,7 +956,7 @@ We used the assumption that the vacuum has zero energy when applying $e^{\pm ipy
 \end{align*}
 Previously, we used microcausality to show that the commutator of the charge with a local operator is independent on time. Now we require the same condition, so we compute the derivative with respect to $y^0$ and impose that it is equal to zero.
 \begin{align*}
-\frac{\partial}{\partial y^0}\bra{0}[Q^a,\phi(x)]\ket{0}&=\frac{\partial}{\partial y^0}\sum_n(2\pi)^3\delta^3(\Vec{p}_n)\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi(x)\ket{0}e^{iE_ny^0}-\bra{0}\phi(x)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_ny^0}\right]\\
+\frac{\partial}{\partial y^0}\bra{0}[Q_V^a,\phi(x)]\ket{0}&=\frac{\partial}{\partial y^0}\sum_n(2\pi)^3\delta^3(\Vec{p}_n)\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi(x)\ket{0}e^{iE_ny^0}-\bra{0}\phi(x)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_ny^0}\right]\\
 &=\sum_ni(2\pi)^3\delta^3(\Vec{p}_n)E_n\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi(x)\ket{0}e^{iE_ny^0}+\bra{0}\phi(x)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_ny^0}\right]
 \end{align*}
 The two conditions $\bra{0}[Q_V^a,\phi(x)]\ket{0}\neq0$ and $\frac{\partial}{\partial y^0}\bra{0}[Q_V^a,\phi(x)]\ket{0}=0$ are compatible if:
@@ -990,7 +988,7 @@ We want to write the matrix elements using Lorentz invariance:
 \labeq{leftpart}
 \bra{0}J^{\mu,a}(x)\ket{\chi^b(\Vec{p})}=iF_{ab}p^\mu e^{ipx} \quad \bra{\chi^b(\Vec{p})}\phi(x)\ket{0}=Z_{ab}
 \end{equation}
-For the first matrix element, keep in mind that $\partial_\mu J^\mu=0$ so when deriving there is another factor $p^\mu$. There will be $p^2$ but since we are dealing with massless particles, the derivative of this matrix element will be equal to zero. Now we plug this in $\bra{0}[Q_V^a,\phi(x)]\ket{0}$, keeping in mind that for massless particles $p^\mu=p^0=E_p$:
+For the first matrix element, keep in mind that $\partial_\mu J^\mu=0$ so when deriving there is another factor $p^\mu$. There will be $p^2$ but since we are dealing with massless particles, the derivative of this matrix element will be equal to zero. Now we plug this in $\bra{0}[Q_V^a,\phi(x)]\ket{0}$, remembering that for massless particles $p^\mu=p^0=E_p$:
 \[
 \bra{0}[Q_V^a,\phi(x)]\ket{0}=\int\frac{d^3p}{2\cancel{E_p}}\delta^3(\Vec{p})\left[iF_{ab}\cancel{E_p}Z_{ab}e^{iE_pt}+iZ_{ab}F_{ab}\cancel{E_p}e^{-iE_pt}\right]
 \]
@@ -1004,10 +1002,10 @@ Similarly, for $\frac{\partial}{\partial y^0}\bra{0}[Q_V^a,\phi(x)]\ket{0}$ we o
 \]
 So, in the limit $V\to\infty$, we get
 $\bra{0}[Q_V^a,\phi(x)]\ket{0}=iF_{ab}Z_{ab}$ while its derivative with respect to $y^0$ is equal to zero.\\
-In general, there will be an unbroken subgroup H$\subset$G which linearly realizes the symmetry: both $J^{\mu,a}$ and $\chi^b$ transform as some representation of the unbroken group. But the left part of \refeq{leftpart} tells us that $J^{\mu,a}$ is interpolating $\chi^b$ from the vacuum and since they both transform as a representation of the unbroken group, this representation must be the same, being the vacuum Lorentz invariant. This explains why:
+In general, there will be an unbroken subgroup H$\subset$G which linearly realizes the symmetry, where G is the symmetry gorup: both $J^{\mu,a}$ and $\chi^b$ transform as some representation of the unbroken group. But the left part of \refeq{leftpart} tells us that $J^{\mu,a}$ is interpolating $\chi^b$ from the vacuum and since they both transform as a representation of the unbroken group, this representation must be the same, being the vacuum Lorentz invariant. This explains why:
 \begin{kaobox}[frametitle=\#NGB]
 \[
-\text{\#NGB=\#broken currents=\#broken generators}
+\text{\#NGB = \#broken currents = \#broken generators}
 \]
 \end{kaobox}
 We now use the covariance under H, with $U(\beta)$ being the unitary operator which implement the transformation.
@@ -1022,10 +1020,10 @@ In SO$(N)$ the transformation $R$ is a rotation of SO$(N-1)$. Let SO$(N-1)$=H: $
 \]
 In this example, we can choose as SO$(N-1)$ the rotations of the first $N-1$ indices: $i=1,\dots,N$ ($N$ fields) and $b=1,\dots,N-1$ ($N-1$ NGBs). Setting $i=N$ means having $Z_{Nb}=0$ because we have no vector for $N$, while $Z_{ab}=Z\delta_{ab}$ for $i=a$. We have only two quantities, $F$ and $Z$ and it is always possible to renormalize $\phi_i$ to have $Z=1$. If we now compute the order parameter we get $\langle T_{ij}^a\phi_j\rangle=iF\delta_{ia}$ where $T_{ij}^a=i(\delta_{ai}\delta_{jN}-\delta_{aj}\delta_{iN})$ are the broken generators. From this, we get $\langle\phi_j\rangle=F\delta_{jN}$ which is different from zero only for the last component, as we assumed, according with the fact that a SO$(N-1)$ rotation involves only the first $N-1$ components.
 \end{example}
-We proved the existence of this massless particle which must have the same quantum numbers of the current and the scalar fields. It is possible to excite the particle using both operators, which are two apparently different things but actually they are not because we have to look at transformation rules under SO$(N-1)$. $J^{\mu,a}$ transforms as the fundamental of SO$(N)$, $\phi_i(x)$ is in the fundamental of SO$(N)$ which gets broken in the fundamental of SO$(N-1)$+a singlet. Two different operators can excite the same particle, the fact that $\phi_i(x)$ is a scalar field (otherwise it would break Lorentz invariance for the vacuum) is telling us that this particle must be a boson. \marginnote{In supersymmetry theory, the field is fermionic.}\\
-Goldstone theorem does not imply that these particles must be in the physical spectrum, it just states that they must exist.
-\paragraph{Alternative proof:}\marginnote{St'aleternative proof fa letteralmente cagare.}
-we start by computing:
+We proved the existence of this massless particle which must have the same quantum numbers of the current and the scalar fields. It is possible to excite the particle using both operators, which are two apparently different things but actually they are not because we have to look at transformation rules under SO$(N-1)$. $J^{\mu,a}$ transforms as the fundamental of SO$(N)$, $\phi_i(x)$ is in the fundamental of SO$(N)$ which gets broken in the fundamental of SO$(N-1)$+a singlet. Two different operators can excite the same particle, the fact that $\phi_i(x)$ is a scalar field (otherwise it would break Lorentz invariance for the vacuum) is telling us that this particle must be a boson. \marginnote{In supersymmetry theory, the field is fermionic.} Goldstone theorem does not imply that these particles must be in the physical spectrum, it just states that they must exist.\\
+An alternative proof of the Goldstone theorem is the following.\marginnote{This alternative proof is terrible, stick to the previous one.}
+\begin{proof}
+Start by computing:
 \begin{align*}
 \partial_\mu^x\bra{0}T[J^{\mu,a}(x)\phi_i(0)]\ket{0}&=\partial_\mu^x\left[\theta(x^0)\bra{0}J^{\mu,a}(x)\phi_i(0)\ket{0}+\theta(-x^0)\bra{0}\phi_i(0)J^{\mu,a}(x)\ket{0}\right]\\
 &=\delta(x^0)\bra{0}[J^{0,a}(x),\phi_i(0)]\ket{0}
@@ -1047,7 +1045,7 @@ If $H^{a.i}(p^2)$ has no poles the integral goes to zero, so it must be:
 H^{a,i}(p^2)=\frac{\langle\delta_a\phi_i\rangle}{p^2}+\text{regular terms in $p^2$}
 \]
 We are exciting the field in a point with the current and with $\phi_i$ in another point. The existence of the pole implies the existence of a state interpolated from the vacuum by $J^\mu$ and $\phi_i$, which propagates and gives us the pole: this is the NGB.\\
-
+\end{proof}
 \textbf{Remarks:}
 \begin{enumerate}
     \item We cannot have SSB of a symmetry (discrete or continue) in dimension $d\le2$ because of infrared divergence.

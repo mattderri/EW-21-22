@@ -15,7 +15,7 @@ A set of objects $\Psi$ that mix under a transformation group is called a \textb
 \[
 \pazocal{M}=\bra{\Psi_1}\pazocal{P}^\dagger\pazocal{P}\ket{\Psi_2}
 \]
-\marginnote{From \cite{schwartz}, Section 8.1.}So $\pazocal{P}^\dagger\pazocal{P}=1$, which is the definition of unitarity. Unitary representations of the Poincaré group are only a small subset of all the possible representations of it. 
+\marginnote{From \cite{schwartz}, Section 8.1.}So $\pazocal{P}^\dagger\pazocal{P}=\mathbb{1}$, which is the definition of unitarity. Unitary representations of the Poincaré group are only a small subset of all the possible representations of it. 
 \begin{definition}
 Particles transform under irreducible unitary representation of the Poincaré group.
 \end{definition}
@@ -42,11 +42,11 @@ Unfortunately, there are \textit{no finite-dimensional unitary representations} 
 % Focus now on the invariant mass: the fact that it commutes with all the generators of the algebra implies that if an element of the representation has a certain $P^2$, it will be the same for all the other elements of the same representation. 
 \marginnote{From \cite{WKT}, Section 10.4.}The unitary irreducible representation of the Poincaré group can be derived by using the \textbf{method of induced representation}. This method is based on the use of the abelian invariant subgroup of translations T$_4$. The square of the four-momentum is a \textbf{Casimir operator} which commutes with all generators, hence with all group transformations. We define it as:
 \[
-C_1:=P_\mu P^\mu=P^2=p_0^2-p^2
+C_1:=p_\mu p^\mu=p_0^2-p^2
 \]
-$C_1$ has the desired properties because it is Lorentz invariant (as the scalar product of $P^\mu$ with itself) and it is also invariant under translations due to the abelian nature of T$_4$. However, its eigenvalue $c_1$ is not positive definite and the irreducible representations of the Lorentz group are labelled by $c_1$. The second Casimir of the Poincaré group comes from the \href{https://en.wikipedia.org/wiki/Pauli-Lubanski_pseudovector}{Pauli-Lubanski} vector:
+$C_1$ has the desired properties because it is Lorentz invariant (as the scalar product of $p^\mu$ with itself) and it is also invariant under translations due to the abelian nature of T$_4$. However, its eigenvalue $c_1$ is not positive definite and the irreducible representations of the Lorentz group are labelled by $c_1$. The second Casimir of the Poincaré group comes from the \href{https://en.wikipedia.org/wiki/Pauli-Lubanski_pseudovector}{Pauli-Lubanski} vector:
 \[
-C_2:=W_\mu W^\mu=W^2 \quad W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}P_\sigma
+C_2:=W_\mu W^\mu=W^2 \quad W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}p_\sigma
 \]
 We can distinguish among 4 cases:
 \begin{enumerate}
@@ -72,7 +72,7 @@ P^\mu U(\Lambda)\ket{\vec{p},\sigma}&=U(\Lambda)[U^{-1}(\Lambda)P^\mu U(\Lambda)
 Therefore, $U(\Lambda)\ket{\vec{p},\sigma}$ must be a linear combination of the states $\ket{\Lambda p,\sigma'}$.
 \begin{equation}
 \labeq{csigma}
-U(\Lambda)\ket{\vec{p},\sigma}=\sum_{\sigma'}=C_{\sigma',\sigma}(\Lambda,p)\ket{\Lambda p,\sigma'}
+U(\Lambda)\ket{\vec{p},\sigma}=\sum_{\sigma'}C_{\sigma',\sigma}(\Lambda,p)\ket{\Lambda p,\sigma'}
 \end{equation}
 In general, it is possible by using suitable linear combinations of $\ket{\vec{p},\sigma}$ to choose the labels $\sigma$ in such a way that the matrix $C_{\sigma',\sigma}(\Lambda,p)$ is block diagonal, i.e. so that the states $\ket{\vec{p},\sigma}$ gives a representation of the Poincaré group. Our task now is to work out the structure of the coefficients $C_{\sigma',\sigma}(\Lambda,p)$ in irreducible representations of the Poincaré group. For this purpose, note that the only functions of $p^\mu$ that are left invariant by proper orthochronous Lorentz transformations $\Lambda^\mu_\nu$ are the invariant square $p^2=\eta_{\mu\nu}p^\mu p^\nu$ and the sign of $p^0$ (for $p^2\le0$). For each value of $p^2$ we can choose a standard four-momentum $k^\mu$ and express any $p^\mu$ of this class as:
 \[
@@ -82,28 +82,30 @@ where $L^\mu_\nu(p)$ is a standard Lorentz transformation which depends on $p^\m
 \[
 \ket{\Vec{p},\sigma}:=U(L(p))\ket{\Vec{k},\sigma}
 \]
-So far, we said nothing about how the $\sigma$ labels are related to different momenta. Now we operate with $U(\Lambda)$ on the state previously defined:
-\[
-U(\Lambda)\ket{\Vec{p},\sigma}=U(\Lambda L(p))\ket{\Vec{k},\sigma}=U(L(\Lambda p))U(L^{-1}(\Lambda p)\Lambda L(p))\ket{\Vec{k},\sigma}
-\]
-The Lorentz transformation $L^{-1}(\Lambda p)\Lambda L(p)$ takes $k$ to $L(p)k=p$ then to $\Lambda p$ and then back to $k$: it belongs to the subgroup of the Lorentz group consisting of transformations $W^\mu_\nu$ which leave $k^\mu$ invariant. This subgroup is called the \textbf{little group}.\\
-We can explicitly show that $\ket{\Vec{p},\sigma}$ are eigenvalues of the momentum.
+So far, we said nothing about how the $\sigma$ labels are related to different momenta. Now we operate with $U(\Lambda)$ on the state previously defined:\marginnote{The product of unitary transformations is the unitary transformation of the product}
 \begin{align*}
-P^\mu\ket{\Vec{p},\sigma}&=P^\mu U(L(p))\ket{\Vec{k},\sigma}=U(L(p))[U^{-1}(L(p))P^\mu U(L(p))]\ket{\vec{k},\sigma}\\
-&=U(L(p))L(p)^\mu_\nu p^\nu\ket{\vec{k},\sigma}=U(L(p))L(p)^\mu_\nu k^\nu\ket{\vec{k},\sigma}\\
-&=U(L(p))p^\mu\ket{\vec{k},\sigma}=p^\mu\ket{\vec{p},\sigma} \quad \checkmark
+U(\Lambda)\ket{\Vec{p},\sigma}&=U(\Lambda L(p))\ket{\Vec{k},\sigma}=U(L(\Lambda p))U(L^{-1}(\Lambda p))U(\Lambda L(p))\ket{\Vec{k},\sigma}\\
+&=U(L(\Lambda p))U(L^{-1}(\Lambda p)\Lambda L(p))\ket{\Vec{k},\sigma}
 \end{align*}
-Moreover, we can show that this state is also an eigenstate of the Lorentz transformations:
-\begin{align*}
-U(\Lambda)\ket{\vec{p},\sigma}&=U(\Lambda)U(L(p))\ket{\vec{k},\sigma}=U(L(\Lambda p))[U^{-1}(L(\Lambda p))U(\Lambda)U(L(p))]\ket{\vec{k},\sigma}\\
-&=U(L(\Lambda p))U(W(\Lambda,p))\ket{\vec{k},\sigma}\marginnote{The product of unitary transformations is the unitary transformation of the product, $W(\Lambda,p):=L(\Lambda p)^{-1}\Lambda L(p)$.}
-\end{align*}
-We look more in details at this transformation $W(\Lambda,p)$.
+The Lorentz transformation $W(\Lambda,p)=L^{-1}(\Lambda p)\Lambda L(p)$ takes $k$ to $L(p)k=p$ then to $\Lambda p$ and then back to $k$: it belongs to the subgroup of the Lorentz group consisting of transformations $W^\mu_\nu$ which leave $k^\mu$ invariant. This subgroup is called the \textbf{little group}.
 \begin{align*}
 W(\Lambda,p)^\mu_\nu k^\nu&=(L(\Lambda p)^{-1}\Lambda L(p))^\mu_\nu k^\nu=(L(\Lambda p)^{-1}\Lambda)L(p)^\mu_\nu k^\nu=(L(\Lambda p)^{-1}\Lambda)^\mu_\nu p^\nu\\
 &=(L(\Lambda p)^{-1})^\mu_\nu(\Lambda p)^\nu=k^\nu
 \end{align*}
-$W(\Lambda,p)$ leaves $k^\mu$ invariant so it is an element of the little group. For any $W$ in the little group we have:
+% We can explicitly show that $\ket{\Vec{p},\sigma}$ are eigenvalues of the momentum.
+% \begin{align*}
+% P^\mu\ket{\Vec{p},\sigma}&=P^\mu U(L(p))\ket{\Vec{k},\sigma}=U(L(p))[U^{-1}(L(p))P^\mu U(L(p))]\ket{\vec{k},\sigma}\\
+% &=U(L(p))L(p)^\mu_\nu p^\nu\ket{\vec{k},\sigma}=U(L(p))L(p)^\mu_\nu k^\nu\ket{\vec{k},\sigma}\\
+% &=U(L(p))p^\mu\ket{\vec{k},\sigma}=p^\mu\ket{\vec{p},\sigma} \quad \checkmark
+% \end{align*}
+% Moreover, we can show that this state is also an eigenstate of the Lorentz transformations:
+% \begin{align*}
+% U(\Lambda)\ket{\vec{p},\sigma}&=U(\Lambda)U(L(p))\ket{\vec{k},\sigma}=U(L(\Lambda p))[U^{-1}(L(\Lambda p))U(\Lambda)U(L(p))]\ket{\vec{k},\sigma}\\
+% &=U(L(\Lambda p))U(W(\Lambda,p))\ket{\vec{k},\sigma}\marginnote{The product of unitary transformations is the unitary transformation of the product, $W(\Lambda,p):=L^{-1}(\Lambda p)\Lambda L(p)$.}
+% \end{align*}
+% We look more in details at this transformation $W(\Lambda,p)$.
+% $W(\Lambda,p)$ leaves $k^\mu$ invariant so it is an element of the little group.
+For any $W$ in the little group we have:
 \begin{equation}
 \labeq{Wlg}
 U(W(\Lambda,p))\ket{\vec{k},\sigma}=\sum_{\sigma'}D_{\sigma\sigma'}(W(\Lambda,p))\ket{\vec{k},\sigma'}
@@ -125,13 +127,13 @@ It follows that:
 \delta_{\sigma\sigma'}=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*\delta_{\hat{\sigma}\hat{\sigma}'}=\sum_{\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}^*}\Rightarrow\text{$D$ is unitary}
 \]
 \subsection{Massive States}
-For massive states, we make a clever choice and work in the reference system where the massive particle is at rest, i.e. $K^\mu=(m,0,0,0)$. The little group is SO(3), since rotations are the only proper orthochronous Lorentz transformations that leaves at rest a particle with zero momentum. 
+For massive states, we make a clever choice and work in the reference system where the massive particle is at rest, i.e. $k^\mu=(m,0,0,0)$. The little group is SO(3), since rotations are the only proper orthochronous Lorentz transformations that leaves at rest a particle with zero momentum. 
 % For SO(2) we have just one Casimir, $J^2$, which is the element that commutes with all the other elements in the algebra, $[J^2,J^i]=\exp{iJ^iM^i\theta}=0$. The action of the operator does not change the Casimir:
 % \[
 % J^2U(R(\theta))\ket{s,\sigma}\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize they commute };}}{=}U(R(\theta))J^2\ket{s,\sigma}=\hbar^2s(s+1)U(R(\theta))\ket{s,\sigma}
 % \]
 % $\ket{\Vec{k},\sigma}$ gives us a unitary infinite-dimensional representation of the Poincaré group, the idea is to extend this structure to other states of the representation. 
-As seen before, elements of the little group are given by $W(\Lambda,p)=L^{-1}(\Lambda p)\Lambda L(p)$. To calculate this rotation, we have to choose a standard boost $L(p)$ which takes the four-momentum from $K^\mu$ to $P^\mu$. Conveniently, this is chosen as:
+As seen before, elements of the little group are given by $W(\Lambda,p)=L^{-1}(\Lambda p)\Lambda L(p)$. To calculate this rotation, we have to choose a standard boost $L(p)$ which takes the four-momentum from $k^\mu$ to $p^\mu$. Conveniently, this is chosen as:
 \[
 \left\{
 \begin{aligned}
@@ -179,7 +181,7 @@ $R(\theta)$ commute with $B(|\Vec{p}|)$, which gives us:
 W(\pazocal{R},p)=R(\pazocal{R}\hat{p})B^{-1}(|\Vec{p}|)R(\theta)B(|\Vec{p}|)R^{-1}(\hat{p})=R(\pazocal{R}\hat{p})R(\theta)R^{-1}(\hat{p})=\pazocal{R}
 \]
 Finally, this shows us that states of a moving massive particles have the same transformation under rotations as in non-relativistic quantum mechanics.\\
-In order to label our sates, it is possible to use the generators $J^2$ and $J_z$ and, being SO(3) compact, the eigenvalues of these generators are quantized. For these states we only need $K^\mu$, $J^2$ and $J_z$. We can prove that $J^2$ is proportional to the second Casimir $W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}P_\sigma$. $\sigma$ must be a temporal index while all the other ones are spatial.
+In order to label our sates, it is possible to use the generators $J^2$ and $J_z$. Being SO(3) compact, the eigenvalues of these generators are quantized. For these states we only need $k^\mu$, $J^2$ and $J_z$. We can prove that $J^2$ is proportional to the second Casimir $W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}p_\sigma$. $\sigma$ must be a temporal index while all the other ones are spatial.
 \[
 W^i=\frac{1}{2}\epsilon^{ijk}M_{jk}\cdot m=J^i\cdot m\xrightarrow[]{}W^2=J^2\cdot m^2
 \]
@@ -187,7 +189,7 @@ Our state can be labeled as $\ket{\Vec{k},\sigma,m,s}$.\marginnote{In principle,
 \[
 \left\{
 \begin{aligned}
-&P^\mu\ket{\Vec{k},\sigma,m,s}=k^\mu\ket{\Vec{k},\sigma,m,s} \quad \text{where $\Vec{k}=0$ and $k^0=m$}\\
+&p^\mu\ket{\Vec{k},\sigma,m,s}=k^\mu\ket{\Vec{k},\sigma,m,s} \quad \text{where $\Vec{k}=0$ and $k^0=m$}\\
 &J^2\ket{\Vec{k},\sigma,m,s}=\hbar^2s(s+1)\ket{\Vec{k},\sigma,m,s}\\
 &J_z\ket{\Vec{k},\sigma,m,s}=\hbar\sigma\ket{\Vec{k},\sigma,m,s}
 \end{aligned}
