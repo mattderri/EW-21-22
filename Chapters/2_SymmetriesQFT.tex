@@ -896,7 +896,7 @@ Suppose now to have two charges, $Q^a$ and $Q^b$, which both annihilate the vacu
 \[
 [Q^a,Q^b]\ket{0}=0 \quad [Q^a,Q^b]=if^{abc}Q^c
 \]
-The charges which annihilate the vacuum generate a linearly realized symmetry subgroup called H. For the other charges, if they do not annihilate the vacuum they are not well defined [\refthm{FP}] and the integral is not convergent.
+The charges which annihilate the vacuum generate a linearly realized symmetry subgroup called H. The other charges do not annihilate the vacuum, they are not well defined [\refthm{FP}] and the integral is not convergent, but it is possible to define a regularized version of the integral:
 \[
 Q^a=\int d^3xJ^{0,a}(\Vec{x},t)\xrightarrow[\text{regularization}]{}Q^a_V(t)=\int_V d^3xJ^{0,a}(\Vec{x},t)
 \]
@@ -904,26 +904,29 @@ The regularized version of the charge will no longer be conserved because it dep
 \[
 [Q_V^a(t),A(y)]=\lim_{V\to\infty}\int_Vd^3x[J^{0,a}(\Vec{x},t),A(y)]\stackrel{?}{<}\infty
 \]
-For relativistic QFT, microcausality tells us that $[O_1(x),O_2(y)]=0$ for $(x-y)^2<0$, i.e. $x,y$ space-like. As $V\to\infty$, we will get $(x-y)^2<0$ so the integral will converge and the commutator of the charge with any local operator is well defined. If we fix a time such that $x$ and $y$ are space-like we must be out of the light cone, but this will eventually happen as we are integrating over $V\to\infty$. We can extend this reasoning to a local operator located in a finite space-time region by considering all the light cones centered in the points of such region and there will always be a $x$ large enough to make the integrand zero in every point of the region. We can use microcausality to prove that this commutator does not depend on time.
+We ask ourselves whether this integral is convergent or not. For relativistic QFT, microcausality tells us that $[O_1(x),O_2(y)]=0$ for $(x-y)^2<0$, i.e. $x,y$ space-like. As $V\to\infty$, we will get $(x-y)^2<0$ so the integral will converge and the commutator of the charge with any local operator is well defined. If we fix a time such that $x$ and $y$ are space-like we must be out of the light cone, but this will eventually happen as we are integrating over $V\to\infty$. We can extend this reasoning to a local operator located in a finite space-time region by considering all the light cones centered in the points of such region and there will always be a $x$ large enough to make the integrand zero in every point of the region.\\
+Moreover, we can also prove prove that this commutator does not depend on time.
 \begin{align*}
 \frac{d}{dt}\lim_{V\to\infty}[Q_V^a(t),A]&=\lim_{V\to\infty}\int_Vd^3x\left[\frac{\partial}{\partial t}J^{0,a}(\Vec{x},t),A(y)\right]\\
 &\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize $\partial_\mu J^\mu=0$ };}}{=}\lim_{V\to\infty}\int_Vd^3x[\Vec{\nabla}\cdot\Vec{J}(\Vec{x},t),A(y)]\\
 &=\lim_{V\to\infty}\int_{\partial V}dS[\hat{n}\cdot\Vec{J}(\Vec{x},t),A(y)]=0
 \end{align*}
-Due to microcausality, $(x-y)^2<0\;\forall x\in\partial V$. Consider now the operator $A$ to have some transformation rules under a certain symmetry:
-\[
-A\to U(\alpha)AU^{-1}(\alpha) \quad U(\alpha)=\exp{iQ^a\alpha^a}
-\]
-In our case, $Q^a$ is not well defined, we can apply this rule only in the Wigner-Weyl realization. Nevertheless we can work with the regularized version of the charge and see what happens to this transformation when sending $V\to\infty$.
-\begin{align*}
-\lim_{V\to\infty}U_V(\alpha)AU^{-1}_V(\alpha)&=\lim_{V\to\infty}e^{iQ_V^a\alpha^a}Ae^{-iQ_V^a\alpha^a}\\
-&\simeq\lim_{V\to\infty}\left[A+i\alpha^a[Q_V^a,A]+\frac{i^2}{2}\alpha^a\alpha^b[Q_V^b,[Q_V^a,A]]+\dots\right]
-\end{align*}
-By defining $\delta_aA:=\lim_{V\to\infty}[Q_V^a,A]$, we can write the transformation as $A\to A+i\alpha^a\delta_aA$. The vacuum expectation value of the transformed $A$:
-\[
-\lim_{V\to\infty}\bra{0}U_V(\alpha)AU_V^{-1}(\alpha)\ket{0}=\lim_{V\to\infty}\bra{\alpha_V}A\ket{\alpha_V}
-\]
-can be seen as the limit for the transformed state $\ket{\alpha_V}$ given by\\ $\ket{\alpha_V}:=U_V^{-1}(\alpha)\ket{0}$. However, the limit of this quantity does not exist but we can overcome this problem by considering both states and taking the limit, but we cannot take the limit singularly of $\ket{\alpha_V}$. We can still consider the vacuum expectation value of some observable $A$ and the vacuum expectation value of the transformed observable $Ag^{-1}$, which can be interpreted as the vacuum expectation value on the transformed state after taking the limit of $V\to\infty$. This is the expectation value of the transformed state, but we cannot directly transform it. This is because the Hilbert space must be \textbf{separable}, i.e. it must contain a countable number of basis vectors. Each vacuum state can be used to create a Hilbert space, different vacuum states contribute to different theories hence a rotation would bring our state in a space which is not the one of our theory. $Q^a\ket{0}$ is not a state on our Hilbert space, but we can still work with the expectation value of the transformed operator.
+Due to microcausality, $(x-y)^2<0\;\forall x\in\partial V$.
+% Consider now the operator $A$ to have some transformation rules under a certain symmetry:
+% \[
+% A\to U(\alpha)AU^{-1}(\alpha) \quad U(\alpha)=\exp{iQ^a\alpha^a}
+% \]
+% In our case, $Q^a$ is not well defined, we can apply this rule only in the Wigner-Weyl realization. Nevertheless we can work with the regularized version of the charge and see what happens to this transformation when sending $V\to\infty$.
+% \begin{align*}
+% \lim_{V\to\infty}U_V(\alpha)AU^{-1}_V(\alpha)&=\lim_{V\to\infty}e^{iQ_V^a\alpha^a}Ae^{-iQ_V^a\alpha^a}\\
+% &\simeq\lim_{V\to\infty}\left[A+i\alpha^a[Q_V^a,A]+\frac{i^2}{2}\alpha^a\alpha^b[Q_V^b,[Q_V^a,A]]+\dots\right]
+% \end{align*}
+% By defining $\delta_aA:=\lim_{V\to\infty}[Q_V^a,A]$, we can write the transformation as $A\to A+i\alpha^a\delta_aA$. The vacuum expectation value of the transformed $A$:
+% \[
+% \lim_{V\to\infty}\bra{0}U_V(\alpha)AU_V^{-1}(\alpha)\ket{0}=\lim_{V\to\infty}\bra{\alpha_V}A\ket{\alpha_V}
+% \]
+% can be seen as the limit for the transformed state $\ket{\alpha_V}$ given by\\ $\ket{\alpha_V}:=U_V^{-1}(\alpha)\ket{0}$. However, the limit of this quantity does not exist but we can overcome this problem by considering both states and taking the limit, but we cannot take the limit singularly of $\ket{\alpha_V}$. We can still consider the vacuum expectation value of some observable $A$ and the vacuum expectation value of the transformed observable $Ag^{-1}$, which can be interpreted as the vacuum expectation value on the transformed state after taking the limit of $V\to\infty$. This is the expectation value of the transformed state, but we cannot directly transform it. This is because the Hilbert space must be \textbf{separable}, i.e. it must contain a countable number of basis vectors. Each vacuum state can be used to create a Hilbert space, different vacuum states contribute to different theories hence a rotation would bring our state in a space which is not the one of our theory. $Q^a\ket{0}$ is not a state on our Hilbert space, but we can still work with the expectation value of the transformed operator.
+All this machinery is needed to prove the Goldstone Theorem.
 \subsection{Goldstone Theorem}
 \label{GT}
 \begin{theorem}
@@ -936,7 +939,7 @@ Spontaneous breaking of continuous global symmetries implies the existence of ma
 \[
 [Q_V^a,\phi(x)]=\phi'(x)
 \]
-$\phi'(x)$ have a non-vanishing vacuum expectation, from which it follows that:
+$\phi'(x)$ have a non-vanishing vacuum expectation value, from which it follows that:
 \[
 \bra{0}[Q_V^a,\phi(x)]\ket{0}\neq0
 \]
@@ -958,7 +961,7 @@ Previously, we used microcausality to show that the commutator of the charge wit
 \frac{\partial}{\partial y^0}\bra{0}[Q^a,\phi(x)]\ket{0}&=\frac{\partial}{\partial y^0}\sum_n(2\pi)^3\delta^3(\Vec{p}_n)\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi(x)\ket{0}e^{iE_ny^0}-\bra{0}\phi(x)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_ny^0}\right]\\
 &=\sum_ni(2\pi)^3\delta^3(\Vec{p}_n)E_n\left[\bra{0}J^{0,a}(0)\ket{n}\bra{n}\phi(x)\ket{0}e^{iE_ny^0}+\bra{0}\phi(x)\ket{n}\bra{n}J^{0,a}(0)\ket{0}e^{-iE_ny^0}\right]
 \end{align*}
-The two conditions $\bra{0}[Q^a,\phi(x)]\ket{0}\neq0$ and $\frac{\partial}{\partial y^0}\bra{0}[Q^a,\phi(x)]\ket{0}=0$ are compatible if:
+The two conditions $\bra{0}[Q_V^a,\phi(x)]\ket{0}\neq0$ and $\frac{\partial}{\partial y^0}\bra{0}[Q_V^a,\phi(x)]\ket{0}=0$ are compatible if:
 \[
 \left\{
 \begin{aligned}
@@ -971,33 +974,42 @@ The last constraint is telling us that $\ket{n}$ is a massless 1-particle state.
 \[
 \delta^3(\Vec{p}_n)E_n\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize for $N$ particles };}}{=}\delta^3\left(\sum_{k=1}^N\Vec{p}_k\right)\left(\sum_{k=1}^N\sqrt{m_k^2+|\Vec{p}_k|^2}\right)
 \]
-The only way in which this can be zero is to have only \textbf{one massless particle}, $\delta^3(\Vec{p}_n)\sqrt{m_n^2+|\Vec{p}_n|^2}=0$ when $m=0$.    
+The only way in which this can be zero is to have only \textbf{one massless particle}, $\delta^3(\Vec{p}_n)\sqrt{m_n^2+|\Vec{p}_n|^2}=0$ when $m_n=0$. The two conditions we required are satisfied only by massless one-particle states. Multi-particle states does not give us $\frac{\partial}{\partial y^0}\bra{0}[Q_V^a,\phi(x)]\ket{0}=0$ because the total momentum will be the sum of the momentum of each particle which is different from zero, implying energy different from zero even if they are massless.   
 \end{proof}
-Let's keep only the contribution coming from massless one-particle states and see if we can obtain some more information.\marginnote[-2cm]{For one-particle state we have $$\sum_n\to\int\frac{d^3p}{(2\pi)^3}\frac{1}{2E_p}$$ where $E_p$ is the energy of the single particle.}
+Let's keep only the contribution coming from massless one-particle states $\chi^b(\Vec{p})$ and see if we can obtain some more information. For one-particle states we have:
 \[
-\langle\delta_a\phi_i\rangle=\lim_{V\to\infty}\int\frac{d^3p}{\cancel{(2\pi)^3}}\frac{\cancel{(2\pi)^3}}{2E_p}f_V(\Vec{p})\left[\bra{0}J^{0,a}(0)\ket{\chi^b(\Vec{p})}\bra{\chi^b(\Vec{p})}\phi_i(0)\ket{0}e^{iE_pt}-\bra{0}\phi_i(0)\ket{\chi^b(\Vec{p})}\bra{\chi^b(\Vec{p})}J^{0,a}(0)\ket{0}e^{-iE_pt}\right]
+\sum_n\to\int\frac{d^3p}{(2\pi)^3}\frac{1}{2E_p}
 \]
+where $E_p$ is the energy of the single particle. This means that:
+\begin{align*}
+\bra{0}[Q_V^a,\phi(x)]\ket{0}=\int\frac{d^3p}{\cancel{(2\pi)^3}}\frac{\cancel{(2\pi)^3}}{2E_p}\delta^3(\Vec{p})&\left[\bra{0}J^{0,a}(0)\ket{\chi^b(\Vec{p})}\bra{\chi^b(\Vec{p})}\phi(x)\ket{0}e^{iE_pt}\right.\\
+&\left.-\bra{0}\phi(x)\ket{\chi^b(\Vec{p})}\bra{\chi^b(\Vec{p})}J^{0,a}(0)\ket{0}e^{-iE_pt}\right]
+\end{align*}
 We want to write the matrix elements using Lorentz invariance:
 \begin{equation}
 \labeq{leftpart}
-\bra{0}J^{\mu,a}(x)\ket{\chi^b(\Vec{p})}=iF_{ab}p^\mu e^{ipx} \quad \bra{\chi^b(\Vec{p})}\phi_i(0)\ket{0}=Z_{ab}
+\bra{0}J^{\mu,a}(x)\ket{\chi^b(\Vec{p})}=iF_{ab}p^\mu e^{ipx} \quad \bra{\chi^b(\Vec{p})}\phi(x)\ket{0}=Z_{ab}
 \end{equation}
-For the first matrix element, we have to keep in mind that $\partial_\mu J^\mu=0$ so when deriving there is another factor $p^\mu$. We will have $p^2$ but since we are dealing with massless particles, the derivative of this matrix element will be equal to zero. Now we plug this in $\langle\delta_a\phi_i\rangle$:
+For the first matrix element, keep in mind that $\partial_\mu J^\mu=0$ so when deriving there is another factor $p^\mu$. There will be $p^2$ but since we are dealing with massless particles, the derivative of this matrix element will be equal to zero. Now we plug this in $\bra{0}[Q_V^a,\phi(x)]\ket{0}$, keeping in mind that for massless particles $p^\mu=p^0=E_p$:
 \[
-\langle\delta_a\phi_i\rangle=\lim_{V\to\infty}\int\frac{d^3p}{2\cancel{E_p}}f_V(\Vec{p})\left[iF_{ab}\cancel{E_p}Z_{ab}e^{iE_pt}+iZ_{ab}F_{ab}\cancel{E_p}e^{-iE_pt}\right]
+\bra{0}[Q_V^a,\phi(x)]\ket{0}=\int\frac{d^3p}{2\cancel{E_p}}\delta^3(\Vec{p})\left[iF_{ab}\cancel{E_p}Z_{ab}e^{iE_pt}+iZ_{ab}F_{ab}\cancel{E_p}e^{-iE_pt}\right]
 \]
 We evaluate the integral:
 \[
-\int d^3pf_V(\Vec{p})e^{iE_pt}=1+\pazocal{O}(1/V)
+\int d^3p\delta^3(\Vec{p})e^{iE_pt}=1
 \]
-Similarly, for $\frac{d}{dt}\langle\delta_a\phi_i\rangle$ we obtain the integral:
+Similarly, for $\frac{\partial}{\partial y^0}\bra{0}[Q_V^a,\phi(x)]\ket{0}$ we obtain the integral:
 \[
-\int d^3pf_V(\Vec{p})E_pe^{iE_pt}=\pazocal{O}(1/V)
+\int d^3p\delta^3(\Vec{p})E_pe^{iE_pt}=0
 \]
-When taking the limit $V\to\infty$, we get
-$\langle\delta_a\phi_i\rangle=iF_{ab}Z_{ab}$ while the derivative is equal to zero.\\
-We expect to have an unbroken subgroup H$\subset$G which linearly realizes the symmetry: both $J^{\mu,a}$ and $\chi^b$ transform as some representation of the unbroken group. But the left part of \refeq{leftpart} tells us that $J^{\mu,a}$ is interpolating $\chi^b$ from the vacuum and since they both transform as a representation of the unbroken group, this representation must be the same, being the vacuum Lorentz invariant. This explains why\\
-\#NGB=\#broken currents=\#broken generators.\\
+So, in the limit $V\to\infty$, we get
+$\bra{0}[Q_V^a,\phi(x)]\ket{0}=iF_{ab}Z_{ab}$ while its derivative with respect to $y^0$ is equal to zero.\\
+In general, there will be an unbroken subgroup H$\subset$G which linearly realizes the symmetry: both $J^{\mu,a}$ and $\chi^b$ transform as some representation of the unbroken group. But the left part of \refeq{leftpart} tells us that $J^{\mu,a}$ is interpolating $\chi^b$ from the vacuum and since they both transform as a representation of the unbroken group, this representation must be the same, being the vacuum Lorentz invariant. This explains why:
+\begin{kaobox}[frametitle=\#NGB]
+\[
+\text{\#NGB=\#broken currents=\#broken generators}
+\]
+\end{kaobox}
 We now use the covariance under H, with $U(\beta)$ being the unitary operator which implement the transformation.
 \[
 \bra{0}J^{\mu,a}(x)\ket{\chi^b(\Vec{p})}=\bra{0}\underbrace{U(\beta)J^{\mu,a}(x)U^{-1}(\beta)}_{{\color{red}{\text{transformed current}}}}\overbrace{U(\beta)\ket{\chi^b(\Vec{p})}}^{{\color{blue}{\text{transformed state}}}}={\color{red}{R_{aa'}}}{\color{blue}{R_{bb'}}}\bra{0}J^{\mu,a'}(x)\ket{\chi^{b'}(\Vec{p})}
