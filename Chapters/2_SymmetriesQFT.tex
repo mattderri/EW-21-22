@@ -13,7 +13,7 @@ T:\pazocal{R}\to\pazocal{R}' \;\text{such that}\;p(\pazocal{R}_1\to\pazocal{R}_2
 \]
 Instead of working with rays, it is easier to work with the states $\ket{\alpha}$: $T:\ket{\alpha}\to U(T)\ket{\alpha}$. The transition probability must stay the same by definition, so that we have:
 \[
-|(\alpha_1,\alpha_2)|=|(\alpha'_1,\alpha'_2)|=|(U\alpha_1,U\alpha_2)|
+|\braket{\alpha_1}{\alpha_2}|=|\braket{\alpha'_1}{\alpha'_2}|=|\braket{U\alpha_1}{U\alpha_2}| 
 \]
 There is a nice theorem proved by Wigner in the early '30s which tells us that:\marginnote{From \cite{W1}, Section 2.2 and Section 2.7.}
 \begin{theorem}[Wigner]
@@ -23,13 +23,13 @@ Let's have a look at the two cases:
 \begin{itemize}
     \item \underline{Linear and unitary}:
     \begin{enumerate}
-        \item $(\alpha,U\lambda\beta)=\lambda(\alpha,U\beta)\;\lambda\in\mathbb{C}$
-        \item $(\alpha,U\beta)=(U^\dagger\alpha,\beta)$
+        \item $\braket{\alpha}{U\lambda\beta}=\lambda\braket{\alpha}{U\beta}\quad\lambda\in\mathbb{C}$
+        \item $\braket{\alpha}{U\beta}=\braket{U^\dagger\alpha}{\beta}$
     \end{enumerate}
-    \item \underline{Anti-linear and Anti-unitary}:
+    \item \underline{Anti-linear and anti-unitary}:
     \begin{enumerate}
-        \item $(\alpha,U\lambda\beta)=\lambda^*(\alpha,U\beta)\;\lambda\in\mathbb{C}$
-        \item $(\alpha,U\beta)=(U^\dagger\alpha,\beta)^*$
+        \item $\braket{\alpha}{U\lambda\beta}=\lambda^*\braket{\alpha}{U\beta}\quad\lambda\in\mathbb{C}$
+        \item $\braket{\alpha}{U\beta}=\braket{U^\dagger\alpha}{\beta}^*$
     \end{enumerate}
 \end{itemize}
 In both cases, we have $UU^\dagger=U^\dagger U=\mathbb{1}$: the conditions for unitarity or anti-unitarity both take the form $U^\dagger=U^{-1}$. Continuity demands that any symmetry that can be made by a continuous change of some parameters must be represented by a linear unitary operator rather than an anti-linear anti-unitary one.\marginnote{Symmetries represented by anti-linear anti-unitary operators are less prominent in physics, they all involve time reversal.}\\
@@ -64,15 +64,15 @@ Any unitary operator has an inverse which is also unitary, so we multiply both s
 e^{i\phi_{\alpha+\beta}(T_1,T_2)}(\ket{\alpha}+\ket{\beta})=e^{i\phi_a(T_1,T_2)}\ket{\alpha}+e^{i\phi_\beta(T_1,T_2)}\ket{\beta}
 \]
 Since $\ket{\alpha}$ and $\ket{\beta}$ are linearly independent, this is only possible if:
-\begin{equation}
-\labeq{prorep}
+\[
 e^{i\phi_{\alpha+\beta}}=e^{i\phi_\alpha}=e^{i\phi_\beta}
-\end{equation}
+\]
 As promised, the phase is then independent on the state, therefore we can write it as an operator relation:
 %for the representation this means that we have \textbf{projective representations}:
-\[
+\begin{equation}
+\labeq{prorep}
 U(T_1)U(T_2)=e^{i\phi(T_1,T_2)}U(T_1\cdot T_2)
-\]
+\end{equation}
 For a general phase we have what is called a \textbf{projective representation}, or a representation \textit{up to a phase}. Suppose to have two different classes of phases: we cannot use this rule because the phase in different classes might be different, e.g. when we treat bosons and fermions we cannot take a combination of them because they satisfy different properties (respectively, commutation and anti-commutation rules).
 
 The structure of the Lie group cannot tell us whether the states give a projective representation but it can tell us whether the group has any intrinsically projective representation. There is a kind of group known as \textbf{connected Lie groups} which is of particular importance in physics. These are groups of transformations $T(\theta)$ described by a finite set of real continuous parameters $\theta^a$, with each element of the group connected to the identity by a path which lies in the group. The group multiplication law is in the form:
@@ -89,7 +89,7 @@ U(T(\theta))=1+i\theta^at_a+\frac{1}{2}\theta^b\theta^ct_{bc}+\dots
 \]
 where $t_a, t_{bc}=t_{cb}$ and so on are Hermitian operators which do not depend on $\theta$. Suppose now that these operators form an ordinary, i.e. \textit{not} projective, representation of this group of transformations:
 \[
-U(T(\theta_1))U(T(\theta_2))=U(T(f(\theta_1,\theta_2))
+U(T(\theta_1))U(T(\theta_2))=U(T(f(\theta_1,\theta_2)))
 \]
 \marginnote{$f^a(\theta_1,\theta_2)=\theta_1^a+\theta_2^a+f^a_{bc}\theta_1^b\theta_2^c+\dots$}
 Expanding this in powers of $\theta_1$ and $\theta_2$ gives us:
@@ -260,13 +260,14 @@ Q\ket{0}=\int d^3xJ^0(\Vec{x},t)\ket{0}=0
 \]
 We multiply the integrand on the left by a generic state $n$ with zero three momentum:
 \[
-\bra{n,p_n=0}J^0(\Vec{x},t)\ket{0}=\bra{n,p_n}e^{-ipx}J^0(\Vec{0},t)\underbrace{e^{+ipx}\ket{0}}_{=\ket{0}}=0
+\bra{n,\vec{p}_n=0}J^0(\Vec{x},t)\ket{0}=\underbrace{\bra{n,p_n}e^{-ipx}}_{\bra{n,\Vec{p}_n=0}}J^0(\Vec{0},t)\underbrace{e^{+ipx}\ket{0}}_{=\ket{0}}=0
 \]
-Consider now the derivative with respect to time of $J^0(x)$, $\bra{n,p_n=0}\partial_0J^0(x)\ket{0}$. This can be written as the total derivative of the current, since the spatial derivative is equal to zero.
+Consider now the derivative with respect to time of $J^0(x)$,\\
+$\bra{n,\vec{p}_n=0}\partial_0J^0(x)\ket{0}=0$. This can be written as the total derivative of the current, since the spatial derivative is equal to zero.
 \[
-\bra{n,p_n=0}\Vec{\nabla}\cdot\Vec{J}(\Vec{x})\ket{0}=\bra{n,p_n=0}\Vec{\nabla}\cdot(e^{-ipx}\Vec{J}(\Vec{0})e^{+ipx})\ket{0}=\bra{n,p_n=0}(-i\Vec{p}\Vec{j}(\Vec{x})+\Vec{J}(\Vec{x})i\Vec{p}\ket{0}=0
+\bra{n,\vec{p}_n=0}\Vec{\nabla}\cdot\Vec{J}(\Vec{x})\ket{0}=\bra{n,\vec{p}_n=0}\Vec{\nabla}\cdot(e^{-ipx}\Vec{J}(\Vec{0})e^{+ipx})\ket{0}=\bra{n,\vec{p}_n=0}(-i\Vec{p}\Vec{j}(\Vec{x})+\Vec{J}(\Vec{x})i\Vec{p}\ket{0}=0
 \]
-We proved that $\bra{n,p_n=0}\partial_\mu J^\mu\ket{0}=0$. Moreover, the operator is \textbf{Lorentz invariant} so we can perform a boost to end up in a reference system where the momentum $p_n$ is different from zero. We have a state whose projection on all possible states is zero, this imply that:
+We proved that $\bra{n,\vec{p}_n=0}\partial_\mu J^\mu\ket{0}=0$. Moreover, the operator is \textbf{Lorentz invariant} so we can perform a boost to end up in a reference system where the momentum $\vec{p}_n$ is different from zero. We have a state whose projection on all possible states is zero, this imply that:
 \[
 \partial_\mu J^\mu\ket{0}=0
 \]
@@ -509,173 +510,173 @@ How do Weyl fermions transform under the Lorentz group?
 where we denoted with $\theta_i$ the rotation angles and with $\beta_i$ the boost angles, both angles are real numbers. Although we mapped $\Vec{J}^-$ or $\Vec{J}^+$ to 0, we still have a non-trivial action of all the Lorentz generators. These are \textbf{faithful} irreducible representations of the Lorentz group.
 
 
-\section{Global Symmetries}\marginnote{Da rivedere tutto perché fa schifo e non si capisce cosa stracazzo voglia fare con questa roba Contino vai a fare in culo.}
-For QED, one only needs the electron, which is described in the reducible Dirac representation $\left(\frac{1}{2},0\right)\oplus\left(0,\frac{1}{2}\right)$ of the Lorentz group. In other theories, such as the Standard Model or supersymmetric theories, spinors that are not Dirac ones are prevalent. Here we are going to discuss Lorentz-invariant quantities that can be constructed using spinors that are not in the Dirac representation.\\
-\textbf{Global symmetry of a theory of free Weyl fermions}\\
-Consider a theory with $N$ free left-handed Weyl fermions denoted by $\chi_i$ which transform as $\left(\frac{1}{2},0\right)$. Our goal is to write the most generic Lagrangian for these fermions:
-\[
-\pazocal{L}=\chi_i^\dagger i\bar{\sigma}^\mu\partial_\mu \delta_{ij}\chi_j-\frac{1}{2}(\chi_i M_{ij}\chi_j+\chi_i^\dagger(M)_{ij}^\dagger\chi_j^\dagger)
-\]
-The $\delta_{ij}$ comes from the diagonalization of $K_{ij}$, we can diagonalize also the mass term which is symmetric but complex, so we obtain a term $\delta_{ij}M_i$. If $M$ had not been symmetric, the mass term would have turned out to be equal to zero. The diagonalization of $M$ can be realized by a unitary transformation $U$:\marginnote{This is called the \href{https://en.wikipedia.org/wiki/Matrix_decomposition#Takagi's_factorization}{Takagi} decomposition.}
-\[
-M\to U^\dagger MU
-\]
-We want to understand what is the global symmetry which leaves the Lagrangian invariant and there are two cases:
-\begin{enumerate}
-    \item $M_i$ are all different, G=$(\mathbb{Z}_2)^N$. We cannot do any transformation since $U^T(\delta_{ij}M_i)U\neq\delta_{ij}M_i$. There are no continue symmetries but only a discrete one:
-    \[
-    P_i:
-    \left\{
-    \begin{aligned}
-    &\chi_i\to-\chi_i\\
-    &\chi_j\to\chi_j
-    \end{aligned}
-    \quad
-    \text{for}\,i\neq j
-    \right.
-    \]
-    \item $M\propto\mathbb{1}$, i.e. $M_{ij}=M\delta_{ij}$. If all the masses are equal, then G=O$(N)$
-\end{enumerate}
-Suppose now that $N=2$ (which corresponds to the case of QED), the mass term contains the two Weyl states:
-\[
-M=\left(\begin{array}{cc}
-    0 & m \\
-    m & 0
-\end{array}\right)
-\xrightarrow[\text{mass term}]{}
-m(\chi_1\chi_2+\chi_2\chi_1+\text{h.c.})
-\]
-A U(1) transformation on $\chi_1$ and $\chi_2$ of the type:
-\[
-\left\{
-\begin{aligned}
-&\chi_1\to e^{+i\alpha}\chi_1\\
-&\chi_2\to e^{-i\alpha}\chi_2
-\end{aligned}
-\right.
-\]
-is a symmetry since the diagonal terms are zero. 
-% In QED, we have transformations on $\xi$ and $\eta$, which we can write using charge conjugation.
+% \section{Global Symmetries}\marginnote{Da rivedere tutto perché fa schifo e non si capisce cosa stracazzo voglia fare con questa roba Contino vai a fare in culo.}
+% For QED, one only needs the electron, which is described in the reducible Dirac representation $\left(\frac{1}{2},0\right)\oplus\left(0,\frac{1}{2}\right)$ of the Lorentz group. In other theories, such as the Standard Model or supersymmetric theories, spinors that are not Dirac ones are prevalent. Here we are going to discuss Lorentz-invariant quantities that can be constructed using spinors that are not in the Dirac representation.\\
+% \textbf{Global symmetry of a theory of free Weyl fermions}\\
+% Consider a theory with $N$ free left-handed Weyl fermions denoted by $\chi_i$ which transform as $\left(\frac{1}{2},0\right)$. Our goal is to write the most generic Lagrangian for these fermions:
+% \[
+% \pazocal{L}=\chi_i^\dagger i\bar{\sigma}^\mu\partial_\mu \delta_{ij}\chi_j-\frac{1}{2}(\chi_i M_{ij}\chi_j+\chi_i^\dagger(M)_{ij}^\dagger\chi_j^\dagger)
+% \]
+% The $\delta_{ij}$ comes from the diagonalization of $K_{ij}$, we can diagonalize also the mass term which is symmetric but complex, so we obtain a term $\delta_{ij}M_i$. If $M$ had not been symmetric, the mass term would have turned out to be equal to zero. The diagonalization of $M$ can be realized by a unitary transformation $U$:\marginnote{This is called the \href{https://en.wikipedia.org/wiki/Matrix_decomposition#Takagi's_factorization}{Takagi} decomposition.}
+% \[
+% M\to U^\dagger MU
+% \]
+% We want to understand what is the global symmetry which leaves the Lagrangian invariant and there are two cases:
+% \begin{enumerate}
+%     \item $M_i$ are all different, G=$(\mathbb{Z}_2)^N$. We cannot do any transformation since $U^T(\delta_{ij}M_i)U\neq\delta_{ij}M_i$. There are no continue symmetries but only a discrete one:
+%     \[
+%     P_i:
+%     \left\{
+%     \begin{aligned}
+%     &\chi_i\to-\chi_i\\
+%     &\chi_j\to\chi_j
+%     \end{aligned}
+%     \quad
+%     \text{for}\,i\neq j
+%     \right.
+%     \]
+%     \item $M\propto\mathbb{1}$, i.e. $M_{ij}=M\delta_{ij}$. If all the masses are equal, then G=O$(N)$
+% \end{enumerate}
+% Suppose now that $N=2$ (which corresponds to the case of QED), the mass term contains the two Weyl states:
+% \[
+% M=\left(\begin{array}{cc}
+%     0 & m \\
+%     m & 0
+% \end{array}\right)
+% \xrightarrow[\text{mass term}]{}
+% m(\chi_1\chi_2+\chi_2\chi_1+\text{h.c.})
+% \]
+% A U(1) transformation on $\chi_1$ and $\chi_2$ of the type:
 % \[
 % \left\{
 % \begin{aligned}
-% &\text{L:}\,\xi\to e^{-i\alpha}\xi\\
-% &\text{R:}\,\eta\to e^{+i\alpha}\eta \quad \eta^c\to e^{-i\alpha}\eta^c
+% &\chi_1\to e^{+i\alpha}\chi_1\\
+% &\chi_2\to e^{-i\alpha}\chi_2
 % \end{aligned}
 % \right.
 % \]
-If we have only a single field, the only thing we can do is $\chi\to e^{i\alpha}\chi$ but this would break the symmetry: the \href{https://en.wikipedia.org/wiki/Ettore_Majorana}{Majorana} mass term requires more fields. The only possibility if we want a gauge symmetry is that $\chi$ transforms as a real representation $r$ of the group, otherwise the mass term would not be gauge invariant.\\
-\textbf{Global symmetry of a theory of free Dirac fermions}\\
-Consider now the case of $N$ free Dirac fermions:
-\[
-\pazocal{L}=\bar{\Psi}_L^ii\slashed{\partial}\delta_{ij}\Psi_L^j+\bar{\Psi}_R^ii\slashed{\partial}\delta_{ij}\Psi_R^j-(\bar{\Psi}_L^im_{ij}\Psi_R^i+\bar{\Psi}_R^i(m)_{ij}^\dagger\Psi_L^i)
-\]
-The symmetry group of the kinetic term is given by\\
-U$(N)_L\times$U$(N)_R\sim$SU$(N)_L\times$SU$(N)_R\times$U$(1)_L\times$U$(1)_R$\marginnote{U$(N)=$SU$(N)\times$U$(1)/\mathbb{Z}_N$}. 
-% The center of a group G is the set of elements that commute with any other element of the group, for SU$(N)$ the center is $\mathbb{Z}_N$ which is the n-th root of the identity $e^{2\pi ki/N}$ with $k=0,1,\dots,N-1$. 
-Let's see what is the vectorial subgroup for the symmetry group of the kinetic term.\marginnote{The vectorial subgroup is the largest subgroup which is unbroken when provided with the requirements that all the fermions are massive.}
-\[
-m\to U_L^\dagger mU_R:
-\left\{
-\begin{aligned}
-&mm^\dagger\to U_L^\dagger(mm^\dagger)U_L\\
-&m^\dagger m\to U_R^\dagger(m^\dagger m)U_R
-\end{aligned}
-\right.
-\]
-We choose $U_L$ and $U_R$ such that they diagonalize the last two transformations, so that $m\to U_L^\dagger mU_R=m_{\text{diag}}$.\\
-If $m$ is \textbf{real} and \textbf{diagonal}, we can write the mass term as $\bar{\Psi}_im_{ij}\Psi_j$ and perform the following transformation:
-\[
-\left\{
-\begin{aligned}
-&\Psi_L^i\to e^{i\alpha_i}\Psi_L^i\\
-&\Psi_R^i\to e^{i\alpha_i}\Psi_R^i
-\end{aligned}
-\quad\forall i=1,\dots,N
-\right.
-\]
-The vectorial subgroup is given by [U$(1)_V$]$^N$.\\
-If all the $m_i$ are \textbf{equal}, i.e. $m_{ij}=m\delta_{ij}$, then we have:
-\[
-\left\{
-\begin{aligned}
-&\Psi_L^i\to U_{ij}\Psi_L^i\\
-&\Psi_R^i\to U_{ij}\Psi_R^i
-\end{aligned}
-\right.
-\]
-Now the vectorial subgroup is SU$(N)_V$. In this case, the mass term will be
-\[
-m\bar{\Psi}_L\mathbb{1}\Psi_R\to m\bar{\Psi}_LU^\dagger\mathbb{1}U\Psi_R=m\bar{\Psi}_L\mathbb{1}\Psi_R
-\]
-Here, we have just seen the invariance of the kinetic term, now we can define U$(1)_V\times$U$(1)_A=$U$(1)_L\times$U$(1)_R$ where V stands for vectorial, A for axial, V=L+R and A=L-R. 
-\[
-\text{U}(1)_V:
-\left\{
-\begin{aligned}
-&\Psi_L^i\to e^{i\alpha}\Psi_L^i\\
-&\Psi_R^i\to e^{i\alpha}\Psi_R^i
-\end{aligned}
-\right.
-\quad
-\text{U}(1)_A:
-\left\{
-\begin{aligned}
-&\Psi_L^i\to e^{-i\alpha}\Psi_L^i\\
-&\Psi_R^i\to e^{i\alpha}\Psi_R^i
-\end{aligned}
-\right.
-\]
-The axial symmetry is a problematic one and it brings down some anomalies. We look at its generators and we will now show that they do not have a closed algebra, hence they do not form a subgroup. 
-\[
-T_L^a=T^a\frac{1-\gamma_5}{2} \quad T_R^a=T^a\frac{1+\gamma_5}{2}
-\]
-It follows from this that $T_A^a=T^a\gamma_5$ and $T_V^a=T^a$, now we compute the commutator:
-\begin{align*}
-[T_A^a,T_A^b]&=[T^a\gamma_5,T^b\gamma_5]=[T^a,T^b]=if^{abc}T^c=if^{abc}T_V^c
-\end{align*}
-The mass term breaks the symmetry, so we perform some spurion analysis.
-\[
-\bar{\Psi}_L^im_{ij}\Psi_R^j+\text{h.c.}\xrightarrow[]{\text{SU}(N)_L\times\text{SU}(N)_R}\bar{\Psi}_LU^\dagger_LmU_R\Psi_R+\text{h.c.}
-\]
-The spurionic transformation rule tells us that $m\to U_LmU^\dagger_R$, $m=(\Box,\bar{\Box})$ of SU$(N)_L\times$SU$(N)_R$.\marginnote{$\Box$ and $\bar{\Box}$ denote the fundamental and the anti-fundamental representation.}
-\begin{exercise}
-Consider the following theory:
-\[
-\pazocal{L}=\bar{\Psi}(i\slashed{\partial}-m_\Psi)\Psi+\frac{1}{2}(\partial_\mu\phi)^2-V(\phi)+y\bar{\Psi}\Psi\phi
-\]
-with $V(\phi)=m_\phi^2\phi^2+\lambda_3\phi^3+\lambda_4\phi^4$. Try to renormalize the fermionic mass term, how $\delta m_\Psi$ depends on the parameters and what are the associated diagrams (first for $\lambda_3=0$ then for $\lambda_3\neq0$).\\
-\textbf{Solution:} we have two important symmetries here, $P_A:\Psi\to\gamma_5\Psi$ and $P_\phi: \phi\to-\phi:$
-\[
-P_A:
-\left\{
-\begin{aligned}
-&m_\Psi\to-m_\Psi\\
-&y\to-y\\
-&\lambda_3\to\lambda_3\\
-&\phi\to\phi
-\end{aligned}
-\right.
-\quad 
-P_\phi:
-\left\{
-\begin{aligned}
-&m_\Psi\to m_\Psi\\
-&y\to-y\\
-&\lambda_3\to-\lambda_3\\
-&\Psi\to\Psi
-\end{aligned}
-\right.
-\]
-$\bullet\lambda_3=0$:\;$\delta m_\Psi$ cannot be linearly proportional to $y$ since it changes sign under $P_\phi$, it must be proportional to $y^2$. 
-\marginnote[-3cm]{
-    \includegraphics{Images/chiralityflip.pdf}
-    \includegraphics{Images/chiralityflip2.pdf}
-    %\caption{Diagrams for $\lambda_3=0$ and $\lambda_3\neq0$.}
-    }
-This interaction flips the chirality.\\
-$\bullet\lambda_3\neq0$:\;$\delta m_\Psi\prop\lambda_3y^3$, here we can use the \href{https://en.wikipedia.org/wiki/Hideki_Yukawa}{Yukawa} interaction to perform the chirality flip, we do not necessarily need the mass to do that.
-\end{exercise}
+% is a symmetry since the diagonal terms are zero. 
+% % In QED, we have transformations on $\xi$ and $\eta$, which we can write using charge conjugation.
+% % \[
+% % \left\{
+% % \begin{aligned}
+% % &\text{L:}\,\xi\to e^{-i\alpha}\xi\\
+% % &\text{R:}\,\eta\to e^{+i\alpha}\eta \quad \eta^c\to e^{-i\alpha}\eta^c
+% % \end{aligned}
+% % \right.
+% % \]
+% If we have only a single field, the only thing we can do is $\chi\to e^{i\alpha}\chi$ but this would break the symmetry: the \href{https://en.wikipedia.org/wiki/Ettore_Majorana}{Majorana} mass term requires more fields. The only possibility if we want a gauge symmetry is that $\chi$ transforms as a real representation $r$ of the group, otherwise the mass term would not be gauge invariant.\\
+% \textbf{Global symmetry of a theory of free Dirac fermions}\\
+% Consider now the case of $N$ free Dirac fermions:
+% \[
+% \pazocal{L}=\bar{\Psi}_L^ii\slashed{\partial}\delta_{ij}\Psi_L^j+\bar{\Psi}_R^ii\slashed{\partial}\delta_{ij}\Psi_R^j-(\bar{\Psi}_L^im_{ij}\Psi_R^i+\bar{\Psi}_R^i(m)_{ij}^\dagger\Psi_L^i)
+% \]
+% The symmetry group of the kinetic term is given by\\
+% U$(N)_L\times$U$(N)_R\sim$SU$(N)_L\times$SU$(N)_R\times$U$(1)_L\times$U$(1)_R$\marginnote{U$(N)=$SU$(N)\times$U$(1)/\mathbb{Z}_N$}. 
+% % The center of a group G is the set of elements that commute with any other element of the group, for SU$(N)$ the center is $\mathbb{Z}_N$ which is the n-th root of the identity $e^{2\pi ki/N}$ with $k=0,1,\dots,N-1$. 
+% Let's see what is the vectorial subgroup for the symmetry group of the kinetic term.\marginnote{The vectorial subgroup is the largest subgroup which is unbroken when provided with the requirements that all the fermions are massive.}
+% \[
+% m\to U_L^\dagger mU_R:
+% \left\{
+% \begin{aligned}
+% &mm^\dagger\to U_L^\dagger(mm^\dagger)U_L\\
+% &m^\dagger m\to U_R^\dagger(m^\dagger m)U_R
+% \end{aligned}
+% \right.
+% \]
+% We choose $U_L$ and $U_R$ such that they diagonalize the last two transformations, so that $m\to U_L^\dagger mU_R=m_{\text{diag}}$.\\
+% If $m$ is \textbf{real} and \textbf{diagonal}, we can write the mass term as $\bar{\Psi}_im_{ij}\Psi_j$ and perform the following transformation:
+% \[
+% \left\{
+% \begin{aligned}
+% &\Psi_L^i\to e^{i\alpha_i}\Psi_L^i\\
+% &\Psi_R^i\to e^{i\alpha_i}\Psi_R^i
+% \end{aligned}
+% \quad\forall i=1,\dots,N
+% \right.
+% \]
+% The vectorial subgroup is given by [U$(1)_V$]$^N$.\\
+% If all the $m_i$ are \textbf{equal}, i.e. $m_{ij}=m\delta_{ij}$, then we have:
+% \[
+% \left\{
+% \begin{aligned}
+% &\Psi_L^i\to U_{ij}\Psi_L^i\\
+% &\Psi_R^i\to U_{ij}\Psi_R^i
+% \end{aligned}
+% \right.
+% \]
+% Now the vectorial subgroup is SU$(N)_V$. In this case, the mass term will be
+% \[
+% m\bar{\Psi}_L\mathbb{1}\Psi_R\to m\bar{\Psi}_LU^\dagger\mathbb{1}U\Psi_R=m\bar{\Psi}_L\mathbb{1}\Psi_R
+% \]
+% Here, we have just seen the invariance of the kinetic term, now we can define U$(1)_V\times$U$(1)_A=$U$(1)_L\times$U$(1)_R$ where V stands for vectorial, A for axial, V=L+R and A=L-R. 
+% \[
+% \text{U}(1)_V:
+% \left\{
+% \begin{aligned}
+% &\Psi_L^i\to e^{i\alpha}\Psi_L^i\\
+% &\Psi_R^i\to e^{i\alpha}\Psi_R^i
+% \end{aligned}
+% \right.
+% \quad
+% \text{U}(1)_A:
+% \left\{
+% \begin{aligned}
+% &\Psi_L^i\to e^{-i\alpha}\Psi_L^i\\
+% &\Psi_R^i\to e^{i\alpha}\Psi_R^i
+% \end{aligned}
+% \right.
+% \]
+% The axial symmetry is a problematic one and it brings down some anomalies. We look at its generators and we will now show that they do not have a closed algebra, hence they do not form a subgroup. 
+% \[
+% T_L^a=T^a\frac{1-\gamma_5}{2} \quad T_R^a=T^a\frac{1+\gamma_5}{2}
+% \]
+% It follows from this that $T_A^a=T^a\gamma_5$ and $T_V^a=T^a$, now we compute the commutator:
+% \begin{align*}
+% [T_A^a,T_A^b]&=[T^a\gamma_5,T^b\gamma_5]=[T^a,T^b]=if^{abc}T^c=if^{abc}T_V^c
+% \end{align*}
+% The mass term breaks the symmetry, so we perform some spurion analysis.
+% \[
+% \bar{\Psi}_L^im_{ij}\Psi_R^j+\text{h.c.}\xrightarrow[]{\text{SU}(N)_L\times\text{SU}(N)_R}\bar{\Psi}_LU^\dagger_LmU_R\Psi_R+\text{h.c.}
+% \]
+% The spurionic transformation rule tells us that $m\to U_LmU^\dagger_R$, $m=(\Box,\bar{\Box})$ of SU$(N)_L\times$SU$(N)_R$.\marginnote{$\Box$ and $\bar{\Box}$ denote the fundamental and the anti-fundamental representation.}
+% \begin{exercise}
+% Consider the following theory:
+% \[
+% \pazocal{L}=\bar{\Psi}(i\slashed{\partial}-m_\Psi)\Psi+\frac{1}{2}(\partial_\mu\phi)^2-V(\phi)+y\bar{\Psi}\Psi\phi
+% \]
+% with $V(\phi)=m_\phi^2\phi^2+\lambda_3\phi^3+\lambda_4\phi^4$. Try to renormalize the fermionic mass term, how $\delta m_\Psi$ depends on the parameters and what are the associated diagrams (first for $\lambda_3=0$ then for $\lambda_3\neq0$).\\
+% \textbf{Solution:} we have two important symmetries here, $P_A:\Psi\to\gamma_5\Psi$ and $P_\phi: \phi\to-\phi:$
+% \[
+% P_A:
+% \left\{
+% \begin{aligned}
+% &m_\Psi\to-m_\Psi\\
+% &y\to-y\\
+% &\lambda_3\to\lambda_3\\
+% &\phi\to\phi
+% \end{aligned}
+% \right.
+% \quad 
+% P_\phi:
+% \left\{
+% \begin{aligned}
+% &m_\Psi\to m_\Psi\\
+% &y\to-y\\
+% &\lambda_3\to-\lambda_3\\
+% &\Psi\to\Psi
+% \end{aligned}
+% \right.
+% \]
+% $\bullet\lambda_3=0$:\;$\delta m_\Psi$ cannot be linearly proportional to $y$ since it changes sign under $P_\phi$, it must be proportional to $y^2$. 
+% \marginnote[-3cm]{
+%     \includegraphics{Images/chiralityflip.pdf}
+%     \includegraphics{Images/chiralityflip2.pdf}
+%     %\caption{Diagrams for $\lambda_3=0$ and $\lambda_3\neq0$.}
+%     }
+% This interaction flips the chirality.\\
+% $\bullet\lambda_3\neq0$:\;$\delta m_\Psi\prop\lambda_3y^3$, here we can use the \href{https://en.wikipedia.org/wiki/Hideki_Yukawa}{Yukawa} interaction to perform the chirality flip, we do not necessarily need the mass to do that.
+% \end{exercise}
 \section{The \href{https://en.wikipedia.org/wiki/Yoichiro_Nambu}{Nambu}-\href{https://en.wikipedia.org/wiki/Jeffrey_Goldstone}{Goldstone} Realization}
 Another possible way to realize symmetries is the Nambu-Goldstone realization. We know that the equations of motion can have some symmetries but their solution will not necessarily be invariant under those symmetries. We talk about \textbf{Spontaneous Symmetry Breaking} (SSB) when the fundamental state is not symmetric while the Lagrangian is invariant under a certain symmetry. We look at the fundamental state because if it is not invariant, neither will be the excited states. SSB is usually associated with phase transitions.\\
 To make things more clear, let's take a simple example in \textbf{Classical Mechanics}: consider a rod perpendicular to a flat surface. We apply a force to it and nothing initially happens, but if we increase the force the rod will bend in some random direction: the symmetric (unbent) configuration becomes unstable beyond this critical value of the force and the new ground state is asymmetric. Also, there are infinitely many possible degenerate ground states, related by rotational symmetry. We learnt that there is a critical value of the parameter beyond which we have SSB and that there is a manifold of degenerate vacua connected by symmetry transformations.\\
@@ -725,7 +726,7 @@ A ferromagnet can be described as a lattice of dipoles.\marginnote{\includegraph
 \[
 H=-\sum_{\{i,j\}}c_{ij}\Vec{\sigma}_i\cdot\Vec{\sigma}_j
 \]
-where the sum is extended over nearest neighbours and $c_{ij}$ are some positive valued coefficients. Such configuration depends on the temperature: for $T>T_c$, the dipoles are aligned randomly while for $T<T_c$ we have an ordered phase where all dipoles are aligned in the same direction. $H$ is invariant under SO(3) but for $T<T_c$ we have SSB, breaking SO(3)$\to$SO(2). We have an infinite number of degenerate vacuum states obtained by a rotation of a single dipole. Suppose to start in a configuration where all the dipoles are aligned in a certain direction and we want to modify. We rotate some of them, by doing this we have a cost in energy: if we want to rotate all of them, we need to use an infinite amount of energy: there will be no tunnelling.
+where the sum is extended over nearest neighbours and $c_{ij}$ are some positive valued coefficients. This is a scalar and therefore invariant under rotations. Such configuration depends on the temperature: for $T>T_c$, the dipoles are aligned randomly while for $T<T_c$ we have an ordered phase where all dipoles are aligned in the same direction. However, the ground state is one in which all the spins are aligned and all the degenerate ground states may by reached from a given one by a rotation. Suppose to start in a configuration where all the dipoles are aligned in a certain direction and we want to modify. We rotate some of them, by doing this we have a cost in energy: if we want to rotate all of them, we need to use an infinite amount of energy: there will be no tunnelling.
 \end{example}
 \begin{example}
 \textbf{Linear U(1) sigma model}\marginnote{From \cite{schwartz}, Section 28.2.1.}\\
@@ -972,8 +973,7 @@ The last constraint is telling us that $\ket{n}$ is a massless 1-particle state.
 \[
 \delta^3(\Vec{p}_n)E_n\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize for $N$ particles };}}{=}\delta^3\left(\sum_{k=1}^N\Vec{p}_k\right)\left(\sum_{k=1}^N\sqrt{m_k^2+|\Vec{p}_k|^2}\right)
 \]
-The only way in which this can be zero is to have only \textbf{one massless particle}, $\delta^3(\Vec{p}_n)\sqrt{m_n^2+|\Vec{p}_n|^2}=0$ when $m_n=0$. The two conditions we required are satisfied only by massless one-particle states. Multi-particle states does not give us $\frac{\partial}{\partial y^0}\bra{0}[Q_V^a,\phi(x)]\ket{0}=0$ because the total momentum will be the sum of the momentum of each particle which is different from zero, implying energy different from zero even if they are massless.   
-\end{proof}
+The only way in which this can be zero is to have only \textbf{one massless particle}, $\delta^3(\Vec{p}_n)\sqrt{m_n^2+|\Vec{p}_n|^2}=0$ when $m_n=0$. The two conditions we required are satisfied only by massless one-particle states. Multi-particle states does not give us $\frac{\partial}{\partial y^0}\bra{0}[Q_V^a,\phi(x)]\ket{0}=0$ because the total momentum will be the sum of the momentum of each particle which is different from zero, implying energy different from zero even if they are massless.\\   
 Let's keep only the contribution coming from massless one-particle states $\chi^b(\Vec{p})$ and see if we can obtain some more information. For one-particle states we have:
 \[
 \sum_n\to\int\frac{d^3p}{(2\pi)^3}\frac{1}{2E_p}
@@ -1002,25 +1002,29 @@ Similarly, for $\frac{\partial}{\partial y^0}\bra{0}[Q_V^a,\phi(x)]\ket{0}$ we o
 \]
 So, in the limit $V\to\infty$, we get
 $\bra{0}[Q_V^a,\phi(x)]\ket{0}=iF_{ab}Z_{ab}$ while its derivative with respect to $y^0$ is equal to zero.\\
-In general, there will be an unbroken subgroup H$\subset$G which linearly realizes the symmetry, where G is the symmetry gorup: both $J^{\mu,a}$ and $\chi^b$ transform as some representation of the unbroken group. But the left part of \refeq{leftpart} tells us that $J^{\mu,a}$ is interpolating $\chi^b$ from the vacuum and since they both transform as a representation of the unbroken group, this representation must be the same, being the vacuum Lorentz invariant. This explains why:
+In general, there will be an unbroken subgroup H$\subset$G which linearly realizes the symmetry, where G is the symmetry group: both $J^{\mu,a}$ and $\chi^b$ transform as some representation of the unbroken group. But the left part of \refeq{leftpart} tells us that $J^{\mu,a}$ is interpolating $\chi^b$ from the vacuum and since they both transform as a representation of the unbroken group, this representation must be the same, being the vacuum Lorentz invariant.\\
+Charges are the generators of the symmetry group, if they do not annihilate the vacuum it means that the vacuum is not invariant under the action of the symmetry group and we have SSB. The charges which annihilate the vacuum form a linearly realized symmetry subgroup, while the other charges \textit{breaks} the initial symmetry, with one current associated to each charge which correspond to a massless one-particle state.
 \begin{kaobox}[frametitle=\#NGB]
 \[
 \text{\#NGB = \#broken currents = \#broken generators}
 \]
 \end{kaobox}
-We now use the covariance under H, with $U(\beta)$ being the unitary operator which implement the transformation.
-\[
-\bra{0}J^{\mu,a}(x)\ket{\chi^b(\Vec{p})}=\bra{0}\underbrace{U(\beta)J^{\mu,a}(x)U^{-1}(\beta)}_{{\color{red}{\text{transformed current}}}}\overbrace{U(\beta)\ket{\chi^b(\Vec{p})}}^{{\color{blue}{\text{transformed state}}}}={\color{red}{R_{aa'}}}{\color{blue}{R_{bb'}}}\bra{0}J^{\mu,a'}(x)\ket{\chi^{b'}(\Vec{p})}
-\]
-In the first step we used the fact that the vacuum is invariant under this transformation, $R_{aa'}$ is a matrix representing the current transformation, $R_{bb'}$ is a matrix for the state transformation. These two matrices must be the same since the state and the current must undergo the same transformation. This means that $F_{ab}=R_{aa'}R_{bb'}F_{a'b'}$, $F_{ab}$ is an invariant tensor under transformations of H.
-\begin{example}
-In SO$(N)$ the transformation $R$ is a rotation of SO$(N-1)$. Let SO$(N-1)$=H: $F_{ab}=F\delta_{ab}$, where $F$ is the decay constant of the NGB. There is only one parameter for all the NGBs, this is because of the covariance under SO$(N-1)$ so we do not need an elaborate matrix but just a number. We repeat the same argument for the other matrix element:
-\[
-\bra{\chi^b(\Vec{p})}\phi_i(x)\ket{0}=Z_{ib}
-\]
-In this example, we can choose as SO$(N-1)$ the rotations of the first $N-1$ indices: $i=1,\dots,N$ ($N$ fields) and $b=1,\dots,N-1$ ($N-1$ NGBs). Setting $i=N$ means having $Z_{Nb}=0$ because we have no vector for $N$, while $Z_{ab}=Z\delta_{ab}$ for $i=a$. We have only two quantities, $F$ and $Z$ and it is always possible to renormalize $\phi_i$ to have $Z=1$. If we now compute the order parameter we get $\langle T_{ij}^a\phi_j\rangle=iF\delta_{ia}$ where $T_{ij}^a=i(\delta_{ai}\delta_{jN}-\delta_{aj}\delta_{iN})$ are the broken generators. From this, we get $\langle\phi_j\rangle=F\delta_{jN}$ which is different from zero only for the last component, as we assumed, according with the fact that a SO$(N-1)$ rotation involves only the first $N-1$ components.
-\end{example}
-We proved the existence of this massless particle which must have the same quantum numbers of the current and the scalar fields. It is possible to excite the particle using both operators, which are two apparently different things but actually they are not because we have to look at transformation rules under SO$(N-1)$. $J^{\mu,a}$ transforms as the fundamental of SO$(N)$, $\phi_i(x)$ is in the fundamental of SO$(N)$ which gets broken in the fundamental of SO$(N-1)$+a singlet. Two different operators can excite the same particle, the fact that $\phi_i(x)$ is a scalar field (otherwise it would break Lorentz invariance for the vacuum) is telling us that this particle must be a boson. \marginnote{In supersymmetry theory, the field is fermionic.} Goldstone theorem does not imply that these particles must be in the physical spectrum, it just states that they must exist.\\
+\end{proof}
+% Denote now with $U(\beta)$ the unitary operator which implement the transformation in the linearly realized symmetry subgroup H.
+% \[
+% \bra{0}J^{\mu,a}(x)\ket{\chi^b(\Vec{p})}=\bra{0}\underbrace{U(\beta)J^{\mu,a}(x)U^{-1}(\beta)}_{{\color{red}{\text{transformed current}}}}\overbrace{U(\beta)\ket{\chi^b(\Vec{p})}}^{{\color{blue}{\text{transformed state}}}}={\color{red}{R_{aa'}}}{\color{blue}{R_{bb'}}}\bra{0}J^{\mu,a'}(x)\ket{\chi^{b'}(\Vec{p})}
+% \]
+% In the first step we used the fact that the vacuum is invariant under this transformation, $R_{aa'}$ is a matrix representing the current transformation, $R_{bb'}$ is a matrix for the state transformation. These two matrices must be the same since the state and the current must undergo the same transformation. This means that $F_{ab}=R_{aa'}R_{bb'}F_{a'b'}$, $F_{ab}$ is an invariant tensor under transformations of H.\\
+% \begin{example}
+% In SO$(N)$ the transformation $R$ is a rotation of SO$(N-1)$. Let SO$(N-1)$=H: $F_{ab}=F\delta_{ab}$, where $F$ is the decay constant of the NGB. There is only one parameter for all the NGBs, this is because of the covariance under SO$(N-1)$ so we do not need an elaborate matrix but just a number. We repeat the same argument for the other matrix element:
+% \[
+% \bra{\chi^b(\Vec{p})}\phi_i(x)\ket{0}=Z_{ib}
+% \]
+% In this example, we can choose as SO$(N-1)$ the rotations of the first $N-1$ indices: $i=1,\dots,N$ ($N$ fields) and $b=1,\dots,N-1$ ($N-1$ NGBs). Setting $i=N$ means having $Z_{Nb}=0$ because we have no vector for $N$, while $Z_{ab}=Z\delta_{ab}$ for $i=a$. We have only two quantities, $F$ and $Z$ and it is always possible to renormalize $\phi_i$ to have $Z=1$. If we now compute the order parameter we get $\langle T_{ij}^a\phi_j\rangle=iF\delta_{ia}$ where $T_{ij}^a=i(\delta_{ai}\delta_{jN}-\delta_{aj}\delta_{iN})$ are the broken generators. From this, we get $\langle\phi_j\rangle=F\delta_{jN}$ which is different from zero only for the last component, as we assumed, according with the fact that a SO$(N-1)$ rotation involves only the first $N-1$ components.
+% \end{example}
+We proved the existence of this massless particle which must have the same quantum numbers of the current $J^{\mu,a}(x)$ and the scalar field $\phi(x)$. It is possible to excite the particle using both operators, which are two apparently different things but actually they are not because we have to look at transformation rules under the unbroken subgroup which linearly realizes the symmetry.\\
+SO$(N-1)$. $J^{\mu,a}$ transforms as the fundamental of SO$(N)$, $\phi_i(x)$ is in the fundamental of SO$(N)$ which gets broken in the fundamental of SO$(N-1)$+a singlet. Two different operators can excite the same particle, the fact that $\phi_i(x)$ is a scalar field (otherwise it would break Lorentz invariance for the vacuum) is telling us that this particle must be a boson. \marginnote{In supersymmetry theory, the field is fermionic.}
+Goldstone theorem does not imply that these particles must be in the physical spectrum, it just states that they must exist.\\
 An alternative proof of the Goldstone theorem is the following.\marginnote{This alternative proof is terrible, stick to the previous one.}
 \begin{proof}
 Start by computing:
