@@ -40,11 +40,12 @@ Unfortunately, there are \textit{no finite-dimensional unitary representations} 
 % \right.
 % \]
 % Focus now on the invariant mass: the fact that it commutes with all the generators of the algebra implies that if an element of the representation has a certain $P^2$, it will be the same for all the other elements of the same representation. 
-\marginnote{From \cite{WKT}, Section 10.4.}The unitary irreducible representation of the Poincaré group can be derived by using the \textbf{method of induced representation}. This method is based on the use of the abelian invariant subgroup of translations T$_4$. The square of the four-momentum is a \textbf{Casimir operator} which commutes with all generators, hence with all group transformations. We define it as:
+\marginnote{From \cite{WKT}, Section 10.4.}The unitary irreducible representation of the Poincaré group can be derived by using the \textbf{method of induced representation}.\\
+The square of the four-momentum is a \textbf{Casimir operator} which commutes with all generators, hence with all group transformations. We define it as:
 \[
 C_1:=p_\mu p^\mu=p_0^2-p^2
 \]
-$C_1$ has the desired properties because it is Lorentz invariant (as the scalar product of $p^\mu$ with itself) and it is also invariant under translations due to the abelian nature of T$_4$. However, its eigenvalue $c_1$ is not positive definite and the irreducible representations of the Lorentz group are labelled by $c_1$. The second Casimir of the Poincaré group comes from the \href{https://en.wikipedia.org/wiki/Pauli-Lubanski_pseudovector}{Pauli-Lubanski} vector:
+$C_1$ has the desired properties because it is Lorentz invariant (as the scalar product of $p^\mu$ with itself) and it is also invariant under translations. Irreducible representations of the Poincaré group are labelled by the eigenvalue of $C_1$, denoted by $c_1$, which is not positive definite. The second Casimir of the Poincaré group comes from the \href{https://en.wikipedia.org/wiki/Pauli-Lubanski_pseudovector}{Pauli-Lubanski} vector:
 \[
 C_2:=W_\mu W^\mu=W^2 \quad W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}p_\sigma
 \]
@@ -56,7 +57,7 @@ We can distinguish among 4 cases:
     \item space-like $p$: $c_1<0$
 \end{enumerate}
 \section{One-Particle States}\marginnote{From \cite{W1}, Section 2.5.}
-We now consider the classification of one-particle states according to their transformation under the Poincaré group. The components of the energy-momentum four-vector all commute with each other, therefore it is natural to express physical state-vectors in terms of eigenvectors $p^\mu$ of the four-momentum $P^\mu$. We introduce a label $\sigma$ to account for the other degrees of freedom, hence we consider state-vectors with:\marginnote{The label $\sigma$ is purely discrete, since we are working with one-particle states.}
+We now consider the classification of one-particle states according to their transformation under the Poincaré group. The components of the energy-momentum four-vector all commute with each other, therefore it is natural to express physical state-vectors in terms of eigenvectors of the four-momentum $P^\mu$. We introduce a label $\sigma$ to account for the other degrees of freedom, hence we consider state-vectors with:\marginnote{The label $\sigma$ is purely discrete, since we are working with one-particle states.}
 \[
 P^\mu\ket{\vec{p},\sigma}=p^\mu\ket{\vec{p},\sigma}
 \]
@@ -69,12 +70,13 @@ We now have to consider how these states transform under Lorentz. The effect of 
 P^\mu U(\Lambda)\ket{\vec{p},\sigma}&=U(\Lambda)[U^{-1}(\Lambda)P^\mu U(\Lambda)]\ket{\vec{p},\sigma}=U(\Lambda)(\Lambda^{-1,\mu}_\rho P^\rho)\ket{\vec{p},\sigma}\\
 &=\Lambda^\mu_\rho p^\rho U(\Lambda)\ket{\vec{p},\sigma}
 \end{align*}
-Therefore, $U(\Lambda)\ket{\vec{p},\sigma}$ must be a linear combination of the states $\ket{\Lambda p,\sigma'}$.
+Therefore, $U(\Lambda)\ket{\vec{p},\sigma}$ must be a linear combination of the states $\ket{\Lambda \Vec{p},\sigma'}$.
 \begin{equation}
 \labeq{csigma}
-U(\Lambda)\ket{\vec{p},\sigma}=\sum_{\sigma'}C_{\sigma',\sigma}(\Lambda,p)\ket{\Lambda p,\sigma'}
+U(\Lambda)\ket{\vec{p},\sigma}=\sum_{\sigma'}C_{\sigma\sigma'}(\Lambda,p)\ket{\Lambda \Vec{p},\sigma'}
 \end{equation}
-In general, it is possible by using suitable linear combinations of $\ket{\vec{p},\sigma}$ to choose the labels $\sigma$ in such a way that the matrix $C_{\sigma',\sigma}(\Lambda,p)$ is block diagonal, i.e. so that the states $\ket{\vec{p},\sigma}$ gives a representation of the Poincaré group. Our task now is to work out the structure of the coefficients $C_{\sigma',\sigma}(\Lambda,p)$ in irreducible representations of the Poincaré group. For this purpose, note that the only functions of $p^\mu$ that are left invariant by proper orthochronous Lorentz transformations $\Lambda^\mu_\nu$ are the invariant square $p^2=\eta_{\mu\nu}p^\mu p^\nu$ and the sign of $p^0$ (for $p^2\le0$). For each value of $p^2$ we can choose a standard four-momentum $k^\mu$ and express any $p^\mu$ of this class as:
+In general, it is possible by using suitable linear combinations of $\ket{\vec{p},\sigma}$ to choose the labels $\sigma$ in such a way that the matrix $C_{\sigma\sigma'}(\Lambda,p)$ is block diagonal, i.e. so that the states $\ket{\vec{p},\sigma}$ gives a representation of the Poincaré group.\\
+Our task now is to work out the structure of the coefficients $C_{\sigma\sigma'}(\Lambda,p)$ in irreducible representations of the Poincaré group. For this purpose, note that the only functions of $p^\mu$ that are left invariant by proper orthochronous Lorentz transformations $\Lambda^\mu_\nu$ are the invariant square $p^2=\eta_{\mu\nu}p^\mu p^\nu$ and the sign of $p^0$ (for $p^2\le0$). For each value of $p^2$ we can choose a standard four-momentum $k^\mu$ and express any $p^\mu$ of this class as:
 \[
 p^\mu=L^\mu_\nu(p) k^\nu
 \]
@@ -87,11 +89,13 @@ So far, we said nothing about how the $\sigma$ labels are related to different m
 U(\Lambda)\ket{\Vec{p},\sigma}&=U(\Lambda L(p))\ket{\Vec{k},\sigma}=U(L(\Lambda p))U(L^{-1}(\Lambda p))U(\Lambda L(p))\ket{\Vec{k},\sigma}\\
 &=U(L(\Lambda p))U(L^{-1}(\Lambda p)\Lambda L(p))\ket{\Vec{k},\sigma}
 \end{align*}
-The Lorentz transformation $W(\Lambda,p)=L^{-1}(\Lambda p)\Lambda L(p)$ takes $k$ to $L(p)k=p$ then to $\Lambda p$ and then back to $k$: it belongs to the subgroup of the Lorentz group consisting of transformations $W^\mu_\nu$ which leave $k^\mu$ invariant. This subgroup is called the \textbf{little group}.
+The Lorentz transformation $W(\Lambda,p)=L^{-1}(\Lambda p)\Lambda L(p)$ takes $k$ to\\
+$L(p)k=p$ then to $\Lambda p$ and then back to $k$:
 \begin{align*}
 W(\Lambda,p)^\mu_\nu k^\nu&=(L(\Lambda p)^{-1}\Lambda L(p))^\mu_\nu k^\nu=(L(\Lambda p)^{-1}\Lambda)L(p)^\mu_\nu k^\nu=(L(\Lambda p)^{-1}\Lambda)^\mu_\nu p^\nu\\
 &=(L(\Lambda p)^{-1})^\mu_\nu(\Lambda p)^\nu=k^\nu
 \end{align*}
+It belongs to the subgroup of the Lorentz group consisting of transformations $W^\mu_\nu$ which leave $k^\mu$ invariant. This subgroup is called the \textbf{little group}.
 % We can explicitly show that $\ket{\Vec{p},\sigma}$ are eigenvalues of the momentum.
 % \begin{align*}
 % P^\mu\ket{\Vec{p},\sigma}&=P^\mu U(L(p))\ket{\Vec{k},\sigma}=U(L(p))[U^{-1}(L(p))P^\mu U(L(p))]\ket{\vec{k},\sigma}\\
@@ -115,12 +119,30 @@ We can substitute this result in the equation above.
 U(\Lambda)\ket{\vec{p},\sigma}=U(L(\Lambda p))\sum_{\sigma'}D_{\sigma\sigma'}(W(\Lambda,p))\ket{\vec{k},\sigma'}=\sum_{\sigma'}D_{\sigma\sigma'}(W(\Lambda,p))\ket{\vec{p}_\Lambda,\sigma'}
 \]
 where $(\vec{p}_\Lambda)=(\Lambda p)^i$.\\
-The problem of finding the coefficients in \refeq{csigma} has been reduced to the problem of finding the representations of the little group. This approach is called the \textbf{method of induced representations}.
+The problem of finding the coefficients $C_{\sigma\sigma'}(\Lambda,p)$ in \refeq{csigma} has been reduced to the problem of finding the representations of the little group. This approach is called the \textbf{method of induced representations}. 
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lcc}
+    \hline
+    Four-momentum & Standard $k^\mu$ & Little group \\
+    \hline\hline 
+    (a) $p^2=-m^2<0,p^0>0$ & $(m,0,0,0)$ & SO(3)\\
+    (b) $p^2=-m^2<0,p^0<0$ & $(-m,0,0,0)$ & SO(3)\\
+    (c) $p^2=0,p^0>0$ & $(k,k,0,0)$ & ISO(2)\\
+    (d) $p^2=0,p^0<0$ & $(-k,k,0,0)$ & ISO(2)\\
+    (e) $p^2=N^2>0$ & $(0,N,0,0)$ & SO(2,1)\\
+    (f) $p^\mu=0$ & $(0,0,0,0)$ & SO(3,1)\\
+    \hline
+    \end{tabular}
+    \caption{Standard momenta and corresponding little group for various classes of four-momenta.}
+    \labtab{lg}
+\end{table}\\
+\reftab{lg} gives a convenient choice of the standard four-momentum and the corresponding little group for various classes of four-momenta. Only (a), (c) and (f) have an interpretation in terms of physical states: (f) describes the vacuum and there is not much to say about it, (a) and (c) are more interesting and cover, respectively, particles of mass $m>0$ and mass zero, which we are going to study in detail in the next pages.\\
 By the usual orthonormalization procedure, we can prove that $D_{\sigma\sigma'}$ is unitary:
 \begin{align*}
-\bra{\vec{p}',\sigma'}\ket{\vec{p},\sigma}&=(2\pi)^32E_p\delta^3(\vec{p}-\vec{p}')\delta_{\sigma\sigma'}=\bra{\vec{p}',\sigma'}U^{-1}(\Lambda)U(\Lambda)\ket{\vec{p},\sigma}\\
-&=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*\bra{\vec{p}_{\Lambda'},\hat{\sigma}'}\ket{\vec{p}_\Lambda,\hat{\sigma}}=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*(2\pi)^32E_{p_{\Lambda}}\delta^3(\vec{p}_\Lambda-\vec{p}'_{\Lambda'})\delta_{\hat{\sigma}\hat{\sigma}'}\\
-&=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*(2\pi)^32E_p\delta^3(\vec{p}-\vec{p}')\delta_{\hat{\sigma}\hat{\sigma}'}
+\bra{\vec{p}',\sigma'}\ket{\vec{p},\sigma}&=\delta^3(\vec{p}-\vec{p}')\delta_{\sigma\sigma'}=\bra{\vec{p}',\sigma'}U^{-1}(\Lambda)U(\Lambda)\ket{\vec{p},\sigma}\\
+&=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*\bra{\vec{p}'_{\Lambda},\hat{\sigma}'}\ket{\vec{p}_\Lambda,\hat{\sigma}}=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*\delta^3(\vec{p}_\Lambda-\vec{p}'_{\Lambda})\delta_{\hat{\sigma}\hat{\sigma}'}\\
+&=\sum_{\hat{\sigma}',\hat{\sigma}}D_{\sigma\hat{\sigma}}D_{\sigma'\hat{\sigma}'}^*\delta^3(\vec{p}-\vec{p}')\delta_{\hat{\sigma}\hat{\sigma}'}
 \end{align*}
 It follows that:
 \[
@@ -133,54 +155,54 @@ For massive states, we make a clever choice and work in the reference system whe
 % J^2U(R(\theta))\ket{s,\sigma}\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize they commute };}}{=}U(R(\theta))J^2\ket{s,\sigma}=\hbar^2s(s+1)U(R(\theta))\ket{s,\sigma}
 % \]
 % $\ket{\Vec{k},\sigma}$ gives us a unitary infinite-dimensional representation of the Poincaré group, the idea is to extend this structure to other states of the representation. 
-As seen before, elements of the little group are given by $W(\Lambda,p)=L^{-1}(\Lambda p)\Lambda L(p)$. To calculate this rotation, we have to choose a standard boost $L(p)$ which takes the four-momentum from $k^\mu$ to $p^\mu$. Conveniently, this is chosen as:
-\[
-\left\{
-\begin{aligned}
-&L_k^i(p)=\delta_{ik}+(\gamma-1)\hat{p}_i\hat{p}_k\\
-&L^i_0(p)=L^0_i(p)=\hat{p}_i\sqrt{\gamma^2-1}\\
-&L^0_0(p)=\gamma
-\end{aligned}
-\right.
-\quad \text{where}\;
-\left\{
-\begin{aligned}
-&\hat{p}_i=\frac{p_i}{|\Vec{p}|}\\
-&\gamma=\frac{\sqrt{p^2+m^2}}{m}
-\end{aligned}
-\right.
-\]
-When $\Lambda^\mu_\nu$ is an arbitrary three-dimensional rotation $\pazocal{R}$, the Wigner rotation $W(\Lambda,p)$ is the same as $\pazocal{R}$ for all $p$. In order to see this, note that the boost $L(p)$ may be expressed as:
-\[
-L(p)=R(\hat{p})B(|\Vec{p}|)R^{-1}(\hat{p})
-\]
-where $R(\hat{p})$ is a rotation that takes the three-axis into the direction of $\Vec{p}$, while $B(|\Vec{p}|)$ is defined as:
-\[
-B(|\Vec{p}|)=\left(\begin{array}{cccc}
-    1 & 0 & 0 & 0 \\
-    0 & 1 & 0 & 0 \\
-    0 & 0 & \gamma & \sqrt{\gamma^2-1} \\
-    0 & 0 & \sqrt{\gamma^2-1} & \gamma 
-\end{array}\right)
-\]
-For an arbitrary rotation $\pazocal{R}$ we then have:
-\[
-W(\pazocal{R},p)=R(\pazocal{R}\hat{p})B^{-1}(|\Vec{p}|){\color{green}R^{-1}(\pazocal{R}\hat{p})\pazocal{R}R(\hat{p})}B(|\Vec{p}|)R^{-1}(\hat{p})
-\]
-The rotation highlighted in green takes the three-axis into the direction of $\Vec{p}$ then in the direction of $\pazocal{R}\Vec{p}$ and then back to the three-axis, therefore it must be just a rotation by some angle $\theta$ around the three-axis:
-\[
-R^{-1}(\pazocal{R}\hat{p})\pazocal{R}R(\hat{p})=R(\theta)=\left(\begin{array}{cccc}
-    \cos\theta & \sin\theta & 0 & 0 \\
-    -\sin\theta & \cos\theta & 0 & 0 \\
-    0 & 0 & 1 & 0 \\
-    0 & 0 & 0 & 1
-\end{array}\right)
-\]
-$R(\theta)$ commute with $B(|\Vec{p}|)$, which gives us:
-\[
-W(\pazocal{R},p)=R(\pazocal{R}\hat{p})B^{-1}(|\Vec{p}|)R(\theta)B(|\Vec{p}|)R^{-1}(\hat{p})=R(\pazocal{R}\hat{p})R(\theta)R^{-1}(\hat{p})=\pazocal{R}
-\]
-Finally, this shows us that states of a moving massive particles have the same transformation under rotations as in non-relativistic quantum mechanics.\\
+% As seen before, elements of the little group are given by $W(\Lambda,p)=L^{-1}(\Lambda p)\Lambda L(p)$. To calculate this rotation, we have to choose a standard boost $L(p)$ which takes the four-momentum from $k^\mu$ to $p^\mu$. Conveniently, this is chosen as:
+% \[
+% \left\{
+% \begin{aligned}
+% &L_k^i(p)=\delta_{ik}+(\gamma-1)\hat{p}_i\hat{p}_k\\
+% &L^i_0(p)=L^0_i(p)=\hat{p}_i\sqrt{\gamma^2-1}\\
+% &L^0_0(p)=\gamma
+% \end{aligned}
+% \right.
+% \quad \text{where}\;
+% \left\{
+% \begin{aligned}
+% &\hat{p}_i=\frac{p_i}{|\Vec{p}|}\\
+% &\gamma=\frac{\sqrt{p^2+m^2}}{m}
+% \end{aligned}
+% \right.
+% \]
+% When $\Lambda^\mu_\nu$ is an arbitrary three-dimensional rotation $\pazocal{R}$, the Wigner rotation $W(\Lambda,p)$ is the same as $\pazocal{R}$ for all $p$. In order to see this, note that the boost $L(p)$ may be expressed as:
+% \[
+% L(p)=R(\hat{p})B(|\Vec{p}|)R^{-1}(\hat{p})
+% \]
+% where $R(\hat{p})$ is a rotation that takes the three-axis into the direction of $\Vec{p}$, while $B(|\Vec{p}|)$ is defined as:
+% \[
+% B(|\Vec{p}|)=\left(\begin{array}{cccc}
+%     1 & 0 & 0 & 0 \\
+%     0 & 1 & 0 & 0 \\
+%     0 & 0 & \gamma & \sqrt{\gamma^2-1} \\
+%     0 & 0 & \sqrt{\gamma^2-1} & \gamma 
+% \end{array}\right)
+% \]
+% For an arbitrary rotation $\pazocal{R}$ we then have:
+% \[
+% W(\pazocal{R},p)=R(\pazocal{R}\hat{p})B^{-1}(|\Vec{p}|){\color{green}R^{-1}(\pazocal{R}\hat{p})\pazocal{R}R(\hat{p})}B(|\Vec{p}|)R^{-1}(\hat{p})
+% \]
+% The rotation highlighted in green takes the three-axis into the direction of $\Vec{p}$ then in the direction of $\pazocal{R}\Vec{p}$ and then back to the three-axis, therefore it must be just a rotation by some angle $\theta$ around the three-axis:
+% \[
+% R^{-1}(\pazocal{R}\hat{p})\pazocal{R}R(\hat{p})=R(\theta)=\left(\begin{array}{cccc}
+%     \cos\theta & \sin\theta & 0 & 0 \\
+%     -\sin\theta & \cos\theta & 0 & 0 \\
+%     0 & 0 & 1 & 0 \\
+%     0 & 0 & 0 & 1
+% \end{array}\right)
+% \]
+% $R(\theta)$ commute with $B(|\Vec{p}|)$, which gives us:
+% \[
+% W(\pazocal{R},p)=R(\pazocal{R}\hat{p})B^{-1}(|\Vec{p}|)R(\theta)B(|\Vec{p}|)R^{-1}(\hat{p})=R(\pazocal{R}\hat{p})R(\theta)R^{-1}(\hat{p})=\pazocal{R}
+% \]
+% Finally, this shows us that states of a moving massive particle have the same transformation under rotations as in non-relativistic quantum mechanics.\\
 In order to label our sates, it is possible to use the generators $J^2$ and $J_z$. Being SO(3) compact, the eigenvalues of these generators are quantized. For these states we only need $k^\mu$, $J^2$ and $J_z$. We can prove that $J^2$ is proportional to the second Casimir $W^\mu=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}M_{\nu\rho}p_\sigma$. $\sigma$ must be a temporal index while all the other ones are spatial.
 \[
 W^i=\frac{1}{2}\epsilon^{ijk}M_{jk}\cdot m=J^i\cdot m\xrightarrow[]{}W^2=J^2\cdot m^2
@@ -196,7 +218,7 @@ Our state can be labeled as $\ket{\Vec{k},\sigma,m,s}$.\marginnote{In principle,
 \right.
 \]
 \subsection{Massless States}
-We want to repeat the same arguments for one-particle massless states, but in this case it is not so simple because the little group is not trivial like it was before. As we previously did, we start by taking a reference momentum which must be compatible with the light-like nature of the state, so we take $K^\mu=(k,0,0,k)$. We need to find the little group of $K^\mu$: we can perform a boost along the $x$-axis, a rotation in the $xz$ plane and again a boost but in the $z$-axis. We require that this sequence of transformations leaves $K^\mu$ invariant.
+We want to repeat the same arguments for one-particle massless states, but in this case it is not so simple because the little group is not trivial like it was before. As we previously did, we start by taking a reference momentum which must be compatible with the light-like nature of the state, so we take $k^\mu=(k,0,0,k)$. We need to find the little group of $k^\mu$: we can perform a boost along the $x$-axis, a rotation in the $xz$ plane and again a boost but in the $z$-axis. We require that this sequence of transformations leaves $k^\mu$ invariant.
 \begin{enumerate}
     \item Boost along the $x$-axis:
     \[
@@ -266,7 +288,7 @@ We want to repeat the same arguments for one-particle massless states, but in th
 \end{enumerate}
 This sequence of transformations leaves the momentum invariant, we can perform the boost along the $x$-axis and then the boost along the $z$-axis or vice-versa. Now we want to find the generators of these transformations which commute with $P$ and that allows us to find the quantum numbers needed to label our states. What we have to do is taking the product of these transformations and make it infinitesimal, assuming that $\beta$ is small. For $\beta\ll1$ we have:
 \[
-\gamma\simeq1+\frac{1}{2}\beta^2 \quad \sin\theta=\beta \quad \cos\theta=1+\pazocal{O}(\beta^2) \quad \Tilde{\beta}=-\frac{1}{2}\beta^2 \quad \Tilde{\gamma}=1+\pazocal{O}(\beta^2)
+\gamma\simeq1+\frac{1}{2}\beta^2 \quad \sin\theta=\beta \quad \cos\theta=1+\pazocal{O}(\beta^2) \quad \Tilde{\beta}=\frac{1}{2}\beta^2 \quad \Tilde{\gamma}=1+\pazocal{O}(\beta^2)
 \]
 To the first order in $\beta$, only the first two transformations make a relevant contribution.\marginnote{For $\beta\ll1$, the matrix of the third transformation becomes the identity at first order in $\beta$.}
 \[
@@ -324,7 +346,7 @@ A^\mu_\nu=\left(\begin{array}{cccc}
     0 & -i & 0 & 0
 \end{array}\right)=(K_1+J_2)^\mu_\nu
 \]
-where we denoted with $K_1$ the generator of the boosts along the $x$-axis and with $J_2$ the generator of the rotations around $\hat{y}$.\\
+where $K_1$ is the generator of the boosts along the $x$-axis and $J_2$ the generator of the rotations around $\hat{y}$ [\refsec{replor}].\\
 What other transformations can we do? We can perform a SO(2) rotation in the $xy$ plane or a transformation like the previous one but with the boost along the $y$-axis, defining in this way $B^\mu_\nu$.
 \[
 B^\mu_\nu=\left(\begin{array}{cccc}
@@ -350,12 +372,12 @@ We found the generators but to identify the group we need to define the algebra.
 \[
 [J_3,A]=iB \quad [J_3,B]=-iA \quad [A,B]=0
 \]
-$A$ and $B$ commute and they transform one into another under the action of $J_3$: this is an invariant subgroup. There will surely be SO(2) generated by $J_3$ plus another invariant subgroup generated by $A$ and $B$. If we put them in a vector, we observe that it is a translation, so we have rotation+translation. This is the \textbf{group of isomorpshims} in $\mathbb{R}^2$ called ISO(2) which is not compact\marginnote{The Poincaré group is the group of isomorphism in Minkowski space, denoted by ISO(3,1).}.\\
-We have to find the unitary representation of this group but, as in the Poincaré case, being it not compact we have the problem that this unitary representation will not be finite-dimensional. However, we have an invariant subgroup, so it is possible to use the method of induced representations but we need to find the Casimir first. So far, we have just one Casimir $P^2=A^2+B^2$ with $\vec{P}=(A,B)$. As in the massless case, this corresponds to the second Casimir of the Poincaré group, which is the square of the Pauli-Lubanski vector $W^\mu$: now we restrict it to states with $P^\mu=K^\mu=(k,0,0,k)$.
+$A$ and $B$ commute and they transform one into another under the action of $J_3$: this is an invariant subgroup. There will surely be SO(2) generated by $J_3$ plus another invariant subgroup generated by $A$ and $B$. If we put them in a vector, we observe that it is a translation, so we have rotation+translation. This is the \textbf{group of isomorpshims} in $\mathbb{R}^2$ called ISO(2) which is not compact\marginnote{The Poincaré group is the group of isomorphisms in Minkowski space, denoted by ISO(3,1).}.\\
+We have to find the unitary representation of this group but, as in the Poincaré case, being it not compact we have the problem that this unitary representation will not be finite-dimensional. However, we have an invariant subgroup, so it is possible to use the method of induced representations but we need to find the Casimir first. So far, we have just one Casimir $P^2=A^2+B^2$ with $\vec{P}=(A,B)$. As in the massless case, this corresponds to the second Casimir of the Poincaré group, which is the square of the Pauli-Lubanski vector $W^\mu$: now we restrict it to states with $p^\mu=k^\mu=(k,0,0,k)$.\marginnote{$J_i=M_{kl}$, with $i,k,l$ symmetric permutations of 123 while $K_i=M_{i0}$.}
 \[
 \left\{
 \begin{aligned}
-&W^0=\frac{1}{2}(\epsilon^{0123}M_{12}k+\epsilon^{0213}M_{21}k)=M_{12}\cdot k=J_3\cdot k\marginnote{$J_i=M_{kl}$, with $i,k,l$ symmetric permutations of 123.}\\
+&W^0=\frac{1}{2}(\epsilon^{0123}M_{12}k+\epsilon^{0213}M_{21}k)=M_{12}\cdot k=J_3\cdot k\\
 &W^1=\frac{1}{2}(\epsilon^{1230}M_{23}k+\epsilon^{1320}M_{32}k+\epsilon^{1203}M_{20}k+\epsilon^{1023}M_{02}k)=k(-J_1+K_2)=+k\cdot B\\
 &W^2=\frac{1}{2}(\epsilon^{2130}M_{13}k+\epsilon^{2310}M_{31}k+\epsilon^{2013}M_{01}k+\epsilon^{2103}M_{10}k)=k(-J_2-K_1)=-k\cdot A\\
 &W^3=\frac{1}{2}(\epsilon^{3210}M_{21}k+\epsilon^{3120}M_{12}k)=-k\cdot J_3
@@ -364,16 +386,16 @@ We have to find the unitary representation of this group but, as in the Poincar�
 \]
 We take the square, $W_\mu W^\mu=W^2=-k^2(A^2+B^2)$. We want to classify physical states according to the value of the Casimir, there are two types of states, which can be classified as $\ket{\Vec{P}}=\ket{a,b}$, where $a$ and $b$ are eigenvalues of $A$ and $B$.
 \begin{enumerate}
-    \item $|\vec{P}|^2=A^2-B^2>0$: $\ket{a,b}$ are real numbers giving an infinite number of states. These states are not observed in nature, because there are no massless particles with continuous indices, they are all described by discrete quantities. Hence, this case is only possible from a mathematical point of view.
+    \item $|\vec{P}|^2=A^2+B^2>0$: $\ket{a,b}$ are real numbers giving an infinite number of states. These states are not observed in nature, because there are no massless particles with continuous indices, they are all described by discrete quantities. Hence, this case is only possible from a mathematical point of view.
     \item $|\vec{P}|^2=A^2+B^2=0$: $\ket{a,b}=\ket{0,0}$, it is not possible to apply translations and we can only do rotations since they leave this vector invariant. The little group of (0,0) is SO(2). These states are distinguished by the eigenvalue $\sigma$ of the remaining generator $J_3$. Since the momentum $\Vec{k}$ is in the third direction, $\sigma$ gives the component of angular momentum in the direction of motion, called \textbf{helicity}
 \end{enumerate}
 We are now able to calculate the Lorentz transformation properties of general massless particle states. We know what is an arbitrary element  $W$ of the little group, so we can write:
 \[
-U(W)\ket{\vec{k},\sigma}=\exp{i\alpha A+i\beta B+i\theta J_3}\ket{k,\sigma}=\exp{i\theta\sigma}\ket{\vec{k},\sigma}
+U(W)\ket{\vec{k},\sigma}=\exp{i\alpha A+i\beta B+i\theta J_3}\ket{\vec{k},\sigma}=\exp{i\theta\sigma}\ket{\vec{k},\sigma}
 \]
-Therefore, \refeq{Wlg} tells us that:
+Therefore, combining this with \refeq{Wlg}, we obtain:
 \[
-D_{\sigma'\sigma}(W)=\exp{i\theta\sigma}\delta_{\sigma'\sigma}
+D_{\sigma\sigma'}(W)=\exp{i\theta\sigma}\delta_{\sigma\sigma'}
 \]
 What are the possible values of the helicity $h$? We have just seen that the action of the little group on physical states is just a rotation around the momentum and there is no \textit{algebraic} reason for a limitation to integer or half-integer values. However, there is a \textit{topological} reason: a rotation by an angle 4$\pi$ around the momentum cannot be continuously deformed into any rotation, so the factor $\exp{4\pi i\sigma}$ must be unity, hence $\sigma$ has to be either integer or half-integer. Note that helicity is Lorentz invariant: a massless particle of a given $\sigma$ looks the same in all inertial frames (aside from its momentum). We would be justified in thinking of massless particles of different helicity as different species of particles. States with $h=1$ belong to a different representation from states with $h=-1$, they are basically different particles. Why don't we use different names? Because, for example, electromagnetic interaction is invariant under parity, which flips the sign of the helicity: for a photon with helicity +1 there will be a photon with helicity -1. The same reasoning applies for gravitational interaction, with the supposed \textit{gravitino} with helicity $\pm2$. On the other hand, massless particles of helicity $\pm\frac{1}{2}$ emitted in nuclear beta decay have no interactions that respect parity, so they are given different names: neutrinos for helicity $+\frac{1}{2}$ and anti-neutrinos for helicity $-\frac{1}{2}$.\\
 % We have the combination CPT and we want to see how helicity transforms under it:
