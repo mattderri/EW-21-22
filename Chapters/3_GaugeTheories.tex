@@ -827,7 +827,7 @@ The field strength is invariant under gauge transformation, resulting in $\pazoc
 \section{Non Abelian Gauge Theories}\marginnote{From \cite{TG}, Section 2.}
 Consider now $n$ fields $A_\mu^a$ $(a=1,\dots,n)$, i.e. $n$ massless states with helicity $h=\pm1$. The idea is to couple these fields to a matter field. We could proceed as in the abelian case and request $n$ conserved currents, one for each field, $J_\mu^a(x)$, and a [U(1)]$^n$ global invariance. For the fermionic case, following the steps of the previous section, in principle we have:
 \[
-\pazocal{L}_{\text{int}}=A_\mu^a J^{\mu,a} \quad \pazocal{L}(A)=-\frac{1}{4g_a^2}(F_{\mu\nu}^a)^2
+\pazocal{L}(\Psi)=\overline{\Psi}(i\gamma^\mu\partial_\mu-m)\Psi \quad \pazocal{L}_{\text{int}}=A_\mu^a J^{\mu,a} \quad \pazocal{L}(A)=-\frac{1}{4g_a^2}(F_{\mu\nu}^a)^2
 \]
 The important thing here is that there is no self-interaction between the massless fields.\\
 There is another way to couple these fields: we must have a global symmetry G$\supset$[U(1)]$^n$ with the matter field transforming under this bigger symmetry G as:
@@ -869,7 +869,7 @@ In this way, the field transforms as a matrix. This is $A_\mu^a$ under global tr
 \left\{
 \begin{aligned}
 &\text{Lorentz transformation:} &&A_\mu(x)\to\Lambda_\mu^\nu A_\nu(\Lambda^{-1}x)+\partial_\mu\alpha^a(x)\\
-&\text{Naive Lorentz transformation:} &&A_\mu(x)\to\Lambda_\mu^\nu A_\nu(\Lambda^{-1}x)\\
+% &\text{Naive Lorentz transformation:} &&A_\mu(x)\to\Lambda_\mu^\nu A_\nu(\Lambda^{-1}x)\\
 &\text{Local G transformation (gauge):} &&A_\mu(x)\to\Omega A_\mu(x)\Omega^{-1}+\partial_\mu\alpha(x)\marginnote{$\alpha(x)=\alpha^a(x)T^a(r)$}
 \end{aligned}
 \right.
@@ -881,13 +881,13 @@ The goal is to find the expression for $\partial_\mu\alpha(x)$ in terms of $\Ome
 &\text{Lorentz:}\left\{
 \begin{aligned}
 &\delta\pazocal{L}(\Psi)=0\\
-&\delta\pazocal{L}_{\text{int}}=\partial_\mu\alpha^a(x)J^{\mu,a}(x)=\partial_\mu\alpha^a(x)\overline{\Psi}\gamma^\mu T^a(r)\Psi
+&\delta\pazocal{L}_{\text{int}}=\partial_\mu\alpha^a(x)J^{\mu,a}(x)=\partial_\mu\alpha^a(x)\overline{\Psi}(x)\gamma^\mu T^a(r)\Psi(x)
 \end{aligned}
 \right.\\
 &\text{Local G:}\left\{
 \begin{aligned}
-&\delta\pazocal{L}(\Psi)=\overline{\Psi}\gamma^\mu(i\Omega^{-1}\partial_\mu\Omega)\Psi\\
-&\delta\pazocal{L}_{\text{int}}=\partial_\mu\alpha^a(x)\overline{\Psi}\gamma^\mu\Omega^{-1}T^a\Omega\Psi
+&\delta\pazocal{L}(\Psi)=\overline{\Psi}(x)\gamma^\mu(i\Omega^{-1}\partial_\mu\Omega)\Psi(x)\\
+&\delta\pazocal{L}_{\text{int}}=\partial_\mu\alpha^a(x)\overline{\Psi}(x)\gamma^\mu\Omega^{-1}T^a(r)\Omega\Psi(x)
 \end{aligned}
 \right.
 \end{aligned}
@@ -895,19 +895,19 @@ The goal is to find the expression for $\partial_\mu\alpha(x)$ in terms of $\Ome
 \]
 We now have to impose that the sum of these two objects transforming under local G is equal to zero.\marginnote{For the Lorentz transformation it is trivial and it is not necessary to impose anything.}
 \[
-0=\delta\pazocal{L}(\Psi)+\delta\pazocal{L}_{\text{int}}=\overline{\Psi}\gamma^\mu(i\Omega^{-1}\partial_\mu\Omega+\partial_\mu\alpha^a(x)\Omega^{-1}T^a\Omega)\Psi
+0=\delta\pazocal{L}(\Psi)+\delta\pazocal{L}_{\text{int}}=\overline{\Psi}\gamma^\mu(i\Omega^{-1}\partial_\mu\Omega+\partial_\mu\alpha^a(x)\Omega^{-1}T^a(r)\Omega)\Psi
 \]
 \[
-\Rightarrow\partial_\mu\alpha^a(x)T^a=-i\partial_\mu\Omega\Omega^{-1}=i\Omega\partial_\mu\Omega^{-1}\marginnote{Since $\Omega\Omega^{-1}$ is a constant, we can move $\partial_\mu$ introducing a minus sign.}
+\Rightarrow\partial_\mu\alpha^a(x)T^a(r)=-i(\partial_\mu\Omega)\Omega^{-1}=i\Omega(\partial_\mu\Omega^{-1})\marginnote{$\partial_\mu(\Omega\Omega^{-1})=0=\Omega^{-1}(\partial_\mu\Omega)+\Omega(\partial_\mu\Omega^{-1})$}
 \]
 This result tells us that gauge transformation for $A_\mu(x)$ is:
 \[
-A_\mu(x)\to\Omega A_\mu(x)\Omega^{-1}+i\Omega\partial_\mu\Omega^{-1}
+A_\mu(x)\to\Omega A_\mu(x)\Omega^{-1}+i\Omega(\partial_\mu\Omega^{-1})
 \]
 We now introduce the covariant derivative in some representation $r$,\\
 $D_\mu:=\partial_\mu-iA_\mu^a T^a(r)$:
 \[
-\pazocal{L}(\Psi)=\overline{\Psi}(i\gamma^\mu D_\mu-m)\Psi
+\pazocal{L}=\pazocal{L}(\Psi)+\pazocal{L}_{\text{int}}=\overline{\Psi}(i\gamma^\mu D_\mu-m)\Psi
 \]
 By construction, $D_\mu\Psi\to\Omega(D_\mu\Psi)$ and this holds true also for the commutator:
 \[
@@ -948,7 +948,7 @@ $D^\mu F_{\mu\nu}=J_\nu$ is not linear in $A_\mu$, we use perturbation theory to
 \]
 It follows that:
 \[
-\pazocal{L}(A)=-\frac{1}{4}[\underbrace{(\partial_\mu A_\nu^a-\partial_\nu A_\mu^a)^2}_{\text{abelian part}}+\underbrace{4gf^{abc}A_\mu^bA_\nu^c\partial_\mu A_\nu^a}_{\text{cubic interaction}}+\underbrace{g^2f^{abc}A_\mu^bA_\nu^cf^{ade}A_\mu^aA_\nu^c}_{\text{quartic interaction}}]
+\pazocal{L}(A)=-\frac{1}{4}[\underbrace{(\partial_\mu A_\nu^a-\partial_\nu A_\mu^a)^2}_{\text{abelian part}}+\underbrace{4gf^{abc}A_\mu^bA_\nu^c\partial_\mu A_\nu^a}_{\text{cubic interaction}}+\underbrace{g^2f^{abc}A_\mu^bA_\nu^cf^{ade}A_\mu^dA_\nu^e}_{\text{quartic interaction}}]
 \]
 Consider now $\phi^a$ in the adjoint of G. We can describe this field by defining a matrix, obtained from a multiplication of the field $\phi^a$ times the generators: $\phi_{ij}:=\phi^aT_{ij}^a$. An index of the generators transforms in the fundamental $F$, the other one in the anti-fundamental $\overline{F}$, so that we have $F\times\overline{F}=1+\text{adjoint}$ and the field will transform as $\phi\to\Omega\phi\Omega^{-1}$. What will be the covariant derivative for $\phi$? $D_\mu\phi:=\partial_\mu\phi-i[A_\mu,\phi]$ in the notation in which both $A_\mu$ and $\phi$ are matrices. We require that $D_\mu$ is covariant, i.e. $D_\mu\phi\to\Omega D_\mu\phi\Omega^{-1}$:
 \begin{align*}
@@ -980,7 +980,7 @@ We can make two possible gauge choices:
     \item \textbf{non-covariant gauges} (e.g. Coulomb gauge, $A^0(x)=0$ and\\
     $\vec{\nabla}\cdot\vec{A}(x)=0$ in the vacuum). In this case, we have to use the Hamiltonian formalism with some constraints and appropriately modify the canonical quantization rules. There is no manifest Lorentz invariance because it gets broken. However, it is very useful to exhibit the physical degrees of freedom:
     the 3 components of $\Vec{A}$ satisfy a single constraint $\Vec{\nabla}\cdot\Vec{A}=0$, leaving behind just 2 degrees of freedom. These will be identified with the two polarization states of the photon.
-    \item \textbf{covariant gauges} (e.g. Lorentz gauge, $\partial_\mu A^\mu=0$). Here we have manifest Lorentz invariance but also some complications. We have to modify the Lagrangian by adding an extra-term which gives us the same equations of motion we would have by imposing $\partial_\mu A^\mu=0$:
+    \item \textbf{covariant gauges} (e.g. Lorentz gauge, $\partial_\mu A^\mu(x)=0$). Here we have manifest Lorentz invariance but also some complications. We have to modify the Lagrangian by adding an extra-term which gives us the same equations of motion we would have by imposing $\partial_\mu A^\mu=0$:
     \[
     \pazocal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}-\frac{1}{2}(\partial_\mu A^\mu)^2
     \]
@@ -1023,7 +1023,9 @@ It gives the rate at which the renormalized coupling constant changes as the ren
 \[
 \mu\frac{d}{d\mu}g(\mu)=\beta(g)=\frac{\beta_0}{16\pi^2}g^3+\frac{\beta_1}{(16\pi^2)^2}g^5+\dots
 \]
-\begin{example}$\beta$-function in QED\marginnote{From \cite{schwartz}, Section 23.2.}\\
+\subsection{Abelian Case}
+Fro the abelian case, we focus on QED and see the explicit computations which leads to the $\beta$-function in terms of the QED coupling.
+\begin{example}\textbf{$\beta$-function in QED}\marginnote{From \cite{schwartz}, Section 23.2.}\\
 % We want the most important radiative corrections, so suppose we want to compute $e^+e^-\to e^+e^-$.
 % \marginnote{\includegraphics[]{Images/eeee.pdf}}
 % In each diagram we have to put the bare coupling and renormalize to have an expression in terms of $g(E)$, where $E$ is the energy of our process. In this case, it corresponds to the exchanged momentum, $E=\sqrt{s}$. Start with the Lagrangian:
@@ -1037,7 +1039,7 @@ The quantities appearing here are infinite, the dimensions of the fields can be 
 \]
 Notice that the bare charge is dimensionless only if $d=4$. We want to use \textbf{dimensional regularization}, i.e. extend the Lagrangian from 4 dimensions to $d=4-\varepsilon$ dimensions. Moreover, we would like the charge renormalized charge $e_R$ to be a number, therefore we rescale everything:\marginnote{We are using $Z_e$ instead of $Z_1$, keeping in mind that $Z_1=Z_eZ_2Z_3^{1/2}$.}
 \[
-A_\mu=\frac{a_\mu^0}{Z_3^{1/2}} \quad \Psi=\frac{\Psi^0}{Z_2^{1/2}} \quad m_R=\frac{m^0}{Z_m} \quad e_R=\frac{e^0}{Z_e}\mu^{\frac{d-4}{2}}
+A_\mu=\frac{A_\mu^0}{Z_3^{1/2}} \quad \Psi=\frac{\Psi^0}{Z_2^{1/2}} \quad m_R=\frac{m^0}{Z_m} \quad e_R=\frac{e^0}{Z_e}\mu^{\frac{d-4}{2}}
 \]
 which leads to:
 \[
@@ -1051,7 +1053,7 @@ The counterterms come from electron self-energy, photon self-energy and vertex c
 \end{align*}
 Since there is $\mu$ dependence in the renormalized Lagrangian but not in the bare one, we must have:
 \[
-0=\mu\frac{d}{d\mu}e^0=\mu\frac{d}{d\mu}=\mu^{\frac{\varepsilon}{2}}e_RZ_e\left[\frac{\varepsilon}{2}+\frac{\mu}{e_R}\frac{de_R}{d\mu}+\frac{\mu}{Z_e}\frac{dZ_e}{d\mu}\right]
+0=\mu\frac{d}{d\mu}e^0=\mu^{\frac{\varepsilon}{2}}e_RZ_e\left[\frac{\varepsilon}{2}+\frac{\mu}{e_R}\frac{de_R}{d\mu}+\frac{\mu}{Z_e}\frac{dZ_e}{d\mu}\right]
 \]
 At the leading order in $e_R$, $Z_e=1$ therefore:
 \[
@@ -1085,24 +1087,7 @@ $Z_1$ is obtained from the $\overline{\Psi}A_\mu\Psi$ vertex, $Z_3$ from the vac
 % \end{align*}
 \end{example}
 As we have just seen, in QED the $\beta$-function is positive, this means that the interaction coupling grows with the energy. In principle, one can imagine scattering processes at arbitrary high energies where the coupling will explode: QED is not a complete theory, it does not work at arbitrary high energies.\\
-Usually, we stop at first order in the $\beta$-function because the coupling is small, but as it gets bigger we have to include higher order terms too. By including higher order terms, theory may \textit{cure itself}, for example with a change of sign. In this case, for a certain value of the coupling $g$, denoted by $g^*$, the theory does not evolve anymore and the coupling constant is really a constant. At this so-called \textbf{fixed point}, the theory is \textbf{conformal}, there is no physical scale and everything is invariant. Sadly, this fixed point does not exist in QED, so the theory explodes at some point and it has to be replaced by something else. This is what we call an \textbf{effective theory}, a theory valid only at low energy that has to be replaced with another theory which guarantees a more fundamental description. This is what we do by introducing the \textbf{Standard Model}.\\
-QED is an abelian gauge theory, for non-abelian gauge theories, we have to take into account more 1-loop contributions than the abelian case.\marginnote{For example, in QCD gluons are self-interacting.} By doing so, at 1-loop one founds:
-\begin{equation}
-\labeq{beta0}
-\beta_0=-\frac{11}{3}C_2(\text{adj})+\frac{4}{3}T(r_f)n_f+\frac{1}{3}T(r_s)n_s
-\end{equation}
-$C_2$ is the quadratic Casimir of the adjoint representation, $T(n_f)$ is the \href{https://en.wikipedia.org/wiki/Eugene_Dynkin}{Dynkin} index for a certain representation of fermions, $n_f$ denotes the number of fermions, $T(r_s)n_s$ is the same thing as the fermions but with complex scalars.\\
-The first term is negative, if we do not have too many matter fields, this will be the dominant one and the $\beta$-function will be negative, so as the energy increases the coupling decreases. It is therefore possible to extrapolate the theory at arbitrary high energies, this is called \textbf{asymptotic freedom}\marginnote{Asymptotic freedom explains a number of important qualitative features of the strong interaction, such as how QCD can be strong but also short-ranged and why free quarks have never been seen}. On the other hand, at low energies the coupling will increase and we cannot treat the theory perturbatively anymore.\\
-Specializing now to QCD with $N_c=3$ and $n_f=6$. In this case, \refeq{beta0} tells us that:
-\[
-\beta_0=-\frac{11}{3}N_c+\frac{2}{3}n_f=-7<0
-\]
-As long as there are less than 17 flavours of quarks (there are six in nature), $\beta_0<0$ hence $g(\mu)$ decreases with increasing $\mu$.
-%Compare this result with the one for the abelian case, where we have:
-% \[
-% \beta_0=\frac{4}{3}q^2_\Psi n_f+\frac{1}{3}q_s^2n_s
-% \]
-% Here the first term of the non-abelian case is not present because there is no self-interaction and $\beta_0$ is always larger than zero, while in the non-abelian case it depends on the number of fermions and scalars.\\
+Usually, we stop at first order in the $\beta$-function because the coupling is small, but as it gets bigger we have to include higher order terms too. By including higher order terms, theory may \textit{cure itself}, for example with a change of sign. In this case, for a certain value of the coupling $g$, denoted by $g^*$, the theory does not evolve anymore and the coupling constant is really a constant. At this so-called \textbf{fixed point}, the theory is \textbf{conformal}, there is no physical scale and everything is invariant. Sadly, this fixed point does not exist in QED, so the theory explodes at some point and it has to be replaced by something else. This is what we call an \textbf{effective theory} [\refch{EFT}], a theory valid only at low energy that has to be replaced with another theory which guarantees a more fundamental description. This is what we do by introducing the \textbf{Standard Model}.\\
 In the abelian case, the coupling evolves until it becomes zero for $E\to0$. The variation of velocity is zero, there is no evolution and this is reached only asymptotically. Conversely, when the energy increases the $\beta$-function increases too and we have two possibilities as $E\to\infty$: 
 \begin{enumerate}
     \item $\beta(g)$ remains positive and there are two sub-cases: $g(E)\to\infty$ for $E\toE_0$ (\href{https://en.wikipedia.org/wiki/Lev_Landau}{Landau} pole) or $g(E)\to\infty$ as $E\to\infty$. In both cases, the theory is not complete.
@@ -1123,7 +1108,7 @@ Conventionally, this expansion is written as:
 \]
 Matching the result in \refeq{betaqed} gives us $\beta_0=-\frac{4}{3}$, at the leading order and at $\varepsilon=0$ we can solve this equation:
 \[
-\mu\frac{d\alpha}{d\mu}=\frac{2}{3\pi}\alpha^2\to\int_{\alpha(\mu)}^{\alpha(M)}\frac{d\alpha}{\alpha^2}=\frac{2}{3\pi}\int_\mu^M\frac{d\mu}{\mu}
+\mu\frac{d\alpha}{d\mu}=\frac{2}{3\pi}\alpha^2\to\int_{\alpha(\mu)}^{\alpha(M)}\frac{d\alpha}{\alpha^2}=\frac{2}{3\pi}\int_\mu^M\frac{d\mu'}{\mu'}
 \]
 where $M$ is a certain scale. Computing the integral gives us:
 \[
@@ -1140,22 +1125,40 @@ We check that it has the right behaviour:
     e_R^2(\mu)\approx\frac{16\pi^2}{\beta_0}\frac{1}{\ln(M^2/\mu^2)}
     \]
     \item for $\mu=M$, $e_R^2(\mu)=e_R^2(M)$
-    \item for $\mu>M$, the denominator will be smaller than 1 and the coupling will increase. There will be a Landau pole, denoted by $\Lambda_{\text{QED}}$:
+    \item for $\mu>M$, the denominator will be smaller than 1 ($\beta_0$ is negative) and the coupling will increase. There will be a Landau pole, denoted by $\Lambda_{\text{QED}}$:
     \[
     1+\frac{\beta_0}{16\pi^2}e_R^2(M)\ln(\mu^2/M^2)=0\to\Lambda_{\text{QED}}:=M\exp{-\frac{8\pi^2}{\beta_0}\frac{1}{e_R^2(M)}}
     \]
 \end{itemize}
 Using $\alpha(m_e=511\,\text{keV})=\frac{e_R^2(m_e)}{4\pi}=\frac{1}{137}$, we find $\Lambda_{\text{QED}}=10^{286}$\,eV. In doing this, we swapped a dimensionless number for a dimensionful scale: this is known as \textbf{dimensional transmutation}. This uncovers a very profound misconception about nature: electrodynamics is fundamentally defined not by the electric charge, as we learned classically, but by a dimensionful scale $\Lambda_{\text{QED}}$. Moreover, this scale only has a meaning if there is another scale in the theory, such as the electron mass, so really it is the ratio $m_e/\Lambda_{\text{QED}}$ which specifies QED completely.\\
-The point is that when the energy increases it is not possible to use perturbation theory anymore because the coupling becomes too large. If we want to reach the IR fixed point there will be other scales, because we reach energies compatible with the mass of the electron. Electrons contribution in the diagram will freeze out for energies smaller than the mass of the electron, so we can create an effective theory without electrons, cutting it off. This theory has only the photons with some self-interaction induced by virtual electrons loops. These interactions disappear at low energies but at this point is not QED anymore, it is a theory of only photons.\\
-At the fixed points of the renormalization groups $\beta(g)=0$: $g$ is a constant, the theory, without masses, is self-similar. In a normal situation, by changing the energy we obtain different results for scattering processes because we have running coupling, while in this case we have the same results because the theory does not evolve anymore. Scattering processes do not depend anymore on the energy of the particles involved.\\
-\underline{QED for $m_e=0$}:
+The point is that when the energy increases it is not possible to use perturbation theory anymore because the coupling becomes too large. If we want to reach the IR fixed point there will be other scales, because we reach energies compatible with the mass of the electron. Electrons contribution in the diagram will freeze out for energies smaller than the mass of the electron, so we can create an effective theory without electrons, cutting them off. This theory has only the photons with some self-interaction induced by virtual electrons loops. These interactions disappear at low energies but at this point is not QED anymore, it is a theory of only photons.\\
+% At the fixed points of the renormalization groups $\beta(g)=0$: $g$ is a constant, the theory, without masses, is self-similar. In a normal situation, by changing the energy we obtain different results for scattering processes because we have running coupling, while in this case we have the same results because the theory does not evolve anymore. Scattering processes do not depend anymore on the energy of the particles involved.\\
+% \underline{QED for $m_e=0$}:
+% \[
+% \pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+\overline{\Psi}\gamma^\mu i(\partial_\mu-igA_\mu)\Psi
+% \]
+% This Lagrangian does not contain scales, it is invariant under change of scale at the classical level. When we include corrections, the coupling evolves because the renormalization process includes a scale factor $\mu$ and this scale evolves. Once the fixed points are reached, we are back in a situation analogous to the classical one: the theory does not evolve anymore, hence it is invariant under scale change. Theories with UV fixed points are called \textbf{asymptotically safe}. Asymptotic safety is a generalization of asymptotic freedom: with asymptotic freedom the coupling goes to zero, while with asymptotic safety the coupling goes to a certain finite constant. Is QED asymptotically safe? No, the fixed points can be reached for small values of the coupling, where we can use perturbation theory to find $g^*$ but computations show that this point does not exist. Another possibility is to have $g*$ for large values of the coupling, where we cannot use perturbation theory and again this fixed point does not exist. QED is an \textbf{effective field theory}, it explodes at some point.
+% \[
+% \lim_{E\to0}g(E)=0\Rightarrow\text{the theory is in the Coulomb phase}
+% \]
+\subsection{Non-Abelian Case}
+For non-abelian gauge theories, we have to take into account more 1-loop contributions than the abelian case.\marginnote{For example, in QCD gluons are self-interacting.} By doing so, at 1-loop one founds:
+\begin{equation}
+\labeq{beta0}
+\beta_0=-\frac{11}{3}C_2(\text{adj})+\frac{4}{3}T(r_f)n_f+\frac{1}{3}T(r_s)n_s
+\end{equation}
+$C_2$ is the quadratic Casimir of the adjoint representation, $T(n_f)$ is the \href{https://en.wikipedia.org/wiki/Eugene_Dynkin}{Dynkin} index for a certain representation of fermions, $n_f$ denotes the number of fermions, $T(r_s)n_s$ is the same thing as the fermions but with complex scalars.\\
+The first term is negative, if we do not have too many matter fields, this will be the dominant one and the $\beta$-function will be negative, so as the energy increases the coupling decreases. It is therefore possible to extrapolate the theory at arbitrary high energies, this is called \textbf{asymptotic freedom}\marginnote{Asymptotic freedom explains a number of important qualitative features of the strong interaction, such as how QCD can be strong but also short-ranged and why free quarks have never been seen}. On the other hand, at low energies the coupling will increase and we cannot treat the theory perturbatively anymore.\\
+Specializing now to QCD with $N_c=3$ and $n_f=6$. In this case, \refeq{beta0} tells us that:
 \[
-\pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+\overline{\Psi}\gamma^\mu i(\partial_\mu-igA_\mu)\Psi
+\beta_0=-\frac{11}{3}N_c+\frac{2}{3}n_f=-7<0
 \]
-This Lagrangian does not contain scales, it is invariant under change of scale at the classical level. When we include corrections, the coupling evolves because the renormalization process includes a scale factor $\mu$ and this scale evolves. Once the fixed points are reached, we are back in a situation analogous to the classical one: the theory does not evolve anymore, hence it is invariant under scale change. Theories with UV fixed points are called \textbf{asymptotically safe}. Asymptotic safety is a generalization of asymptotic freedom: with asymptotic freedom the coupling goes to zero, while with asymptotic safety the coupling goes to a certain finite constant. Is QED asymptotically safe? No, the fixed points can be reached for small values of the coupling, where we can use perturbation theory to find $g^*$ but computations show that this point does not exist. Another possibility is to have $g*$ for large values of the coupling, where we cannot use perturbation theory and again this fixed point does not exist. QED is an \textbf{effective field theory}, it explodes at some point.
-\[
-\lim_{E\to0}g(E)=0\Rightarrow\text{the theory is in the Coulomb phase}
-\]
+As long as there are less than 17 flavours of quarks (there are six in nature), $\beta_0<0$ hence $g(\mu)$ decreases with increasing $\mu$.\\
+%Compare this result with the one for the abelian case, where we have:
+% \[
+% \beta_0=\frac{4}{3}q^2_\Psi n_f+\frac{1}{3}q_s^2n_s
+% \]
+% Here the first term of the non-abelian case is not present because there is no self-interaction and $\beta_0$ is always larger than zero, while in the non-abelian case it depends on the number of fermions and scalars.\\
 \underline{Non-abelian gauge theories SU$(N)$ (QCD)}: in the non-abelian case, it can happen to have so many massless flavours that the $\beta_0$ contribution in the $\beta-$function coming from the matter is bigger than the negative contribution coming from the gauge field, resulting in $\beta_0>0$. However, we do not have only one gauge field, but $N^2-1$ fields (if we are in SU$(N)$). For simplicity, consider only fermions in the fundamental representation:\marginnote{It is the same thing for scalars.}
 \[
 \beta_0=-\frac{11}{3}N+\frac{2}{3}n_f\to\beta_0>0 \;\text{for}\;n_f>\frac{11}{2}N
@@ -1194,7 +1197,7 @@ Classically, we start from a theory where we do not have any dimensional paramet
 The action is invariant since there are no dimensional parameter, so there is nothing fixing a reference scale. However, this is valid only on a classical level: in the Lagrangian, there is the coupling in the covariant derivative and in the non-abelian interaction term, so these parameters are dimensionless but we have seen that the coupling introduces a scale $\Lambda$. This phenomenon is called \textbf{dimensional transmutation}: starting from a theory with only dimensionless parameters we arrive to a theory which has an intrinsic scale due to coupling when it gets non-perturbative, $\Lambda$ is generated dynamically from the theory.\marginnote[-3.5cm]{\includegraphics[]{Images/massgap.pdf}} $\Lambda$ fixes the mass gap, except for lightest bound states ($m_\pi$) which arise from spontaneous symmetry breaking and they will be treated as pseudo-Nambu-Goldstone bosons.\\
 We have seen that a possibility for the $\beta-$function is to have an IR fixed point which appears in vectorial SU$(N)$ gauge theories with $n_f$ Dirac fermions. The possibility to have this perturbative IR fixed point requires $n_f\lesssim\frac{11}{2}N$. What happens if we consider instead massive fermions? When we decrease the energy, we start inside the conformal window so the coupling will move towards the fixed point. 
 At some point, we will get to the energy of the order of the mass of the first fermion, $E\sim m_{f_1}$, and the contribution of any Feynman diagram coming from the virtual propagation of this fermion will freeze. Going to energies below $m_{f_1}$, we can forget about this fermion and write an effective theory without considering it. Repeating this argument for more fermions, we may find ourselves outside the conformal window and enter the confinement phase, where there will be a threshold at which bound states are formed, i.e. the dynamical scale $\Lambda$. In principle, there could be also other fermions lighter than $\Lambda$ which do not necessarily have to be massless (this is the case of QCD). All the lighter fermions behave as if they were massless even if they are not and the number of these fermions tells us where we are in \reffig{confwind}. In QCD, there are 3 lighter fermions (up, down and strange), the dynamical scale $\Lambda\approx(100\text{MeV}-1\text{GeV})$ (charm) and two heavier fermions (top and bottom).
-\section{Spin-1 Particle as a Gauge Theory}
+\section{Spin-1 Particles as a Gauge Theory}
 Summarizing, we have seen the Coulomb phase with short range forces, then the conformal phase where there are no particles and lastly the confinement phase with asymptotic bound states. There is another possibility. Consider the Proca Lagrangian for massive spin-1 particles:
 \[
 \pazocal{L}_{\text{P}}=-\frac{1}{4}V_{\mu\nu}^2+\frac{m_v^2}{2}V_\mu^2 \quad V_{\mu\nu}=\partial_\mu V_\nu-\partial_\nu V_\mu
