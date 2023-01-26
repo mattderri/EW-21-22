@@ -1610,7 +1610,7 @@ How can we parameterize these NGBs? We introduce the field $\Sigma(x)$:
 \]
 with $T^a$ generators of SU$(N)$ in the fundamental representation, i.e. $N\times N$ traceless hermitian matrices. Consider now the following kinetic term for this field:
 \[
-\pazocal{L}=\frac{1}{4}v^2\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}
+\pazocal{L}=\frac{1}{4}v^2\Tr{(\partial_\mu\Sigma)^\dagger(\partial^\mu\Sigma)}
 \]
 $\Sigma$ is dimensionless by definition, so it is necessary to add the term $v^2$ which has dimension 2. What global symmetry do we have in this case? We can make a transformation in which $\Sigma$ is multiplied by elements of SU$(N)_{\text{L}}$ and SU$(N)_{\text{R}}$:\marginnote{$L$ acts on $\Sigma$ on the left and $R$ acts on $\Sigma$ on the right, hence the names SU$(N)_{\text{L}}$ and SU$(N)_{\text{R}}$.}
 \[
@@ -1641,11 +1641,11 @@ D_\mu\Sigma:=\partial_\mu\Sigma-igT^aA_\mu^a\Sigma
 \]
 At the end of the day, we can write the Lagrangian as:
 \[
-\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{v^2}{4}\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}
+\pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{v^2}{4}\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}
 \]
 To see he Higgs mechanism at work, we move to the unitary gauge where $\Sigma(x)=\mathbb{1}$. To do that, we make a local SU$(N)$ transformation which eats all the NGBs and we obtain:
 \[
-\frac{v^2}{4}\Tr{D_\mu\Sigma^\dagger D^\mu\Sigma}=\frac{v^2}{4}g^2\Tr{T^aT^b}A_\mu^aA_\mu^b=\frac{1}{2}\left(\frac{vg}{2}\right)^2A_\mu^a(x)A_\mu^a(x)\Rightarrow m=\frac{gv}{2}
+\frac{v^2}{4}\Tr{(D_\mu\Sigma^\dagger)(D^\mu\Sigma)}=\frac{v^2}{4}g^2\Tr{T^aT^b}A_\mu^aA_\mu^b=\frac{1}{2}\left(\frac{vg}{2}\right)^2A_\mu^a(x)A_\mu^a(x)\Rightarrow m=\frac{gv}{2}
 \]
 In the last step we used the fact that $T^a$ and $T^b$ are generally normalized so that $\Tr{T^aT^b}=\frac{\delta^{ab}}{2}$. We observe that all the gauge fields acquire the same mass.\marginnote{If we make both SU$(N)_{\text{L}}$ and SU$(N)_{\text{R}}$ local we will have $N^2-1$ massive fields and $N^2-1$ will remain massless, but we do not want those extra massless fields.}\\
 SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}$ is not linearly realized even if apparently the transformation for $\Sigma$ is linear: how is that possible? In this case, there are two non-linear constraints:
@@ -1656,7 +1656,7 @@ SU$(N)_{\text{L}}\times$SU$(N)_{\text{R}}$ is not linearly realized even if appa
 If we start with a $N\times N$ complex matrix there are $2N^2$ degrees of freedom. We have to subtract the constraints just imposed, resulting in $2N^2-N^2-1=N^2-1$ degrees of freedom which are exactly the ones we have.\\
 SU$(N)_{\text{V}}$ is linearly realized, which means that also $\chi(x)$ transforms linearly.
 \[
-\Sigma\xrightarrow[]{\text{SU}(N)_{\text{V}}}\underbrace{\exp{i\alpha^AT^A}}_{V}\underbrace{\exp{2i\chi^a(x)T^a/v}}_{\Sigma}\underbrace{\exp{-i\alpha^AT^A}}_{V^\dagger}=\exp{2i\chi^a(x)VT^aV^\dagger}
+\Sigma\xrightarrow[]{\text{SU}(N)_{\text{V}}}\underbrace{\exp{i\alpha^AT^A}}_{V}\underbrace{\exp{\frac{2i\chi^a(x)}{v}T^a}}_{\Sigma}\underbrace{\exp{-i\alpha^AT^A}}_{V^\dagger}=\exp{\frac{2i\chi^a(x)}{v}VT^aV^\dagger}
 \]
 That is exactly the transformation rule we want for a linearly realized symmetry, because at this point we can write:
 \[
@@ -1679,19 +1679,19 @@ The equivalence theorem tells us that we can compute the scattering amplitude of
 \[
 \pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{v^2}{4}\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}+\text{gauge-fixing} \quad \Sigma=\exp{2i\frac{\chi^a(x)}{v}T^a}
 \]
-We have to work on the trace term, let's write it explicitly. Remember that the covariant derivative is defined as $D_\mu=\partial_\mu+igA_\mu^aT^a$.
+We have to work on the trace term, let's write it explicitly. Remember that the covariant derivative is defined as $D_\mu=\partial_\mu-igA_\mu^aT^a$.
 \begin{equation}
 \labeq{dsigma}
-\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}=\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}+\underbrace{igA_\mu^a\Tr{-\partial_\mu\Sigma^\dagger T^a\Sigma+\Sigma^\dagger T^a\partial_\mu\Sigma}}_{=igA_\mu^a\Tr{\Sigma^\dagger T^ai\overset{\leftrightarrow}{\partial_\mu}\Sigma}=igA_\mu^aJ_\mu^a}+\underbrace{g^2A_\mu^aA_\mu^b\Tr{\Sigma^\dagger T^aT^b\Sigma}}_{\frac{g^2}{2}A_\mu^aA_\mu^a}
+\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}=\Tr{(\partial_\mu\Sigma)^\dagger(\partial^\mu\Sigma)}+\underbrace{igA_\mu^a\Tr{-(\partial_\mu\Sigma)^\dagger T^a\Sigma+\Sigma^\dagger T^a(\partial_\mu\Sigma)}}_{=igA_\mu^a\Tr{\Sigma^\dagger T^a\overset{\leftrightarrow}{\partial_\mu}\Sigma}=igA_\mu^aJ_\mu^a}+\underbrace{g^2A_\mu^aA_\mu^b\Tr{\Sigma^\dagger T^aT^b\Sigma}}_{\frac{g^2}{2}A_\mu^aA_\mu^a}
 \end{equation}
-The last term gives us the mass term, since the trace is cyclic, $\Sigma$ is unitary and the generators are usually normalized as $\Tr{T^aT^b}=\frac{\delta^{ab}}{2}$. If we do a global transformation of SU$(N)_{\text{L}}$ we get a conserved current of the form displayed in the second term which is coupled to the gauge field. We want to expand this expression in powers of $\chi$, keeping only terms up to order of $\chi^2$. We define $\chi:=\frac{\chi^aT^a}{v}$ and work in a special case with $N=2$\marginnote{The general case is a bit more complicated.} so that we have SU$(2)\times$SU$(2)\to$SU(2). The generators in SU(2) are nothing but the Pauli matrices divided by two, $T^a=\sigma^a/2$:
+The last term gives us the mass term, since the trace is cyclic, $\Sigma$ is unitary and the generators are usually normalized as $\Tr{T^aT^b}=\frac{\delta^{ab}}{2}$. If we do a global transformation of SU$(N)_{\text{L}}$ we get a conserved current of the form displayed in the second term which is coupled to the gauge field. We want to expand this expression in powers of $\chi$, keeping only terms up to order of $\chi^2$. We define $\chi:=2\frac{\chi^aT^a}{v}$ and work in a special case with $N=2$\marginnote{The general case is a bit more complicated.} so that we have SU$(2)\times$SU$(2)\to$SU(2). The generators in SU(2) are nothing but the Pauli matrices divided by two, $T^a=\frac{\sigma^a}{2}$:
 \[
-\Sigma=\exp{i\chi^a(x)\frac{\sigma^a}{v}}
+\Sigma=\exp{2i\chi^a(x)\frac{\sigma^a}{2v}}=\exp{i\chi}
 \]
 We want to compute $igA_\mu^a\Tr{\Sigma^\dagger\frac{\sigma^a}{2}\partial_\mu\Sigma}$ so we expand up to second order:
 \begin{align*}
-igA_\mu^a\Tr{\Sigma^\dagger\frac{\sigma^a}{2}\partial_\mu\Sigma}&\simeq igA_\mu^a\Tr{(1-i\chi-\frac{\chi^2}{2}+\dots)\frac{\sigma^a}{2}(i\partial_\mu\chi-\frac{\partial_\mu\chi^2}{2}+\dots)}\\
-&=igA_\mu^A\left[\Tr{i\frac{\sigma^a}{2}\partial_\mu\chi}+\Tr{\chi\frac{\sigma^a}{2}\partial_\mu\chi-\frac{1}{2}\frac{\sigma^a}{2}\partial_\mu\chi^2}+\pazocal{O}(\chi^3)\right]
+\Tr{\Sigma^\dagger\frac{\sigma^a}{2}(\partial_\mu\Sigma)}&\simeq\Tr{(1-i\chi-\frac{\chi^2}{2}+\dots)\frac{\sigma^a}{2}(i\partial_\mu\chi-\frac{\partial_\mu\chi^2}{2}+\dots)}\\
+&=\left[\Tr{i\frac{\sigma^a}{2}\partial_\mu\chi}+\Tr{\chi\frac{\sigma^a}{2}\partial_\mu\chi-\frac{1}{2}\frac{\sigma^a}{2}\partial_\mu\chi^2}+\pazocal{O}(\chi^3)\right]
 \end{align*}
 Hence, after some annoying calculations, one obtains:
 \[
@@ -1700,21 +1700,21 @@ Hence, after some annoying calculations, one obtains:
 Once we multiply this by $\frac{v^2}{4}igA_\mu^a$, from the first term we get that\\
 $\pazocal{L}\supset-\frac{1}{2}gvA_\mu^a\partial^\mu\chi^a$ which is the term we want to remove, so we choose a proper gauge-fixing term:
 \[
-\pazocal{L}_{\text{GF}}=-\frac{1}{2\xi}(\partial_\mu A^{\mu,a}+\frac{1}{2}\xi gv\chi^a)^2
+\pazocal{L}_{\text{GF}}=-\frac{1}{2\xi}\left(\partial_\mu A^{\mu,a}+\frac{1}{2}\xi gv\chi^a\right)^2
 \]
-Focus now on the term $\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}$ from \refeq{dsigma}. This is invariant under $\Sigma\to\Sigma^\dagger$, which is equivalent, by definition, to changing the sign of $\chi^a$: in the expansion of powers of $\chi$, there will only be even powers of $\chi$. To compute this kinetic term, we need to go to the 4$^\text{th}$ order in $\chi$, so we have to expand $\Sigma$ up to the 3$^\text{rd}$ order.
+Focus now on the term $\Tr{(\partial_\mu\Sigma)^\dagger(\partial^\mu\Sigma)}$ from \refeq{dsigma}. This is invariant under $\Sigma\to\Sigma^\dagger$, which is equivalent, by definition, to changing the sign of $\chi^a$: in the expansion of powers of $\chi$, there will only be even powers of $\chi$. To compute this kinetic term, we need to go to the 4$^\text{th}$ order in $\chi$, so we have to expand $\Sigma$ up to the 3$^\text{rd}$ order.
 \[
-\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}\simeq\Tr{(-i\partial_\mu\chi-\frac{1}{2}\partial_\mu\chi^2+\frac{i}{6}\partial_\mu\chi^3+\dots)(-i\partial_\mu\chi-\frac{1}{2}\partial_\mu\chi^2+\frac{i}{6}\partial_\mu\chi^3+\dots)}
+\Tr{(\partial_\mu\Sigma)^\dagger(\partial^\mu\Sigma)}\simeq\Tr{(-i\partial_\mu\chi-\frac{1}{2}\partial_\mu\chi^2+\frac{i}{6}\partial_\mu\chi^3+\dots)(i\partial_\mu\chi-\frac{1}{2}\partial_\mu\chi^2-\frac{i}{6}\partial_\mu\chi^3+\dots)}
 \]
-The term $\chi^2$ is equal to $\chi^2=\frac{\chi^a\sigma^a}{2v}\frac{\chi^b\sigma^b}{2v}=\frac{\chi^a\chi^b}{v^2}\frac{1}{2}\{\sigma^a\sigma^b\}$ so we can write:
+The term $\chi^2$ is equal to $\chi^2=\frac{\chi^a\sigma^a}{v}\frac{\chi^b\sigma^b}{v}=\frac{\chi^a\chi^b}{v^2}\frac{1}{2}\{\sigma^a\sigma^b\}$ so we can write:
 \[
-\frac{v^2}{4}\Tr{\partial_\mu\Sigma^\dagger\partial^\mu\Sigma}=\frac{1}{2}(\partial_\mu\chi^a)^2+\frac{1}{6v^2}[(\chi^a\partial_\mu\chi^a)^2-\chi^a\chi^a(\partial_\mu\chi^b\partial^\mu\chi^b)]+\pazocal{O}(\chi^6)
+\frac{v^2}{4}\Tr{(\partial_\mu\Sigma)^\dagger(\partial^\mu\Sigma)}=\frac{1}{2}(\partial_\mu\chi^a)^2+\frac{1}{6v^2}[(\chi^a\partial_\mu\chi^a)^2-\chi^a\chi^a(\partial_\mu\chi^b\partial^\mu\chi^b)]+\pazocal{O}(\chi^6)
 \]
 The very last term above corresponds to a quartic contact interaction and it is the only one contributing to the scattering at this leading order of the energy, with a contribution $\simeq E^2/v^2$.\\
 Summarizing, the full Lagrangian with the gauge-fixing term is the following:
 \begin{align*}
-\pazocal{L}+\pazocal{L}_{\text{GF}}=&-\frac{1}{4}(F_{\mu\nu}^a)^2-\frac{1}{2\xi}(\partial_\mu A^{\mu,a})^2+\frac{m_A^2}{2}A_\mu^aA_\mu^a+\frac{1}{2}(\partial_\mu\chi^a)^2-\frac{1}{2}m_A^2\xi(\chi^a)^2\\
-&-\frac{1}{2}g\epsilon^{abc}A_\mu^a\partial_\mu\chi^b\chi^c+\frac{1}{6v^2}\left[(\chi^a\partial_\mu\chi^a)^2-\chi^a\chi^b(\partial_\mu\chi^b\partial^\mu\chi^b)\right]+\pazocal{O}(\chi^b,A\chi^3)
+\pazocal{L}+\pazocal{L}_{\text{GF}}=&-\frac{1}{4}(F_{\mu\nu}^a)^2-\frac{1}{2\xi}(\partial_\mu A^{\mu,a})^2+\frac{1}{2}m_A^2A_\mu^aA_\mu^a+\frac{1}{2}(\partial_\mu\chi^a)^2-\frac{1}{2}m_A^2\xi(\chi^a)^2\\
+&-\frac{1}{2}g\epsilon^{abc}A_\mu^a\partial_\mu\chi^b\chi^c+\frac{1}{6v^2}\left[(\chi^a\partial_\mu\chi^a)^2-\chi^a\chi^a(\partial_\mu\chi^b\partial^\mu\chi^b)\right]+\pazocal{O}(\chi^b,A\chi^3)
 \end{align*}
 where $m_A=\frac{gv}{2}$. Now that we have the Lagrangian, it is possible to compute the amplitude. The contribution comes from the diagram depicted on the side and again we don't do the general case but a special one: $\chi^a\chi^b\to\chi^a\chi^b$.\marginnote{\includegraphics[width=0.3\textwidth]{Images/abab.pdf}\\
 Diagram at the first order in perturbation theory.}
@@ -1752,7 +1752,7 @@ This perturbative series breaks when $\frac{g^2(E)}{16\pi^2}\sim\pazocal{O}(1)$,
 \section{Role of the Higgs Boson}
 At this point we know that this theory cannot be extrapolated at arbitrary high energies and one may ask: what do we do with this theory, we throw it away or we can still use it? There are two possibilities:
 \begin{enumerate}
-    \item modify the theory, so that it becomes mathematically complete. We are actually lucky, because there is a simple way to do that. In order to do that, we need to change the number of degrees of freedom, adding them.
+    \item modify the theory, so that it becomes mathematically complete. We are actually lucky, because there is a simple way to do that. In order to do that, we need to change the number of degrees of freedom, increasing them.
     \item keep it as an \tetxbf{effective field theory} (EFT), a description valid upon a certain energy. Remember, even QED is an EFT.
 \end{enumerate}
 Here we discuss the first option, while the second one will be the topic of the next chapter.\\
@@ -1827,7 +1827,7 @@ We are left with the kinetic term for $\Sigma$ which we have already encountered
 Let's look at the potential: if we look for the minima, we find\\
 $\langle\varphi\rangle=v=\sqrt{\frac{\mu^2}{\lambda}}$, implying $\langle\pazocal{H}\rangle=v$ This means that SU$(2)_{\text{L}}\times$SU$(2)_{\text{R}}$ is broken to SU$(2)_{\text{V}}$. It is now possible to define the field $\varphi(x)$ as the vev $v$+a certain excitation denoted by $h(x)$ with $m_h^2=2\mu^2$. This is the Higgs boson, the 4-th degree of freedom for the massive radial excitation, the other 3 are in $\Sigma$ and parametrize the excitation around the valley of minima.
 \begin{align*}
-\pazocal{L}=&-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{2}(\partial_\mu h(x))^2+\frac{1}{2}m_h^2h^2(x)-\lambda vh^3(x)-\frac{\lambda}{4}h^4(x)\\
+\pazocal{L}=&-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{2}(\partial_\mu h(x))^2-\frac{1}{2}m_h^2h^2(x)-\lambda vh^3(x)-\frac{\lambda}{4}h^4(x)\\
 &+\frac{v^2}{4}\left(1+\frac{h(x)}{v}\right)^2\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}+\text{constant terms}
 \end{align*}
 Now, we have $h(x)$ as a self-interacting massive field and it interacts through the last term with the NGB $\chi^a$ contained in $\Sigma$. We want to understand this interaction and see how this fixes the dependency $E^2$ of the scattering amplitude of $\chi^a\chi^b\to\chi^a\chi^b$. This gives us the diagram depicted on the side \marginnote{\includegraphics[width=0.3\textwidth]{Images/aahbb.png}}:
