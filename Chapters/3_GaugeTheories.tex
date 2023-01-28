@@ -63,7 +63,7 @@ P^\mu\ket{\vec{p},\sigma}=p^\mu\ket{\vec{p},\sigma}
 \]
 Applying translations to these states results in:
 \[
-U(1,a)\ket{\vec{p},\sigma}=\exp{-iP^\mu a_\mu}\ket{\vec{p},\sigma}=\exp{-i\Vec{p}\cdot \vec{a}}\ket{\vec{p},\sigma}
+U(\mathbb{1},a)\ket{\vec{p},\sigma}=\exp{-iP^\mu a_\mu}\ket{\vec{p},\sigma}=\exp{-i\Vec{p}\cdot \vec{a}}\ket{\vec{p},\sigma}
 \]
 We now have to consider how these states transform under Lorentz. The effect of operating with a Lorentz transformation $U(\Lambda,0):=U(\Lambda)$ on $\ket{\vec{p},\sigma}$ is to produce an eigenvector of the four-momentum with eigenvalue $\Lambda p$.
 \begin{align*}
@@ -92,8 +92,8 @@ U(\Lambda)\ket{\Vec{p},\sigma}&=U(\Lambda L(p))\ket{\Vec{k},\sigma}=U(L(\Lambda 
 The Lorentz transformation $W(\Lambda,p)=L^{-1}(\Lambda p)\Lambda L(p)$ takes $k$ to\\
 $L(p)k=p$ then to $\Lambda p$ and then back to $k$:
 \begin{align*}
-W(\Lambda,p)^\mu_\nu k^\nu&=(L(\Lambda p)^{-1}\Lambda L(p))^\mu_\nu k^\nu=(L(\Lambda p)^{-1}\Lambda)L(p)^\mu_\nu k^\nu=(L(\Lambda p)^{-1}\Lambda)^\mu_\nu p^\nu\\
-&=(L(\Lambda p)^{-1})^\mu_\nu(\Lambda p)^\nu=k^\nu
+W(\Lambda,p)^\mu_\nu k^\nu&=(L^{-1}(\Lambda p)\Lambda L(p))^\mu_\nu k^\nu=(L^{-1}(\Lambda p)\Lambda)L(p)^\mu_\nu k^\nu=(L^{-1}(\Lambda p)\Lambda)^\mu_\nu p^\nu\\
+&=(L^{-1}(\Lambda p))^\mu_\nu(\Lambda p)^\nu=k^\nu
 \end{align*}
 It belongs to the subgroup of the Lorentz group consisting of transformations $W^\mu_\nu$ which leave $k^\mu$ invariant. This subgroup is called the \textbf{little group}.
 % We can explicitly show that $\ket{\Vec{p},\sigma}$ are eigenvalues of the momentum.
@@ -126,9 +126,9 @@ The problem of finding the coefficients $C_{\sigma\sigma'}(\Lambda,p)$ in \refeq
     \hline
     Four-momentum & Standard $k^\mu$ & Little group \\
     \hline\hline 
-    (a) $p^2=-m^2<0,p^0>0$ & $(m,0,0,0)$ & SO(3)\\
-    (b) $p^2=-m^2<0,p^0<0$ & $(-m,0,0,0)$ & SO(3)\\
-    (c) $p^2=0,p^0>0$ & $(k,k,0,0)$ & ISO(2)\\
+    (a) $p^2=m^2>0,p^0>0$ & $(m,0,0,0)$ & SO(3)\\
+    (b) $p^2=m^2>0,p^0<0$ & $(-m,0,0,0)$ & SO(3)\\
+    (c) $p^2=0,p^0>0$ & $(k,0,0,k)$ & ISO(2)\\
     (d) $p^2=0,p^0<0$ & $(-k,k,0,0)$ & ISO(2)\\
     (e) $p^2=N^2>0$ & $(0,N,0,0)$ & SO(2,1)\\
     (f) $p^\mu=0$ & $(0,0,0,0)$ & SO(3,1)\\
@@ -218,7 +218,7 @@ Our state can be labeled as $\ket{\Vec{k},\sigma,m,s}$.\marginnote{In principle,
 \right.
 \]
 \subsection{Massless States}
-We want to repeat the same arguments for one-particle massless states, but in this case it is not so simple because the little group is not trivial like it was before. As we previously did, we start by taking a reference momentum which must be compatible with the light-like nature of the state, so we take $k^\mu=(k,0,0,k)$. We need to find the little group of $k^\mu$: we can perform a boost along the $x$-axis, a rotation in the $xz$ plane and again a boost but in the $z$-axis. We require that this sequence of transformations leaves $k^\mu$ invariant.
+We want to repeat the same arguments for one-particle massless states, but in this case it is not so simple because the little group is not trivial like it was before. As we previously did, we start by taking a reference momentum which must be compatible with the light-like nature of the state, so we take $k^\mu=(k,0,0,k)$. We need to find the little group of $k^\mu$: one possibility is to perform a boost along the $x$-axis, a rotation in the $xz$ plane and again a boost but in the $z$-axis. We require that this sequence of transformations leaves $k^\mu$ invariant.
 \begin{enumerate}
     \item Boost along the $x$-axis:
     \[
@@ -347,7 +347,7 @@ A^\mu_\nu=\left(\begin{array}{cccc}
 \end{array}\right)=(K_1+J_2)^\mu_\nu
 \]
 where $K_1$ is the generator of the boosts along the $x$-axis and $J_2$ the generator of the rotations around $\hat{y}$ [\refsec{replor}].\\
-What other transformations can we do? We can perform a SO(2) rotation in the $xy$ plane or a transformation like the previous one but with the boost along the $y$-axis, defining in this way $B^\mu_\nu$.
+What other transformations can we do? Another possibility is to perform a SO(2) rotation in the $xy$ plane or a transformation like the previous one but with the initial 1boost along the $y$-axis, a rotation in the $yz$ plane and a boost along the $z$-axis, defining in this way $B^\mu_\nu$.
 \[
 B^\mu_\nu=\left(\begin{array}{cccc}
     0 & 0 & -i & 0 \\
@@ -357,7 +357,7 @@ B^\mu_\nu=\left(\begin{array}{cccc}
 \end{array}\right)=(K_2-J_1)^\mu_\nu
 \]
 In this case, $K_2$ is the generator of the boosts along the $y$-axis and $J_1$ the generator of the rotations around $\hat{x}$.\\
-The little group will be composed by three generators, $A^\mu_\nu$, $B^\mu_\nu$ and $J_3$ so in general we have:\marginnote{\[
+The little group will be composed by the generators of the three transformations, $A^\mu_\nu$, $B^\mu_\nu$ and $J_3$ so in general we have:\marginnote{\[
 J_3=\left(\begin{array}{cccc}
     0 & 0 & 0 & 0 \\
     0 & 0 & -i & 0 \\
@@ -373,11 +373,11 @@ We found the generators but to identify the group we need to define the algebra.
 [J_3,A]=iB \quad [J_3,B]=-iA \quad [A,B]=0
 \]
 $A$ and $B$ commute and they transform one into another under the action of $J_3$: this is an invariant subgroup. There will surely be SO(2) generated by $J_3$ plus another invariant subgroup generated by $A$ and $B$. If we put them in a vector, we observe that it is a translation, so we have rotation+translation. This is the \textbf{group of isomorpshims} in $\mathbb{R}^2$ called ISO(2) which is not compact\marginnote{The Poincaré group is the group of isomorphisms in Minkowski space, denoted by ISO(3,1).}.\\
-We have to find the unitary representation of this group but, as in the Poincaré case, being it not compact we have the problem that this unitary representation will not be finite-dimensional. However, we have an invariant subgroup, so it is possible to use the method of induced representations but we need to find the Casimir first. So far, we have just one Casimir $P^2=A^2+B^2$ with $\vec{P}=(A,B)$. As in the massless case, this corresponds to the second Casimir of the Poincaré group, which is the square of the Pauli-Lubanski vector $W^\mu$: now we restrict it to states with $p^\mu=k^\mu=(k,0,0,k)$.\marginnote{$J_i=M_{kl}$, with $i,k,l$ symmetric permutations of 123 while $K_i=M_{i0}$.}
+We have to find the unitary representation of this group but, as in the Poincaré case, being it not compact we have the problem that this unitary representation will not be finite-dimensional. However, we have an invariant subgroup, so it is possible to use the method of induced representations but we need to find the Casimir first. So far, we have just one Casimir $P^2=A^2+B^2$ with $\vec{P}=(A,B)$. As in the massive case, this corresponds to the second Casimir of the Poincaré group, which is the square of the Pauli-Lubanski vector $W^\mu$: now we restrict it to states with $p^\mu=k^\mu=(k,0,0,k)$.\marginnote{$J_i=M_{kl}$, with $i,k,l$ symmetric permutations of 123 while $K_i=M_{i0}$.}
 \[
 \left\{
 \begin{aligned}
-&W^0=\frac{1}{2}(\epsilon^{0123}M_{12}k+\epsilon^{0213}M_{21}k)=M_{12}\cdot k=J_3\cdot k\\
+&W^0=\frac{1}{2}(\epsilon^{0123}M_{12}k+\epsilon^{0213}M_{21}k)=M_{12}\cdot k=k\cdot J_3\\
 &W^1=\frac{1}{2}(\epsilon^{1230}M_{23}k+\epsilon^{1320}M_{32}k+\epsilon^{1203}M_{20}k+\epsilon^{1023}M_{02}k)=k(-J_1+K_2)=+k\cdot B\\
 &W^2=\frac{1}{2}(\epsilon^{2130}M_{13}k+\epsilon^{2310}M_{31}k+\epsilon^{2013}M_{01}k+\epsilon^{2103}M_{10}k)=k(-J_2-K_1)=-k\cdot A\\
 &W^3=\frac{1}{2}(\epsilon^{3210}M_{21}k+\epsilon^{3120}M_{12}k)=-k\cdot J_3
