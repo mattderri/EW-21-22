@@ -260,7 +260,7 @@ Q\ket{0}=\int d^3xJ^0(\Vec{x},t)\ket{0}=0
 \]
 We multiply the integrand on the left by a generic state $n$ with zero three momentum:
 \[
-\bra{n,\vec{p}_n=0}J^0(\Vec{x},t)\ket{0}=\underbrace{\bra{n,p_n}e^{-ipx}}_{\bra{n,\Vec{p}_n=0}}J^0(\Vec{0},t)\underbrace{e^{+ipx}\ket{0}}_{=\ket{0}}=0
+\bra{n,\vec{p}_n=0}J^0(\Vec{x},t)\ket{0}=\underbrace{\bra{n,\vec{p}_n=0}e^{-ipx}}_{\bra{n,\Vec{p}_n=0}}J^0(\Vec{0},t)\underbrace{e^{+ipx}\ket{0}}_{=\ket{0}}=0
 \]
 Consider now the derivative with respect to time of $J^0(x)$,\\
 $\bra{n,\vec{p}_n=0}\partial_0J^0(x)\ket{0}=0$. This can be written as the total derivative of the current, since the spatial derivative is equal to zero.
@@ -712,7 +712,7 @@ If we have a particle confined in a well, there is a non-zero probability that a
 \]
 After some mysterious calculations, $b$ turns out to be different from zero: this means that the eigenstates of $H$ must be combinations of $\ket{\pm v}$.
 \[
-\ket{\pm}=\frac{\ket{+v}\pm\ket{-v}}{2} \quad E_\pm=a\pm b
+\ket{\pm}=\frac{\ket{+v}\pm\ket{-v}}{\sqrt{2}} \quad E_\pm=a\pm b
 \]
 Which one of these will be the fundamental state? using the nodes theorem, we see that for $b<0$ the fundamental state is $\ket{+}$ with $E_0=a+b$. Thanks to tunnel effect, we have only one fundamental state and it is no longer degenerate.\\
 In \textbf{Quantum Field Theory} we can discretize the space\\
@@ -746,7 +746,7 @@ This theory has a global U(1) symmetry given by $\phi\to e^{i\alpha}\phi$ with $
 \]
 At the minimum, we have $\phi^\dagger\phi=\frac{v^2}{2}$. These vacuum states are all degenerate: $\phi(x)=\frac{1}{\sqrt{2}}ve^{i\theta}$, where $\theta$ is an arbitrary value describing the position of all the vacuum states in the manifold which are all connected by a symmetry transformation $\phi\to\phi+i\alpha\phi+\pazocal{O}(\alpha^2)$. The current associated is:
 \[
-J^\mu=\frac{\delta\pazocal{L}}{\delta(\partial_\mu\phi)}i\phi+\frac{\delta\pazocal{L}}{\delta(\partial\phi^\dagger)}(-i\phi^\dagger)=\partial_\mu\phi^\dagger i\phi-\partial_\mu\phi i\phi^\dagger=-i\phi^\dagger\overset{\leftrightarrow}{\partial_\mu}\phi
+J^\mu=\frac{\delta\pazocal{L}}{\delta(\partial_\mu\phi)}i\phi+\frac{\delta\pazocal{L}}{\delta(\partial_\mu\phi^\dagger)}(-i\phi^\dagger)=\partial_\mu\phi^\dagger i\phi-\partial_\mu\phi i\phi^\dagger=-i\phi^\dagger\overset{\leftrightarrow}{\partial_\mu}\phi
 \]
 All the vacua are equivalent (by symmetry) so it is possible to pick any convenient parametrization. Instead of writing $\phi(x)=v+\Tilde{\phi}(x)$, with $\Tilde{\phi}(x)$ a complex field, it is more convenient to expand around $v$ by parametrizing $\phi(x)$ in terms of two real fields $\eta(x)$ and $\xi(x)$:
 \begin{equation}

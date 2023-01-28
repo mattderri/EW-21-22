@@ -23,7 +23,7 @@ How can we describe local effects? With \textbf{local operators} which we have t
 \labeq{EFT}
 \pazocal{L}_{\text{EFT}}=\pazocal{L}^{(4)}+\sum_n C^{(n)}O^{(n)}(x)
 \end{equation}%1:19:37
-$\pazocal{L}^{(4)}$ describes the low energy degrees of freedom and it is renormalizable while $O^{(n)}(x)$ are local operators of dimension $d_n$ which describe the effects of the heavy degrees of freedom. $C^{(n)}$ are arbitrary coefficients of dimension $4-d_n$ and they can be written in terms of a new scale, $C^{(n)}\propto\left(\frac{1}{M}\right)^{d_n-4}$, where $M$ denotes the mass of the heavy state. $\pazocal{L}_{\text{EFT}}$ is not renormalizable, however things are not so bad as they seem: let's have a look at the effects of these local operators. What does it mean \textit{local}? These are operators which are products, in general polynomial, of fields all computed in the \textbf{same point} with arbitrary dimensions. For example, $O(x)=\varphi^6(x)$ or $O(x)=(\Bar{\Psi}(x)\Psi(x))^2$. Then we add these operators according to the symmetries of our theory, they have to satisfy all the global symmetries that we impose on the low-energy theory.\marginnote{Gauge invariance is included among the symmetries.} There are two situations: \textit{either} we know the UV theory, find out what these operators are, take out the heavy particles and compare the two theories obtaining $C^{(n)}$ and then $O^{(n)}(x)$ \textit{or}, if we do not know the theory at high energy, write the most general effective Lagrangian compatible with symmetries we require at low-energy. Suppose to have an observable $A$ at low-energy, the relative effect of the heavy states, i.e. of the local operators, will be:
+$\pazocal{L}^{(4)}$ describes the low energy degrees of freedom and it is renormalizable while $O^{(n)}(x)$ are local operators of dimension $d_n$ which describe the effects of the heavy degrees of freedom. $C^{(n)}$ are arbitrary coefficients of dimension $4-d_n$ and they can be written in terms of a new scale, $C^{(n)}\propto\left(\frac{1}{M}\right)^{d_n-4}$, where $M$ denotes the mass of the heavy state. $\pazocal{L}_{\text{EFT}}$ is not renormalizable, however things are not so bad as they seem: let's have a look at the effects of these local operators. What does it mean \textit{local}? These are operators which are products, in general polynomial, of fields all computed in the \textbf{same point} with arbitrary dimensions. For example, $O(x)=\varphi^6(x)$ or $O(x)=(\overline{\Psi}(x)\Psi(x))^2$. Then we add these operators according to the symmetries of our theory, they have to satisfy all the global symmetries that we impose on the low-energy theory.\marginnote{Gauge invariance is included among the symmetries.} There are two situations: \textit{either} we know the UV theory, find out what these operators are, take out the heavy particles and compare the two theories obtaining $C^{(n)}$ and then $O^{(n)}(x)$ \textit{or}, if we do not know the theory at high energy, write the most general effective Lagrangian compatible with symmetries we require at low-energy. Suppose to have an observable $A$ at low-energy, the relative effect of the heavy states, i.e. of the local operators, will be:
 \[
 \frac{\delta A}{A}\approx\left(\frac{E}{M}\right)^{(d_n-4)m}
 \]
@@ -32,15 +32,15 @@ When $M$ is much larger than the energy of the process we are considering it is 
 To make things more clear, we make a couple of examples.
 \subsection{Examples of EFTs}
 \begin{example}\textbf{\href{https://en.wikipedia.org/wiki/Enrico_Fermi}{Fermi} theory for $\beta$ decay}\\
-The $\beta$ decay $n\to pe^-\Bar{\nu}_e$ is described by:
+The $\beta$ decay $n\to pe^-\overline{\nu}_e$ is described by:
 \[
-\pazocal{L}=-\frac{G_F}{\sqrt{2}}[\underbrace{\Bar{p}\gamma^\mu(1-\gamma_5)n}_{J^{\mu}_{\text{had}}}][\underbrace{\Bar{e^-}\gamma^\mu(1-\gamma_5)\nu_e}_{J^{\mu}_{\text{lep}}}]
+\pazocal{L}=-\frac{G_F}{\sqrt{2}}[\underbrace{\overline{p}\gamma^\mu(1-\gamma_5)n}_{J^{\mu}_{\text{had}}}][\underbrace{\overline{e}^-\gamma^\mu(1-\gamma_5)\nu_e}_{J^{\mu}_{\text{lep}}}]
 \]
 This Lagrangian is the product of two currents and has dimension 6. We can see it as an EFT obtained by integrating out, i.e. considering only what is below, a heavy particle coupled to both hadrons and leptons. This particle is massive with spin 1, with a mass much bigger than the energy involved in the process: the $W$ boson.\marginnote[-3cm]{\includegraphics[]{Images/betadecay.pdf}\\
 Diagram of the process}\\
 From the complete theory, the amplitude of this diagram is given by:
 \[
-A=\left(\frac{g}{\sqrt{2}}\right)^2\frac{i^2}{2!}2\frac{(-i)}{k^2-m_W^2}\eta_{\mu\nu}\Bar{u}(p)\gamma^\mu\frac{(1-\gamma_5)}{2}u(n)\Bar{u}(e^-)\gamma^\nu\frac{(1-\gamma_5)}{2}v(\nu_e)
+A=\left(\frac{g}{\sqrt{2}}\right)^2\frac{i^2}{2!}2\frac{(-i)}{k^2-m_W^2}\eta_{\mu\nu}\overline{u}(p)\gamma^\mu\frac{(1-\gamma_5)}{2}u(n)\overline{u}(e^-)\gamma^\nu\frac{(1-\gamma_5)}{2}v(\nu_e)
 \]
 Without going into details, the point here is that if $k^2\ll m_W^2$ it is possible to expand the propagator:
 \[
@@ -48,7 +48,7 @@ Without going into details, the point here is that if $k^2\ll m_W^2$ it is possi
 \]
 Each term here is analytical in $k$, therefore each contribution comes from a local operator. The Fermi interaction is basically coming from the contribution at first order of this propagator, which means that the diagram is approximated by a contact interaction between the hadronic and leptonic currents. By comparing the amplitude from the effective theory with the one obtained by the complete theory (at first order) it is possible to find the value of the effective operator:
 \[
-\left(\frac{G_F}{\sqrt{2}}\right)=\frac{g^2}{8m_W^2}
+\frac{G_F}{\sqrt{2}}=\frac{g^2}{8m_W^2}
 \]
 Higher order terms of the expansion correspond to other contributions, operators with higher dimensionality, where the momentum corresponds to derivative interactions acting on currents.
 \[
@@ -62,7 +62,7 @@ We are increasing the number of derivatives which act on the fields, hence the d
 \begin{example}\textbf{Heavy fermion coupled to a scalar and a gauge field}\\
 The Lagrangian which describes this kind of theory is:
 \[
-\pazocal{L}=\Bar{\Psi}(i\slashed{D}-M)\Psi-\frac{1}{4}(F_{\mu\nu})^2+\frac{1}{2}(\partial_\mu\phi)^2+y\phi\Bar{\Psi}\Psi-\frac{1}{2}m_\phi^2\phi^2
+\pazocal{L}=\overline{\Psi}(i\slashed{D}-M)\Psi-\frac{1}{4}(F_{\mu\nu})^2+\frac{1}{2}(\partial_\mu\phi)^2+y\phi\overline{\Psi}\Psi-\frac{1}{2}m_\phi^2\phi^2
 \marginnote[-2.5cm]{\includegraphics{Images/aaphiphi.pdf}\\
 Diagram of the full process.}
 \]
@@ -117,7 +117,7 @@ If we work at low energy, it might be more convenient to use EFT than having the
 \begin{example}\textbf{QED as an EFT}\\
 We want to consider the operator which contributes to the anomalous magnetic moment of the electron:
 \[
-c_0\underbrace{\Bar{\Psi}\sigma^{\mu\nu}F_{\mu\nu}\Psi}_{D=5}\quad\text{contributes to:}\left\{\begin{aligned}
+c_0\underbrace{\overline{\Psi}\sigma^{\mu\nu}F_{\mu\nu}\Psi}_{D=5}\quad\text{contributes to:}\left\{\begin{aligned}
 &\Vec{\mu}=\frac{e}{2m_ec}g_e\Vec{s}\\
 &a_e=\frac{g_e-2}{2}
 \end{aligned}\right.
@@ -143,7 +143,7 @@ we denoted with $M_*$ the new physics scale, $n$ the number of fields in the ope
 c_0\sim\frac{e}{M_*}\left(\frac{g_*^2}{16\pi^2}\right)
 \]
 where we inserted the electromagnetic coupling $e$. The photon-electron interaction does not take place through the covariant derivative but via $F_{\mu\nu}$, it is a non minimal interaction. If the field of the new physics is minimally coupled with the covariant derivative there is no way to generate this operator at tree-level, we need one loop: that is another assumption we make (3). Suppose to have something like the diagram portrayed on the side: \marginnote[-3.5cm]{\includegraphics{Images/eftqed.pdf}}due to gauge invariance of electromagnetic theory, the coupling on the top vertex must necessary be $e$ while for the bottom vertex there is nothing that tells us it has to be some known coupling, so we denote the other coupling with $g_*$.\\
-This is not the end of the story for our operator, there is still one extra-argument we can use. If we look at the structure of our operator, we notice that it is very similar to the structure of the mass term, mixing left and right chirality. There is a symmetry we can use: we know the mass term $\Bar{\Psi}_L\Psi_R$ is the only operator which breaks axial symmetry.
+This is not the end of the story for our operator, there is still one extra-argument we can use. If we look at the structure of our operator, we notice that it is very similar to the structure of the mass term, mixing left and right chirality. There is a symmetry we can use: we know the mass term $\overline{\Psi}_L\Psi_R$ is the only operator which breaks axial symmetry.
 \[
 P_A:
 \left\{
@@ -153,7 +153,7 @@ m_e&\to-m_e
 \end{aligned}
 \right.
 \]
-$m_e(\Bar{\Psi}_L\Psi_R+\text{h.c.})$ is formally invariant under $P_A$. Another assumption (4) is that there is only one spurion in the new theory which breaks $P_A$ and it is the same which contributes to the mass term and to the new operator. This implies that this operator must be proportional to $m_e$:
+$m_e(\overline{\Psi}_L\Psi_R+\text{h.c.})$ is formally invariant under $P_A$. Another assumption (4) is that there is only one spurion in the new theory which breaks $P_A$ and it is the same which contributes to the mass term and to the new operator. This implies that this operator must be proportional to $m_e$:
 \[
 c_0\sim\frac{e}{M_*}\left(\frac{g_*^2}{16\pi^2}\right)\frac{m_e}{M_*}
 \]
@@ -182,7 +182,7 @@ This new physics is just the Standard Model completion of QED+QCD and the partic
 The anomalous magnetic moment of the electron is not sensitive to new physics of this kind, because its scale is too heavy. However, there is another situation where we are sensitive to new physics because $c_0$ scales with $m_e$ so at this point we ask ourselves if we can consider the muon magnetic moment instead of the electron one. The experimental precision for the muon anomalous magnetic moment is\\
 0.35 ppm $=3.5\cdot10^{-7}$ and with this result we get $M_*\approx400\,\text{GeV}\cdot g_*$, the same order of magnitude as before. In the Standard Model, the operator is modified:
 \[
-c_0\Bar{\Psi}\sigma^{\mu\nu}F_{\mu\nu}\Psi\to\Bar{\Psi}_L\sigma^{\mu\nu}W^{\mu\nu}\Psi_RH\marginnote{At the moment this formula is a bit beyonf our understanding, but it will become more clear (hopefully) after the next chapter.}
+c_0\overline{\Psi}\sigma^{\mu\nu}F_{\mu\nu}\Psi\to\overline{\Psi}_L\sigma^{\mu\nu}W^{\mu\nu}\Psi_RH\marginnote{At the moment this formula is a bit beyonf our understanding, but it will become more clear (hopefully) after the next chapter.}
 \]
 $H$ is the Higgs field, required to have SU$(2)_{\text{EW}}$ invariance. Now we have $\Delta a_\mu=a_\mu^{\text{exp}}-a_\mu^{\text{SM}}=2.5\cdot10^{-9}$ which is larger than experimental uncertainty. There is a difference at $4\sigma$ level, so there must be some new physics. We can say that this difference comes from $W^{\mu\nu}$ and if we do this we get a scale
 $M_*\approx25\,\text{GeV}\cdot g_*$. This is a bit uncomfortable because it is below the electroweak scale, the new physics should be lighter than the electroweak particles \textit{unless} the coupling gets larger.
@@ -191,7 +191,7 @@ $M_*\approx25\,\text{GeV}\cdot g_*$. This is a bit uncomfortable because it is b
 When these effective theories collapse? There is not a unique answer, we have to make some assumptions (again). Let's see an example.
 \begin{example}\textbf{Fermi theory}\\
 \[
-\pazocal{L}=c_6[\Bar{e}\gamma^\mu(1-\gamma^5)\nu_e][\Bar{\nu}_\mu\gamma_\mu(1-\gamma^5)\mu] \quad c_6=-\frac{G_F}{\sqrt{2}}=-\frac{g^2}{8m_W^2}\marginnote[-1cm]{\includegraphics[]{Images/fermieft.pdf}}
+\pazocal{L}=c_6[\overline{e}\gamma^\mu(1-\gamma^5)\nu_e][\overline{\nu}_\mu\gamma_\mu(1-\gamma^5)\mu] \quad c_6=-\frac{G_F}{\sqrt{2}}=-\frac{g^2}{8m_W^2}\marginnote[-1cm]{\includegraphics[]{Images/fermieft.pdf}}
 \]    
 This operator describes the purely leptonic decay of the muon depicted on the side. If we compare it with the effective operator for protons, neutrons, electrons and neutrinos the coefficient in front is not quite the same but approximately the same. Suppose to measure the muon lifetime, what is measured is the coefficient $c_6$. Since in our theory there is nothing to justify the decay of the muon, then we understand that this process is mediated by effective operators, hence why we want to measure $c_6$. What does this say about the scale of new physics? It does not tell us anything directly about the scale of new physics because what we measure is the ratio between the coupling and the scale: without knowing the value of the coupling we cannot say anything about the scale. Today, we know the value of the coupling since the full theory is known but at the time when people first observed the muon decay this information was not available. What is the range of possibility? We can vary the coupling from very small values up to 4$\pi$, where the theory becomes not perturbative. \marginnote{\includegraphics[-1cm]{Images/scalenp.pdf}} The scale of new physics varies between the mass of the muon up to a point where the coupling is of order 4$\pi$, corresponding to the scale of new physics of order 1.5 TeV. This range is highlighted in red in the picture on the side, but we do not know exactly where this new physics could appear. How could we determine it? We \textit{either} make some assumptions on the value of the coupling, which of course have to be theoretically motivated, and then extrapolate the value of $m_W$ \textit{or} we look for new physics in scattering processes with the same elements of the Fermi interaction, for example $e^-\nu_\mu\to\mu^-\nu_e$. This was done by the Gargamella experiment in 1973, observing both charged and neutral currents, so $W$ and $Z$. To find the masses, we had to wait until 1983 at CERN which told us that this new physics appears at $m_W\simeq80$\,GeV.
 \end{example} 
