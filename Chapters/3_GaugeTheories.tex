@@ -129,7 +129,7 @@ The problem of finding the coefficients $C_{\sigma\sigma'}(\Lambda,p)$ in \refeq
     (a) $p^2=m^2>0,p^0>0$ & $(m,0,0,0)$ & SO(3)\\
     (b) $p^2=m^2>0,p^0<0$ & $(-m,0,0,0)$ & SO(3)\\
     (c) $p^2=0,p^0>0$ & $(k,0,0,k)$ & ISO(2)\\
-    (d) $p^2=0,p^0<0$ & $(-k,k,0,0)$ & ISO(2)\\
+    (d) $p^2=0,p^0<0$ & $(-k,0,0,k)$ & ISO(2)\\
     (e) $p^2=N^2>0$ & $(0,N,0,0)$ & SO(2,1)\\
     (f) $p^\mu=0$ & $(0,0,0,0)$ & SO(3,1)\\
     \hline
@@ -286,7 +286,7 @@ We want to repeat the same arguments for one-particle massless states, but in th
     \end{array}\right)
     \]
 \end{enumerate}
-This sequence of transformations leaves the momentum invariant, we can perform the boost along the $x$-axis and then the boost along the $z$-axis or vice-versa. Now we want to find the generators of these transformations which commute with $P$ and that allows us to find the quantum numbers needed to label our states. What we have to do is taking the product of these transformations and make it infinitesimal, assuming that $\beta$ is small. For $\beta\ll1$ we have:
+This sequence of transformations leaves the momentum invariant, we can perform the boost along the $x$-axis and then the boost along the $z$-axis or vice-versa. Now we want to find the generators of these transformations and that allows us to find the quantum numbers needed to label our states. What we have to do is taking the product of these transformations and make it infinitesimal, assuming that $\beta$ is small. For $\beta\ll1$ we have:
 \[
 \gamma\simeq1+\frac{1}{2}\beta^2 \quad \sin\theta=\beta \quad \cos\theta=1+\pazocal{O}(\beta^2) \quad \Tilde{\beta}=\frac{1}{2}\beta^2 \quad \Tilde{\gamma}=1+\pazocal{O}(\beta^2)
 \]
@@ -347,7 +347,7 @@ A^\mu_\nu=\left(\begin{array}{cccc}
 \end{array}\right)=(K_1+J_2)^\mu_\nu
 \]
 where $K_1$ is the generator of the boosts along the $x$-axis and $J_2$ the generator of the rotations around $\hat{y}$ [\refsec{replor}].\\
-What other transformations can we do? Another possibility is to perform a SO(2) rotation in the $xy$ plane or a transformation like the previous one but with the initial 1boost along the $y$-axis, a rotation in the $yz$ plane and a boost along the $z$-axis, defining in this way $B^\mu_\nu$.
+What other transformations can we do? Another possibility is to perform a SO(2) rotation in the $xy$ plane or a transformation like the previous one but with the initial boost along the $y$-axis, a rotation in the $yz$ plane and a boost along the $z$-axis, defining in this way $B^\mu_\nu$.
 \[
 B^\mu_\nu=\left(\begin{array}{cccc}
     0 & 0 & -i & 0 \\
@@ -473,7 +473,7 @@ When we transform it, we require that $U(\Lambda)V^\mu(x)U^{-1}(\Lambda)=(\Lambd
 \[
 \left\{
 \begin{aligned}
-&U(\Lambda)V^\mu(x)U^{-1}(\Lambda)=\sum_{\sigma\sigma'}\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_p}}\sqrt{\frac{E_{p_\Lambda}}{E_p}}\left[D_{\sigma\sigma'}^*\varepsilon^\mu(\vec{p},\sigma)a(\vec{p}_\Lambda,\sigma')e^{-ipx}+\text{h.c.}\right]\\
+&U(\Lambda)V^\mu(x)U^{-1}(\Lambda)=\sum_{\sigma\sigma'}\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_p}}\sqrt{\frac{E_{p_\Lambda}}{E_p}}\left[D_{\sigma\sigma'}^*(W(\Lambda,p))\varepsilon^\mu(\vec{p},\sigma)a(\vec{p}_\Lambda,\sigma')e^{-ipx}+\text{h.c.}\right]\\
 &(\Lambda^{-1})^\mu_\nu V^\nu(\Lambda x)=\sum_{\sigma'}\int\frac{d^3p_\Lambda}{(2\pi)^3}\frac{1}{\sqrt{2E_{p_\Lambda}}}[(\Lambda^{-1})^\mu_\nu\varepsilon^\nu(\Vec{p}_\Lambda,\sigma')a(\Vec{p}_\Lambda,\sigma')e^{-i(\Lambda p)(\Lambda x)}+\text{h.c.}]
 \end{aligned}
 \right.
@@ -483,7 +483,7 @@ Comparing the two expressions above, we have to impose that:\marginnote{The inte
 \int\frac{d^3p}{E_p}=\int\frac{d^3p_\Lambda}{E_{p_\Lambda}}
 \]}
 \[
-\sum_\sigma D_{\sigma\sigma'}^*\varepsilon^\mu(\vec{p},\sigma)=(\Lambda^{-1})^\mu_\nu\varepsilon^\nu(\vec{p}_\Lambda,\sigma')
+\sum_\sigma D_{\sigma\sigma'}^*(W(\Lambda,p))\varepsilon^\mu(\vec{p},\sigma)=(\Lambda^{-1})^\mu_\nu\varepsilon^\nu(\vec{p}_\Lambda,\sigma')
 \]
 If we look at the condition we imposed over $\varepsilon^\mu(\vec{p},\sigma)$, it is possible to see that there are two indices which transform under Lorentz, $\mu$ and $\sigma$. $\mu$ transforms with $\Lambda$, which is what we expect for a vector, but also $\sigma$ transforms and it has nothing to do with the field. $\sigma$ is the index for particles and it transforms as a representation of the little group: $\varepsilon^\mu(\vec{p},\sigma)$ is the object connecting particles and fields.\\
 We would like to find an explicit expression for $\varepsilon^\mu(\vec{p},\sigma)$, to do that we work in the reference frame where the particle is at rest, $\Vec{p}=0$. Let $\Lambda$ be the standard boost $L(q)$ that takes a particle of mass $m$ from rest to some four-momentum $q^\mu$. It follows that $L(p)=\mathbb{1}$ and:
@@ -495,7 +495,7 @@ This implies that $D_{\sigma\sigma'}(W)=D_{\sigma\sigma'}(\mathbb{1})=\delta_{\s
 \varepsilon^\mu(\Vec{0},\sigma)=(L^{-1}(q))^\mu_\nu\varepsilon^\nu(\vec{q},\sigma)\xleftrightarrow[]{}\varepsilon^\mu(\vec{q},\sigma)=L(q)^\mu_\nu\varepsilon^\nu(\Vec{0},\sigma)
 \]
 In other words, if we know the expression for the polarization vector in the reference system where the particle is at rest, then know the expression for the polarization vector in any reference system by simply performing a boost.\\
-Now, keep working with $\Vec{p}=0$ but this time let $\Lambda$ be a Lorentz transformation with $\Vec{p}_\Lambda=0$, i.e. take $\Lambda$ as a rotation $R$. The rotation acts on the spatial components which are all equal to zero, hence $L(\Lambda k)=L(k)=\mathbb{1}$ so $W=\Lambda=R$. We substitute it:
+Now, keep working with $\Vec{p}=0$ but this time let $\Lambda$ be a Lorentz transformation with $\Vec{p}_\Lambda=0$, i.e. take $\Lambda$ as a rotation $R$. The rotation acts on the spatial components which are all equal to zero, hence $L(\Lambda p)=L(p)=\mathbb{1}$ so $W=\Lambda=R$. We substitute it:
 \[
 \sum_\sigma D_{\sigma\sigma'}^*(R)\varepsilon^\mu(\Vec{0},\sigma)=(R^{-1})^\mu_\nu\varepsilon^\nu(\Vec{0},\sigma')
 \]
@@ -760,7 +760,7 @@ The Lagrangian is given by:
 \[
 \pazocal{L}(\Psi)=\overline{\Psi}(i\gamma^\mu\partial_\mu-m)\Psi
 \]
-This Lagrangian has a U(1) global invariance $\Psi(x)\to e^{i\alpha}\Psi(x)$ and the current is given by $J^\mu(x)=\overline{\Psi}\gamma^\mu\Psi$. Let's introduce now an interaction term between $\Psi(x)$ and $A^\mu(x)$:
+This Lagrangian has a U(1) global invariance $\Psi(x)\to e^{i\alpha}\Psi(x)$ and the current is given by $J^\mu(x)=\overline{\Psi}(x)\gamma^\mu\Psi(x)$. Let's introduce now an interaction term between $\Psi(x)$ and $A^\mu(x)$:
 \[
 \pazocal{L}_{\text{int}}=A_\mu J^\mu
 \]
@@ -787,7 +787,8 @@ The Lagrangian is given by:
 \[
 \pazocal{L}(\phi)=\partial_\mu\phi^\dagger\partial^\mu\phi-m^2\phi^\dagger\phi
 \]
-It has a global U(1) invariance $\phi(x)\to e^{i\alpha}\phi(x)$, the interaction term is the same as the previous example $A_\mu J^\mu$ with now $J^\mu(x)=\phi^\dagger i\overset{\leftrightarrow}{\partial_\mu}\phi$. We repeat the same steps we did for the fermionic field, so under Lorentz transformation $\pazocal{L}(\phi)$ is invariant while the interaction Lagrangian presents again a shift due to gauge transformation.
+It has a global U(1) invariance $\phi(x)\to e^{i\alpha}\phi(x)$, the interaction term is the same as the previous example $A_\mu J^\mu$ with now the current given by\\
+$J^\mu(x)=\phi^\dagger(x)i\overset{\leftrightarrow}{\partial_\mu}\phi(x)$. We repeat the same steps we did for the fermionic field, so under Lorentz transformation $\pazocal{L}(\phi)$ is invariant while the interaction Lagrangian presents again a shift due to gauge transformation.
 \[
 \delta\pazocal{L}_{\text{int}}=\partial_\mu\alpha(x)J^\mu(x)
 \]
@@ -862,7 +863,7 @@ $\Box$ is the \textbf{fundamental representation} which is the smallest non-triv
 Assume now that $\pazocal{L}(A)$ is invariant under global and local transformations of G and that under a global transformations of G we have:
 \begin{align*}
 \Psi(x)&\to\Omega\Psi(x)\\
-A_\mu^a\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize  generators in $r$};}}{T^a(r)}:=A_\mu&\to\Omega A_\mu\Omega^{-1}
+A_\mu^a(x)\underset{\mathclap{\tikz \node {$\uparrow$} node [below=1ex] {\footnotesize  generators in $r$};}}{T^a(r)}:=A_\mu(x)&\to\Omega A_\mu\Omega^{-1}
 \end{align*}
 In this way, the field transforms as a matrix. This is $A_\mu^a$ under global transformations of G, let's see how it transforms under other transformations.
 \[
