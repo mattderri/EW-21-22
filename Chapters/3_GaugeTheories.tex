@@ -1088,7 +1088,7 @@ $Z_1$ is obtained from the $\overline{\Psi}A_\mu\Psi$ vertex, $Z_3$ from the vac
 % \end{align*}
 \end{example}
 As we have just seen, in QED the $\beta$-function is positive, this means that the interaction coupling grows with the energy. In principle, one can imagine scattering processes at arbitrary high energies where the coupling will explode: QED is not a complete theory, it does not work at arbitrary high energies.\\
-Usually, we stop at first order in the $\beta$-function because the coupling is small, but as it gets bigger we have to include higher order terms too. By including higher order terms, theory may \textit{cure itself}, for example with a change of sign. In this case, for a certain value of the coupling $g$, denoted by $g^*$, the theory does not evolve anymore and the coupling constant is really a constant. At this so-called \textbf{fixed point}, the theory is \textbf{conformal}, there is no physical scale and everything is invariant. Sadly, this fixed point does not exist in QED, so the theory explodes at some point and it has to be replaced by something else. This is what we call an \textbf{effective theory} [\refch{EFT}], a theory valid only at low energy that has to be replaced with another theory which guarantees a more fundamental description. This is what we do by introducing the \textbf{Standard Model} [\refch{SM}].\\
+Usually, we stop at first order in the $\beta$-function because the coupling is small, but as it gets bigger we have to include higher order terms too. By including higher order terms, theory may \textit{cure itself}, for example with a change of sign. In this case, for a certain value of the coupling $g$, denoted by $g^*$, the theory does not evolve anymore and the coupling constant is really a constant. At this so-called \textbf{fixed point}, the theory is \textbf{conformal}, there is no physical scale and everything is invariant. Sadly, this fixed point does not exist in QED, so the theory explodes at some point and it has to be replaced by something else. This is what we call an \textbf{effective theory} [\refch{EFT}], a theory valid only at low energy that has to be replaced with another theory which guarantees a more fundamental description. This is what we do by introducing the \textbf{Standard Model} [\refch{IntroSM}].\\
 In the abelian case, the coupling evolves until it becomes zero for $E\to0$. The variation of velocity is zero, there is no evolution and this is reached only asymptotically. Conversely, when the energy increases the $\beta$-function increases too and we have two possibilities as $E\to\infty$: 
 \begin{enumerate}
     \item $\beta(g)$ remains positive and there are two sub-cases: $g(E)\to\infty$ for $E\toE_0$ (\href{https://en.wikipedia.org/wiki/Lev_Landau}{Landau} pole) or $g(E)\to\infty$ as $E\to\infty$. In both cases, the theory is not complete.
@@ -1131,7 +1131,7 @@ We check that it has the right behaviour:
     1+\frac{\beta_0}{16\pi^2}e_R^2(M)\ln(\mu^2/M^2)=0\to\Lambda_{\text{QED}}:=M\exp{-\frac{8\pi^2}{\beta_0}\frac{1}{e_R^2(M)}}
     \]
 \end{itemize}
-Using $\alpha(m_e=511\,\text{keV})=\frac{e_R^2(m_e)}{4\pi}=\frac{1}{137}$, we find $\Lambda_{\text{QED}}=10^{286}$\,eV. In doing this, we swapped a dimensionless number for a dimensionful scale: this is known as \textbf{dimensional transmutation}. This uncovers a very profound misconception about nature: electrodynamics is fundamentally defined not by the electric charge, as we learned classically, but by a dimensionful scale $\Lambda_{\text{QED}}$. Moreover, this scale only has a meaning if there is another scale in the theory, such as the electron mass, so really it is the ratio $m_e/\Lambda_{\text{QED}}$ which specifies QED completely.\\
+Using $\alpha(m_e=511\,\text{keV})=\frac{e_R^2(m_e)}{4\pi}=\frac{1}{137}$, we find $\Lambda_{\text{QED}}\approx10^{286}$\,eV. In doing this, we swapped a dimensionless number for a dimensionful scale: this is known as \textbf{dimensional transmutation}. This uncovers a very profound misconception about nature: electrodynamics is fundamentally defined not by the electric charge, as we learned classically, but by a dimensionful scale $\Lambda_{\text{QED}}$. Moreover, this scale only has a meaning if there is another scale in the theory, such as the electron mass, so really it is the ratio $m_e/\Lambda_{\text{QED}}$ which specifies QED completely.\\
 The point is that when the energy increases it is not possible to use perturbation theory anymore because the coupling becomes too large. If we want to reach the IR fixed point there will be other scales, because we reach energies compatible with the mass of the electron. Electrons contribution in the diagram will freeze out for energies smaller than the mass of the electron, so we can create an effective theory without electrons, cutting them off. This theory has only the photons with some self-interaction induced by virtual electrons loops. These interactions disappear at low energies but at this point is not QED anymore, it is a theory of only photons.\\
 % At the fixed points of the renormalization groups $\beta(g)=0$: $g$ is a constant, the theory, without masses, is self-similar. In a normal situation, by changing the energy we obtain different results for scattering processes because we have running coupling, while in this case we have the same results because the theory does not evolve anymore. Scattering processes do not depend anymore on the energy of the particles involved.\\
 % \underline{QED for $m_e=0$}:
@@ -1201,7 +1201,7 @@ At some point, we will get to the energy of the order of the mass of the first f
 \section{Spin-1 Particles as a Gauge Theory}
 Summarizing, we have seen the Coulomb phase with short range forces, then the conformal phase where there are no particles and lastly the confinement phase with asymptotic bound states. There is another possibility. Consider the Proca Lagrangian for massive spin-1 particles:
 \[
-\pazocal{L}_{\text{P}}=-\frac{1}{4}V_{\mu\nu}^2+\frac{m_v^2}{2}V_\mu^2 \quad V_{\mu\nu}=\partial_\mu V_\nu-\partial_\nu V_\mu
+\pazocal{L}_{\text{P}}=-\frac{1}{4}V_{\mu\nu}^2+\frac{1}{2}m_v^2V_\mu^2 \quad V_{\mu\nu}=\partial_\mu V_\nu-\partial_\nu V_\mu
 \]
 We want to understand how this Lagrangian is connected with gauge invariance and gauge symmetry. To do that, we use the so-called \href{https://en.wikipedia.org/wiki/Ernst_Stueckelberg}{Stueckelberg} trick which is nothing but a change of variables in which we put $V_\mu(x)=A_\mu(x)-\partial_\mu\pi(x)$, where $A_\mu(x)$ is a gauge field and $\pi(x)$  a scalar field. This description is not unique, we can choose the two fields in different ways. We have a redundancy, with these new variables, the Lagrangian is invariant under:
 \[
@@ -1224,7 +1224,7 @@ $\xi$ is an arbitrary dimensionless parameter, we define $\chi(x):=m_v\pi(x)$ an
 \begin{align*}
 \pazocal{L}=\pazocal{L}_{\text{P}}+\pazocal{L}_{\text{GF}}&=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}A_\mu^2-\frac{1}{2\xi}(\partial_\mu A^\mu)^2+\frac{1}{2}(\partial_\mu\chi)^2-\frac{1}{2}\xi m_v^2\chi^2-m_v^2A_\mu\partial_\mu\pi-m_v^2\partial_\mu A^\mu\pi\\
 &=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}A_\mu^2-\frac{1}{2\xi}(\partial_\mu A^\mu)^2+\frac{1}{2}(\partial_\mu\chi)^2-\frac{1}{2}\xi m_v^2\chi^2-m_v^2\partial_\mu(A^\mu\pi)\\
-&=-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}A_\mu^2-\frac{1}{2\xi}(\partial_\mu A^\mu)^2+\frac{1}{2}(\partial_\mu\chi)^2-\frac{1}{2}\xi m_v^2\chi^2
+&=\underbrace{-\frac{1}{4}F_{\mu\nu}^2+\frac{m_v^2}{2}A_\mu^2-\frac{1}{2\xi}(\partial_\mu A^\mu)^2}\underbrace{+\frac{1}{2}(\partial_\mu\chi)^2-\frac{1}{2}\xi m_v^2\chi^2}
 \end{align*}
 The last term has been dropped since it is a total derivative and it gives a null surface contribution in the action.\\
 This is now the Lagrangian of our theory with no mixed terms. The first part resembles a gauge theory, except for the mass term which seems a bit odd, while the second part is a scalar theory. In order to quantize the theory, we can invert the kinetic term to get the propagator so that we can understand how many physical degrees of freedom there are: we started with 3 degrees of freedom, i.e. massive spin-1 particle, and now apparently we have 4 of them. We have to study the poles of the propagators.
@@ -1291,8 +1291,17 @@ This is now a gauge theory in which the fields transform like:
 \end{aligned}
 \right.
 \]
-By defining $\alpha(x):=g\varepsilon(x)$ it becomes a gauge transformation which acts linearly. Before it was not a linear transformation in $\chi$ because there was a non-linear shift, moreover $\varphi$ is subject to a non-linear constraint $\varphi^\dagger\varphi=v^2$.\\
-At this point, we forget about all the considerations we made about gauge transformations and we consider U(1):$\varphi(x)\to e^{i\alpha(x)}\varphi(x)$. We have a gauge theory with a U(1) global symmetry non-linearly realized, $\chi$ is nothing but the NGB corresponding to this spontaneously broken global invariance: this symmetry is not realized à la Wigner, but rather à la Nambu-Goldstone. Gauge theories with spontaneously broken global symmetry correspond to theories of massive spin-1 particles.\\
+By defining $\alpha(x):=g\varepsilon(x)$, the part regarding $A_\mu(x)$ and $\varphi(x)$ becomes a gauge transformation which acts linearly. 
+\[
+\left\{
+\begin{aligned}
+&\varphi(x)\toe^{i\alpha(x)}\varphi(x)\\
+&A_\mu(x)\to A_\mu(x)+\frac{1}{g}\partial_\mu\alpha(x)
+\end{aligned}
+\right.
+\]
+Previously, it was not a linear transformation in $\chi$ because there was a non-linear shift, moreover $\varphi$ is subject to a non-linear constraint $\varphi^\dagger\varphi=v^2$.\\
+At this point, we forget about all the considerations we made about gauge transformations and we consider U(1):$\varphi(x)\to e^{i\alpha(x)}\varphi(x)$. We have a gauge theory with a U(1) global symmetry non-linearly realized, $\chi$ is nothing but the NGB corresponding to this spontaneously broken global (non-linearly realized) invariance: this symmetry is not realized à la Wigner, but rather à la Nambu-Goldstone. Gauge theories with spontaneously broken global symmetry correspond to theories of massive spin-1 particles.\\
 Spontaneous Symmetry Breaking (SSB) does not occur only when we have a potential, for example there is no potential in what we have just seen. The important thing is how this symmetry is realized, whether à la Wigner (linearly) or à la Nambu-Goldstone (non-linearly). Notice that it is the global invariance to be broken, not the gauge one which is a redundancy and cannot be spontaneously broken. If we go to energies much larger than the mass of this spin-1 particle, then we can ignore it. Our theory has 3 degrees of freedom, which are the three possible polarizations of a massive spin-1 particle $(\sigma=-1,0,+1)$: at high energies we can include the theory in the Poincaré group and treat it as a massless spin-1 particle plus a scalar. So it is a gauge theory both at high energies and at low energies since we have SSB.\\
 As said, for $E\gg m_v$ we neglect the mass terms:
 \[
@@ -1303,7 +1312,8 @@ The part associated to the massless spin-1 particle propagates only two degrees 
 \section{\href{https://en.wikipedia.org/wiki/Robert_Brout}{Brout}-\href{https://en.wikipedia.org/wiki/Francois_Englert}{Englert}-\href{https://en.wikipedia.org/wiki/Peter_Higgs}{Higgs} Mechanism}\marginnote{From \cite{schwartz}, Section 28.3\\
 From \cite{CL}, Section 8.3.}
 We saw that the imposition of local symmetry implies the existence of massless vector particles. If we want to avoid this feature of the gauge theory and obtain massive vector bosons, the gauge symmetry must be broken somehow. If we introduce explicit breaking terms in the form of arbitrary gauge boson masses, we alter the high-energy behaviour of the theory in such a way that the renormalizability is lost.\\
-We have the situation of a hidden symmetry: the Lagrangian is still invariant under the symmetry transformations but the dynamics are such that the vacuum is not a singlet of the symmetry group. The choice of one of all the possible degenerate vacua breaks the symmetry. According to Goldstone theorem [\refthm{GT}], this would imply the existence of a set of massless scalar bosons so, again, we run into undesired massless particles. However, the proof of the theorem requires the validity of the usual field theory axioms: manifest Lorentz covariance, positivity of the norm and so on. There is no gauge-fixing condition we can impose for a theory to obey \textit{all} the axioms of the usual field theories. If we consider massless gauge bosons and massless Goldstone bosons as disease of the theory, each turns out to be the cure of the other. They both disappear from the physical spectrum of the theory by combining to form massive vector particles, without ruining the good high-energy behaviour of the symmetric theory.\\
+We have the situation of a hidden symmetry: the Lagrangian is still invariant under the symmetry transformations but the dynamics are such that the vacuum is not a singlet of the symmetry group. The choice of one of all the possible degenerate vacua breaks the symmetry. According to Goldstone theorem [\refthm{GT}], this would imply the existence of a set of massless scalar bosons so, again, we run into undesired massless particles.\\
+However, the proof of the theorem requires the validity of the usual field theory axioms: manifest Lorentz covariance, positivity of the norm and so on. There is no gauge-fixing condition we can impose for a theory to obey \textit{all} the axioms of the usual field theories. If we consider massless gauge bosons and massless Goldstone bosons as disease of the theory, each turns out to be the cure of the other. They both disappear from the physical spectrum of the theory by combining to form massive vector particles, without ruining the good high-energy behaviour of the symmetric theory.\\
 Consider the simple case of an abelian U(1) gauge theory:
 % At this point we want to get rid of the constraint $\varphi^\dagger\varphi=v^2$ introduced before and we can show that in order to do that we have to introduce another degree of freedom, namely a scalar field: the \textbf{Higgs boson}. We start with:
 \[
@@ -1358,7 +1368,7 @@ We take the modulus squared of this object and we are left with:
 \]
 When expanding the square in the last term, there is a mixing term which we want to get rid of. Again, we add a gauge-fixing term to remove this unwanted part:
 \[
-\pazocal{L}_{\text{GF}}=-\frac{1}{2\xi}(\partial_\mu A^\mu+\xi gv\chi)^2
+\pazocal{L}_{\text{GF}}=-\frac{1}{2\xi}(\partial_\mu A_\mu+\xi gv\chi)^2
 \]
 Putting everything together we obtain:
 \begin{align*}
@@ -1397,9 +1407,6 @@ We now take a look at some possible choices for $\xi$:
     \frac{\chi}{v}\to\frac{\chi}{v}+\alpha(x) \quad \alpha(x)=-\frac{\chi}{v} 
     \]
     We send the NGB to zero but if $\xi\to\infty$, then the mass of the NGB goes to infinity too so we cannot excite this state anymore because it would require an infinite amount of energy.
-    \[
-    \Pi_{\mu\nu}(p)=-\frac{i}{p^2-m_A^2}\left(\eta_{\mu\nu}-\frac{p_\mu p_\nu}{m_A^2}\right)
-    \]
 \end{enumerate}
 % The generic expression for the propagator is given by:
 % \[
@@ -1407,7 +1414,7 @@ We now take a look at some possible choices for $\xi$:
 % \]
 In some gauges, the NGB is not present while we find it in some other ones, whether it is massive or massless. However, the Goldstone theorem [\refthm{GT}] tells us that whenever we have SSB we should have a massless NGB. It seems like this theorem holds true for some cases and in some other ones it is not valid anymore: the validity of the Goldstone theorem depends on the gauge-fixing. For example, non-covariant gauges (like the Coulomb one) violate the theorem. For the Goldstone theorem, we needed that:
 \[
-\lim_{V\to\infty}[Q_V(t),\phi(0)]=\lim_{V\to\infty}\int_Vd^3x[J^0(\Vec{x},t),\phi(0)]<\infty
+\lim_{V\to\infty}[Q_V(t),\phi(x)]=\lim_{V\to\infty}\int_Vd^3y[J^0(\Vec{y},t),\phi(x)]<\infty
 \]
 To prove that we used microcausality, which exploits Lorentz covariance. If we work in a gauge with no Lorentz covariance, we will have some problems in this step. Even when these NGBs are massless and present in the theory, they are not physical quantities. Therefore, although the theorem is still valid it does not produce a physical contribution.\\
 % We can prove that by considering the fact that the $S$-matrix must be unitary when we include the physical states. Restricting the $S$-matrix to the space of physical states, without including the NGBs, keeps the $S$-matrix unitary: in a gauge theory, the NGB is never physical and we can always choose a gauge in which it is not even present.\\
@@ -1450,7 +1457,7 @@ M=-4i\left(\frac{m_A^4}{v^2}\right)\left[\frac{\varepsilon_L(p_1)\cdot\varepsilo
 \]
 where we denoted with $s$ the momentum flowing inside the S-channel. We are interested in the high energy limit, for which the polarization becomes:
 \[
-\varepsilon_L^\mu=\frac{1}{m_A}(|\Vec{p}|,E\hat{p})\to\frac{P^\mu}{m_A}\left(1+\pazocal{O}\left(\frac{m_A^2}{E^2}\right)\right)
+\varepsilon_L^\mu=\frac{1}{m_A}(|\Vec{p}|,E\hat{p})\to\frac{p^\mu}{m_A}\left(1+\pazocal{O}\left(\frac{m_A^2}{E^2}\right)\right)
 \]
 We can substitute this in the previous expression for $M$:
 \[
