@@ -1698,12 +1698,12 @@ The last term gives us the mass term, since the trace is cyclic, $\Sigma$ is uni
 \]
 We want to compute $igA_\mu^a\Tr{\Sigma^\dagger\frac{\sigma^a}{2}\partial_\mu\Sigma}$ so we expand up to second order:
 \begin{align*}
-\Tr{\Sigma^\dagger\frac{\sigma^a}{2}(\partial_\mu\Sigma)}&\simeq\Tr{(1-i\chi-\frac{\chi^2}{2}+\dots)\frac{\sigma^a}{2}(i\partial_\mu\chi-\frac{\partial_\mu\chi^2}{2}+\dots)}\\
-&=\left[\Tr{i\frac{\sigma^a}{2}\partial_\mu\chi}+\Tr{\chi\frac{\sigma^a}{2}\partial_\mu\chi-\frac{1}{2}\frac{\sigma^a}{2}\partial_\mu\chi^2}+\pazocal{O}(\chi^3)\right]
+\Sigma^\dagger\frac{\sigma^a}{2}(\partial_\mu\Sigma)&\simeq(1-i\chi-\frac{\chi^2}{2}+\dots)\frac{\sigma^a}{2}(i\partial_\mu\chi-\frac{\partial_\mu\chi^2}{2}+\dots)\\
+&=i\frac{\sigma^a}{2}\partial_\mu\chi+\chi\frac{\sigma^a}{2}\partial_\mu\chi-\frac{1}{2}\frac{\sigma^a}{2}\partial_\mu\chi^2+\pazocal{O}(\chi^3)
 \end{align*}
 Hence, after some annoying calculations, one obtains:
 \[
-\Tr{\Sigma^\dagger\frac{\sigma^a}{2}\overset{\leftrightarrow}{\partial_\mu}\Sigma}=\frac{2i}{v}\partial_\mu\chi^a+\frac{2i}{v^2}\epsilon^{abc}\partial_\mu\chi^b\chi^c+\pazocal{O}(\chi^3)
+\Tr{\Sigma^\dagger\frac{\sigma^a}{2}\overset{\leftrightarrow}{\partial_\mu}\Sigma}=\frac{2i}{v}\partial_\mu\chi^a+\frac{2}{v^2}\epsilon^{abc}(\partial_\mu\chi^b)\chi^c+\pazocal{O}(\chi^3)
 \]
 Once we multiply this by $\frac{v^2}{4}igA_\mu^a$, from the first term we get that\\
 $\pazocal{L}\supset-\frac{1}{2}gvA_\mu^a\partial^\mu\chi^a$ which is the term we want to remove, so we choose a proper gauge-fixing term:
@@ -1714,7 +1714,7 @@ Focus now on the term $\Tr{(\partial_\mu\Sigma)^\dagger(\partial^\mu\Sigma)}$ fr
 \[
 \Tr{(\partial_\mu\Sigma)^\dagger(\partial^\mu\Sigma)}\simeq\Tr{(-i\partial_\mu\chi-\frac{1}{2}\partial_\mu\chi^2+\frac{i}{6}\partial_\mu\chi^3+\dots)(i\partial_\mu\chi-\frac{1}{2}\partial_\mu\chi^2-\frac{i}{6}\partial_\mu\chi^3+\dots)}
 \]
-The term $\chi^2$ is equal to $\chi^2=\frac{\chi^a\sigma^a}{v}\frac{\chi^b\sigma^b}{v}=\frac{\chi^a\chi^b}{v^2}\frac{1}{2}\{\sigma^a\sigma^b\}$ so we can write:
+The term $\chi^2$ is equal to $\chi^2=\frac{\chi^a\sigma^a}{v}\frac{\chi^b\sigma^b}{v}=\frac{\chi^a\chi^b}{v^2}\frac{1}{2}\{\sigma^a,\sigma^b\}$ so we can write:
 \[
 \frac{v^2}{4}\Tr{(\partial_\mu\Sigma)^\dagger(\partial^\mu\Sigma)}=\frac{1}{2}(\partial_\mu\chi^a)^2+\frac{1}{6v^2}[(\chi^a\partial_\mu\chi^a)^2-\chi^a\chi^a(\partial_\mu\chi^b\partial^\mu\chi^b)]+\pazocal{O}(\chi^6)
 \]
@@ -1722,7 +1722,7 @@ The very last term above corresponds to a quartic contact interaction and it is 
 Summarizing, the full Lagrangian with the gauge-fixing term is the following:
 \begin{align*}
 \pazocal{L}+\pazocal{L}_{\text{GF}}=&-\frac{1}{4}(F_{\mu\nu}^a)^2-\frac{1}{2\xi}(\partial_\mu A^{\mu,a})^2+\frac{1}{2}m_A^2A_\mu^aA_\mu^a+\frac{1}{2}(\partial_\mu\chi^a)^2-\frac{1}{2}m_A^2\xi(\chi^a)^2\\
-&-\frac{1}{2}g\epsilon^{abc}A_\mu^a\partial_\mu\chi^b\chi^c+\frac{1}{6v^2}\left[(\chi^a\partial_\mu\chi^a)^2-\chi^a\chi^a(\partial_\mu\chi^b\partial^\mu\chi^b)\right]+\pazocal{O}(\chi^b,A\chi^3)
+&-\frac{1}{2}g\epsilon^{abc}A_\mu^a(\partial_\mu\chi^b)\chi^c+\frac{1}{6v^2}\left[(\chi^a\partial_\mu\chi^a)^2-\chi^a\chi^a(\partial_\mu\chi^b\partial^\mu\chi^b)\right]+\pazocal{O}(\chi^b,A\chi^3)
 \end{align*}
 where $m_A=\frac{gv}{2}$. Now that we have the Lagrangian, it is possible to compute the amplitude. The contribution comes from the diagram depicted on the side and again we don't do the general case but a special one: $\chi^a\chi^b\to\chi^a\chi^b$.\marginnote{\includegraphics[width=0.3\textwidth]{Images/abab.pdf}\\
 Diagram at the first order in perturbation theory.}
@@ -1828,7 +1828,7 @@ The last piece vanishes because it is nothing but $\Tr{D_\mu(\Sigma^\dagger\Sigm
 \[
 \Sigma\to L\Sigma R^\dagger\Rightarrow(\Sigma^\dagger\Sigma)\to R(\Sigma^\dagger\Sigma)R^\dagger
 \]
-We are left with the kinetic term for $\Sigma$ which we have already encountered before, $\Tr{\Sigma\Sigma^\dagger}=2$ so the Lagrangian is obtained by plugging this expression in \refeq{lsigma}:
+We are left with the kinetic term for $\Sigma$ which we have already encountered before, $\Tr{\Sigma\Sigma^\dagger}=2$ so the Lagrangian is obtained by plugging this expression in \refeq{lsigma}, adding also the potential $V(\pazocal{H})$, with a minus sign in front:
 \[
 \pazocal{L}=-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{2}(\partial_\mu\varphi)^2+\frac{\mu^2}{2}\varphi^2-\frac{\lambda}{4}\varphi^4+\frac{1}{4}\varphi^2\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}
 \]
