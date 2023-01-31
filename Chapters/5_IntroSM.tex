@@ -116,7 +116,7 @@ The Standard Model is a theory of fields of spin 0, $\frac{1}{2}$ and 1, summari
         \caption{Field content in the Standard Model.}
         \labtab{SMfield}
     \end{table}\\
-The \textbf{fermions} (matter fields), highlighted in orange in the table, are formed by quarks and leptons. Quarks come in triplet of colours, left-handed quarks and leptons come in doublets of weak isospin, where $i$ is the family index $i=1,2,3$. The fact that left- and right-handed fermions carry different weak isospin makes the Standard Model is a chiral gauge theory. There is no right-handed neutrino because we do not need it now, we want the minimum number of fields which reproduce what is observed in nature, although there is evidence for neutrino masses from neutrino oscillations experiments. The threefold replication of quark-lepton families is one of the
+The \textbf{fermions} (matter fields), highlighted in orange in the table, are formed by quarks and leptons. Quarks come in triplet of colours, left-handed quarks and leptons come in doublets of weak isospin, where $i$ is the family index $i=1,2,3$. The fact that left- and right-handed fermions carry different weak isospin makes the Standard Model a chiral gauge theory. There is no right-handed neutrino because we do not need it now, we want the minimum number of fields which reproduce what is observed in nature, although there is evidence for neutrino masses from neutrino oscillations experiments. The threefold replication of quark-lepton families is one of the
 puzzles whose explanation requires physics beyond the Standard Model.\\
 The spin-1 particles are the \textbf{gauge bosons} associated with the fundamental interactions, highlighted in blue in the table: $G_\mu^a$ are the \textbf{gluons} of the \textbf{strong interaction}, $W_\mu^i$ and $B_\mu$ are the bosons of the \textbf{electroweak interaction}.\\
 The last ingredient of the Standard Model is the \textbf{Higgs field}, the only spin-0 particle in the theory, highlighted in purple in the table. It is a complex scalar field and a doublet of weak isospin, coupling left- and right-handed fermions together.\\
@@ -164,16 +164,16 @@ $h(x)$ is the radial excitation while $\chi(x)$ is the angular excitation: the l
     0\\v
 \end{pmatrix}
 \]
-Now we act with a combination of generators from SU(2)$\times$U(1), which is $a_0Y+a_i\frac{\sigma_i}{2}$. We want to see when $(a_0Y+a_i\frac{\sigma_i}{2})\langle H(x)\rangle=0$.
+Now we act with a combination of generators from SU(2)$\times$U(1), which is $a_i\frac{\sigma_i}{2}a_0Y$. We want to see when $(a_i\frac{\sigma_i}{2}+a_0Y)\langle H(x)\rangle=0$.
 \begin{align*}
-\left(a_0Y+a_i\frac{\sigma_i}{2}\right)\langle H(x)\rangle&=\frac{1}{2}\left(\begin{array}{cc}
-    a_0+a_3 & a_1-ia_2 \\
-    a_1+ia_2 & a_0-a_3
+\left(a_i\frac{\sigma_i}{2}+a_0Y\right)\langle H(x)\rangle&=\frac{1}{2}\left(\begin{array}{cc}
+    2a_0+a_3 & a_1-ia_2 \\
+    a_1+ia_2 & 2a_0-a_3
 \end{array}\right)\begin{pmatrix}
     0\\1
 \end{pmatrix}\\
 &=\frac{1}{2}\begin{pmatrix}
-    a_1-ia_2\\a_0-a_3
+    a_1-ia_2\\2a_0-a_3
 \end{pmatrix}
 \begin{pmatrix}
     0\\1
@@ -181,10 +181,10 @@ Now we act with a combination of generators from SU(2)$\times$U(1), which is $a_
     0\\0
 \end{pmatrix}\Rightarrow\left\{\begin{aligned}
     &a_1=a_2=0\\
-    &a_0=a_3
+    &a_0=\frac{1}{2}a_3
 \end{aligned}\right.
 \end{align*}
-The \textbf{unbroken generator} is $Q=Y+T_3$, the Higgs scalar potential breaks SU$(2)_{\text{EW}}\times$U$(1)_{\text{Y}}$ into U$(1)_{\text{Q}}$, i.e. 3+1 generators are broken into 1, resulting in 3 massless modes.\\
+The \textbf{unbroken generator} is $Q=T_3+\frac{1}{2}Y$, the Higgs scalar potential breaks SU$(2)_{\text{EW}}\times$U$(1)_{\text{Y}}$ into U$(1)_{\text{Q}}$, i.e. 3+1 generators are broken into 1, resulting in 3 massless modes.\\
 We now want to see masses and couplings, so we move in the unitary gauge where $\chi^i=0$. In the unitary gauge the potential will depend on $h(x)$, resulting in:
 \[
 V(H)=\frac{1}{2}m_h^2h^2(x)+\lambda vh^3(x)+\frac{1}{4}\lambda h^4(x)+\text{constant terms}
@@ -289,8 +289,8 @@ From this rotation, it follows that:
 \labeq{azbasis}
 \left\{
 \begin{aligned}
-&Z_\mu=\cos\theta_wW_\mu^3-\sin\theta_wB_\mu\\
-&A_\mu=\sin\theta_wW_\mu^3+\cos\theta_wB_\mu
+&A_\mu=\sin\theta_wW_\mu^3+\cos\theta_wB_\mu\\
+&Z_\mu=\cos\theta_wW_\mu^3-\sin\theta_wB_\mu
 \end{aligned}
 \right.
 \Leftrightarrow
@@ -354,28 +354,28 @@ e_R^i=\{e_R,\mu_R,\tau_R\} \quad u_R^i=\{u_R,c_R,t_R\} \quad d_R^i=\{d_R,s_R,b_R
 They all transform as right-handed Weyl spinors under the Lorentz group.\marginnote{Again, right-handed neutrinos are not included despite observations suggest their existence.}\\
 Consider now the electroweak kinetic term in $Q_L^i$:
 \[
-\overline{Q}_L^ii\slashed{D}Q_L^i=\overline{Q}_L^ii\gamma^\mu\left(\partial_\mu-igW_\mu^i\frac{\sigma^i}{2}-ig'YB_\mu\right)Q_L^i
+\overline{Q}_L^ii\slashed{D}Q_L^i=\overline{Q}_L^ii\gamma^\mu\left[\partial_\mu-\frac{i}{2}(gW_\mu^i\sigma^i-ig'YB_\mu)\right]Q_L^i
 \]
 We use the same substitution as before with $W_\mu^+$ and $W_\mu^-$ to write:
 \[
-\overline{Q}_L^ii\slashed{\partial}Q_L^i+\overline{Q}_L^i\gamma^\mu\left[\frac{g}{\sqrt{2}}(W_\mu^+\sigma^++W_\mu^-\sigma^-)+(gW_\mu^3T_3+g'B_\mu Y)\right]Q_L^i
+\overline{Q}_L^ii\slashed{\partial}Q_L^i+\overline{Q}_L^i\gamma^\mu\left[\frac{g}{\sqrt{2}}(W_\mu^+\sigma^++W_\mu^-\sigma^-)+\left(gW_\mu^3T_3+g'B_\mu \frac{1}{2}Y\right)\right]Q_L^i
 \]
 Now we change to the $A_\mu-Z_\mu$ basis by using \refeq{azbasis} which gives us:
 \begin{align*}
-gW_\mu^3T_3+g'B_\mu Y&=gT_3(\sin\theta_wA_\mu+\cos\theta_wZ_\mu)+g'Y(\cos\theta_wA_\mu-\sin\theta_wZ_\mu)\\
-&=A_\mu(gT_3\sin\theta_w+g'Y\cos\theta_w)+Z_\mu(gT_3\cos\theta_w-g'Y\sin\theta_w)
+gW_\mu^3T_3+g'B_\mu\frac{1}{2}Y&=gT_3(\sin\theta_wA_\mu+\cos\theta_wZ_\mu)+\frac{1}{2}g'Y(\cos\theta_wA_\mu-\sin\theta_wZ_\mu)\\
+&=A_\mu\left(gT_3\sin\theta_w+\frac{1}{2}g'Y\cos\theta_w\right)+Z_\mu\left(gT_3\cos\theta_w-\frac{1}{2}g'Y\sin\theta_w\right)
 \end{align*}
 But we know from \refeq{thetaw} how to express $\sin\theta_w$ and $\cos\theta_w$ in terms of the couplings $g$ and $g'$:
 \[
-gT_3{\color{green}\sin\theta_w}+g'Y{\color{blue}\cos\theta_w}=T_3{\color{green}\frac{{\color{black}g}g'}{\sqrt{g^2+g'^2}}}+Y{\color{blue}\frac{g{\color{black}g'}}{\sqrt{g^2+g'^2}}}=\frac{gg'}{\sqrt{g^2+g'^2}}(T_3+Y):=e\cdot Q
+gT_3{\color{green}\sin\theta_w}+\frac{1}{2}g'Y{\color{blue}\cos\theta_w}=T_3{\color{green}\frac{{\color{black}g}g'}{\sqrt{g^2+g'^2}}}+\frac{1}{2}Y{\color{blue}\frac{g{\color{black}g'}}{\sqrt{g^2+g'^2}}}=\frac{gg'}{\sqrt{g^2+g'^2}}\left(T_3+\frac{1}{2}Y\right):=e\cdot Q
 \]
 where in the last step we have defined:
 \[
-e:=\frac{gg'}{\sqrt{g^2+g'^2}}\xleftrightarrow[]{}\frac{1}{e^2}=\frac{1}{g^2}+\frac{1}{g'^2} \quad Q:=T_3+Y
+e:=\frac{gg'}{\sqrt{g^2+g'^2}}\xleftrightarrow[]{}\frac{1}{e^2}=\frac{1}{g^2}+\frac{1}{g'^2} \quad Q:=T_3+\frac{1}{2}Y
 \]
 This was for the term proportional to $A_\mu$, now we use this result to compute the term proportional to $Z_\mu$:
 \begin{align*}
-gT_3{\color{blue}\cos\theta_w}-g'{\color{red}Y}{\color{green}\sin\theta_w}&={\color{blue}\frac{g{\color{black}g}}{\sqrt{g^2+g'^2}}}T_3-{\color{red}(Q-T_3)}{\color{green}\frac{g'{\color{black}g'}}{\sqrt{g^2+g'^2}}}\\
+gT_3{\color{blue}\cos\theta_w}-g'{\color{red}\frac{1}{2}Y}{\color{green}\sin\theta_w}&={\color{blue}\frac{g{\color{black}g}}{\sqrt{g^2+g'^2}}}T_3-{\color{red}(Q-T_3)}{\color{green}\frac{g'{\color{black}g'}}{\sqrt{g^2+g'^2}}}\\
 &=\sqrt{g^2+g'^2}T_3-Q\frac{g'^2}{\sqrt{g^2+g'^2}}\frac{\sqrt{g^2+g'^2}}{\sqrt{g^2+g'^2}}\\
 &=\sqrt{g^2+g'^2}T_3-\sqrt{g^2+g'^2}Q\frac{g'^2}{g^2+g'^2}\\
 &=\frac{g}{\cos\theta_w}(T_3-\sin^2\theta_wQ)
@@ -383,7 +383,7 @@ gT_3{\color{blue}\cos\theta_w}-g'{\color{red}Y}{\color{green}\sin\theta_w}&={\co
 In the last step we used from \refeq{thetaw} that $\sqrt{g^2+g'^2}=\frac{g}{\cos\theta_w}$ and $\sin^2\theta_w=\frac{g'^2}{g^2+g'^2}$.\\
 At the end of the day, putting everything together we have:
 \begin{align*}
-\overline{Q}_L^ii\slashed{D}Q_L=&\underbrace{\overline{Q}_L^ii\gamma^\mu(\partial_\mu-ieQA_\mu)Q_L}_{\text{photons interaction}}\\
+\overline{Q}_L^ii\slashed{D}Q_L^i=&\underbrace{\overline{Q}_L^ii\gamma^\mu(\partial_\mu-ieQA_\mu)Q_L}_{\text{photons interaction}}\\
 &+\underbrace{\frac{g}{\sqrt{2}}\overline{Q}_L^i\gamma^\mu(\sigma^+W_\mu^++\sigma^-W_\mu^-)Q_L^i}_{\text{$W$ interaction}}\\
 &+\underbrace{\frac{g}{\cos\theta_w}\gamma^\mu Z_\mu\overline{Q}_L^i(T_3-\sin^2\theta_wQ)Q_L^i}_{\text{$Z$ interaction}}
 \end{align*}
@@ -407,9 +407,9 @@ Focus now just on quarks, we look at the Yukawa Lagrangian in the unitary gauge.
 \pazocal{L}_{\text{Yuk}}&\supset-\overline{Q}_L^iY_u^{ij}\frac{1}{\sqrt{2}}\begin{pmatrix}
     1\\0
 \end{pmatrix}(v+h)u_R^j-\overline{Q}_L^iY_d^{ij}\frac{1}{\sqrt{2}}\begin{pmatrix}
-    1\\0
+    0\\1
 \end{pmatrix}(v+h)d_R^j+\text{h.c}\\
-&=-\frac{vY_u^{ij}}{\sqrt{2}}\left(1+\frac{h}{v}\right)\overline{u}_L^iu_R^j-\frac{vY_d^{ij}}{\sqrt{2}}\left(1+\frac{h}{v}\right)\overline{u}_L^id_R^j+\text{h.c}
+&=-\frac{vY_u^{ij}}{\sqrt{2}}\left(1+\frac{h}{v}\right)\overline{u}_L^iu_R^j-\frac{vY_d^{ij}}{\sqrt{2}}\left(1+\frac{h}{v}\right)\overline{d}_L^id_R^j+\text{h.c}
 \end{align*}
 We can see that there are two $3\times3$ Yukawa matrices, which contain a lot of parameters for just a few masses. If it were not for gauge interactions, we could just diagonalize these matrices and the masses would be the only physical parameters. The term $\frac{1}{\sqrt{2}}vY_u^{ij}$ represents a mass term but the Yukawa matrix is not diagonal: we have to perform two unitary transformations in order to diagonalize it.
 \[
@@ -434,7 +434,7 @@ u_R^i\to e^{i\phi_i}u_R^i\Rightarrow Y_u^{\text{diag}}=\mqty(\dmat{y_u,y_c,y_t})
 \]
 The Yukawa Lagrangian now gets written as:
 \[
-\pazocal{L}_{\text{Yuk}}=-\overline{u}_i\mqty(\dmat{m_u,m_c,m_t})_{ij}u_j\left(1+\frac{h}{v}\right)+\text{h.c.}-\overline{d}_i\mqty(\dmat{m_d,m_s,m_b})_{ij}d_j\left(1+\frac{h}{v}\right)+\text{h.c.}
+\pazocal{L}_{\text{Yuk}}=-\overline{u}^i_L\mqty(\dmat{m_u,m_c,m_t})_{ij}u^j_R\left(1+\frac{h}{v}\right)+\text{h.c.}-\overline{d}^i_L\mqty(\dmat{m_d,m_s,m_b})_{ij}d^j_R\left(1+\frac{h}{v}\right)+\text{h.c.}
 \]
 This gives us the masses of the quarks, where we have defined $m_i$ as $m_i:=\frac{1}{\sqrt{2}}vY_{ii}$. There is also interaction with $h(x)$, but the flavour does not change in the interaction with the Higgs boson.\\
 What happens to the kinetic term after this rotation? If we look at \refeq{Yuk}, we notice that for $u_L$ and $d_L$ we have the term $\overline{u}_L\gamma^\mu W_\mu^+d_L$ which mixes the two fields. After the rotation, this becomes:
