@@ -164,7 +164,7 @@ $h(x)$ is the radial excitation while $\chi(x)$ is the angular excitation: the l
     0\\v
 \end{pmatrix}
 \]
-Now we act with a combination of generators from SU(2)$\times$U(1), which is $a_i\frac{\sigma_i}{2}a_0Y$. We want to see when $(a_i\frac{\sigma_i}{2}+a_0Y)\langle H(x)\rangle=0$.
+Now we act with a combination of generators from SU(2)$\times$U(1), which is $a_i\frac{\sigma_i}{2}+a_0Y$. We want to see when $(a_i\frac{\sigma_i}{2}+a_0Y)\langle H(x)\rangle=0$.
 \begin{align*}
 \left(a_i\frac{\sigma_i}{2}+a_0Y\right)\langle H(x)\rangle&=\frac{1}{2}\left(\begin{array}{cc}
     2a_0+a_3 & a_1-ia_2 \\
@@ -254,9 +254,9 @@ D_\mu H=\frac{1}{\sqrt{2}}\begin{pmatrix}0 \\ \partial_\mu h(x)\end{pmatrix}+\fr
 With the same strategy, we compute $(D_\mu H)^\dagger$:
 \begin{align*}
 (D_\mu H)^\dagger=&\begin{pmatrix}0 & v+h(x)\end{pmatrix}\frac{1}{\sqrt{2}}\left[\partial_\mu+\frac{i}{2}(g\sigma^iW_\mu^i+g'Y_WB_\mu)\right]\\
-=&\frac{1}{\sqrt{2}}\begin{pmatrix}0 & \partial_\mu h(x)\end{pmatrix}+\frac{i}{2\sqrt{2}}\begin{pmatrix}0 & v+h(x)\end{pmatrix}(g\sigma^3W_\mu^3-g'Y_WB_\mu)\\
+=&\frac{1}{\sqrt{2}}\begin{pmatrix}0 & \partial_\mu h(x)\end{pmatrix}+\frac{i}{2\sqrt{2}}\begin{pmatrix}0 & v+h(x)\end{pmatrix}(g\sigma^3W_\mu^3+g'Y_WB_\mu)\\
 &+\frac{ig}{2}\begin{pmatrix}0 & v+h(x)\end{pmatrix}(\sigma^+W_\mu^++\sigma^-W_\mu^-)\marginnote{We act with the $\sigma$ matrices on the row vector: $\sigma^3$ changes its sign as before, $\sigma^+$ gives a zero while $\sigma^-$ flips it.}\\
-=&\frac{1}{\sqrt{2}}\begin{pmatrix}0 & \partial_\mu h(x)\end{pmatrix}+\frac{i}{2\sqrt{2}}\begin{pmatrix}0 & v+h(x)\end{pmatrix}(gW_\mu^3-g'Y_WB_\mu)\\
+=&\frac{1}{\sqrt{2}}\begin{pmatrix}0 & \partial_\mu h(x)\end{pmatrix}-\frac{i}{2\sqrt{2}}\begin{pmatrix}0 & v+h(x)\end{pmatrix}(gW_\mu^3-g'Y_WB_\mu)\\
 &+\frac{ig}{2}\begin{pmatrix}v+h(x) & 0\end{pmatrix}W_\mu^-
 \end{align*}
 We can finally write the full form of $|D_\mu H|^2$:
@@ -354,7 +354,7 @@ e_R^i=\{e_R,\mu_R,\tau_R\} \quad u_R^i=\{u_R,c_R,t_R\} \quad d_R^i=\{d_R,s_R,b_R
 They all transform as right-handed Weyl spinors under the Lorentz group.\marginnote{Again, right-handed neutrinos are not included despite observations suggest their existence.}\\
 Consider now the electroweak kinetic term in $Q_L^i$:
 \[
-\overline{Q}_L^ii\slashed{D}Q_L^i=\overline{Q}_L^ii\gamma^\mu\left[\partial_\mu-\frac{i}{2}(gW_\mu^i\sigma^i-ig'YB_\mu)\right]Q_L^i
+\overline{Q}_L^ii\slashed{D}Q_L^i=\overline{Q}_L^ii\gamma^\mu\left[\partial_\mu-\frac{i}{2}(gW_\mu^i\sigma^i-g'YB_\mu)\right]Q_L^i
 \]
 We use the same substitution as before with $W_\mu^+$ and $W_\mu^-$ to write:
 \[
