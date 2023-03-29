@@ -1148,7 +1148,7 @@ For non-abelian gauge theories, we have to take into account more 1-loop contrib
 \labeq{beta0}
 \beta_0=-\frac{11}{3}C_2(\text{adj})+\frac{4}{3}T(r_f)n_f+\frac{1}{3}T(r_s)n_s
 \end{equation}
-$C_2$ is the quadratic Casimir of the adjoint representation, $T(n_f)$ is the \href{https://en.wikipedia.org/wiki/Eugene_Dynkin}{Dynkin} index for a certain representation of fermions, $n_f$ denotes the number of fermions, $T(r_s)n_s$ is the same thing as the fermions but with complex scalars.\\
+$C_2$ is the quadratic Casimir of the adjoint representation, $T(r_f)$ is the \href{https://en.wikipedia.org/wiki/Eugene_Dynkin}{Dynkin} index for a certain representation of fermions, $n_f$ denotes the number of fermions, $T(r_s)n_s$ is the same thing as the fermions but with complex scalars.\\
 The first term is negative: if we do not have too many matter fields, this will be the dominant one and the $\beta$-function will be negative, so as the energy increases the coupling decreases. It is therefore possible to extrapolate the theory at arbitrary high energies, this is called \textbf{asymptotic freedom}\marginnote{Asymptotic freedom explains a number of important qualitative features of the strong interaction, such as how QCD can be strong but also short-ranged and why free quarks have never been seen}. On the other hand, at low energies the coupling will increase and we cannot treat the theory perturbatively anymore.\\
 Specializing now to QCD with $N_c=3$ and $n_f=6$. In this case, \refeq{beta0} tells us that:
 \[
@@ -1319,7 +1319,7 @@ Consider the simple case of an abelian U(1) gauge theory:
 \[
 \pazocal{L}=-\frac{1}{4}F_{\mu\nu}^2+|D_\mu\varphi|^2-V(\varphi) \quad \left\{
 \begin{aligned}
-&V(\varphi)=\mu^2(\varphi^\dagger\varphi)+\lambda(\varphi^\dagger\varphi)^2\\
+&V(\varphi)=-\mu^2(\varphi^\dagger\varphi)+\lambda(\varphi^\dagger\varphi)^2\\
 &D_\mu=\partial_\mu-igA_\mu\\
 &F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu
 \end{aligned}
@@ -1341,9 +1341,9 @@ This Lagrangian is invariant under the local gauge transformation:
 \end{aligned}
 \right.
 \]
-When $\mu^2<0$, the minimum of the potential $V(\varphi)$ is at:
+The minimum of the potential $V(\varphi)$ is at:
 \[
-|\varphi|=\sqrt{\frac{-\mu^2}{2\lambda}}=\frac{v}{\sqrt{2}}
+|\varphi|=\sqrt{\frac{\mu^2}{2\lambda}}=\frac{v}{\sqrt{2}}
 \]
 This means that $\varphi$ develops a vacuum expectation value (vev) equal to $\langle\varphi\rangle=\frac{v}{\sqrt{2}}$. The Lagrangian has a U(1) symmetry and the minimization of the potential can only fix the modulus of $\varphi$. Picking one out of the infinite number of possible physical vacua breaks the symmetry.\\
 We can parametrize the field $\varphi(x)$ by using another field $\eta(x)$:
@@ -1515,7 +1515,7 @@ The new field $\varphi'(x)$ still satisfies the constraint so it is a good trans
 \[
 \pazocal{L}=|\partial_\mu\varphi(x)|^2
 \]
-and it is U$(N)$ invariant. Is this invariant linearly realized? No, because there is a non linear constraint. We have $2N-1$ degrees of freedom, since we have $N$ complex fields with one constraint. We can write $\varphi(x)$ in the following representation:
+and it is U$(N)$ invariant. Is this invariance linearly realized? No, because there is a non linear constraint. We have $2N-1$ degrees of freedom, since we have $N$ complex fields with one constraint. We can write $\varphi(x)$ in the following representation:
 \[
 \varphi(x)=\frac{v}{\sqrt{2}}\exp{\frac{i\chi^{\hat{a}}(x)T^{\hat{a}}}{v}}\begin{pmatrix}0\\\vdots\\0\\1\end{pmatrix} \quad \hat{a}=,1,2,\cdots,2N-1
 \]
@@ -1838,7 +1838,7 @@ $\langle\varphi\rangle=v=\sqrt{\frac{\mu^2}{\lambda}}$, implying $\langle\pazoca
 \pazocal{L}=&-\frac{1}{4}(F_{\mu\nu}^a)^2+\frac{1}{2}(\partial_\mu h(x))^2-\frac{1}{2}m_h^2h^2(x)-\lambda vh^3(x)-\frac{\lambda}{4}h^4(x)\\
 &+\frac{v^2}{4}\left(1+\frac{h(x)}{v}\right)^2\Tr{(D_\mu\Sigma)^\dagger(D^\mu\Sigma)}+\text{constant terms}
 \end{align*}
-Now, we have $h(x)$ as a self-interacting massive field and it interacts through the last term with the NGB $\chi^a$ contained in $\Sigma$. We want to understand this interaction and see how this fixes the dependency $E^2$ of the scattering amplitude of $\chi^a\chi^b\to\chi^a\chi^b$. This gives us the diagram depicted on the side \marginnote{\includegraphics[width=0.3\textwidth]{Images/aahbb.png}}:
+Now, we have $h(x)$ as a self-interacting massive field and it interacts through the last term with the NGB $\chi^a$ contained in $\Sigma$. We want to understand this interaction and see how this fixes the dependency $E^2$ of the scattering amplitude of $\chi^a\chi^b\to\chi^a\chi^b$. This gives us the diagram depicted on the side \marginnote{\includegraphics[width=0.3\textwidth]{Images/aahbb.pdf}}:
 \begin{align*}
 M_h(\chi^a\chi^b\to\chi^a\chi^b)&=\frac{i^2}{2!v^2}2\cdot2\cdot2(p_1\cdot p_3)(p_2\cdot p_4)\frac{i}{(p_1-p_3)^2-m_h^2}\\
 &=\frac{-i}{t-m_h^2}(t-2m_A^2)^2\frac{1}{v^2}=-\frac{it}{v^2}+\dots

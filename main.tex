@@ -49,6 +49,66 @@
 \addbibresource{main.bib} % Bibliography file
 
 % Load mathematical packages for theorems and related environments. NOTE: choose only one between 'mdftheorems' and 'plaintheorems'.
+% \usepackage{styles/mdftheorems}
+% %\usepackage{styles/plaintheorems}
+% \usepackage{physics}
+% \usepackage{tikz, mathtools}
+% \usepackage{boxedminipage}
+% \usepackage{svg}
+% \usepackage{wrapfig}
+% \usetikzlibrary{arrows.meta, bending, chains}
+% \usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+% \usepackage{calrsfs}
+% \usepackage{nccmath}
+% \usepackage{witharrows}
+% \DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+% \usepackage{enumitem}
+% \usepackage{tikz-cd} % For the curved arrows under the equations
+% \newcommand\bigLambda{\makebox(3,3){\text{\huge $\Lambda_{\mu\nu}$}}}
+% \newcommand\bigR{\makebox(3,3){\text{\huge $R$}}}
+% \newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+% \usepackage{nicematrix} %Fa le matrici ciotte
+% \usepackage{tikz}
+% \usepackage{blkarray}
+% \usepackage{multirow}
+% \usepackage{arydshln}
+% %\usepackage[fleqn,tbtags]{mathtools}
+% \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+%             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+% % \tikzstyle{H} = [solid,<->,yshift=-2mm]
+% % \tikzstyle{V} = [solid,<->,xshift=8mm]
+% %\newcommand{\eps}{\varepsilon}
+% \newcommand*{\img}[1]{%
+%     \raisebox{-1.9\baselineskip}{%
+%         \includegraphics[
+%         height=2cm,
+%         width=4cm,
+%         keepaspectratio,
+%         ]{#1}%
+%     }%
+% }
+% \newcommand*\mycirc[1]{%
+%   \begin{tikzpicture}
+%      \node[draw,circle,inner sep=1pt] {#1};
+%   \end{tikzpicture}}
+% \graphicspath{{examples/documentation/images/}{images/}} % Paths in which to look for images
+% \usepackage{cancel}
+% \usepackage{nicefrac}
+% \usepackage{graphicx,calc}
+% \newlength\myheight
+% \newlength\mydepth
+% \settototalheight\myheight{Xygp}
+% \settodepth\mydepth{Xygp}
+% \setlength\fboxsep{0pt}
+% \usepackage{subfiles} % Best loaded last in the preamble
+% \usepackage{soul}
+% \usepackage{xcolor}
+% \definecolor{red}{RGB}{255, 0, 0}
+% \definecolor{blue}{RGB}{0, 0, 255}
+% \renewcommand{\CancelColor}{\color{red}}
+% \makeindex[columns=3, title=Indice analitico, intoc] % Make LaTeX produce the files required to compile the index
+
 \usepackage{styles/mdftheorems}
 %\usepackage{styles/plaintheorems}
 \usepackage{physics}
@@ -88,53 +148,29 @@
     }%
 }
 \newcommand*\mycirc[1]{%
-   \begin{tikzpicture}
+  \begin{tikzpicture}
      \node[draw,circle,inner sep=1pt] {#1};
-   \end{tikzpicture}}
+  \end{tikzpicture}}
 \graphicspath{{examples/documentation/images/}{images/}} % Paths in which to look for images
 \usepackage{cancel}
 \usepackage{nicefrac}
-%\usepackage{graphicx,calc}
+\usepackage{graphicx,calc}
 \newlength\myheight
 \newlength\mydepth
 \settototalheight\myheight{Xygp}
 \settodepth\mydepth{Xygp}
 \setlength\fboxsep{0pt}
 \usepackage{subfiles} % Best loaded last in the preamble
-\usepackage{calligra}
-\usepackage{enumitem}
-\usepackage[makeroom]{cancel}
-\newcommand\norder[1]{\vcentcolon\mathrel{#1}\vcentcolon}
-\usepackage{slashed}
-\usepackage{tikz}
-\usepackage{amsmath}% http://ctan.org/pkg/amsmath
-\usetikzlibrary{tikzmark}
-\usepackage{tikz-cd}
-\usepackage[usestackEOL]{stackengine}
-\usepackage{wrapfig}
-\stackMath
-
-\newcommand\JoinUp[4][10pt]{
-\draw
-  ([shift={#2}]pic cs:start#4) -- ++(0pt,#1) -| ([shift={(#3)}]pic cs:end#4);
-}
-\newcommand\JoinDown[4][10pt]{
-\draw
-  ([shift={#2}]pic cs:start#4) -- ++(0pt,-#1) -| ([shift={(#3)}]pic cs:end#4);
-}
-\newcommand\JoinUpF[4][10pt]{
-\draw[<->]
-  ([shift={#2}]pic cs:start#4) -- ++(0pt,#1) -| ([shift={(#3)}]pic cs:end#4);
-}
-\newcommand\JoinDownF[4][10pt]{
-\draw[<->]
-  ([shift={#2}]pic cs:start#4) -- ++(0pt,-#1) -| ([shift={(#3)}]pic cs:end#4);
-}
-\DeclareMathSymbol{\varv}{\mathord}{matha}{118}
+\usepackage{soul}
+%\usepackage{calligra}
+%\usepackage{enumitem}
+%\usepackage[makeroom]{cancel}
+\definecolor{red}{RGB}{255, 0, 0}
+\definecolor{blue}{RGB}{0, 0, 255}
+\renewcommand{\CancelColor}{\color{red}}
 \newcommand{\RN}[1]{%
   \textup{\uppercase\expandafter{\romannumeral#1}}%
 }
-\newcommand{\boxed}[1]{\fbox{\m@th$\displaystyle#1$}}
 \definecolor{red}{RGB}{255, 0, 0}
 \definecolor{green}{rgb}{0.0, 0.5, 0.0}
 \renewcommand{\CancelColor}{\color{red}}
@@ -144,7 +180,7 @@
 \definecolor{unmellowyellow}{rgb}{1.0, 1.0, 0.4}
 \definecolor{bluebell}{rgb}{0.64, 0.64, 0.82}
 \makeindex[columns=3, title=Indice analitico, intoc] % Make LaTeX produce the files required to compile the index
-
+\usepackage{slashed}
 
 \makeglossaries % Make LaTeX produce the files required to compile the glossary
 
@@ -228,7 +264,7 @@ Electroweak Interactions}
 	
 	    
 	\textbf{Publisher} \\
-	First wrote in November 2022 by \@author\\
+	First wrote in November 2022 by me :)\\
 	
 	
 }
@@ -324,7 +360,7 @@ Electroweak Interactions}
 
 \backmatter % Denotes the end of the main document content
 \setchapterstyle{plain} % Output plain chapters from this point onwards
-
+\subfile{Chapters/Fish}
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
